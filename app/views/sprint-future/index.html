@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}Sprint future - LITE Prototypes{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-xl">Sprint future</h1>
+		<div class="govuk-tabs" data-module="govuk-tabs">
+			<h2 class="govuk-tabs__title">LITE services</h2>
+			<ul class="govuk-tabs__list">
+				<li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+					<a class="govuk-tabs__tab" href="#exporter">Exporter</a>
+				</li>
+				<li class="govuk-tabs__list-item">
+					<a class="govuk-tabs__tab" href="#internal">Internal</a>
+				</li>
+				<li class="govuk-tabs__list-item">
+					<a class="govuk-tabs__tab" href="#permissions-finder">Permissions Finder</a>
+				</li>
+			</ul>
+			<section class="govuk-tabs__panel" id="exporter">
+				<h3 class="govuk-heading-m">Exporter</h3>
+				<ol class="govuk-list govuk-list--number">
+					<li>GOV.UK entry points:
+						<ul class="govuk-list--bullet govuk-!-margin-top-2">
+							<li><a href="exporter/gov-uk-guidance.html">GOV.UK - Guidance</a></li>
+							<li><a href="exporter/gov-uk-start.html">GOV.UK - Start</a></li>
+						</ul>
+					</li>
+					<li class="govuk-!-margin-top-6">Sign in or create account:
+						<ul class="govuk-list--bullet govuk-!-margin-top-2">
+							<li><a href="exporter/login.html">Sign in</a></li>
+							<li><a href="exporter/create-account.html">Create an account</a></li>
+							<li><a href="exporter/password-reset.html">Reset passsword</a></li>
+							<li><a href="#">Reset email address</a></li>
+						</ul>
+					</li>
+					<li class="govuk-!-margin-top-6">Exporters dashboard:
+						<ul class="govuk-list--bullet govuk-!-margin-top-2">
+							<li><a href="exporter/index.html">Home</a></li>
+						</ul>
+						<ul class="govuk-list--bullet govuk-!-margin-top-4">
+							<li><a href="#">Check for a licence</a></li>
+							<li><a href="#">Apply for a licence</a></li>
+							<li><a href="#">View licences</a></li>
+							<li><a href="#">Appeals</a></li>
+						</ul>
+						<ul class="govuk-list--bullet govuk-!-margin-top-4">
+							<li><a href="exporter/ask-a-question.html">Ask a question</a></li>
+						</ul>
+						<ul class="govuk-list--bullet govuk-!-margin-top-4">
+							<li><a href="#">Edit your account</a></li>
+							<li><a href="#">Delete your account</a></li>
+						</ul>
+					</li>
+				</ol>	
+			</section>
+			<section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="internal">
+				<h3 class="govuk-heading-m">Internal</h3>
+				<p>TBC</p>
+			</section>
+			<section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="permissions-finder">
+				<h3 class="govuk-heading-m">Permissions Finder</h3>
+				<p>TBC</p>
+			</section>
+		</div>
+    </div>
+</div>
+{% endblock %}

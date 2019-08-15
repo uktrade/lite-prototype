@@ -1,0 +1,48 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}Sign in - Sprint future - LITE Prototypes{% endblock %}
+
+{% set serviceName %} {% endset%}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="index" method="post" novalidate>
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Sign in</h1>
+				</legend>
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="email-address">Email address</label>
+					<input class="govuk-input govuk-input--width-20" id="email-address" name="email-address" type="email" aria-describedby="email-address-hint" autocomplete="email" spellcheck="false">
+				</div>
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="password">Password</label>
+					<input class="govuk-input govuk-input--width-20" id="password" name="password" type="password" aria-describedby="password-hint">
+				</div>
+			</fieldset>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Sign in</button>
+		</form>
+		<p><a href="create-account.html">Create an account</a></p>
+		<h2 class="govuk-heading-m">Problems signing in</h2>
+		<ul class="govuk-list">
+			<li>
+				<a class="govuk-link" href="password-reset.html">I forgot my password</a>
+			</li>
+			<li>
+				<a class="govuk-link" href="#">I forgot my email address</a>
+			</li>
+		</ul>
+	</div>
+</div>
+{% endblock %}

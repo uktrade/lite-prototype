@@ -1,0 +1,25 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Exporters dashboard - Sprint future - LITE Prototypes{% endblock %}
+
+{% set serviceName %}Exporters dashboard{% endset%}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+	<form action="confirm-ask-a-question" method="post" novalidate>
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+					<h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Ask a question</h1>
+				</legend>
+				<div class="govuk-form-group">
+					<span id="ask-question-hint" class="govuk-hint">XXXXXX</span>
+					<textarea class="govuk-textarea" id="ask-question" name="ask-question" rows="5" aria-describedby="ask-question-hint"></textarea>
+				</div>
+			</fieldset>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Send</button>
+		</form>
+	</div>
+</div>
+{% endblock %}
