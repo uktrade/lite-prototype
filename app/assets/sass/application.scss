@@ -17,37 +17,6 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-// Prototye Layout 
-.journey-step {
-    display: flex;
-    background: rgba(0, 0, 0, 0.15);
-    margin-bottom: 10px;
-}
-
-.journey-step .step-number {
-    width: 10%;
-    background: rgba(0, 0, 0, 0.05);
-    text-align: center;
-    padding: 10px 0;
-    font-family: "GDS Transport", Arial, sans-serif;
-}
-
-.journey-step .step-content {
-    padding: 10px;
-    width: 90%;
-}
-
-.journey-step .step-description {
-    display: block;
-    margin: 15px 0 5px 0;
-    font-size: 0.8em;
-}
-
-.journey-step ul {
-    font-size: 0.8em;
-    margin-top: 5px;
-}
-
 .govuk-tabs {
     font-family: "GDS Transport", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -62,9 +31,6 @@ $govuk-assets-path: '/govuk/assets/';
     border-top: 2px solid #005ea5;
 }
 
-/* ol li { font-weight: bold }
-ul li { font-weight: normal } */
-
 .panel {
     border: 1px solid #b1b4b6;
     padding: 20px;
@@ -72,7 +38,6 @@ ul li { font-weight: normal } */
 
 @media only screen and (min-width: 48.0625em) { /* 769px or more */
     .exporter-ui nav {
-        /* display: inline-block; */
         float: right;
     }
 }
