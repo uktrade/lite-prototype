@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Before you begin - Sprint future - LITE Prototypes{% endblock %}
+
+{% set serviceName %}Check if you need an export licence and apply for a licence online{% endset%}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">Before you begin</h1>
+		<p class="govuk-body">You don't have to complete everything in one go. If you want to return to this service later, you can use this code to recover your previous answers:</p>
+		<div class="govuk-inset-text">
+			<p class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold">665K-QN9Q</p>
+		</div>
+		<p class="govuk-body">This code will remain at the top of the screen as you use the service.</p>
+		<details class="govuk-details" data-module="govuk-details">
+			<summary class="govuk-details__summary">
+				<span class="govuk-details__summary-text">Email me this code (optional)</span>
+			</summary>
+			<div class="govuk-details__text">
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="email-address">Your email address</label>
+					<input class="govuk-input govuk-!-width-two-thirds" id="email-address" name="email-address" type="email" autocomplete="email" spellcheck="false">
+				</div>
+			</div>
+		</details>
+	</div>
+</div>
+{% endblock %}

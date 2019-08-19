@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Check if you need an export licence and apply for a licence online - Sprint future - LITE Prototypes{% endblock %}
+
+{% set serviceName %}Check if you need an export licence and apply for a licence online{% endset%}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Section",
+      href: "#"
+    },
+    {
+      text: "Subsection"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">Check if you need an export licence and apply for a licence online</h1>
+		<p class="govuk-body">If your business is considering exporting items, goods or services such as consultancy, you will need to check if you need a licence to export from the UK.</p>
+		<p class="govuk-body">You may need a licence even if you are only exporting goods temporarily eg: taking a sample to an exhibition.</p>
+		<div class="govuk-inset-text">If you do need an export licence, you will get the option to apply for one by using this service.</div>
+		<div class="govuk-warning-text">
+			<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+			<strong class="govuk-warning-text__text">
+				<span class="govuk-warning-text__assistive">Warning</span>
+				Exporting goods without the right licence is a criminal offence, so it's important to check first.
+			</strong>
+		</div>
+		<h2 class="govuk-heading-s">If you know the control list classification for your goods</h2>
+		<p class="govuk-body"><a href="#" class="govuk-link">Enter your control list classification</a> to save time on your application</p>
+		<h3 class="govuk-heading-m">You will need to tell us:</h3>
+        <ul class="govuk-list govuk-list--bullet">
+			<li>what your item is</li>
+			<li>where your item is being exported to</li>
+			<li>any technical information about your item or goods</li>
+		</ul>
+		<p class="govuk-body">This will take around 5 to 10 minutes.</p>
+		<a href="before-you-start.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+			Start now
+			<svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+				<path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+			</svg>
+		</a>
+	</div>
+	<div class="govuk-grid-column-one-third">
+		<aside class="app-related-items govuk-!-padding-top-3" role="complementary">
+			<h2 class="govuk-heading-s" id="subsection-title">Related content</h2>
+			<nav role="navigation" aria-labelledby="subsection-title">
+				<ul class="govuk-list govuk-!-font-size-16">
+					<li><a href="https://www.gov.uk/guidance/export-military-or-dual-use-goods-services-or-technology-special-rules">Export military or dual use goods, services or technology: special rules</a></li>
+					<li><a href="https://www.gov.uk/guidance/uk-strategic-export-control-lists-the-consolidated-list-of-strategic-military-and-dual-use-items">UK Strategic Export Control Lists</a></li>
+					<li><a href="https://www.gov.uk/government/collections/open-general-export-licences-ogels">Open general export licences (OGELs)</a></li>
+				</ul>
+			</nav>
+		</aside>
+	</div>
+</div>
+{% endblock %}
