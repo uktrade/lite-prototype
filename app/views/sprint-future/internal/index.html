@@ -1,0 +1,53 @@
+
+{% extends "layout-internal.html" %}
+
+{% block pageTitle %}Internal service name - Sprint future - LITE Prototypes{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+		<div class="govuk-tabs" data-module="govuk-tabs">
+			<h2 class="govuk-tabs__title">LITE services</h2>
+			<ul class="govuk-tabs__list">
+				<li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+					<a class="govuk-tabs__tab" href="#cases">Cases</a>
+				</li>
+				<li class="govuk-tabs__list-item">
+					<a class="govuk-tabs__tab" href="#organisations">Organisations</a>
+				</li>
+				<li class="govuk-tabs__list-item">
+					<a class="govuk-tabs__tab" href="#queues">Queues</a>
+				</li>
+				<li class="govuk-tabs__list-item">
+					<a class="govuk-tabs__tab" href="#flags">Flags</a>
+				</li>
+			</ul>
+			<section class="govuk-tabs__panel" id="cases">
+				<h2 class="govuk-heading-xl">Cases</h2>
+				<p>TBC</p>
+			</section>
+			<section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="organisations">
+				<h2 class="govuk-heading-xl">Organisations</h2>
+				<p>TBC</p>
+			</section>
+			<section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="queues">
+				<h2 class="govuk-heading-xl">Queues</h2>
+				<p>TBC</p>
+			</section>
+			<section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="flags">
+				<h2 class="govuk-heading-xl">Flags</h2>
+				<p>TBC</p>
+			</section>
+		</div>
+    </div>
+</div>
+{% endblock %}

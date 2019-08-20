@@ -37,24 +37,24 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% set bodyClasses = "exporter-ui" %}
+{% set bodyClasses = "internal-ui" %}
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
-    serviceName: "Exporter service name",
+    serviceName: "Internal service name",
     serviceUrl: "/",
     containerClasses: "govuk-width-container",
     navigationClasses: "user-menu",
     navigation: [
       {
-        href: "#",
+        href: "my-account.html",
         text: "View your account"
       },
       {
-        href: "sign-out.html",
+        href: "#",
         text: "Sign out"
       }
     ]

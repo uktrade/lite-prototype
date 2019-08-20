@@ -36,8 +36,27 @@ $govuk-assets-path: '/govuk/assets/';
     padding: 20px;
 }
 
+.internal-ui .govuk-tabs__panel {
+    border: none !important;
+    padding-left: 0 !important;
+}
+
+.internal-ui .govuk-header__logo {
+    display: none;
+}
+
 @media only screen and (min-width: 48.0625em) { /* 769px or more */
-    .exporter-ui nav {
+    .exporter-ui nav,
+    .internal-ui nav {
         float: right;
+    }
+
+    .internal-ui .govuk-header__content {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .internal-ui .govuk-tabs__list-item {
+        width: 18%;
     }
 }
