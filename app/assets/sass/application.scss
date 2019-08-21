@@ -38,14 +38,30 @@ $govuk-assets-path: '/govuk/assets/';
 
 .internal-ui .govuk-tabs__panel {
     border: none !important;
-    padding-left: 0 !important;
+    /*padding-left: 0 !important;*/
 }
 
 .internal-ui .govuk-header__logo {
     display: none;
 }
 
-@media only screen and (min-width: 48.0625em) { /* 769px or more */
+.internal-ui .govuk-header__menu-button {
+    top: 10px;
+}
+
+.internal-ui .govuk-footer {
+    background: #f3f2f1 !important;
+    /* clear: both; */
+}
+
+
+@media (min-width: 40.0625em) { /* 641px or more */
+    .internal-ui .govuk-header__menu-button {
+        top: 15px;
+    }
+}
+
+@media (min-width: 48.0625em) { /* 769px or more */
     .exporter-ui nav,
     .internal-ui nav {
         float: right;
