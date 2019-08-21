@@ -54,6 +54,10 @@ $govuk-assets-path: '/govuk/assets/';
     /* clear: both; */
 }
 
+.hidden {
+    display: none;
+}
+
 
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
