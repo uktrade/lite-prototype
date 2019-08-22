@@ -22,9 +22,11 @@
 				<li class="govuk-tabs__list-item">
 					<a class="govuk-tabs__tab" href="#archive">Archive</a>
 				</li>
-				<!-- <li class="govuk-tabs__list-item">
+				<!-- # Jira content
+				<li class="govuk-tabs__list-item">
 					<a class="govuk-tabs__tab" href="#jira">Jira</a>
-				</li> -->
+				</li> 
+				-->
 			</ul>
 			<section class="govuk-tabs__panel" id="exporter">
 				<h2 class="govuk-heading-l">Exporter</h2>
@@ -45,18 +47,22 @@
 				<h3 class="govuk-heading-m govuk-!-margin-bottom-1">Sign in or create account</h3>
 				<ul class="govuk-list govuk-!-margin-top-0">
 					<li><a href="exporter/login.html">Sign in</a>
-						<!-- <ul class="govuk-list govuk-!-margin-top-0">
+						<!-- # Error example	
+						<ul class="govuk-list govuk-!-margin-top-0">
 							<li><a href="#">[Error] Incorrect email address</a></li>
-						</ul> -->
+						</ul> 
+						-->
 					</li>
 					<li><a href="exporter/create-account.html">Create an account</a></li>
 					<li><a href="exporter/activate-account.html">Activate account</a></li>
 					<li><a href="exporter/password-reset.html">Reset your passsword</a></li>
 					<li><a href="exporter/password-reset-confirm.html">Passsword reset</a></li>
-					<li><a href="#">Reset email address</a></li>
+					<li><a href="exporter/email-reset.html">Reset email address</a></li>
+					<li><a href="exporter/email-reset-confirm.html">Email address reset</a></li>
 					<li><a href="exporter/sign-out.html">Sign out</a></li>
 				</ul>
-				<!-- <details class="govuk-details" data-module="govuk-details">
+				<!-- # Error example
+				<details class="govuk-details" data-module="govuk-details">
 					<summary class="govuk-details__summary">
 						<span class="govuk-details__summary-text">Validation errors</span>
 					</summary>
@@ -68,18 +74,23 @@
 							<li><a href="#">Reset email address</a></li>
 						</ul>
 					</div>
-				</details> -->
+				</details> 
+				-->
 				<h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">Email notifications</h4>
 				<ul class="govuk-list govuk-!-margin-top-0">
-					<li><a href="#">Account created</a></li>
-					<li><a href="#">Password reset</a></li>
-					<li><a href="#">Password reminder</a></li>
+					<li><a href="exporter/email-notifications/account-created.html">Account created</a></li>
+					<li><a href="exporter/email-notifications/password-reset.html">Password reset</a></li>
+					<!-- Are more email templates needed? -->
 				</ul>
 				<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 				<h3 class="govuk-heading-m govuk-!-margin-bottom-1">Exporter service</h3>
 				<ul class="govuk-list govuk-!-margin-top-0">
 					<li><a href="exporter/index.html">Home</a></li>
+				</ul> 
+				<ul class="govuk-list govuk-!-margin-top-0">
+					<li><a href="apply/index.html">Apply for an export licence</a></li>
 				</ul>
+				<!-- 
 				<h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">Licence management</h4>
 				<ul class="govuk-list govuk-!-margin-top-0">
 					<li><a href="#">Check for a licence</a></li>
@@ -87,8 +98,10 @@
 					<li><a href="exporter/applications.html">View applications for a licence</a></li>
 					<li><a href="exporter/track-applications.html">Track applications for a licence</a></li>
 					<li><a href="#">Appeal against a decision</a></li>
-				</ul>
-				<!-- <details class="govuk-details" data-module="govuk-details">
+				</ul> -->
+
+				<!-- # Error example
+				<details class="govuk-details" data-module="govuk-details">
 					<summary class="govuk-details__summary">
 						<span class="govuk-details__summary-text">Validation errors</span>
 					</summary>
@@ -100,7 +113,10 @@
 							<li><a href="#">Appeals</a></li>
 						</ul>
 					</div>
-				</details> -->
+				</details> 
+				-->
+				
+				<!--
 				<h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">Tasks???</h4>
 				<ul class="govuk-list govuk-!-margin-top-0">
 					<li><a href="exporter/ask-a-question.html">Ask a question</a></li>
@@ -110,7 +126,7 @@
 				<ul class="govuk-list govuk-!-margin-top-0">
 					<li><a href="#">Edit your account</a></li>
 					<li><a href="#">Delete your account</a></li>
-				</ul>
+				</ul> -->
 				<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 				<h3 class="govuk-heading-m govuk-!-margin-bottom-1">No service</h3>
 				<ul class="govuk-list govuk-!-margin-top-0">
@@ -156,12 +172,12 @@
 				<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 				<h3 class="govuk-heading-m govuk-!-margin-bottom-1">Email notifications</h3>
 				<ul class="govuk-list govuk-!-margin-top-0">
-					<li><a href="permissions-finder/email-application-code.html">Application number</a></li>
+					<li><a href="permissions-finder/email-notifications/application-code.html">Application number</a></li>
 				</ul> 
 			</section>
 			<section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="archive">
 				<h2 class="govuk-heading-l">Archive</h2>
-				<h3 class="govuk-heading-m govuk-!-margin-bottom-1">Apply for a non-OGEL permission to export</h3>
+				<h3 class="govuk-heading-m govuk-!-margin-bottom-1">Apply for an export licence</h3>
 				<p class="govuk-body govuk-!-margin-bottom-0">Lab days</p>
 				<ul class="govuk-list govuk-!-margin-top-2">
 					<li><a href="#">XX September 2019</a></li>
@@ -169,8 +185,15 @@
 					<li><a href="#">XX October 2019</a></li>
 				</ul>
 				<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+				<h3 class="govuk-heading-m govuk-!-margin-bottom-1">TBC</h3>
+				<p class="govuk-body govuk-!-margin-bottom-0">Lab days</p>
+				<ul class="govuk-list govuk-!-margin-top-2">
+					<li><a href="#">XX XXXXXXX 2019</a></li>
+					<li><a href="#">XX XXXXXXX 2019</a></li>
+				</ul>
 			</section>
-			<!-- <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="jira">
+			<!-- # Jira content
+			<section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="jira">
 				<h2 class="govuk-heading-l">Jira</h2>
 				<h3 class="govuk-heading-m govuk-!-margin-bottom-1">Exporter</h3>
 				<h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">Create a LITE account for an individual</h4>
@@ -190,7 +213,8 @@
 					<li><a href="#">Prototype</a></li>
 					<li><a href="#">Jira</a></li>						
 				</ul>
-			</section> -->
+			</section> 
+			-->
 		</div>
     </div>
 </div>
