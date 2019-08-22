@@ -3,29 +3,50 @@
 
 {% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
 
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "View your account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<form action="confirm-ask-a-question" method="post">
-				<div class="govuk-form-group">
-					<fieldset class="govuk-fieldset">
-						<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-							<h1 class="govuk-fieldset__heading">Where is the item or service located?</h1>
-						</legend>
-						<div class="govuk-radios">
-							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="in-the-uk" name="location" type="radio" value="in-the-uk">
-							  	<label class="govuk-label govuk-radios__label" for="in-the-uk">In the UK</label>
-							</div>
-							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="outside-the-uk" name="location" type="radio" value="outside-the-uk">
-								<label class="govuk-label govuk-radios__label" for="outside-the-uk">Outside the UK</label>
-							</div>	
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Where is the item or service located?</h1>
+					</legend>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="in-the-uk" name="location" type="radio" value="in-the-uk">
+							<label class="govuk-label govuk-radios__label" for="in-the-uk">In the UK</label>
 						</div>
-					</fieldset>
-				</div>
-			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
-			<p><a href="">Save and exit</a></p>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="outside-the-uk" name="location" type="radio" value="outside-the-uk">
+							<label class="govuk-label govuk-radios__label" for="outside-the-uk">Outside the UK</label>
+						</div>	
+					</div>
+				</fieldset>
+			</div>
+			<button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Save and continue</button><br />
+			<!--<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Save and come back later</button> -->
+			 <p><a href="#">Save and come back later</a></p> 
 		</form>
 	</div>
 </div>
