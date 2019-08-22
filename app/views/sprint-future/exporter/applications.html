@@ -1,0 +1,120 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Applications - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBreadcrumbs({
+	items: [
+	  {
+		text: "Home",
+		href: "index.html"
+	  },
+	  {
+		text: "Applications"
+	  }
+	]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<h1 class="govuk-heading-l govuk-!-margin-bottom-6">Applications</h1>
+		<table class="govuk-table applications">
+			<caption class="govuk-table__caption hidden">Licence applications</caption>
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+				<th scope="col" class="govuk-table__header govuk-!-width-one-half">Reference</th>
+				<th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Number of goods</th>
+				<th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="applications/application-1.html">Application 1</a></td>
+					<td class="govuk-table__cell">1</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 2</a></td>
+					<td class="govuk-table__cell">1</td>
+					<td class="govuk-table__cell">In progress <span class="status-date">Last updated on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 3</a></td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">Resubmitted <span class="status-date">Sent on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 4</a></td>
+					<td class="govuk-table__cell">0</td>
+					<td class="govuk-table__cell">In progress <span class="status-date">Last updated on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 5</a></td>
+					<td class="govuk-table__cell">1</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 6</a></td>
+					<td class="govuk-table__cell">9</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 7</a></td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell">Withdrawn <span class="status-date">Removed on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 8</a></td>
+					<td class="govuk-table__cell">1</td>
+					<td class="govuk-table__cell">Under review <span class="status-date">Sent on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 9</a></td>
+					<td class="govuk-table__cell">17</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 10</a></td>
+					<td class="govuk-table__cell">1</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 11</a></td>
+					<td class="govuk-table__cell">3</td>
+					<td class="govuk-table__cell">Under final review <span class="status-date">Sent on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 12</a></td>
+					<td class="govuk-table__cell">3</td>
+					<td class="govuk-table__cell">Withdrawn <span class="status-date">Removed on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 13</a></td>
+					<td class="govuk-table__cell">1</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 14</a></td>
+					<td class="govuk-table__cell">1</td>
+					<td class="govuk-table__cell">In progress <span class="status-date">Last updated on 19 August 2019</span></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 15</a></td>
+					<td class="govuk-table__cell">0</td>
+					<td class="govuk-table__cell">In progress <span class="status-date">Last updated on 19 August 2019</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endblock %}

@@ -58,6 +58,16 @@ $govuk-assets-path: '/govuk/assets/';
     display: none;
 }
 
+.applications .govuk-table__cell {
+    font-size: 0.85em;
+}
+
+.applications .govuk-table__cell .status-date {
+    font-size: 0.85em;
+    color: #6f777b;
+    display: block;   
+}
+
 
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {

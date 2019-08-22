@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}View licences - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+{% block pageTitle %}Track your applications for a licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -18,7 +18,7 @@
 		href: "index.html"
 	  },
 	  {
-		text: "View licences"
+		text: "Track your applications for a licence"
 	  }
 	]
   }) }}
@@ -27,91 +27,91 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-		<h1 class="govuk-heading-l govuk-!-margin-bottom-6">View licences</h1>
-		<table class="govuk-table">
+		<h1 class="govuk-heading-l govuk-!-margin-bottom-6">Track your applications for a licence</h1>
+		<table class="govuk-table applications">
 			<caption class="govuk-table__caption hidden">Licence applications</caption>
 			<thead class="govuk-table__head">
 				<tr class="govuk-table__row">
-				<th scope="col" class="govuk-table__header">Application reference</th>
-				<th scope="col" class="govuk-table__header">Number of goods</th>
-				<th scope="col" class="govuk-table__header">Status</th>
+				<th scope="col" class="govuk-table__header govuk-!-width-one-half">Reference</th>
+				<th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Number of goods</th>
+				<th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
 				</tr>
 			</thead>
 			<tbody class="govuk-table__body">
 				<tr class="govuk-table__row">
-					<td scope="row" class="govuk-table__cell"><a href="view-licences/application-1.html">Application 1</a></td>
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 1</a></td>
 					<td class="govuk-table__cell">1</td>
-					<td class="govuk-table__cell">Submitted</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
-					<td scope="row" class="govuk-table__cell"><a href="view-licences/application-2.html">Application 2</a></td>
+					<td scope="row" class="govuk-table__cell"><a href="#">Application 2</a></td>
 					<td class="govuk-table__cell">1</td>
-					<td class="govuk-table__cell">In progress</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 3</a></td>
 					<td class="govuk-table__cell">5</td>
-					<td class="govuk-table__cell">Submitted</td>
+					<td class="govuk-table__cell">Resubmitted <span class="status-date">Sent on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 4</a></td>
 					<td class="govuk-table__cell">0</td>
-					<td class="govuk-table__cell">In progress</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Last updated on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 5</a></td>
 					<td class="govuk-table__cell">1</td>
-					<td class="govuk-table__cell">Submitted</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 6</a></td>
 					<td class="govuk-table__cell">9</td>
-					<td class="govuk-table__cell">Submitted</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 7</a></td>
 					<td class="govuk-table__cell">2</td>
-					<td class="govuk-table__cell">Withdrawn</td>
+					<td class="govuk-table__cell">Withdrawn <span class="status-date">Removed on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 8</a></td>
 					<td class="govuk-table__cell">1</td>
-					<td class="govuk-table__cell">Submitted</td>
+					<td class="govuk-table__cell">Under review <span class="status-date">Sent on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 9</a></td>
 					<td class="govuk-table__cell">17</td>
-					<td class="govuk-table__cell">Submitted</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 10</a></td>
 					<td class="govuk-table__cell">1</td>
-					<td class="govuk-table__cell">Submitted</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 11</a></td>
 					<td class="govuk-table__cell">3</td>
-					<td class="govuk-table__cell">Submitted</td>
+					<td class="govuk-table__cell">Under final review <span class="status-date">Sent on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 12</a></td>
 					<td class="govuk-table__cell">3</td>
-					<td class="govuk-table__cell">Withdrawn</td>
+					<td class="govuk-table__cell">Withdrawn <span class="status-date">Removed on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 13</a></td>
 					<td class="govuk-table__cell">1</td>
-					<td class="govuk-table__cell">Submitted</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Sent on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 14</a></td>
 					<td class="govuk-table__cell">1</td>
-					<td class="govuk-table__cell">In progress</td>
+					<td class="govuk-table__cell">Submitted <span class="status-date">Last updated on 19 August 2019</span></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td scope="row" class="govuk-table__cell"><a href="#">Application 15</a></td>
 					<td class="govuk-table__cell">0</td>
-					<td class="govuk-table__cell">In progress</td>
+					<td class="govuk-table__cell">Under review <span class="status-date">Last updated on 19 August 2019</span></td>
 				</tr>
 			</tbody>
 		</table>
