@@ -68,6 +68,11 @@ $govuk-assets-path: '/govuk/assets/';
     display: block;   
 }
 
+.govuk-tag-progress {
+    background-color: #f3f2f1;
+    color: #0b0c0c;
+}
+
 
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {

@@ -26,26 +26,18 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form action="location-uk" method="post">
+		<form action="check-your-answers" method="post">
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-						<h1 class="govuk-fieldset__heading">Where is the item or service located?</h1>
-					</legend>
-					<div class="govuk-radios">
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="in-the-uk" name="location" type="radio" value="true">
-							<label class="govuk-label govuk-radios__label" for="in-the-uk">In the UK</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="outside-the-uk" name="location" type="radio" value="false">
-							<label class="govuk-label govuk-radios__label" for="outside-the-uk">Outside the UK</label>
-						</div>	
-					</div>
+						<h1 class="govuk-fieldset__heading">What address are you shipping your item or service from?</h1>
+          			</legend>
+					<span id="address-hint" class="govuk-hint">This address will appear on your licence and other export documentation. You can edit this later if you need to.</span>
+					<p>[Address lookup]</p>
 				</fieldset>
 			</div>
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
-			<p><a href="task-list.html">Exit application</a></p> 
+			<p><a href="task-list.html">Exit application</a></p>  
 		</form>
 	</div>
 </div>
