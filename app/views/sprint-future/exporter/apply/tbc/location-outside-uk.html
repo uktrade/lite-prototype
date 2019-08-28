@@ -16,7 +16,7 @@
         text: "My account"
       },
       {
-        href: "../sign-out.html",
+        href: "../../sign-out.html",
         text: "Sign out"
       }
     ]
@@ -27,20 +27,15 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<form action="check-your-answers" method="post">
+			<h1 class="govuk-label-wrapper">
+				<label class="govuk-label govuk-label--l" for="address-shipping">What address are you shipping your item or service from?</label>
+			</h1>
 			<div class="govuk-form-group">
-				<h1 class="govuk-label-wrapper">
-					<label class="govuk-label govuk-label--l" for="address">Select shipping address</label>
-				</h1>
-				<select class="govuk-select" id="address" name="address">
-					<option value="found" selected>2 addresses found</option>
-					<option value="victoria">50 Victoria St, Westminster, London SW1H 0TL</option>
-					<option value="tfl">Transport For London Street Management</option>
-				</select>
-			</div>
-			<p class="govuk-body govuk-!-margin-top-6">Postcode <span class="govuk-!-font-weight-bold">SW1H 0TL</span> &nbsp;&nbsp;&nbsp;<a href="location-uk.html">Change</a></p>
-			<p class=" govuk-!-margin-top-4 govuk-!-margin-bottom-6"><a href="location-uk-manual.html">I can't find my address</a></p> 
+				<span id="address-shipping-hint" class="govuk-hint">This address will appear on your licence and other export documentation. You can edit this later if you need to.</span>
+				<textarea class="govuk-textarea" id="address-shipping" name="address-shipping" rows="5" aria-describedby="address-shipping-hint"></textarea>
+			</div>	
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
-			<p><a href="task-list.html">Finish later</a></p>  
+			<p><a href="../list?tbc=started">Finish later</a></p>  
 		</form>
 	</div>
 </div>

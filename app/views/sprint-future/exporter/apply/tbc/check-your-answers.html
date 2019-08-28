@@ -16,7 +16,7 @@
         text: "My account"
       },
       {
-        href: "../sign-out.html",
+        href: "../../sign-out.html",
         text: "Sign out"
       }
     ]
@@ -56,11 +56,12 @@
 						<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> shipping address</span></a>
 					</dd>
 			</div>
-		</dl>
-		<form action="task-list-complete" method="post">
+        </dl>
+        <a href="../list?tbc=completed" class="govuk-button">Confirm and continue</a>
+		<!-- <form action="../list?tbc=completed" method="post">
 			<input type="hidden" name="answers-checked" value="true">
 			<button type="submit" class="govuk-button" data-module="govuk-button">Confirm and continue</button>
-		</form>
+		</form> -->
 	</div>
 </div>
 {% endblock %}

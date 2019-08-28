@@ -1,0 +1,143 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l govuk-!-margin-bottom-7">Apply for an export licence</h1>
+		<ol class="app-task-list">
+			<li>
+				<h2 class="app-task-list__section">
+					<span class="app-task-list__section-number">1. </span> Check before you start
+				</h2>
+				<ul class="app-task-list__items">
+					<li class="app-task-list__item">
+						<span class="app-task-list__task-name">
+							<a href="#" aria-describedby="eligibility-completed">Check eligibility</a>
+						</span>
+						<strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+					</li>
+				</ul>
+			</li>
+			<li>
+			<h2 class="app-task-list__section">
+				<span class="app-task-list__section-number">2. </span> Prepare application
+			</h2>
+			<ul class="app-task-list__items">
+                {% if sectionStatus.tbc === "completed" %}
+                <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                        <a href="tbc/check-your-answers.html" aria-describedby="tbc-completed">TBC</a>
+                    </span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="tbc-completed">Completed</strong>
+                </li>
+                {% elif sectionStatus.tbc === "started" %}
+                <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                        <a href="tbc/index.html" aria-describedby="tbc-in-progress">TBC</a>
+                    </span>
+                    <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="tbc-in-progress">In progress</strong>
+                </li> 
+                {% else %}
+				<li class="app-task-list__item">
+					<span class="app-task-list__task-name">
+						<a href="tbc/index.html" aria-describedby="tbc">TBC</a>
+                    </span>                
+                </li>
+                {% endif %}
+
+                {% if sectionStatus.items === "completed" %}
+                <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                        <a href="items/check-your-answers.html" aria-describedby="items-completed">Your items</a>
+                    </span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="items-completed">Completed</strong>
+                </li>
+                {% elif sectionStatus.items === "started" %}
+                <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                        <a href="items/index.html" aria-describedby="items-in-progress">Your items</a>
+                    </span>
+                    <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="items-in-progress">In progress</strong>
+                </li> 
+                {% else %}
+				<li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                        <a href="items/index.html" aria-describedby="items">Your items</a>
+                    </span>                
+                </li>
+                {% endif %}
+
+
+                
+				<li class="app-task-list__item">
+					<span class="app-task-list__task-name">
+						<a href="#" aria-describedby="people-completed">People involved</a>
+					</span>
+					<!-- <strong class="govuk-tag app-task-list__task-completed" id="people-completed">Completed</strong> -->
+				</li>
+				<li class="app-task-list__item">
+					<span class="app-task-list__task-name">
+						<a href="#" aria-describedby="end-user-completed">End user undertaking</a>
+					</span>
+					<!-- <strong class="govuk-tag app-task-list__task-completed" id="end-user-completed">Completed</strong> -->
+				</li>
+				<li class="app-task-list__item">
+					<span class="app-task-list__task-name">
+						<a href="#" aria-describedby="other-information-completed">Other information</a>
+						</span>
+						<!-- <strong class="govuk-tag app-task-list__task-completed" id="other-information-completed">Completed</strong>
+						</li> -->
+					</ul>
+				</li>
+				<li>
+				<h2 class="app-task-list__section">
+					<span class="app-task-list__section-number">3. </span> Apply
+				</h2>
+				<ul class="app-task-list__items">
+
+                    {% if
+                        (sectionStatus.tbc === "completed")
+                        and (sectionStatus.items === "completed")
+                    %}
+
+					<li class="app-task-list__item">
+						<span class="app-task-list__task-name">
+							<a href="declaration.html" aria-describedby="submit-completed">Submit application</a>
+						</span>
+                    </li>
+
+                    {% else %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name grey-text">Submit application</span>
+                    </li>
+                    {% endif %}
+				</ul>
+			</li>
+		</ol>
+		<p class="govuk-body"><a href="cancel-application.html">Cancel application</a></p>
+	</div>
+</div>
+{% endblock %}
