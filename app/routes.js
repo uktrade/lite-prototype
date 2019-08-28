@@ -19,11 +19,15 @@ router.get('/sprint-future/exporter/apply/list', (req, res, next) => {
 
     if (!req.session.sectionStatus){
       req.session.sectionStatus = {
+        check: undefined,
         tbc: undefined,
         items: undefined,
       }
     }
   
+    if (req.query.check) {
+        req.session.sectionStatus.check = req.query.check
+      };
     if (req.query.tbc) {
       req.session.sectionStatus.tbc = req.query.tbc
     };
@@ -34,9 +38,7 @@ router.get('/sprint-future/exporter/apply/list', (req, res, next) => {
     res.render('sprint-future/exporter/apply/list.html', {sectionStatus: req.session.sectionStatus});
   });
   
-  
   // Clear data on the 'application cancelled' screen
-  
   router.get('/*/clear-v9', function (req, res) {
     req.session.destroy()
     res.render('sprint-future/exporter/apply/application-cancelled')

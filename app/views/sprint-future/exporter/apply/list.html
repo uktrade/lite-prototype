@@ -32,13 +32,22 @@
 				<h2 class="app-task-list__section">
 					<span class="app-task-list__section-number">1. </span> Check before you start
 				</h2>
-				<ul class="app-task-list__items">
-					<li class="app-task-list__item">
-						<span class="app-task-list__task-name">
-							<a href="#" aria-describedby="eligibility-completed">Check eligibility</a>
-						</span>
-						<strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-					</li>
+				<ul class="app-task-list__items">                    
+                    <!-- Check eligibility -->
+                    {% if sectionStatus.check === "completed" %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="check/index.html" aria-describedby="check-completed">Check eligibility</a>
+                        </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="check-completed">Completed</strong>
+                    </li>
+                    {% else %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="check/index.html" aria-describedby="check">Check eligibility</a>
+                        </span>                
+                    </li>
+                    {% endif %}
 				</ul>
 			</li>
 			<li>
@@ -46,6 +55,8 @@
 				<span class="app-task-list__section-number">2. </span> Prepare application
 			</h2>
 			<ul class="app-task-list__items">
+
+                <!-- TBC -->
                 {% if sectionStatus.tbc === "completed" %}
                 <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
@@ -68,6 +79,7 @@
                 </li>
                 {% endif %}
 
+                <!-- Your items -->
                 {% if sectionStatus.items === "completed" %}
                 <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
@@ -89,7 +101,6 @@
                     </span>                
                 </li>
                 {% endif %}
-
 
                 
 				<li class="app-task-list__item">
@@ -119,7 +130,8 @@
 				<ul class="app-task-list__items">
 
                     {% if
-                        (sectionStatus.tbc === "completed")
+                        (sectionStatus.check === "completed")
+                        and (sectionStatus.tbc === "completed")
                         and (sectionStatus.items === "completed")
                     %}
 
