@@ -16,7 +16,7 @@ router.post('/sprint-future/exporter/apply/tbc/location-uk', function (req, res)
 })
 
 // Task list 
-router.get('/sprint-future/exporter/apply/list', (req, res, next) => {
+router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
 
     if (!req.session.sectionStatus){
     	req.session.sectionStatus = {
@@ -36,7 +36,7 @@ router.get('/sprint-future/exporter/apply/list', (req, res, next) => {
     	req.session.sectionStatus.items = req.query.items
     };
   
-    res.render('sprint-future/exporter/apply/list.html', {sectionStatus: req.session.sectionStatus});
+    res.render('sprint-future/exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
 });
   
 // Clear data on the 'Application cancelled' page
