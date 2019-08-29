@@ -3,6 +3,7 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
+// UK/Non-UK location routing
 router.post('/sprint-future/exporter/apply/tbc/location-uk', function (req, res) {
 
     let locationUK = req.session.data['location']
@@ -36,14 +37,12 @@ router.get('/sprint-future/exporter/apply/list', (req, res, next) => {
     };
   
     res.render('sprint-future/exporter/apply/list.html', {sectionStatus: req.session.sectionStatus});
-  });
+});
   
-// Clear data on the 'application cancelled' screen
-router.get('/*/clear-apply', function (req, res) {
+// Clear data on the 'Application cancelled' page
+router.get('/*/application-cancelled', function (req, res) {
 	req.session.destroy()
-    res.render('sprint-future/exporter/apply/application-cancelled')
+    res.render('sprint-future/exporter/apply/confirm-cancel')
 })
-
-
 
 module.exports = router
