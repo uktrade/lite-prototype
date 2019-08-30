@@ -27,18 +27,37 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds-from-desktop">
 		<h1 class="govuk-heading-l">You have added 1 item</h1>
-		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+		<dl class="govuk-summary-list govuk-!-margin-bottom-6">
             <div class="govuk-summary-list__row">
-                <!-- <dt class="govuk-summary-list__key">Control list classification</dt> -->
                 <dd class="govuk-summary-list__value">{{ data['control-list'] }}</dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="index.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> control list classification</span></a>
                     &nbsp;&nbsp;&nbsp;
-                    <a class="govuk-link" href="index.html?edit=true#control-list">Remove<span class="govuk-visually-hidden"> control list classification</span></a> 
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> control list classification</span></a> 
                 </dd>
             </div>
         </dl>
-        <a href="../task-list?items=completed" class="govuk-button">Confirm and continue</a>
+        <form action="#" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">Add another item?</h2>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="item-yes" name="item-add" type="radio" value="Yes" {{ checked("item-add", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="item-yes">Yes</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="item-no" name="item-add" type="radio" value="No" {{ checked("item-add", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="item-no">No</label>
+                        </div>	
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+            <p><a href="../task-list?tbc=started">Finish later</a></p>
+        </form>
 	</div>
 </div>
 {% endblock %}
