@@ -32,7 +32,7 @@
 			</h1>
 			<div class="govuk-form-group">
 				<span id="address-shipping-hint" class="govuk-hint">This address will appear on your licence and other export documentation. You can edit this later if you need to.</span>
-				<textarea class="govuk-textarea" id="address-shipping" name="address-shipping" rows="5" aria-describedby="address-shipping-hint" value="{{ data['address-shipping'] }}"></textarea>
+				<textarea class="govuk-textarea" id="address-shipping" name="address-shipping" rows="5" aria-describedby="address-shipping-hint">{{ data['address-shipping'] }}</textarea>
 			</div>	
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
 			<p><a href="../task-list?tbc=started">Finish later</a></p>  

@@ -8,7 +8,7 @@ router.post('/sprint-future/exporter/apply/tbc/location-uk', function (req, res)
 
     let locationUK = req.session.data['location']
 
-    if (locationUK == 'true') {
+    if (locationUK === "In the UK") {
         res.redirect('/sprint-future/exporter/apply/tbc/location-uk')
     } else {
         res.redirect('/sprint-future/exporter/apply/tbc/location-outside-uk')
