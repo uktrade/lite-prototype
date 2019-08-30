@@ -1,0 +1,52 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Apply for an export licence - Exporter licence account - Sprint future - LITE Prototypes{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        {% if data["edit"] == "true" %}
+        <form action="check-your-answers" method="post">
+        {% else %}
+		<form action="check-your-answers" method="post">
+        {% endif %}
+			<h1 class="govuk-label-wrapper">
+				<label class="govuk-label govuk-label--l govuk-!-margin-bottom-3" for="ask-question">Upload supporting documentation</label>
+            </h1>
+            <p class="govuk-body">You can upload any documents such as technical specifications.</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>File format: .jpeg or .png</li>
+                <li>Maximum file size: 500MB</li>
+            </ul>
+			<!-- <span id="file-upload-hint" class="govuk-hint">You can upload any documents such as technical specifications (jpeg or img file, not exceeding 500MB)</span> -->
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="file-upload">Upload a file</label>
+				<input class="govuk-file-upload" id="file-upload" name="file-upload" type="file" aria-describedby="file-upload-hint">
+			</div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+			<p><a href="../task-list?items=started">Finish later</a></p> 
+		</form>
+	</div>
+</div>
+{% endblock %}

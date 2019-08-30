@@ -28,34 +28,34 @@
 	<div class="govuk-grid-column-two-thirds-from-desktop">
 		<h1 class="govuk-heading-l">Check your answers</h1>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-			<!-- <div class="govuk-summary-list__row">
+			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">Application reference</dt>
 				<dd class="govuk-summary-list__value">{{ data['reference-application'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="index.html#reference-application">Change<span class="govuk-visually-hidden"> application reference</span></a> 
+					<a class="govuk-link" href="index.html?edit=true#reference-application">Change<span class="govuk-visually-hidden"> application reference</span></a> 
 				</dd>
-			</div> -->
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">Application reference</dt>
-				<dd class="govuk-summary-list__value">23082019_Wea-234_JU90</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> application reference</span></a> 
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">Item or service location</dt>
-				<dd class="govuk-summary-list__value">UK</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> location</span></a>
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">Shipping address for item or service</dt>
-					<dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
-					<dd class="govuk-summary-list__actions">
-						<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> shipping address</span></a>
-					</dd>
-			</div>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Item or service location</dt>
+                <dd class="govuk-summary-list__value">{{ data['location'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="location.html?edit=true#reference-application">Change<span class="govuk-visually-hidden"> location</span></a> 
+                </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Shipping address for item or service</dt>
+                {% if data["location"] == "false" %}
+                <dd class="govuk-summary-list__value">{{ data['address-shipping'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="location-outside-uk.html?edit=true#address-shipping">Change<span class="govuk-visually-hidden"> location</span></a> 
+                </dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="location-uk.html?edit=true#address-shipping">Change<span class="govuk-visually-hidden"> location</span></a> 
+                </dd>
+                {% endif %}
+            </div> 
         </dl>
         <a href="../task-list?tbc=completed" class="govuk-button">Confirm and continue</a>
 	</div>

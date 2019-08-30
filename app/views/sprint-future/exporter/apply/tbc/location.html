@@ -26,7 +26,11 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
+        {% if data["edit"] == "true" %}
+        <form action="check-your-answers" method="post">
+        {% else %}
 		<form action="location-uk" method="post">
+        {% endif %}
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -34,11 +38,11 @@
 					</legend>
 					<div class="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="in-the-uk" name="location" type="radio" value="true">
+							<input class="govuk-radios__input" id="in-the-uk" name="location" type="radio" value="true" {{ checked("location", "true") }}>
 							<label class="govuk-label govuk-radios__label" for="in-the-uk">In the UK</label>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="outside-the-uk" name="location" type="radio" value="false">
+							<input class="govuk-radios__input" id="outside-the-uk" name="location" type="radio" value="false" {{ checked("location", "false") }}>
 							<label class="govuk-label govuk-radios__label" for="outside-the-uk">Outside the UK</label>
 						</div>	
 					</div>

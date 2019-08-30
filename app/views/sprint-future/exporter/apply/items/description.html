@@ -29,18 +29,22 @@
         {% if data["edit"] == "true" %}
         <form action="check-your-answers" method="post">
         {% else %}
-		<form action="location" method="post">
+		<form action="quantity" method="post">
         {% endif %}
 			<h1 class="govuk-label-wrapper">
-				<label class="govuk-label govuk-label--l" for="reference-application">Create a name or reference for your application</label>
-			</h1>
-			<div class="govuk-form-group">
-			    <span id="reference-application-hint" class="govuk-hint">This can be used to retrieve your application later</span>
-				<input class="govuk-input govuk-!-width-one-half" id="reference-application" name="reference-application" type="text" aria-describedby="reference-application-hint" value="{{ data['reference-application'] }}">
-			</div>
+				<label class="govuk-label govuk-label--l" for="description">Enter a description of your item or service</label>
+            </h1>
+            <div class="govuk-form-group">
+                <textarea class="govuk-textarea" id="description" name="description" rows="5" value="{{ data['description'] }}"></textarea>
+            </div>
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+					<span class="govuk-details__summary-text">Help with describing your item or service</span>
+				</summary>
+				<div class="govuk-details__text">Text explaining what the user needs to add in this section. This type of interaction should only be used if the majority of users will know what to type in the textarea box.</div>
+			</details>
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
-			<!--<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Save and come back later</button> -->
-			<p><a href="../task-list?tbc=started">Finish later</a></p> 
+			<p><a href="../task-list?items=started">Finish later</a></p> 
 		</form>
 	</div>
 </div>
