@@ -1,0 +1,51 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        {% if data["edit"] == "true" %}
+        <form action="cya-items" method="post">
+        {% else %}
+		<form action="quantity" method="post">
+        {% endif %}
+			<h1 class="govuk-label-wrapper">
+				<label class="govuk-label govuk-label--l" for="description">Enter a description of your item or service</label>
+            </h1>
+            <div class="govuk-form-group">
+                <textarea class="govuk-textarea" id="description" name="description" rows="5">{{ data['description'] }}</textarea>
+            </div>
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+					<span class="govuk-details__summary-text">Help with describing your item or service</span>
+				</summary>
+				<div class="govuk-details__text">Text explaining what the user needs to add in this section. This type of interaction should only be used if the majority of users will know what to type in the textarea box.</div>
+			</details>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+			<p><a href="../task-list?items=started">Finish later</a></p> 
+		</form>
+	</div>
+</div>
+{% endblock %}

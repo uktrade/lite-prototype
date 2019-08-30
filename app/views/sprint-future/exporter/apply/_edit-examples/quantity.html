@@ -1,0 +1,45 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        {% if data["edit"] == "true" %}
+        <form action="cya-items" method="post">
+        {% else %}
+		<form action="value" method="post">
+        {% endif %}
+			<h1 class="govuk-label-wrapper">
+				<label class="govuk-label govuk-label--l" for="quantity">What is the quantity?</label>
+			</h1>
+			<div class="govuk-form-group">
+				<input class="govuk-input govuk-!-width-one-half" id="quantity" name="quantity" type="text" value="{{ data['quantity'] }}">
+			</div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+			<p><a href="../task-list?items=started">Finish later</a></p> 
+		</form>
+	</div>
+</div>
+{% endblock %}

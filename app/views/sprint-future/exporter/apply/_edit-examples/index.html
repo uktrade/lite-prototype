@@ -1,0 +1,52 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        {% if data["edit"] == "true" %}
+		<form action="cya-items" method="post">
+        {% else %}
+        <form action="description" method="post">
+        {% endif %}
+			<h1 class="govuk-label-wrapper">
+				<label class="govuk-label govuk-label--l" for="control-list">Control list classification</label>
+			</h1>
+			<div class="govuk-form-group">
+				<span id="control-list-hint" class="govuk-hint">This can be found on UK Strategic Export Control Lists. It is made up of letters and numbers (e.g. PL9005)</span>
+				<input class="govuk-input govuk-!-width-one-half" id="control-list" name="control-list" type="text" aria-describedby="control-list-hint" value="{{ data['control-list'] }}">
+			</div>
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+					<span class="govuk-details__summary-text">I don't know the control list classification</span>
+				</summary>
+				<div class="govuk-details__text">Text explaining where they can go to find this on the <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">Permissons Finder</a> service. Tell user that the link will open in a new window/tab as we should not take them out of the service.</div>
+			</details>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+			<p><a href="../task-list?items=started">Finish later</a></p> 
+		</form>
+	</div>
+</div>
+{% endblock %}
