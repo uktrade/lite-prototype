@@ -26,7 +26,46 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds-from-desktop">
-		<h1 class="govuk-heading-l">Check your item</h1>
+        <h1 class="govuk-heading-l">Check your item</h1>
+        {% if data["item-add"] == "Yes" %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Control list classification</dt>
+                <dd class="govuk-summary-list__value">{{ data['control-list-2'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="index.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> control list classification</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Item or service description</dt>
+                <dd class="govuk-summary-list__value">{{ data['description-2'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="description.html?edit=true#description">Change<span class="govuk-visually-hidden"> item or service description</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Quantity</dt>
+                <dd class="govuk-summary-list__value">{{ data['quantity-2'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="quantity.html?edit=true#quantity">Change<span class="govuk-visually-hidden"> quantity</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Total value</dt>
+                <dd class="govuk-summary-list__value">£{{ data['total-value-2'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="value.html?edit=true#total-value">Change<span class="govuk-visually-hidden"> total value</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Supporting documentation</dt>
+                <dd class="govuk-summary-list__value">{{ data['file-upload-2'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="upload-document.html?edit=true#file-upload">Change<span class="govuk-visually-hidden"> supporting documentation</span></a> 
+                </dd>
+            </div>
+        </dl>
+        {% else %}
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control list classification</dt>
@@ -64,6 +103,7 @@
                 </dd>
             </div>
         </dl>
+        {% endif %}
         <!-- <a href="../task-list?items=completed" class="govuk-button">Confirm and continue</a> -->
         <a href="item-added" class="govuk-button">Save and continue</a>
         <p><a href="../task-list?items=started">Finish later</a></p> 

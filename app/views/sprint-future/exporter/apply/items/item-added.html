@@ -26,10 +26,32 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds-from-desktop">
-		<h1 class="govuk-heading-l">You have added 1 item</h1>
+        {% if data["item-add"] == "Yes" %}
+        <h1 class="govuk-heading-l">You have added 2 items</h1>
+        {% else %}
+        <h1 class="govuk-heading-l">You have added 1 item</h1>
+        {% endif %}
 		<dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            {% if data["item-add"] == "Yes" %}
             <div class="govuk-summary-list__row">
+                {% if data['control-list-2'] %}
+                <dd class="govuk-summary-list__value">{{ data['control-list-2'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">Controlled Radioactive Sources - 1.1</dd>
+                {% endif %}
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="cya-items">Change<span class="govuk-visually-hidden"> control list classification</span></a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a class="govuk-link" href="item-remove.html">Remove<span class="govuk-visually-hidden"> control list classification</span></a> 
+                </dd>
+            </div>
+            {% endif %}
+            <div class="govuk-summary-list__row">
+                {% if data['control-list'] %}
                 <dd class="govuk-summary-list__value">{{ data['control-list'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">Controlled Radioactive Sources - 1.1</dd>
+                {% endif %}
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="cya-items">Change<span class="govuk-visually-hidden"> control list classification</span></a>
                     &nbsp;&nbsp;&nbsp;
