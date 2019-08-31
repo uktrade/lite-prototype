@@ -28,32 +28,38 @@
 	<div class="govuk-grid-column-two-thirds">
 		<form action="cya-items" method="post">
             {% if data["item-add"] == "Yes" %}
-            <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--l govuk-!-margin-bottom-3" for="file-upload-2">Upload supporting documentation</label>
-            </h1>
-            <p class="govuk-body">You can upload any documents such as technical specifications.</p>
-            <ul class="govuk-list govuk-list--bullet">
-                <li>File format: .jpeg or .png</li>
-                <li>Maximum file size: 500MB</li>
-            </ul>
-            <!-- <span id="file-upload-hint-2" class="govuk-hint">You can upload any documents such as technical specifications (jpeg or img file, not exceeding 500MB)</span> -->
             <div class="govuk-form-group">
-                <label class="govuk-label" for="file-upload-2">Upload a file</label>
-                <input class="govuk-file-upload" id="file-upload=2" name="file-upload-2" type="file" aria-describedby="file-upload-hint-2">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">Upload supporting documentation</h1>
+                    </legend>
+                    <p class="govuk-body">You can upload any documents such as technical specifications.</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>File format: .jpeg or .png</li>
+                        <li>Maximum file size: 500MB</li>
+                    </ul>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="file-upload">Upload a file</label>
+                        <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
+                    </div>
+                </fieldset>
             </div>
             {% else %}
-			<h1 class="govuk-label-wrapper">
-				<label class="govuk-label govuk-label--l govuk-!-margin-bottom-3" for="ask-question">Upload supporting documentation</label>
-            </h1>
-            <p class="govuk-body">You can upload any documents such as technical specifications.</p>
-            <ul class="govuk-list govuk-list--bullet">
-                <li>File format: .jpeg or .png</li>
-                <li>Maximum file size: 500MB</li>
-            </ul>
-			<!-- <span id="file-upload-hint" class="govuk-hint">You can upload any documents such as technical specifications (jpeg or img file, not exceeding 500MB)</span> -->
-			<div class="govuk-form-group">
-				<label class="govuk-label" for="file-upload">Upload a file</label>
-				<input class="govuk-file-upload" id="file-upload" name="file-upload" type="file" aria-describedby="file-upload-hint">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">Upload supporting documentation</h1>
+                    </legend>
+                    <p class="govuk-body">You can upload any documents such as technical specifications.</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>File format: .jpeg or .png</li>
+                        <li>Maximum file size: 500MB</li>
+                    </ul>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="file-upload">Upload a file</label>
+                        <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
+                    </div>
+                </fieldset>
             </div>
             {% endif %}
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
