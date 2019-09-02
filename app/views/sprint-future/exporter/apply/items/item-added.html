@@ -34,11 +34,7 @@
 		<dl class="govuk-summary-list govuk-!-margin-bottom-6">
             {% if data["item-add"] == "Yes" %}
             <div class="govuk-summary-list__row">
-                {% if data['control-list-2'] %}
                 <dd class="govuk-summary-list__value">{{ data['control-list-2'] }}</dd>
-                {% else %}
-                <dd class="govuk-summary-list__value">Controlled Radioactive Sources - 1.1</dd>
-                {% endif %}
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="cya-items">Change<span class="govuk-visually-hidden"> control list classification</span></a>
                     &nbsp;&nbsp;&nbsp;
@@ -47,11 +43,7 @@
             </div>
             {% endif %}
             <div class="govuk-summary-list__row">
-                {% if data['control-list'] %}
                 <dd class="govuk-summary-list__value">{{ data['control-list'] }}</dd>
-                {% else %}
-                <dd class="govuk-summary-list__value">Controlled Radioactive Sources - 1.1</dd>
-                {% endif %}
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="cya-items">Change<span class="govuk-visually-hidden"> control list classification</span></a>
                     &nbsp;&nbsp;&nbsp;
