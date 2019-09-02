@@ -32,7 +32,7 @@
 				<h2 class="app-task-list__section">
 					<span class="app-task-list__section-number">1. </span> Check before you start
 				</h2>
-				<ul class="app-task-list__items">                    
+				<ul class="app-task-list__items">
                     <!-- 1. Check eligibility -->
                     {% if sectionStatus.check === "completed" %}
                     <li class="app-task-list__item">
@@ -45,7 +45,7 @@
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="check/index.html" aria-describedby="check">Check eligibility</a>
-                        </span>                
+                        </span>
                     </li>
                     {% endif %}
 				</ul>
@@ -69,36 +69,38 @@
                             <a href="tbc/index.html" aria-describedby="tbc-in-progress">TBC</a>
                         </span>
                         <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="tbc-in-progress">In progress</strong>
-                    </li> 
+                    </li>
                     {% else %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="tbc/index.html" aria-describedby="tbc">TBC</a>
-                        </span>                
+                        </span>
                     </li>
                     {% endif %}
                     <!-- 2.2 Your items -->
-                    {% if sectionStatus.items === "completed" %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="items/cya-items-2.html" aria-describedby="items-completed">Your items</a>
-                        </span>
-                        <strong class="govuk-tag app-task-list__task-completed" id="items-completed">Completed</strong>
-                    </li>
-                    {% elif sectionStatus.items === "started" %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="items/index.html" aria-describedby="items-in-progress">Your items</a>
-                        </span>
-                        <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="items-in-progress">In progress</strong>
-                    </li> 
-                    {% else %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="items/index.html" aria-describedby="items">Your items</a>
-                        </span>                
-                    </li>
-                    {% endif %}
+					{% if data['items-new'].length > 0 %}
+						{% if sectionStatus.items === "completed" %}
+							<li class="app-task-list__item">
+								<span class="app-task-list__task-name">
+									<a href="items/items.html" aria-describedby="items-completed">Your items</a>
+								</span>
+								<strong class="govuk-tag app-task-list__task-completed" id="items-completed">Completed</strong>
+							</li>
+						{% else %}
+							<li class="app-task-list__item">
+								<span class="app-task-list__task-name">
+									<a href="items/items.html" aria-describedby="items-in-progress">Your items</a>
+								</span>
+								<strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="items-in-progress">In progress</strong>
+							</li>
+						{% endif %}
+					{% else %}
+	                    <li class="app-task-list__item">
+	                        <span class="app-task-list__task-name">
+	                            <a href="items/index.html" aria-describedby="items">Your items</a>
+	                        </span>
+	                    </li>
+					{% endif %}
                     <!-- 2.3 People involved -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">

@@ -15,6 +15,29 @@ router.post('/sprint-future/exporter/apply/tbc/location-uk', function (req, res)
     }
 })
 
+// Add item routing
+router.post('/sprint-future/exporter/apply/items/upload-document', function (req, res) {
+	if (req.session.data['items-new'] == undefined) {
+		req.session.data['items-new'] = []
+	}
+
+	req.session.data['items-new'].push({
+		'control-list': req.session.data['control-list'],
+		'description': req.session.data['description'],
+		'file-upload': req.session.data['file-upload'],
+		'total-value': req.session.data['total-value'],
+		'quantity': req.session.data['quantity'],
+	})
+
+	req.session.data['control-list'] = undefined
+	req.session.data['description'] = undefined
+	req.session.data['file-upload'] = undefined
+	req.session.data['total-value'] = undefined
+	req.session.data['quantity'] = undefined
+
+	res.redirect('/sprint-future/exporter/apply/items/items')
+})
+
 // Remove items routing
 router.post('/sprint-future/exporter/apply/items/index', function (req, res) {
 
@@ -38,7 +61,7 @@ router.post('/sprint-future/exporter/apply/items/item-removed', function (req, r
     }
 })
 
-// Task list 
+// Task list
 router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
 
     if (!req.session.sectionStatus){
@@ -48,7 +71,7 @@ router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
         	items: undefined,
       	}
     }
-  
+
     if (req.query.check) {
     	req.session.sectionStatus.check = req.query.check
     };
@@ -58,10 +81,10 @@ router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
     if (req.query.items) {
     	req.session.sectionStatus.items = req.query.items
     };
-  
+
     res.render('sprint-future/exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
 });
-  
+
 // Clear data on the 'Application cancelled' page
 router.get('/*/application-cancelled', function (req, res) {
 	req.session.destroy()

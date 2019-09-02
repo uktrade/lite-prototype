@@ -1,0 +1,84 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-l">Your items</h1>
+
+		<p class="govuk-label">You've added {{ data['items-new'].length }} items.</p>
+
+		<br><br>
+
+		<a class="govuk-body-m govuk-link govuk-link--no-visited-state" href="index.html">Add another item</a>
+
+		<br><br><br><br>
+
+		{% for item in data['items-new'] %}
+			<h3 class="govuk-heading-m">Item</h3>
+			<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+	            <div class="govuk-summary-list__row">
+	                <dt class="govuk-summary-list__key">Control list classification</dt>
+	                <dd class="govuk-summary-list__value">{{ item['control-list'] }}</dd>
+	                <dd class="govuk-summary-list__actions">
+	                    <a class="govuk-link" href="index.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> control list classification</span></a>
+	                </dd>
+	            </div>
+	            <div class="govuk-summary-list__row">
+	                <dt class="govuk-summary-list__key">Item or service description</dt>
+	                <dd class="govuk-summary-list__value">{{ item['description'] }}</dd>
+	                <dd class="govuk-summary-list__actions">
+	                    <a class="govuk-link" href="description.html?edit=true#description">Change<span class="govuk-visually-hidden"> item or service description</span></a>
+	                </dd>
+	            </div>
+	            <div class="govuk-summary-list__row">
+	                <dt class="govuk-summary-list__key">Quantity</dt>
+	                <dd class="govuk-summary-list__value">{{ item['quantity'] }}</dd>
+	                <dd class="govuk-summary-list__actions">
+	                    <a class="govuk-link" href="quantity.html?edit=true#quantity">Change<span class="govuk-visually-hidden"> quantity</span></a>
+	                </dd>
+	            </div>
+	            <div class="govuk-summary-list__row">
+	                <dt class="govuk-summary-list__key">Total value</dt>
+	                <dd class="govuk-summary-list__value">£{{ item['total-value'] }}</dd>
+	                <dd class="govuk-summary-list__actions">
+	                    <a class="govuk-link" href="value.html?edit=true#total-value">Change<span class="govuk-visually-hidden"> total value</span></a>
+	                </dd>
+	            </div>
+	            <div class="govuk-summary-list__row">
+	                <dt class="govuk-summary-list__key">Supporting documentation</dt>
+	                <dd class="govuk-summary-list__value">{{ item['file-upload'] }}</dd>
+	                <dd class="govuk-summary-list__actions">
+	                    <a class="govuk-link" href="upload-document.html?edit=true#file-upload">Change<span class="govuk-visually-hidden"> supporting documentation</span></a>
+	                </dd>
+	            </div>
+	        </dl>
+		{% endfor %}
+
+        <a href="../task-list?items=completed" class="govuk-button">Save and mark as complete</a>
+        <p><a class="govuk-link--no-visited-state" href="../task-list?items=started">Save and finish later</a></p>
+	</div>
+</div>
+{% endblock %}
