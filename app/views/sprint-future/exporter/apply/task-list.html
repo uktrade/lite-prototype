@@ -77,25 +77,25 @@
                          </span>                
                      </li>
                      {% endif %}
-                    <!-- 2.2 Your items -->
-                    {% if sectionStatus.items === "completed" %}
+                    <!-- 2.2 Your products -->
+                    {% if sectionStatus.products === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="items/cya-items-2.html" aria-describedby="items-completed">Describe your product</a>
+                            <a href="products/cya-2.html" aria-describedby="products-completed">Describe your product</a>
                         </span>
-                        <strong class="govuk-tag app-task-list__task-completed" id="items-completed">Completed</strong>
+                        <strong class="govuk-tag app-task-list__task-completed" id="products-completed">Completed</strong>
                     </li>
-                    {% elif sectionStatus.items === "started" %}
+                    {% elif sectionStatus.products === "started" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="items/index.html" aria-describedby="items-in-progress">Describe your product</a>
+                            <a href="products/index.html" aria-describedby="products-in-progress">Describe your product</a>
                         </span>
-                        <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="items-in-progress">In progress</strong>
+                        <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="products-in-progress">In progress</strong>
                     </li> 
                     {% else %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="items/index.html">Describe your product</a>
+                            <a href="products/index.html">Describe your product</a>
                         </span>                
                     </li>
                     {% endif %}
@@ -103,7 +103,7 @@
                     {% if sectionStatus.people === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="people/cya-people.html" aria-describedby="people-completed">People involved</a>
+                            <a href="people/cya.html" aria-describedby="people-completed">People involved</a>
                         </span>
                         <strong class="govuk-tag app-task-list__task-completed" id="people-completed">Completed</strong>
                     </li>
@@ -125,7 +125,7 @@
                     {% if sectionStatus.endUser === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="end-user/cya-end-user.html" aria-describedby="end-user-completed">End user undertaking</a>
+                            <a href="end-user/cya.html" aria-describedby="end-user-completed">End user undertaking</a>
                         </span>
                         <strong class="govuk-tag app-task-list__task-completed" id="end-user-completed">Completed</strong>
                     </li>
@@ -175,7 +175,7 @@
                     {% if
                         (sectionStatus.check === "completed")
                         and (sectionStatus.name === "completed")
-                        and (sectionStatus.items === "completed")
+                        and (sectionStatus.products === "completed")
                         and (sectionStatus.people === "completed")
                         and (sectionStatus.endUser === "completed")
                         and (sectionStatus.information === "completed")

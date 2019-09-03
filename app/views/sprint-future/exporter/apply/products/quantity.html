@@ -27,7 +27,7 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
         {% if data["edit"] == "true" %}
-        <form action="cya-items" method="post">
+        <form action="cya" method="post">
         {% else %}
 		<form action="value" method="post">
         {% endif %}
@@ -53,7 +53,7 @@
             </fieldset>
             {% endif %}
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
-			<p><a href="../task-list?items=started">Finish later</a></p> 
+			<p><a href="../task-list?products=started">Finish later</a></p> 
 		</form>
 	</div>
 </div>

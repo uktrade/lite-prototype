@@ -4,37 +4,37 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 // UK/Non-UK location routing
-router.post('/sprint-future/exporter/apply/items/location-uk', function (req, res) {
+router.post('/sprint-future/exporter/apply/products/location-uk', function (req, res) {
 
     let locationUK = req.session.data['location']
 
     if (locationUK === "In the UK") {
-        res.redirect('/sprint-future/exporter/apply/items/location-uk')
+        res.redirect('/sprint-future/exporter/apply/products/location-uk')
     } else {
-        res.redirect('/sprint-future/exporter/apply/items/location-outside-uk')
+        res.redirect('/sprint-future/exporter/apply/products/location-outside-uk')
     }
 })
 
-// Remove items routing
-router.post('/sprint-future/exporter/apply/items/index', function (req, res) {
+// Remove products routing
+router.post('/sprint-future/exporter/apply/products/index', function (req, res) {
 
     let itemAdd = req.session.data['item-add']
 
     if (itemAdd === "Yes") {
-        res.redirect('/sprint-future/exporter/apply/items/index')
+        res.redirect('/sprint-future/exporter/apply/products/index')
     } else {
-        res.redirect('/sprint-future/exporter/apply/task-list?items=completed')
+        res.redirect('/sprint-future/exporter/apply/task-list?products=completed')
     }
 })
 
-router.post('/sprint-future/exporter/apply/items/item-removed', function (req, res) {
+router.post('/sprint-future/exporter/apply/products/item-removed', function (req, res) {
 
     let itemRemove = req.session.data['item-remove']
 
     if (itemRemove === "Yes") {
-        res.redirect('/sprint-future/exporter/apply/items/item-removed')
+        res.redirect('/sprint-future/exporter/apply/products/item-removed')
     } else {
-        res.redirect('/sprint-future/exporter/apply/items/item-added')
+        res.redirect('/sprint-future/exporter/apply/products/item-added')
     }
 })
 
@@ -45,7 +45,7 @@ router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
     	req.session.sectionStatus = {
         	check: undefined,
         	name: undefined,
-            items: undefined,
+            products: undefined,
             people: undefined,
             enduser: undefined,
             information: undefined,
@@ -58,8 +58,8 @@ router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
     if (req.query.name) {
     	req.session.sectionStatus.name = req.query.name
     };
-    if (req.query.items) {
-    	req.session.sectionStatus.items = req.query.items
+    if (req.query.products) {
+    	req.session.sectionStatus.products = req.query.products
     };
     if (req.query.people) {
     	req.session.sectionStatus.people = req.query.people
