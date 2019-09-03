@@ -27,14 +27,14 @@ router.post('/sprint-future/exporter/apply/products/index', function (req, res) 
     }
 })
 
-router.post('/sprint-future/exporter/apply/products/item-removed', function (req, res) {
+router.post('/sprint-future/exporter/apply/products/remove-productd', function (req, res) {
 
-    let itemRemove = req.session.data['item-remove']
+    let itemRemove = req.session.data['remove-product']
 
     if (itemRemove === "Yes") {
-        res.redirect('/sprint-future/exporter/apply/products/item-removed')
+        res.redirect('/sprint-future/exporter/apply/products/remove-productd')
     } else {
-        res.redirect('/sprint-future/exporter/apply/products/item-added')
+        res.redirect('/sprint-future/exporter/apply/products/product-added')
     }
 })
 

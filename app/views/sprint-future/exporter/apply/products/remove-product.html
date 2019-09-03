@@ -32,16 +32,16 @@
         {% else %}
         <div class="govuk-inset-text">Controlled Radioactive Sources - 1.1</div>
         {% endif%}
-        <form action="item-removed" method="post">
+        <form action="remove-productd" method="post">
             <div class="govuk-form-group">
                 <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="item-remove-yes" name="item-remove" type="radio" value="Yes" {{ checked("item-remove", "Yes") }}>
-                        <label class="govuk-label govuk-radios__label" for="item-remove-yes">Yes</label>
+                        <input class="govuk-radios__input" id="remove-product-yes" name="remove-product" type="radio" value="Yes" {{ checked("remove-product", "Yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="remove-product-yes">Yes</label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="item-remove-no" name="item-remove" type="radio" value="No" {{ checked("item-remove", "No") }}>
-                        <label class="govuk-label govuk-radios__label" for="item-remove-no">No</label>
+                        <input class="govuk-radios__input" id="remove-product-no" name="remove-product" type="radio" value="No" {{ checked("remove-product", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="remove-product-no">No</label>
                     </div>	
                 </div>
             </div>
