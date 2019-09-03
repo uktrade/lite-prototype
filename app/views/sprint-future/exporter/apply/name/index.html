@@ -1,0 +1,43 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="cya-name" method="post">
+			<h1 class="govuk-label-wrapper">
+				<label class="govuk-label govuk-label--l" for="reference-application">Create a name or reference for your application</label>
+			</h1>
+			<div class="govuk-form-group">
+			    <span id="reference-application-hint" class="govuk-hint">This can be used to retrieve your application later</span>
+				<input class="govuk-input govuk-!-width-one-half" id="reference-application" name="reference-application" type="text" aria-describedby="reference-application-hint" value="{{ data['reference-application'] }}">
+			</div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+			<!--<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Save and come back later</button> -->
+			<p><a href="../task-list?name=started">Finish later</a></p> 
+		</form>
+	</div>
+</div>
+{% endblock %}

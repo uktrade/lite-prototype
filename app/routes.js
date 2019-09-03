@@ -4,14 +4,14 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 // UK/Non-UK location routing
-router.post('/sprint-future/exporter/apply/tbc/location-uk', function (req, res) {
+router.post('/sprint-future/exporter/apply/items/location-uk', function (req, res) {
 
     let locationUK = req.session.data['location']
 
     if (locationUK === "In the UK") {
-        res.redirect('/sprint-future/exporter/apply/tbc/location-uk')
+        res.redirect('/sprint-future/exporter/apply/items/location-uk')
     } else {
-        res.redirect('/sprint-future/exporter/apply/tbc/location-outside-uk')
+        res.redirect('/sprint-future/exporter/apply/items/location-outside-uk')
     }
 })
 
@@ -44,19 +44,31 @@ router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
     if (!req.session.sectionStatus){
     	req.session.sectionStatus = {
         	check: undefined,
-        	tbc: undefined,
-        	items: undefined,
+        	name: undefined,
+            items: undefined,
+            people: undefined,
+            enduser: undefined,
+            other: undefined,
       	}
     }
   
     if (req.query.check) {
     	req.session.sectionStatus.check = req.query.check
     };
-    if (req.query.tbc) {
-    	req.session.sectionStatus.tbc = req.query.tbc
+    if (req.query.name) {
+    	req.session.sectionStatus.name = req.query.name
     };
     if (req.query.items) {
     	req.session.sectionStatus.items = req.query.items
+    };
+    if (req.query.people) {
+    	req.session.sectionStatus.people = req.query.people
+    };
+    if (req.query.endUser) {
+    	req.session.sectionStatus.endUser = req.query.endUser
+    };
+    if (req.query.other) {
+    	req.session.sectionStatus.other = req.query.other
     };
   
     res.render('sprint-future/exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});

@@ -30,10 +30,31 @@
         <h2 class="govuk-heading-m">Item 1</h2>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Item or service location</dt>
+                <dd class="govuk-summary-list__value">{{ data['location'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="index.html?edit=true#in-the-uk">Change<span class="govuk-visually-hidden"> location</span></a> 
+                </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Shipping address for item or service</dt>
+                {% if data["location"] === "Outside the UK" %}
+                <dd class="govuk-summary-list__value">{{ data['address-shipping'] | striptags(true) | escape | nl2br }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="location-outside-uk.html?edit=true#address-shipping">Change<span class="govuk-visually-hidden"> location</span></a> 
+                </dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="location-uk.html?edit=true#address-postcode">Change<span class="govuk-visually-hidden"> location</span></a> 
+                </dd>
+                {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control list classification</dt>
                 <dd class="govuk-summary-list__value">{{ data['control-list'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="index.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> control list classification</span></a> 
+                    <a class="govuk-link" href="control-list.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> control list classification</span></a> 
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -68,10 +89,31 @@
         <h2 class="govuk-heading-m">Item 2</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Item or service location</dt>
+                <dd class="govuk-summary-list__value">{{ data['location-2'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="index.html?edit=true#in-the-uk">Change<span class="govuk-visually-hidden"> location</span></a> 
+                </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Shipping address for item or service</dt>
+                {% if data["location-2"] === "Outside the UK" %}
+                <dd class="govuk-summary-list__value">{{ data['address-shipping-2'] | striptags(true) | escape | nl2br }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="location-outside-uk.html?edit=true#address-shipping">Change<span class="govuk-visually-hidden"> location</span></a> 
+                </dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="location-uk.html?edit=true#address-postcode">Change<span class="govuk-visually-hidden"> location</span></a> 
+                </dd>
+                {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control list classification</dt>
                 <dd class="govuk-summary-list__value">{{ data['control-list-2'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="index.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> control list classification</span></a> 
+                    <a class="govuk-link" href="control-list.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> control list classification</span></a> 
                 </dd>
             </div>
             <div class="govuk-summary-list__row">

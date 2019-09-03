@@ -27,29 +27,29 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
         {% if data["edit"] == "true" %}
-        <form action="cya-items" method="post">
+        <form action="cya-people" method="post">
         {% else %}
-		<form action="location-uk" method="post">
+		<form action="user-type" method="post">
         {% endif %}
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-						<h1 class="govuk-fieldset__heading">Where is the item or service located?</h1>
+						<h1 class="govuk-fieldset__heading">Who will be the end user?</h1>
 					</legend>
 					<div class="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="in-the-uk" name="location" type="radio" value="In the UK" {{ checked("location", "In the UK") }}>
-							<label class="govuk-label govuk-radios__label" for="in-the-uk">In the UK</label>
+							<input class="govuk-radios__input" id="organisation" name="user-type" type="radio" value="Organisation" {{ checked("user-type", "Organisation") }}>
+							<label class="govuk-label govuk-radios__label" for="organisation">Organisation</label>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="outside-the-uk" name="location" type="radio" value="Outside the UK" {{ checked("location", "Outside the UK") }}>
-							<label class="govuk-label govuk-radios__label" for="outside-the-uk">Outside the UK</label>
+							<input class="govuk-radios__input" id="individual" name="user-type" type="radio" value="Individual" {{ checked("user-type", "Individual") }}>
+							<label class="govuk-label govuk-radios__label" for="individual">Individual</label>
 						</div>	
 					</div>
 				</fieldset>
 			</div>
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
-			<p><a href="../task-list?tbc=started">Finish later</a></p>  
+			<p><a href="../task-list?people=started">Finish later</a></p>  
 		</form>
 	</div>
 </div>
