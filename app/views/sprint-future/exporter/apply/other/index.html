@@ -29,11 +29,10 @@
         {% if data['other-information'] %} 
         <form action="cya-other" method="post">
             <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--l" for="other-information">Other information (optional)</label>
+                <label class="govuk-label govuk-label--l" for="other-information">Add more information to support your application (optional)</label>
             </h1>
             <div class="govuk-form-group">
-                <span id="other-information-hint" class="govuk-hint">XXXX</span>
-                <textarea class="govuk-textarea" id="other-information" name="other-information" rows="5" aria-describedby="other-information-hint">{{ data['other-information'] }}</textarea>
+                <textarea class="govuk-textarea" id="other-information" name="other-information" rows="5">{{ data['other-information'] }}</textarea>
             </div>	
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
             <p><a href="../task-list?other=started">Finish later</a></p>  
@@ -41,11 +40,10 @@
         {% else %}
         <form action="../task-list" method="post">
             <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--l" for="other-information">Other information (optional)</label>
+                <label class="govuk-label govuk-label--l" for="other-information">Add more information to support your application (optional)</label>
             </h1>
             <div class="govuk-form-group">
-                <span id="other-information-hint" class="govuk-hint">XXXX</span>
-                <textarea class="govuk-textarea" id="other-information" name="other-information" rows="5" aria-describedby="other-information-hint">{{ data['other-information'] }}</textarea>
+                <textarea class="govuk-textarea" id="other-information" name="other-information" rows="5">{{ data['other-information'] }}</textarea>
             </div>	
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
             <p><a href="../task-list?other=started">Finish later</a></p>  

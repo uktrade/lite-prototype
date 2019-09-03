@@ -26,42 +26,42 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds-from-desktop">
-        <h1 class="govuk-heading-l">Check your items</h1>
-        <h2 class="govuk-heading-m">Item 1</h2>
+        <h1 class="govuk-heading-l">Check your answers</h1>
+        <h2 class="govuk-heading-m">Product 1</h2>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Item or service location</dt>
+                <dt class="govuk-summary-list__key">Shipping from</dt>
                 <dd class="govuk-summary-list__value">{{ data['location'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="index.html?edit=true#in-the-uk">Change<span class="govuk-visually-hidden"> location</span></a> 
+                    <a class="govuk-link" href="index.html?edit=true#in-the-uk">Change<span class="govuk-visually-hidden"> shipping location</span></a> 
                 </dd>
             </div> 
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Shipping address for item or service</dt>
+                <dt class="govuk-summary-list__key">Shipping address</dt>
                 {% if data["location"] === "Outside the UK" %}
                 <dd class="govuk-summary-list__value">{{ data['address-shipping'] | striptags(true) | escape | nl2br }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="location-outside-uk.html?edit=true#address-shipping">Change<span class="govuk-visually-hidden"> location</span></a> 
+                    <a class="govuk-link" href="location-outside-uk.html?edit=true#address-shipping">Change<span class="govuk-visually-hidden"> shipping address</span></a> 
                 </dd>
                 {% else %}
                 <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="location-uk.html?edit=true#address-postcode">Change<span class="govuk-visually-hidden"> location</span></a> 
+                    <a class="govuk-link" href="location-uk.html?edit=true#address-postcode">Change<span class="govuk-visually-hidden"> shipping address</span></a> 
                 </dd>
                 {% endif %}
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Control list classification</dt>
+                <dt class="govuk-summary-list__key">Classification</dt>
                 <dd class="govuk-summary-list__value">{{ data['control-list'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="control-list.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> control list classification</span></a> 
+                    <a class="govuk-link" href="control-list.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> classification</span></a> 
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Item or service description</dt>
+                <dt class="govuk-summary-list__key">Product</dt>
                 <dd class="govuk-summary-list__value">{{ data['description'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="description.html?edit=true#description">Change<span class="govuk-visually-hidden"> item or service description</span></a> 
+                    <a class="govuk-link" href="description.html?edit=true#description">Change<span class="govuk-visually-hidden"> product</span></a> 
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -72,55 +72,55 @@
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Total value</dt>
+                <dt class="govuk-summary-list__key">Value</dt>
                 <dd class="govuk-summary-list__value">£{{ data['total-value'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="value.html?edit=true#total-value">Change<span class="govuk-visually-hidden"> total value</span></a> 
+                    <a class="govuk-link" href="value.html?edit=true#total-value">Change<span class="govuk-visually-hidden"> value</span></a> 
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Supporting documentation</dt>
+                <dt class="govuk-summary-list__key">Specification</dt>
                 <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="upload-document.html?edit=true#file-upload">Change<span class="govuk-visually-hidden"> supporting documentation</span></a> 
+                    <a class="govuk-link" href="upload-document.html?edit=true#file-upload">Change<span class="govuk-visually-hidden"> specification</span></a> 
                 </dd>
             </div>
         </dl>
-        <h2 class="govuk-heading-m">Item 2</h2>
+        <h2 class="govuk-heading-m">Product 2</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Item or service location</dt>
+                <dt class="govuk-summary-list__key">Shipping from</dt>
                 <dd class="govuk-summary-list__value">{{ data['location-2'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="index.html?edit=true#in-the-uk">Change<span class="govuk-visually-hidden"> location</span></a> 
+                    <a class="govuk-link" href="index.html?edit=true#in-the-uk">Change<span class="govuk-visually-hidden"> shipping location</span></a> 
                 </dd>
             </div> 
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Shipping address for item or service</dt>
+                <dt class="govuk-summary-list__key">Shipping address</dt>
                 {% if data["location-2"] === "Outside the UK" %}
                 <dd class="govuk-summary-list__value">{{ data['address-shipping-2'] | striptags(true) | escape | nl2br }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="location-outside-uk.html?edit=true#address-shipping">Change<span class="govuk-visually-hidden"> location</span></a> 
+                    <a class="govuk-link" href="location-outside-uk.html?edit=true#address-shipping">Change<span class="govuk-visually-hidden"> shipping address</span></a> 
                 </dd>
                 {% else %}
                 <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="location-uk.html?edit=true#address-postcode">Change<span class="govuk-visually-hidden"> location</span></a> 
+                    <a class="govuk-link" href="location-uk.html?edit=true#address-postcode">Change<span class="govuk-visually-hidden"> shipping address</span></a> 
                 </dd>
                 {% endif %}
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Control list classification</dt>
+                <dt class="govuk-summary-list__key">Classification</dt>
                 <dd class="govuk-summary-list__value">{{ data['control-list-2'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="control-list.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> control list classification</span></a> 
+                    <a class="govuk-link" href="control-list.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> classification</span></a> 
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Item or service description</dt>
+                <dt class="govuk-summary-list__key">Product</dt>
                 <dd class="govuk-summary-list__value">{{ data['description-2'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="description.html?edit=true#description">Change<span class="govuk-visually-hidden"> item or service description</span></a> 
+                    <a class="govuk-link" href="description.html?edit=true#description">Change<span class="govuk-visually-hidden"> product </span></a> 
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -131,22 +131,22 @@
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Total value</dt>
+                <dt class="govuk-summary-list__key">Value</dt>
                 <dd class="govuk-summary-list__value">£{{ data['total-value-2'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="value.html?edit=true#total-value">Change<span class="govuk-visually-hidden"> total value</span></a> 
+                    <a class="govuk-link" href="value.html?edit=true#total-value">Change<span class="govuk-visually-hidden"> value</span></a> 
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Supporting documentation</dt>
+                <dt class="govuk-summary-list__key">Specification</dt>
                 <dd class="govuk-summary-list__value">{{ data['file-upload-2'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="upload-document.html?edit=true#file-upload">Change<span class="govuk-visually-hidden"> supporting documentation</span></a> 
+                    <a class="govuk-link" href="upload-document.html?edit=true#file-upload">Change<span class="govuk-visually-hidden"> specification</span></a> 
                 </dd>
             </div>
         </dl>
         <a href="../task-list?items=completed" class="govuk-button">Confirm and continue</a>
-        <p><a href="index.html">Add an item to your application</a></p> 
+        <p><a href="index.html">Add another product</a></p> 
         <!-- <a href="item-added" class="govuk-button">Confirm and continue</a>
             <p><a href="../task-list?items=started">Finish later</a></p> -->
 	</div>
