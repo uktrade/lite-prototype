@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+{% block pageTitle %}Enter your control code - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -36,8 +36,7 @@
                 <label class="govuk-label govuk-label--l" for="control-list-2">Enter your control code</label>
             </h1>
             <div class="govuk-form-group">
-                <!-- <span id="control-list-2-hint" class="govuk-hint">This can be found on UK Strategic Export Control Lists. It is made up of letters and numbers (e.g. PL9005)</span> -->
-                <input class="govuk-input govuk-!-width-one-half" id="control-list-2" name="control-list-2" type="text" aria-describedby="control-list-2-hint" value="{{ data['control-list-2'] }}">
+                <input class="govuk-input govuk-!-width-one-half" id="control-list-2" name="control-list-2" type="text" value="{{ data['control-list-2'] }}">
             </div>
             <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
@@ -50,8 +49,7 @@
                 <label class="govuk-label govuk-label--l" for="control-list">Enter your control list classification</label>
             </h1>
             <div class="govuk-form-group">
-                <!-- <span id="control-list-hint" class="govuk-hint">This can be found on UK Strategic Export Control Lists. It is made up of letters and numbers (e.g. PL9005)</span> -->
-                <input class="govuk-input govuk-!-width-one-half" id="control-list" name="control-list" type="text" aria-describedby="control-list-hint" value="{{ data['control-list'] }}">
+                <input class="govuk-input govuk-!-width-one-half" id="control-list" name="control-list" type="text" value="{{ data['control-list'] }}">
             </div>
             <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">

@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+{% block pageTitle %}Apply for an export licence - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -59,7 +59,7 @@
                      {% if sectionStatus.name === "completed" %}
                      <li class="app-task-list__item">
                          <span class="app-task-list__task-name">
-                             <a href="name/cya-name.html" aria-describedby="name-completed">Name your application</a>
+                             <a href="name/cya.html" aria-describedby="name-completed">Name your application</a>
                          </span>
                          <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
                      </li>
@@ -144,24 +144,24 @@
                     </li>
                     {% endif %}
                     <!-- 2.5 Other information -->
-                    {% if sectionStatus.other === "completed" %}
+                    {% if sectionStatus.information === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="other/cya-other.html" aria-describedby="other-completed">Add more information to support your application</a>
+                            <a href="information/cya.html" aria-describedby="other-completed">Add more information to support your application</a>
                         </span>
                         <strong class="govuk-tag app-task-list__task-completed" id="other-completed">Completed</strong>
                     </li>
-                    {% elif sectionStatus.other === "started" %}
+                    {% elif sectionStatus.information === "started" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="other/index.html" aria-describedby="other-in-progress">Add more information to support your application</a>
+                            <a href="information/index.html" aria-describedby="other-in-progress">Add more information to support your application</a>
                         </span>
                         <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="other-in-progress">In progress</strong>
                     </li> 
                     {% else %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="other/index.html">Add more information to support your application</a>
+                            <a href="information/index.html">Add more information to support your application</a>
                         </span>                
                     </li>
                     {% endif %}
@@ -174,8 +174,11 @@
                     <!-- 3. Submit application link -->
                     {% if
                         (sectionStatus.check === "completed")
-                        and (sectionStatus.tbc === "completed")
+                        and (sectionStatus.name === "completed")
                         and (sectionStatus.items === "completed")
+                        and (sectionStatus.people === "completed")
+                        and (sectionStatus.endUser === "completed")
+                        and (sectionStatus.information === "completed")
                     %}
 					<li class="app-task-list__item">
 						<span class="app-task-list__task-name">

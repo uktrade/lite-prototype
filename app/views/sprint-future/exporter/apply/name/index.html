@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+{% block pageTitle %}Give your application a name or reference - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,7 +26,7 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form action="cya-name" method="post">
+		<form action="cya" method="post">
 			<h1 class="govuk-label-wrapper">
 				<label class="govuk-label govuk-label--l" for="reference-application">Give your application a name or reference</label>
 			</h1>
@@ -35,7 +35,6 @@
 				<input class="govuk-input govuk-!-width-one-half" id="reference-application" name="reference-application" type="text" aria-describedby="reference-application-hint" value="{{ data['reference-application'] }}">
 			</div>
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
-			<!--<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Save and come back later</button> -->
 			<p><a href="../task-list?name=started">Finish later</a></p> 
 		</form>
 	</div>

@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Apply for an export licence - Exporter service name - Sprint future - LITE Prototypes{% endblock %}
+{% block pageTitle %}Add more information to support your application (optional) - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -27,7 +27,7 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds"> 
         {% if data['other-information'] %} 
-        <form action="cya-other" method="post">
+        <form action="cya" method="post">
             <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--l" for="other-information">Add more information to support your application (optional)</label>
             </h1>

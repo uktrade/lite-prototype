@@ -48,7 +48,7 @@ router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
             items: undefined,
             people: undefined,
             enduser: undefined,
-            other: undefined,
+            information: undefined,
       	}
     }
   
@@ -67,8 +67,8 @@ router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
     if (req.query.endUser) {
     	req.session.sectionStatus.endUser = req.query.endUser
     };
-    if (req.query.other) {
-    	req.session.sectionStatus.other = req.query.other
+    if (req.query.information) {
+    	req.session.sectionStatus.information = req.query.information
     };
   
     res.render('sprint-future/exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
