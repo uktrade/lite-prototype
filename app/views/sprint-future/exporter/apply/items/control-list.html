@@ -33,10 +33,10 @@
         {% endif %}
             {% if data["item-add"] == "Yes" %}
             <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--l" for="control-list-2">Control list classification</label>
+                <label class="govuk-label govuk-label--l" for="control-list-2">Enter your control code</label>
             </h1>
             <div class="govuk-form-group">
-                <span id="control-list-2-hint" class="govuk-hint">This can be found on UK Strategic Export Control Lists. It is made up of letters and numbers (e.g. PL9005)</span>
+                <!-- <span id="control-list-2-hint" class="govuk-hint">This can be found on UK Strategic Export Control Lists. It is made up of letters and numbers (e.g. PL9005)</span> -->
                 <input class="govuk-input govuk-!-width-one-half" id="control-list-2" name="control-list-2" type="text" aria-describedby="control-list-2-hint" value="{{ data['control-list-2'] }}">
             </div>
             <details class="govuk-details" data-module="govuk-details">
@@ -47,17 +47,17 @@
             </details>
             {% else %}
             <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--l" for="control-list">Control list classification</label>
+                <label class="govuk-label govuk-label--l" for="control-list">Enter your control list classification</label>
             </h1>
             <div class="govuk-form-group">
-                <span id="control-list-hint" class="govuk-hint">This can be found on UK Strategic Export Control Lists. It is made up of letters and numbers (e.g. PL9005)</span>
+                <!-- <span id="control-list-hint" class="govuk-hint">This can be found on UK Strategic Export Control Lists. It is made up of letters and numbers (e.g. PL9005)</span> -->
                 <input class="govuk-input govuk-!-width-one-half" id="control-list" name="control-list" type="text" aria-describedby="control-list-hint" value="{{ data['control-list'] }}">
             </div>
             <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">I don't know the control list classification</span>
+                    <span class="govuk-details__summary-text">I do not know the control list classification</span>
                 </summary>
-                <div class="govuk-details__text">Text explaining where they can go to find this on the <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">Permissons Finder</a> service. Tell user that the link will open in a new window/tab as we should not take them out of the service.</div>
+                <div class="govuk-details__text">You can <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">get a control list classification</a> from another GOV.UK service (Check if you need an export licence and apply for a licence online).</div>
             </details>
             {% endif %}
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />

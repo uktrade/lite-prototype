@@ -33,18 +33,18 @@
         {% endif %}
             {% if data["item-add"] == "Yes" %}
 			<h1 class="govuk-label-wrapper">
-				<label class="govuk-label govuk-label--l" for="address-shipping-2">What address are you shipping your item or service from?</label>
+				<label class="govuk-label govuk-label--l" for="address-shipping-2">What address are you sending from?</label>
 			</h1>
 			<div class="govuk-form-group">
-				<span id="address-shipping-2-hint" class="govuk-hint">This address will appear on your licence and other export documentation. You can edit this later if you need to.</span>
+				<!-- <span id="address-shipping-2-hint" class="govuk-hint">This address will appear on your licence and other export documentation. You can edit this later if you need to.</span> -->
 				<textarea class="govuk-textarea" id="address-shipping-2" name="address-shipping-2" rows="5" aria-describedby="address-shipping-2-hint">{{ data['address-shipping-2'] }}</textarea>
             </div>	
             {% else %}
             <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--l" for="address-shipping">What address are you shipping your item or service from?</label>
+                <label class="govuk-label govuk-label--l" for="address-shipping">What address are you sending from?</label>
             </h1>
             <div class="govuk-form-group">
-                <span id="address-shipping-hint" class="govuk-hint">This address will appear on your licence and other export documentation. You can edit this later if you need to.</span>
+                <!-- <span id="address-shipping-hint" class="govuk-hint">This address will appear on your licence and other export documentation. You can edit this later if you need to.</span> -->
                 <textarea class="govuk-textarea" id="address-shipping" name="address-shipping" rows="5" aria-describedby="address-shipping-hint">{{ data['address-shipping'] }}</textarea>
             </div>	
             {% endif %}
