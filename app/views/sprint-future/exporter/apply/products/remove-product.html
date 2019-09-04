@@ -27,12 +27,9 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Remove this product?</h1>
-        {% if data['control-list'] %}
-        <div class="govuk-inset-text">{{ data['control-list'] }}</div>
-        {% else %}
-        <div class="govuk-inset-text">Controlled Radioactive Sources - 1.1</div>
-        {% endif%}
-        <form action="remove-productd" method="post">
+        {% if data['control-list-1'] %}
+        <div class="govuk-inset-text">{{ data['control-list-1'] }}</div>
+        <form action="product-removed" method="post">
             <div class="govuk-form-group">
                 <div class="govuk-radios">
                     <div class="govuk-radios__item">
@@ -48,6 +45,25 @@
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
             <p><a href="../task-list?products=started">Finish later</a></p>
         </form>
+        {% elseif data['control-list-2'] %}
+        <div class="govuk-inset-text">{{ data['control-list-2'] }}</div>
+        <form action="product-removed" method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="remove-product-yes" name="remove-product" type="radio" value="Yes" {{ checked("remove-product", "Yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="remove-product-yes">Yes</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="remove-product-no" name="remove-product" type="radio" value="No" {{ checked("remove-product", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="remove-product-no">No</label>
+                    </div>	
+                </div>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+            <p><a href="../task-list?products=started">Finish later</a></p>
+        </form>
+        {% endif %}
 	</div>
 </div>
 {% endblock %}

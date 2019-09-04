@@ -15,7 +15,31 @@ router.post('/sprint-future/exporter/apply/products/location-uk', function (req,
     }
 })
 
-// Remove products routing
+// UK/Non-UK location - Product 1
+router.post('/sprint-future/exporter/apply/products/location-uk-1', function (req, res) {
+
+    let locationUK1 = req.session.data['location-1']
+
+    if (locationUK1 === "In the UK") {
+        res.redirect('/sprint-future/exporter/apply/products/location-uk-1')
+    } else {
+        res.redirect('/sprint-future/exporter/apply/products/location-outside-uk-1')
+    }
+})
+
+// UK/Non-UK location - Product 2
+router.post('/sprint-future/exporter/apply/products/location-uk-2', function (req, res) {
+
+    let locationUK2 = req.session.data['location-2']
+
+    if (locationUK2 === "In the UK") {
+        res.redirect('/sprint-future/exporter/apply/products/location-uk-2')
+    } else {
+        res.redirect('/sprint-future/exporter/apply/products/location-outside-uk-2')
+    }
+})
+
+// Remove products 
 router.post('/sprint-future/exporter/apply/products/index', function (req, res) {
 
     let itemAdd = req.session.data['item-add']
@@ -27,12 +51,58 @@ router.post('/sprint-future/exporter/apply/products/index', function (req, res) 
     }
 })
 
-router.post('/sprint-future/exporter/apply/products/remove-productd', function (req, res) {
+router.post('/sprint-future/exporter/apply/products/remove-product', function (req, res) {
 
     let itemRemove = req.session.data['remove-product']
 
     if (itemRemove === "Yes") {
-        res.redirect('/sprint-future/exporter/apply/products/remove-productd')
+        res.redirect('/sprint-future/exporter/apply/products/remove-product')
+    } else {
+        res.redirect('/sprint-future/exporter/apply/products/product-added')
+    }
+})
+
+// Remove products - Product 1
+router.post('/sprint-future/exporter/apply/products/index-2', function (req, res) {
+
+    let itemAdd1 = req.session.data['item-add-1']
+
+    if (itemAdd1 === "Yes") {
+        res.redirect('/sprint-future/exporter/apply/products/index-2')
+    } else {
+        res.redirect('/sprint-future/exporter/apply/task-list?products=completed')
+    }
+})
+
+router.post('/sprint-future/exporter/apply/products/remove-product', function (req, res) {
+
+    let itemRemove1 = req.session.data['remove-product']
+
+    if (itemRemove1 === "Yes") {
+        res.redirect('/sprint-future/exporter/apply/products/remove-product')
+    } else {
+        res.redirect('/sprint-future/exporter/apply/products/product-added')
+    }
+})
+
+// Remove products - Product 2
+router.post('/sprint-future/exporter/apply/products/index', function (req, res) {
+
+    let itemAdd2 = req.session.data['item-add-2']
+
+    if (itemAdd2 === "Yes") {
+        res.redirect('/sprint-future/exporter/apply/products/index')
+    } else {
+        res.redirect('/sprint-future/exporter/apply/task-list?products=completed')
+    }
+})
+
+router.post('/sprint-future/exporter/apply/products/remove-product', function (req, res) {
+
+    let itemRemove2 = req.session.data['remove-product']
+
+    if (itemRemove2 === "Yes") {
+        res.redirect('/sprint-future/exporter/apply/products/remove-product')
     } else {
         res.redirect('/sprint-future/exporter/apply/products/product-added')
     }

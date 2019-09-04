@@ -26,7 +26,30 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
+        {% if data["edit"] == "true" %}
+        <form action="cya" method="post">
+        {% else %}
 		<form action="location-uk" method="post">
+        {% endif %}
+            {% if data["item-add"] == "Yes" %}
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Where are your products now?</h1>
+					</legend>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="in-the-uk" name="location-2" type="radio" value="In the UK" {{ checked("location-2", "In the UK") }}>
+							<label class="govuk-label govuk-radios__label" for="in-the-uk">In the UK</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="outside-the-uk" name="location-2" type="radio" value="Outside the UK" {{ checked("location-2", "Outside the UK") }}>
+							<label class="govuk-label govuk-radios__label" for="outside-the-uk">Outside the UK</label>
+						</div>	
+					</div>
+				</fieldset>
+            </div>
+            {% else %}
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -44,6 +67,7 @@
                     </div>
                 </fieldset>
             </div>
+            {% endif %}
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
 			<p><a href="../task-list?products=started">Finish later</a></p>  
 		</form>
