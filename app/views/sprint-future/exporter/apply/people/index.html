@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}XXXXX - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Who will be the end user? - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,11 +26,7 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        {% if data["edit"] == "true" %}
-        <form action="cya-people" method="post">
-        {% else %}
-		<form action="user-type" method="post">
-        {% endif %}
+		<form action="organisation" method="post">
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">

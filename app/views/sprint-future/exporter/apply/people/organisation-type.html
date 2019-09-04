@@ -1,0 +1,56 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}What type of organisation is this? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="website" method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">What type of organisation is this?</h1>
+					</legend>
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="commercial-organisation" name="organisation-type" type="radio" value="Commerical organisation" {{ checked("organisation-type", "Commerical organisation") }}>
+							<label class="govuk-label govuk-radios__label" for="commercial-organisation">Commercial organisation</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="government" name="organisation-type" type="radio" value="Government" {{ checked("organisation-type", "Government") }}>
+							<label class="govuk-label govuk-radios__label" for="government">Government</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="other" name="organisation-type" type="radio" value="Other" {{ checked("organisation-type", "Other") }}>
+                            <label class="govuk-label govuk-radios__label" for="other">Other</label>
+                        </div>	
+					</div>
+				</fieldset>
+			</div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+			<p><a href="../task-list?people=started">Finish later</a></p>  
+		</form>
+	</div>
+</div>
+{% endblock %}

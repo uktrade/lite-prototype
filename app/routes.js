@@ -3,7 +3,7 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-// UK/Non-UK location routing
+// UK/Non-UK location
 router.post('/sprint-future/exporter/apply/products/location-uk', function (req, res) {
 
     let locationUK = req.session.data['location']
@@ -15,7 +15,7 @@ router.post('/sprint-future/exporter/apply/products/location-uk', function (req,
     }
 })
 
-// UK/Non-UK location - Product 1
+// UK/Non-UK location [Product 1]
 router.post('/sprint-future/exporter/apply/products/location-uk-1', function (req, res) {
 
     let locationUK1 = req.session.data['location-1']
@@ -27,7 +27,7 @@ router.post('/sprint-future/exporter/apply/products/location-uk-1', function (re
     }
 })
 
-// UK/Non-UK location - Product 2
+// UK/Non-UK location [Product 2]
 router.post('/sprint-future/exporter/apply/products/location-uk-2', function (req, res) {
 
     let locationUK2 = req.session.data['location-2']
@@ -62,7 +62,7 @@ router.post('/sprint-future/exporter/apply/products/remove-product', function (r
     }
 })
 
-// Remove products - Product 1
+// Remove products [Product 1]
 router.post('/sprint-future/exporter/apply/products/index-2', function (req, res) {
 
     let itemAdd1 = req.session.data['item-add-1']
@@ -85,7 +85,7 @@ router.post('/sprint-future/exporter/apply/products/product-removed', function (
     }
 })
 
-// Remove products - Product 2
+// Remove products [Product 2]
 router.post('/sprint-future/exporter/apply/products/index', function (req, res) {
 
     let itemAdd2 = req.session.data['item-add-2']
@@ -105,6 +105,18 @@ router.post('/sprint-future/exporter/apply/products/product-removed', function (
         res.redirect('/sprint-future/exporter/apply/products/product-removed')
     } else {
         res.redirect('/sprint-future/exporter/apply/products/product-added')
+    }
+})
+
+// User type
+router.post('/sprint-future/exporter/apply/people/organisation', function (req, res) {
+
+    let userType = req.session.data['user-type']
+
+    if (userType === "Organisation") {
+        res.redirect('/sprint-future/exporter/apply/people/organisation')
+    } else {
+        res.redirect('/sprint-future/exporter/apply/people/individual')
     }
 })
 
