@@ -74,12 +74,12 @@ router.post('/sprint-future/exporter/apply/products/index-2', function (req, res
     }
 })
 
-router.post('/sprint-future/exporter/apply/products/remove-product', function (req, res) {
+router.post('/sprint-future/exporter/apply/products/product-removed', function (req, res) {
 
     let itemRemove1 = req.session.data['remove-product']
 
     if (itemRemove1 === "Yes") {
-        res.redirect('/sprint-future/exporter/apply/products/remove-product')
+        res.redirect('/sprint-future/exporter/apply/products/product-removed')
     } else {
         res.redirect('/sprint-future/exporter/apply/products/product-added')
     }
@@ -97,12 +97,12 @@ router.post('/sprint-future/exporter/apply/products/index', function (req, res) 
     }
 })
 
-router.post('/sprint-future/exporter/apply/products/remove-product', function (req, res) {
+router.post('/sprint-future/exporter/apply/products/product-removed', function (req, res) {
 
     let itemRemove2 = req.session.data['remove-product']
 
     if (itemRemove2 === "Yes") {
-        res.redirect('/sprint-future/exporter/apply/products/remove-product')
+        res.redirect('/sprint-future/exporter/apply/products/product-removed')
     } else {
         res.redirect('/sprint-future/exporter/apply/products/product-added')
     }

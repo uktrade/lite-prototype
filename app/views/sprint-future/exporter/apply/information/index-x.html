@@ -25,7 +25,8 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-	<div class="govuk-grid-column-two-thirds">
+	<div class="govuk-grid-column-two-thirds"> 
+        {% if data['other-information'] %} 
         <form action="cya" method="post">
             <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--l" for="other-information">Add more information to support your application (optional)</label>
@@ -35,7 +36,19 @@
             </div>	
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
             <p><a href="../task-list?information=started">Finish later</a></p>  
-        </form>    
+        </form>
+        {% else %}
+        <form action="../task-list" method="post">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="other-information">Add more information to support your application (optional)</label>
+            </h1>
+            <div class="govuk-form-group">
+                <textarea class="govuk-textarea" id="other-information" name="other-information" rows="5">{{ data['other-information'] }}</textarea>
+            </div>	
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+            <p><a href="../task-list?information=started">Finish later</a></p>  
+        </form>
+        {% endif %}
 	</div>
 </div>
 {% endblock %}
