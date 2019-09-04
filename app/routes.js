@@ -120,6 +120,18 @@ router.post('/sprint-future/exporter/apply/people/organisation', function (req, 
     }
 })
 
+// End user undertaking
+router.post('/sprint-future/exporter/apply/end-user/upload-document', function (req, res) {
+
+    let euuType = req.session.data['euu-document']
+
+    if (euuType === "I have this document, it is signed by the end user and I am ready to upload it") {
+        res.redirect('/sprint-future/exporter/apply/end-user/upload-document')
+    } else {
+        res.redirect('/sprint-future/exporter/apply/end-user/cya')
+    }
+})
+
 // Task list 
 router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
 
@@ -129,7 +141,7 @@ router.get('/sprint-future/exporter/apply/task-list', (req, res, next) => {
         	name: undefined,
             products: undefined,
             people: undefined,
-            enduser: undefined,
+            endUser: undefined,
             information: undefined,
       	}
     }
