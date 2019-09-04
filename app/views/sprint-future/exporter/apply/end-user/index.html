@@ -1,12 +1,12 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}End user undertaking - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}End user undertaking - Apply for an export licence - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
 	homepageUrl: "/",
-    serviceName: "Exporter service name",
+    serviceName: "Apply for an export licence",
     serviceUrl: "/",
     containerClasses: "govuk-width-container",
     navigationClasses: "user-menu",
@@ -34,7 +34,7 @@
 					</legend>
 					<div class="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="agree" name="euu-document" type="radio" value="I have this document, it is signed by the end user and I am ready to upload it" {{ checked("euu-document", "I have this document, it is signed by the end user and I am ready to upload it") }}>
+							<input class="govuk-radios__input" id="agree" name="euu-document" type="radio" value="Uploaded" {{ checked("euu-document", "Uploaded") }}>
 							<label class="govuk-label govuk-radios__label" for="agree">I have this document, it is signed by the end user and I am ready to upload it</label>
 						</div>
 						<div class="govuk-radios__item">
@@ -45,7 +45,7 @@
                 </fieldset>
                 <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
                     <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">Where can I get an End User Undertaking (EUU) document from</span>
+                        <span class="govuk-details__summary-text">Where can I get an end user undertaking (EUU) document from</span>
                     </summary>
                     <div class="govuk-details__text">An EUU is a document signed by the end user (the person you are sending your product to). This document checks who the end user is and explains what they plan to do with your product. You can get a template EUU from <a href="#" target="_blank">[where]</a> if you do not have this yet.</div>
                 </details>

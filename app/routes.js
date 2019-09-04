@@ -125,7 +125,7 @@ router.post('/sprint-future/exporter/apply/end-user/upload-document', function (
 
     let euuType = req.session.data['euu-document']
 
-    if (euuType === "I have this document, it is signed by the end user and I am ready to upload it") {
+    if (euuType === "Uploaded") {
         res.redirect('/sprint-future/exporter/apply/end-user/upload-document')
     } else {
         res.redirect('/sprint-future/exporter/apply/end-user/cya')

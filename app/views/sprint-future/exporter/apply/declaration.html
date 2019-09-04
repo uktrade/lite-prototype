@@ -1,12 +1,12 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Declaration - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Declaration - Apply for an export licence - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
 	homepageUrl: "/",
-    serviceName: "Exporter service name",
+    serviceName: "Apply for an export licence",
     serviceUrl: "/",
     containerClasses: "govuk-width-container",
     navigationClasses: "user-menu",
@@ -27,8 +27,20 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Declaration</h1>
-    	<p class="govuk-body">TBC</p>
-    	<p class="govuk-body"><a href="confirm-application.html">Submit application</a></p>
+        <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item govuk-!-margin-bottom-4">
+                <input class="govuk-checkboxes__input" id="declaration" name="declaration" type="checkbox" value="The information I have given on this application is correct">
+                <label class="govuk-label govuk-checkboxes__label" for="declaration">The information I have given on this application is correct</label>
+            </div>
+        </div>
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                You can be fined up to £XXXX if you intentionally use false or misleading information on your application form.
+            </strong>
+        </div>
+    	<a href="confirm-application.html" class="govuk-button">Submit application</a>
 	</div>
 </div>
 {% endblock %}

@@ -1,12 +1,12 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Apply for an export licence - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Apply for an export licence - Apply for an export licence - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
 	homepageUrl: "/",
-    serviceName: "Exporter service name",
+    serviceName: "Apply for an export licence",
     serviceUrl: "/",
     containerClasses: "govuk-width-container",
     navigationClasses: "user-menu",
@@ -182,12 +182,12 @@
                     %}
 					<li class="app-task-list__item">
 						<span class="app-task-list__task-name">
-							<a href="declaration.html" aria-describedby="submit-completed">Submit application</a>
+							<a href="declaration.html" aria-describedby="submit-completed">Sign declaration before you submit</a>
 						</span>
                     </li>
                     {% else %}
                     <li class="app-task-list__item">
-                        <span class="app-task-list__task-name grey-text">Submit application</span>
+                        <span class="app-task-list__task-name grey-text">Sign declaration before you submit</span>
                     </li>
                     {% endif %}
 				</ul>
