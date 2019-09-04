@@ -9,18 +9,217 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 		<h1 class="govuk-heading-xl">LITE <span class="govuk-caption-xl">based on GOV.UK Prototype Kit {{releaseVersion}}</span></h1>{{releaseVersion | log }}
-		<!-- TBD
-		<h2 class="govuk-heading-m">Production sprints</h2>
-		<ul class="govuk-list govuk-list--bullet">
-			<li><a href="sprint-22/">Sprint 22</a></li>
-			<li><a href="sprint-21/">Sprint 21</a></li>
-		</ul>
-		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-		-->
-		<h2 class="govuk-heading-m">Our sandbox area</h2>
-		<ul class="govuk-list govuk-list--bullet">
-			<li><a href="sprint-future/">Sprint future</a></li>
-		</ul>
+		<div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">LITE services</h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#exporter">Exporter</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#internal">Internal</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#permissions-finder">Permissions Finder</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#archive">Archive</a>
+                </li>
+                <!-- # Jira content
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#jira">Jira</a>
+                </li> 
+                -->
+            </ul>
+            <section class="govuk-tabs__panel" id="exporter">
+                <h2 class="govuk-heading-l">Exporter</h2>
+                <a href="exporter/gov-uk-guidance.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-bottom-1" data-module="govuk-button">
+                    Start journey
+                    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+                        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                    </svg>
+                </a>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">GOV.UK</h3>
+                <p class="govuk-body govuk-!-margin-bottom-0">Entry points into our service.</p>
+                <ul class="govuk-list govuk-!-margin-top-2">
+                    <li><a href="exporter/gov-uk-guidance.html">GOV.UK - Guidance</a></li>
+                    <li><a href="exporter/gov-uk-start.html">GOV.UK - Start</a></li>
+                </ul>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Sign in or create account</h3>
+                <ul class="govuk-list govuk-!-margin-top-0">
+                    <li><a href="exporter/login.html">Sign in</a>
+                        <!-- # Error example	
+                        <ul class="govuk-list govuk-!-margin-top-0">
+                            <li><a href="#">[Error] Incorrect email address</a></li>
+                        </ul> 
+                        -->
+                    </li>
+                    <li><a href="exporter/create-account.html">Create an account</a></li>
+                    <li><a href="exporter/activate-account.html">Activate account</a></li>
+                    <li><a href="exporter/password-reset.html">Reset your passsword</a></li>
+                    <li><a href="exporter/password-reset-confirm.html">Passsword reset</a></li>
+                    <li><a href="exporter/email-reset.html">Reset email address</a></li>
+                    <li><a href="exporter/email-reset-confirm.html">Email address reset</a></li>
+                    <li><a href="exporter/sign-out.html">Sign out</a></li>
+                </ul>
+                <!-- # Error example
+                <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">Validation errors</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <ul class="govuk-list govuk-!-margin-top-0">
+                            <li><a href="#">Sign in</a></li>
+                            <li><a href="#">Create an account</a></li>
+                            <li><a href="#">Reset your passsword</a></li>
+                            <li><a href="#">Reset email address</a></li>
+                        </ul>
+                    </div>
+                </details> 
+                -->
+                <h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">Email notifications</h4>
+                <ul class="govuk-list govuk-!-margin-top-0">
+                    <li><a href="exporter/email-notifications/account-created.html">Account created</a></li>
+                    <li><a href="exporter/email-notifications/password-reset.html">Password reset</a></li>
+                    <!-- Are more email templates needed? -->
+                </ul>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Exporter service</h3>
+                <!-- 
+                <ul class="govuk-list govuk-!-margin-top-0">
+                    <li><a href="exporter/index.html">Home</a></li>
+                </ul> 
+                -->
+                <ul class="govuk-list govuk-!-margin-top-0">
+                    <li><a href="exporter/apply/task-list.html">Apply for an export licence</a></li>
+                </ul>
+                <!-- 
+                <h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">Licence management</h4>
+                <ul class="govuk-list govuk-!-margin-top-0">
+                    <li><a href="#">Check for a licence</a></li>
+                    <li><a href="#">Apply for a licence</a></li>
+                    <li><a href="exporter/applications.html">View applications for a licence</a></li>
+                    <li><a href="exporter/track-applications.html">Track applications for a licence</a></li>
+                    <li><a href="#">Appeal against a decision</a></li>
+                </ul> -->
+
+                <!-- # Error example
+                <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">Validation errors</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <ul class="govuk-list govuk-!-margin-top-0">
+                            <li><a href="#">Check for a licence</a></li>
+                            <li><a href="#">Apply for a licence</a></li>
+                            <li><a href="#">View licences</a></li>
+                            <li><a href="#">Appeals</a></li>
+                        </ul>
+                    </div>
+                </details> 
+                -->
+                
+                <!--
+                <h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">Tasks???</h4>
+                <ul class="govuk-list govuk-!-margin-top-0">
+                    <li><a href="exporter/ask-a-question.html">Ask a question</a></li>
+                    <li><a href="exporter/upload-document.html">Upload a document</a></li>
+                </ul>
+                <h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">Account management</h4>
+                <ul class="govuk-list govuk-!-margin-top-0">
+                    <li><a href="#">Edit your account</a></li>
+                    <li><a href="#">Delete your account</a></li>
+                </ul> -->
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">No service</h3>
+                <ul class="govuk-list govuk-!-margin-top-0">
+                    <li><a href="exporter/service-unavailable.html">Service unavailable (error 503)</a></li>
+                    <li><a href="exporter/service-problem.html">There is a problem (error 500)</a></li>
+                    <li><a href="exporter/service-not-found.html">Page not found (error 404)</a></li>
+                </ul>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Accessibility</h3>
+                <ul class="govuk-list govuk-!-margin-top-0">
+                    <li><a href="exporter/accessibility.html">Accessibility statement</a></li>
+                </ul>
+            </section>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="internal">
+                <h2 class="govuk-heading-l">Internal</h2>
+                <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-bottom-1" data-module="govuk-button">
+                    Start journey
+                    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+                        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                    </svg>
+                </a>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Cases</h3>
+                <ul class="govuk-list govuk-!-margin-top-2">
+                    <li><a href="internal/index.html">Cases</a></li>
+                </ul>
+            </section>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="permissions-finder">
+                <h2 class="govuk-heading-l">Permissions Finder</h2>
+                <a href="permissions-finder/gov-uk-guidance.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-bottom-1" data-module="govuk-button">
+                    Start journey
+                    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+                        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                    </svg>
+                </a>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">GOV.UK</h3>
+                <p class="govuk-body govuk-!-margin-bottom-0">Entry points into our service.</p>
+                <ul class="govuk-list govuk-!-margin-top-2">
+                    <li><a href="permissions-finder/gov-uk-guidance.html">GOV.UK - Guidance</a></li>
+                    <li><a href="permissions-finder/gov-uk-start.html">GOV.UK - Start</a></li>
+                </ul>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Email notifications</h3>
+                <ul class="govuk-list govuk-!-margin-top-0">
+                    <li><a href="permissions-finder/email-notifications/application-code.html">Application number</a></li>
+                </ul> 
+            </section>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="archive">
+                <h2 class="govuk-heading-l">Archive</h2>
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Apply for an export licence</h3>
+                <p class="govuk-body govuk-!-margin-bottom-0">Lab days</p>
+                <ul class="govuk-list govuk-!-margin-top-2">
+                    <li><a href="#">XX September 2019</a></li>
+                    <li><a href="#">XX September 2019</a></li>
+                    <li><a href="#">XX October 2019</a></li>
+                </ul>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">TBC</h3>
+                <p class="govuk-body govuk-!-margin-bottom-0">Lab days</p>
+                <ul class="govuk-list govuk-!-margin-top-2">
+                    <li><a href="#">XX XXXXXXX 2019</a></li>
+                    <li><a href="#">XX XXXXXXX 2019</a></li>
+                </ul>
+            </section>
+            <!-- # Jira content
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="jira">
+                <h2 class="govuk-heading-l">Jira</h2>
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Exporter</h3>
+                <h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">Create a LITE account for an individual</h4>
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-0">
+                    <li><a href="#">Prototype</a></li>
+                    <li><a href="https://uktrade.atlassian.net/browse/LT-1417">Jira</a></li>						
+                </ul>
+                <h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">Create a LITE account for an individual</h4>
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-0">
+                    <li><a href="#">Prototype</a></li>
+                    <li><a href="https://uktrade.atlassian.net/browse/LT-1417">Jira</a></li>						
+                </ul>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Internal</h3>
+                <h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-0">TBC</h4>
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-0">
+                    <li><a href="#">Prototype</a></li>
+                    <li><a href="#">Jira</a></li>						
+                </ul>
+            </section> 
+            -->
+        </div>
     </div>
 </div>
 {% endblock %}
