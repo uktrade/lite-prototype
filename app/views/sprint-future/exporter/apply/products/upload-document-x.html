@@ -27,12 +27,21 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<form action="cya" method="post">
+            {% if data["item-add"] == "Yes" %}
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--l" for="file-upload-2">Upload a product specification</label>
+                </h1>
+                <input class="govuk-file-upload" id="file-upload-2" name="file-upload-2" type="file">
+            </div>
+            {% else %}
             <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
                     <label class="govuk-label govuk-label--l" for="file-upload">Upload a product specification</label>
                 </h1>
                 <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
             </div>
+            {% endif %}
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
 			<p><a href="../task-list?products=started">Finish later</a></p> 
 		</form>
