@@ -35,7 +35,7 @@
                 <textarea class="govuk-textarea" id="other-information" name="other-information" rows="5">{{ data['other-information'] }}</textarea>
             </div>	
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
-            <p><a href="../task-list?other=started">Finish later</a></p>  
+            <p><a href="../task-list?information=started">Finish later</a></p>  
         </form>
         {% else %}
         <form action="../task-list" method="post">
@@ -46,7 +46,7 @@
                 <textarea class="govuk-textarea" id="other-information" name="other-information" rows="5">{{ data['other-information'] }}</textarea>
             </div>	
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
-            <p><a href="../task-list?other=started">Finish later</a></p>  
+            <p><a href="../task-list?information=started">Finish later</a></p>  
         </form>
         {% endif %}
 	</div>
