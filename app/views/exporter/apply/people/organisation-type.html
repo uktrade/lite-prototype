@@ -38,20 +38,25 @@
 							<label class="govuk-label govuk-radios__label" for="commercial-organisation">Commercial organisation</label>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="government" name="organisation-type" type="radio" value="Government" {{ checked("organisation-type", "Government") }}>
-							<label class="govuk-label govuk-radios__label" for="government">Government</label>
+							<input class="govuk-radios__input" id="government" name="organisation-type" type="radio" value="Government" {{ checked("organisation-type", "Government") }} data-aria-controls="conditional-government-conditional">
+							<label class="govuk-label govuk-radios__label" for="government-conditional">Government</label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-government-conditional">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="government-name">Government name</label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="government-name" name="government-name" type="text" value="{{ data['government-name'] }}">
+                            </div>
                         </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="other-conditional" name="organisation-type" type="radio" value="Other" {{ checked("organisation-type", "Other") }}  data-aria-controls="conditional-other-conditional">
                             <label class="govuk-label govuk-radios__label" for="other-conditional">Other</label>
-                            </div>
-                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-conditional">
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-conditional">
                             <div class="govuk-form-group">
                                 <label class="govuk-label" for="other-name">Other name</label>
-                                <input class="govuk-input govuk-!-width-one-third" id="other-name" name="other-name" type="text" value="{{ data['other-name'] }}">
+                                <input class="govuk-input govuk-!-width-two-thirds" id="other-name" name="other-name" type="text" value="{{ data['other-name'] }}">
                             </div>
                         </div>
-
 					</div>
 				</fieldset>
 			</div>

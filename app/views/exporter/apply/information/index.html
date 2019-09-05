@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Add more information to support your application (optional) - Apply for an export licence - GOV.UK{% endblock %}
+{% block pageTitle %}Do you have any more information to support your application? - Apply for an export licence - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -27,12 +27,30 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
         <form action="cya" method="post">
-            <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--l" for="other-information">Add more information to support your application (optional)</label>
-            </h1>
             <div class="govuk-form-group">
-                <textarea class="govuk-textarea" id="other-information" name="other-information" rows="5">{{ data['other-information'] }}</textarea>
-            </div>	
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">Do you have any more information to support your application?</h1>
+                    </legend>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="yes-conditional" name="information-support" type="radio" value="Yes" {{ checked("information-support", "Yes") }}  data-aria-controls="conditional-yes-conditional">
+                            <label class="govuk-label govuk-radios__label" for="yes-conditional">Yes</label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="yes-provide">Provide information</label>
+                                <textarea class="govuk-textarea" id="yes-provide" name="yes-provide" rows="5">{{ data['yes-provide'] }}</textarea>
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="no" name="information-support" type="radio" value="No" {{ checked("information-support", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="no">No</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
             <p><a href="../task-list?information=started">Finish later</a></p>  
         </form>    
