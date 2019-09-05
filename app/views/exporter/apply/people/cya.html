@@ -42,6 +42,15 @@
                     <a class="govuk-link" href="organisation.html#organisation-name">Change<span class="govuk-visually-hidden"> organisation name</span></a> 
                 </dd>
             </div> 
+            {% if data['organisation-type'] == "Other" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">End user</dt>
+                <dd class="govuk-summary-list__value">Other - {{ data['other-name'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> end user</span></a> 
+                </dd>
+            </div>
+            {% else %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">End user</dt>
                 <dd class="govuk-summary-list__value">{{ data['organisation-type'] }}</dd>
@@ -49,6 +58,7 @@
                     <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> end user</span></a> 
                 </dd>
             </div>
+            {% endif %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Website</dt>
                 <dd class="govuk-summary-list__value">{{ data['website-url'] }}</dd>
