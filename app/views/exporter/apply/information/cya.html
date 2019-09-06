@@ -31,10 +31,17 @@
             {% if data['information-support'] == "Yes" %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">Support your application</dt>
-				<dd class="govuk-summary-list__value">Yes<br /><br />{{ data['yes-provide'] | striptags(true) | escape | nl2br }}</dd>
+				<dd class="govuk-summary-list__value">{{ data['information-support'] }}</dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="index.html#information-support">Change<span class="govuk-visually-hidden"> support your application</span></a> 
 				</dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Supporting information</dt>
+                <dd class="govuk-summary-list__value">{{ data['yes-provide'] | striptags(true) | escape | nl2br }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="index.html#yes-provide">Change<span class="govuk-visually-hidden"> supporting information</span></a> 
+                </dd>
             </div> 
             {% else %}
             <div class="govuk-summary-list__row">
