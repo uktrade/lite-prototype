@@ -45,7 +45,7 @@
             </div> 
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Type of orgnisation</dt>
-                <dd class="govuk-summary-list__value">Other - {{ data['other-name'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['other-name'] }}</dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> type of organisation</span></a> 
                 </dd>
@@ -60,7 +60,7 @@
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Type of organisation</dt>
-                <dd class="govuk-summary-list__value">Government - {{ data['government-name'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['government-name'] }}</dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> type of organisation</span></a> 
                 </dd>
@@ -92,7 +92,7 @@
             {% if data['have-website'] == "Yes" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Website</dt>
-                <dd class="govuk-summary-list__value">Yes - {{ data['website-url'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['website-url'] }}</dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="website.html#website-url">Change<span class="govuk-visually-hidden"> website</span></a> 
                 </dd>
