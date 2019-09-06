@@ -3,7 +3,7 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-// UK/Non-UK location
+// UK/non-UK location
 router.post('/exporter/apply/products/location-uk', function (req, res) {
 
     let locationUK = req.session.data['location']
@@ -15,7 +15,7 @@ router.post('/exporter/apply/products/location-uk', function (req, res) {
     }
 })
 
-// UK/Non-UK location [Product 1]
+// UK/non-UK location [Product 1]
 router.post('/exporter/apply/products/location-uk-1', function (req, res) {
 
     let locationUK1 = req.session.data['location-1']
@@ -27,7 +27,7 @@ router.post('/exporter/apply/products/location-uk-1', function (req, res) {
     }
 })
 
-// UK/Non-UK location [Product 2]
+// UK/non-UK location [Product 2]
 router.post('/exporter/apply/products/location-uk-2', function (req, res) {
 
     let locationUK2 = req.session.data['location-2']
