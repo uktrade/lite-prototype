@@ -141,7 +141,6 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
         	name: undefined,
             products: undefined,
             people: undefined,
-            endUser: undefined,
             information: undefined,
       	}
     }
@@ -157,9 +156,6 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
     };
     if (req.query.people) {
     	req.session.sectionStatus.people = req.query.people
-    };
-    if (req.query.endUser) {
-    	req.session.sectionStatus.endUser = req.query.endUser
     };
     if (req.query.information) {
     	req.session.sectionStatus.information = req.query.information

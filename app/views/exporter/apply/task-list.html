@@ -100,29 +100,7 @@
                         </span>                
                     </li>
                     {% endif %}
-                    <!-- 1.4 End user undertaking -->
-                    {% if sectionStatus.endUser === "completed" %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="end-user/cya.html" aria-describedby="end-user-completed">End user undertaking</a>
-                        </span>
-                        <strong class="govuk-tag app-task-list__task-completed" id="end-user-completed">Completed</strong>
-                    </li>
-                    {% elif sectionStatus.endUser === "started" %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="end-user/index.html" aria-describedby="end-user-in-progress">End user undertaking</a>
-                        </span>
-                        <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="end-user-in-progress">In progress</strong>
-                    </li> 
-                    {% else %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="end-user/index.html">End user undertaking</a>
-                        </span>                
-                    </li>
-                    {% endif %}
-                    <!-- 1.5 Other information -->
+                    <!-- 1.4 Other information -->
                     {% if sectionStatus.information === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -181,7 +159,6 @@
                         and (sectionStatus.name === "completed")
                         and (sectionStatus.products === "completed")
                         and (sectionStatus.people === "completed")
-                        and (sectionStatus.endUser === "completed")
                         and (sectionStatus.information === "completed")
                     %}
 					<li class="app-task-list__item">
