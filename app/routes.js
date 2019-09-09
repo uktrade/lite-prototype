@@ -39,30 +39,19 @@ router.post('/exporter/apply/products/location-uk-2', function (req, res) {
     }
 })
 
-// Remove products 
-router.post('/exporter/apply/products/index', function (req, res) {
+// Remove product [Product 1]
+router.post('/exporter/apply/products/product-removed', function (req, res) {
 
-    let itemAdd = req.session.data['item-add']
+    let itemRemove1 = req.session.data['remove-product-1']
 
-    if (itemAdd === "Yes") {
-        res.redirect('/exporter/apply/products/index')
-    } else {
-        res.redirect('/exporter/apply/task-list?products=completed')
-    }
-})
-
-router.post('/exporter/apply/products/remove-product', function (req, res) {
-
-    let itemRemove = req.session.data['remove-product']
-
-    if (itemRemove === "Yes") {
-        res.redirect('/exporter/apply/products/remove-product')
+    if (itemRemove1 === "Yes") {
+        res.redirect('/exporter/apply/products/product-removed')
     } else {
         res.redirect('/exporter/apply/products/product-added')
     }
 })
 
-// Remove products [Product 1]
+// Add another product [Product 1]
 router.post('/exporter/apply/products/index-2', function (req, res) {
 
     let itemAdd1 = req.session.data['item-add-1']
@@ -74,18 +63,19 @@ router.post('/exporter/apply/products/index-2', function (req, res) {
     }
 })
 
+// Remove product [Product 2]
 router.post('/exporter/apply/products/product-removed', function (req, res) {
 
-    let itemRemove1 = req.session.data['remove-product']
+    let itemRemove2 = req.session.data['remove-product-2']
 
-    if (itemRemove1 === "Yes") {
+    if (itemRemove2 === "Yes") {
         res.redirect('/exporter/apply/products/product-removed')
     } else {
         res.redirect('/exporter/apply/products/product-added')
     }
 })
 
-// Remove products [Product 2]
+// Add another product [Product 2]
 router.post('/exporter/apply/products/index', function (req, res) {
 
     let itemAdd2 = req.session.data['item-add-2']
@@ -97,16 +87,9 @@ router.post('/exporter/apply/products/index', function (req, res) {
     }
 })
 
-router.post('/exporter/apply/products/product-removed', function (req, res) {
 
-    let itemRemove2 = req.session.data['remove-product']
 
-    if (itemRemove2 === "Yes") {
-        res.redirect('/exporter/apply/products/product-removed')
-    } else {
-        res.redirect('/exporter/apply/products/product-added')
-    }
-})
+
 
 // User type
 router.post('/exporter/apply/people/organisation', function (req, res) {
