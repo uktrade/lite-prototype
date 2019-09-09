@@ -29,9 +29,15 @@
         <form action="address" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
+                    {% if data['user-type'] == "Organisation" %}
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">Do they have a website?</h1>
+                    </legend>
+                    {% elseif data['user-type'] == "Individual" %}
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">Do you have a website?</h1>
                     </legend>
+                    {% endif %}
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="yes-conditional" name="have-website" type="radio" value="Yes" {{ checked("have-website", "Yes") }}  data-aria-controls="conditional-yes-conditional">
