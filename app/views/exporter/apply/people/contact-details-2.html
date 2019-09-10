@@ -26,23 +26,23 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form action="upload-document" method="post">
+		<form action="upload-document-2" method="post">
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 						<h1 class="govuk-fieldset__heading">What is their name, address and do they have a website?</h1>
 					</legend>
 					<div class="govuk-form-group">
-                        <label class="govuk-label" for="individual-name">Full name</label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="individual-name" name="individual-name" type="text" value="{{ data['individual-name'] }}">
+                        <label class="govuk-label" for="individual-name-2">Full name</label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="individual-name-2" name="individual-name-2" type="text" value="{{ data['individual-name-2'] }}">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="address">Address</label>
-                        <textarea class="govuk-textarea govuk-!-width-two-thirds" id="address" name="address" rows="5">{{ data['address'] }}</textarea>
+                        <label class="govuk-label" for="address-2">Address</label>
+                        <textarea class="govuk-textarea govuk-!-width-two-thirds" id="address-2" name="address-2" rows="5">{{ data['address-2'] }}</textarea>
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="website-url">Website (optional)</label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="website-url" name="website-url" type="text" value="{{ data['website-url'] }}">
+                        <label class="govuk-label" for="website-url-2">Website (optional)</label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="website-url-2" name="website-url-2" type="text" value="{{ data['website-url-2'] }}">
                     </div>
 				</fieldset>
 			</div>

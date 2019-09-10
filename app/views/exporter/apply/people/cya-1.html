@@ -28,73 +28,73 @@
 	<div class="govuk-grid-column-two-thirds-from-desktop">
 		<h1 class="govuk-heading-l">Check your answers</h1>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            {% if data['person-type'] == "Someone else" %}
+            {% if data['person-type-1'] == "Someone else" %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">Job</dt>
-				<dd class="govuk-summary-list__value">{{ data['who-else'] }}</dd>
+				<dd class="govuk-summary-list__value">{{ data['who-else-1'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="index.html">Change<span class="govuk-visually-hidden"> job</span></a> 
+					<a class="govuk-link" href="index-1.html">Change<span class="govuk-visually-hidden"> job</span></a> 
 				</dd>
             </div>
             {% else %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Job</dt>
-                <dd class="govuk-summary-list__value">{{ data['person-type'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['person-type-1'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="index.html">Change<span class="govuk-visually-hidden"> job</span></a> 
+                    <a class="govuk-link" href="index-1.html">Change<span class="govuk-visually-hidden"> job</span></a> 
                 </dd>
             </div>
             {% endif %}
-            {% if data['organisation-type'] == "Something else" %}
+            {% if data['organisation-type-1'] == "Something else" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Working for</dt>
-                <dd class="govuk-summary-list__value">{{ data['something-else-description'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['something-else-description-1'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> organisation</span></a> 
+                    <a class="govuk-link" href="organisation-type-1.html">Change<span class="govuk-visually-hidden"> organisation</span></a> 
                 </dd>
             </div>
             {% else %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Working for</dt>
-                <dd class="govuk-summary-list__value">{{ data['organisation-type'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['organisation-type-1'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> organisation</span></a> 
+                    <a class="govuk-link" href="organisation-type-1.html">Change<span class="govuk-visually-hidden"> organisation</span></a> 
                 </dd>
             </div>
             {% endif %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Full name</dt>
-                <dd class="govuk-summary-list__value">{{ data['individual-name'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['individual-name-1'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="contact-details.html#individual-name">Change<span class="govuk-visually-hidden"> full name</span></a> 
+                    <a class="govuk-link" href="contact-details-1.html#individual-name-1">Change<span class="govuk-visually-hidden"> full name</span></a> 
                 </dd>
             </div> 
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address</dt>
-                <dd class="govuk-summary-list__value">{{ data['address'] | striptags(true) | escape | nl2br }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['address-1'] | striptags(true) | escape | nl2br }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="contact-details.html#address">Change<span class="govuk-visually-hidden"> address</span></a> 
+                    <a class="govuk-link" href="contact-details-1.html#address-1">Change<span class="govuk-visually-hidden"> address</span></a> 
                 </dd>
             </div> 
-            {% if data['website-url'] %}
+            {% if data['website-url-1'] %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Website</dt>
-                <dd class="govuk-summary-list__value">{{ data['website-url'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['website-url-1'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="contact-details.html#website-url">Change<span class="govuk-visually-hidden"> website</span></a> 
+                    <a class="govuk-link" href="contact-details-1.html#website-url-1">Change<span class="govuk-visually-hidden"> website</span></a> 
                 </dd>
             </div> 
             {% endif %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">File</dt>
-                <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['file-upload-1'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="upload-document.html#file-upload">Change<span class="govuk-visually-hidden"> file</span></a> 
+                    <a class="govuk-link" href="upload-document-1.html#file-upload-1">Change<span class="govuk-visually-hidden"> file</span></a> 
                 </dd>
             </div>  
         </dl>
         <a href="people-added" class="govuk-button">Save and continue</a>
-        <p><a href="../task-list?people=started">Finish later</a></p>
+        <p><a href="../task-list?people=started">Finish later</a></p> 
 	</div>
 </div>
 {% endblock %}

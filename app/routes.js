@@ -87,6 +87,54 @@ router.post('/exporter/apply/products/index', function (req, res) {
     }
 })
 
+// Remove people [Person 1]
+router.post('/exporter/apply/people/people-removed', function (req, res) {
+
+    let peopleRemove1 = req.session.data['remove-people-1']
+
+    if (peopleRemove1 === "Yes") {
+        res.redirect('/exporter/apply/people/people-removed')
+    } else {
+        res.redirect('/exporter/apply/people/people-added')
+    }
+})
+
+// Add another person [Person 1]
+router.post('/exporter/apply/people/index-2', function (req, res) {
+
+    let peopleAdd1 = req.session.data['person-add-1']
+
+    if (peopleAdd1 === "Yes") {
+        res.redirect('/exporter/apply/people/index-2')
+    } else {
+        res.redirect('/exporter/apply/task-list?people=completed')
+    }
+})
+
+// Remove people [Person 2]
+router.post('/exporter/apply/people/people-removed', function (req, res) {
+
+    let peopleRemove2 = req.session.data['remove-people-2']
+
+    if (peopleRemove2 === "Yes") {
+        res.redirect('/exporter/apply/people/people-removed')
+    } else {
+        res.redirect('/exporter/apply/people/people-added')
+    }
+})
+
+// Add another person [Person 2]
+router.post('/exporter/apply/people/index', function (req, res) {
+
+    let peopleAdd2 = req.session.data['people-add-2']
+
+    if (peopleAdd2 === "Yes") {
+        res.redirect('/exporter/apply/people/index')
+    } else {
+        res.redirect('/exporter/apply/task-list?people=completed')
+    }
+})
+
 
 
 

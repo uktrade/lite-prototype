@@ -1,0 +1,49 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Remove this person? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Remove this person?</h1>
+        <div class="govuk-inset-text">{{ data['person-type-1'] }}</div>
+        <form action="people-removed" method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="remove-people-yes" name="remove-people" type="radio" value="Yes" {{ checked("remove-people", "Yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="remove-people-yes">Yes</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="remove-people-no" name="remove-people" type="radio" value="No" {{ checked("remove-people", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="remove-people-no">No</label>
+                    </div>	
+                </div>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+            <p><a href="../task-list?people=started">Finish later</a></p>
+        </form>
+	</div>
+</div>
+{% endblock %}
