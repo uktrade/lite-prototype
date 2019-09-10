@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Who will be the end user? - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}What does this person do? - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,23 +26,69 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form action="organisation" method="post">
+		<form action="organisation-type" method="post">
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-						<h1 class="govuk-fieldset__heading">Who will be the end user?</h1>
-					</legend>
-					<div class="govuk-radios">
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="organisation" name="user-type" type="radio" value="Organisation" {{ checked("user-type", "Organisation") }}>
-							<label class="govuk-label govuk-radios__label" for="organisation">Organisation</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="individual" name="user-type" type="radio" value="Individual" {{ checked("user-type", "Individual") }}>
-							<label class="govuk-label govuk-radios__label" for="individual">Individual</label>
-						</div>	
-					</div>
-				</fieldset>
+						<h1 class="govuk-fieldset__heading">What does this person do?</h1>
+                    </legend>
+                    <span id="sign-in-hint" class="govuk-hint">This person is the:</span>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exporter" name="person-type" type="radio" value="Exporter" {{ checked("person-type", "Exporter") }}" aria-describedby="exporter-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="exporter">Exporter</label>
+                                <span id="exporter-item-hint" class="govuk-hint govuk-radios__hint">The person sending the goods. You must include information about the exporter if you are not the exporter, for example if you are an agent.</span>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="end-user" name="person-type" type="radio" value="End user" {{ checked("person-type", "End user") }}" aria-describedby="end-user-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="end-user">End user</label>
+                                <span id="end-user-item-hint" class="govuk-hint govuk-radios__hint">The person using your goods (incorporating them into an end product). They will either:
+                                    <ul class="govuk-list govuk-list--bullet grey-text govuk-!-margin-top-1 govuk-!-margin-bottom-0">
+                                        <li>use the goods as they are, or</li>
+                                        <li>sell the goods as they are, or</li>
+                                        <li>put the goods into another product  and then use them /sell them in that other product</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="agent" name="person-type" type="radio" value="Agent" {{ checked("person-type", "Agent") }}" aria-describedby="agent-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="agent">Agent</label>
+                                <span id="agent-item-hint" class="govuk-hint govuk-radios__hint">The person who is involved in negotiating the export deal.</span>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="consignee" name="person-type" type="radio" value="Intermediate consignee" {{ checked("person-type", "Intermediate consignee") }}" aria-describedby="consignee-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="consignee">Intermediate consignee</label>
+                                <span id="consignee-item-hint" class="govuk-hint govuk-radios__hint">The person who looks after the goods temporarily, on a stopover.<br /><br />This is anyone who accepts the goods after their first stop, on the way to their final destination.</span>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="submitter" name="person-type" type="radio" value="Authorised submitter" {{ checked("person-type", "Authorised submitter") }}" aria-describedby="submitter-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="submitter">Authorised submitter</label>
+                                <span id="submitter-item-hint" class="govuk-hint govuk-radios__hint">The person who does the final review and then submits the paperwork for this export.</span>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="consultant" name="person-type" type="radio" value="Consultant" {{ checked("person-type", "Consultant") }}" aria-describedby="consultant-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="consultant">Consultant</label>
+                                <span id="consultant-item-hint" class="govuk-hint govuk-radios__hint">The person who gives advice about this export.</span>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact" name="person-type" type="radio" value="Contact" {{ checked("person-type", "Contact") }}" aria-describedby="contact-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="contact">Contact</label>
+                                <span id="contact-item-hint" class="govuk-hint govuk-radios__hint">This could be anyone else involved in the export process. For example, this could be the person you speak to if your goods get held up at customs.</span>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="someone-else-conditional" name="person-type" type="radio" value="Someone else" {{ checked("person-type", "Someone else") }}  data-aria-controls="conditional-someone-else-conditional">
+                                <label class="govuk-label govuk-radios__label" for="someone-else-conditional">Someone else</label>
+                            </div>
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-someone-else-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="who-else">Who else?</label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="who-else" name="who-else" type="text" value="{{ data['who-else'] }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
 			</div>
 			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
 			<p><a href="../task-list?people=started">Finish later</a></p>  

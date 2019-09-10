@@ -1,0 +1,56 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}What is their name, address and do they have a website? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="upload-document" method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">What is their name, address and do they have a website?</h1>
+					</legend>
+					<div class="govuk-form-group">
+                        <label class="govuk-label" for="individual-name">Full name</label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="individual-name" name="individual-name" type="text" value="{{ data['individual-name'] }}">
+                        <!-- <label class="govuk-label" for="event-name">Event name</label>
+                        <input class="govuk-input" id="event-name" name="event-name" type="text"> -->
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="address">Address</label>
+                        <textarea class="govuk-textarea govuk-!-width-two-thirds" id="address" name="address" rows="5">{{ data['address'] }}</textarea>
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="website-url">Website (optional)</label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="website-url" name="website-url" type="text" value="{{ data['website-url'] }}">
+                    </div>
+				</fieldset>
+			</div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+			<p><a href="../task-list?people=started">Finish later</a></p>  
+		</form>
+	</div>
+</div>
+{% endblock %}

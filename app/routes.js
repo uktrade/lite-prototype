@@ -92,28 +92,28 @@ router.post('/exporter/apply/products/index', function (req, res) {
 
 
 // User type
-router.post('/exporter/apply/people/organisation', function (req, res) {
+//router.post('/exporter/apply/people/organisation', function (req, res) {
 
-    let userType = req.session.data['user-type']
+//    let userType = req.session.data['user-type']
 
-    if (userType === "Organisation") {
-        res.redirect('/exporter/apply/people/organisation')
-    } else {
-        res.redirect('/exporter/apply/people/individual')
-    }
-})
+//    if (userType === "Organisation") {
+//        res.redirect('/exporter/apply/people/organisation')
+//    } else {
+//        res.redirect('/exporter/apply/people/individual')
+//    }
+//})
 
 // End user undertaking
-router.post('/exporter/apply/end-user/upload-document', function (req, res) {
+//router.post('/exporter/apply/end-user/upload-document', function (req, res) {
 
-    let euuType = req.session.data['euu-document']
+//    let euuType = req.session.data['euu-document']
 
-    if (euuType === "Uploaded") {
-        res.redirect('/exporter/apply/end-user/upload-document')
-    } else {
-        res.redirect('/exporter/apply/end-user/cya')
-    }
-})
+//    if (euuType === "Uploaded") {
+//        res.redirect('/exporter/apply/end-user/upload-document')
+//    } else {
+//        res.redirect('/exporter/apply/end-user/cya')
+//    }
+//})
 
 // Task list 
 router.get('/exporter/apply/task-list', (req, res, next) => {
