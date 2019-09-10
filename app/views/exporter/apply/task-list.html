@@ -34,7 +34,7 @@
                     <span class="app-task-list__section-number">1. </span> Prepare application
                 </h2>
 			    <ul class="app-task-list__items">
-                     <!-- 1.1 Name your application -->
+                     <!-- Name your application -->
                      {% if sectionStatus.name === "completed" %}
                      <li class="app-task-list__item">
                          <span class="app-task-list__task-name">
@@ -56,7 +56,7 @@
                          </span>                
                      </li>
                      {% endif %}
-                    <!-- 1.2 Your products -->
+                    <!-- Your products -->
                     {% if sectionStatus.products === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -78,7 +78,7 @@
                         </span>                
                     </li>
                     {% endif %}
-                    <!-- 1.3 People involved -->
+                    <!-- People involved -->
                     {% if sectionStatus.people === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -100,7 +100,7 @@
                         </span>                
                     </li>
                     {% endif %}
-                    <!-- 1.4 Other information -->
+                    <!-- Other information -->
                     {% if sectionStatus.information === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -124,13 +124,12 @@
                     {% endif %}
                 </ul>
             </li>
-
             <li>
                 <h2 class="app-task-list__section">
                     <span class="app-task-list__section-number">2. </span> Review application
                 </h2>
                 <ul class="app-task-list__items">                    
-                    <!-- 2. Check application -->
+                    <!-- Check application -->
                     {% if sectionStatus.check === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -153,7 +152,7 @@
                     <span class="app-task-list__section-number">3. </span> Apply
                 </h2>
 				<ul class="app-task-list__items">
-                    <!-- 3. Submit application link -->
+                    <!-- Submit application -->
                     {% if
                         (sectionStatus.check === "completed")
                         and (sectionStatus.name === "completed")
