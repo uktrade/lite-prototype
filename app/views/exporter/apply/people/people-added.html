@@ -32,24 +32,44 @@
         <h1 class="govuk-heading-l">You have added 1 person</h1>
         {% endif %}
 		<dl class="govuk-summary-list govuk-!-margin-bottom-6">
-            {% if data['person-type-2'] %}
+            {% if data['person-type-2'] == "Someone else" %}
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">{{ data['who-else-2'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="cya-2.html">Change<span class="govuk-visually-hidden"> job</span></a>
+                    &nbsp;&nbsp;&nbsp; -->
+                    <a class="govuk-link" href="remove-people-2.html">Remove<span class="govuk-visually-hidden"> job</span></a> 
+                </dd>
+            </div>
+            {% elseif data['person-type-2'] %}
             <div class="govuk-summary-list__row">
                 <dd class="govuk-summary-list__value">{{ data['person-type-2'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="cya-2.html">Change<span class="govuk-visually-hidden"> job</span></a>
-                    &nbsp;&nbsp;&nbsp;
+                    <!-- <a class="govuk-link" href="cya-2.html">Change<span class="govuk-visually-hidden"> job</span></a>
+                    &nbsp;&nbsp;&nbsp; -->
                     <a class="govuk-link" href="remove-people-2.html">Remove<span class="govuk-visually-hidden"> job</span></a> 
                 </dd>
             </div>
             {% endif %}
+            {% if data['person-type-1'] == "Someone else" %}
             <div class="govuk-summary-list__row">
-                <dd class="govuk-summary-list__value">{{ data['person-type-1'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ data['who-else-1'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="cya-1.html">Change<span class="govuk-visually-hidden"> job</span></a>
-                    &nbsp;&nbsp;&nbsp;
+                    <!-- <a class="govuk-link" href="cya-1.html">Change<span class="govuk-visually-hidden"> job</span></a>
+                    &nbsp;&nbsp;&nbsp; -->
                     <a class="govuk-link" href="remove-people-1.html">Remove<span class="govuk-visually-hidden"> job</span></a> 
                 </dd>
             </div>
+            {% else %}
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">{{ data['person-type-1'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <!-- <a class="govuk-link" href="cya-1.html">Change<span class="govuk-visually-hidden"> job</span></a>
+                    &nbsp;&nbsp;&nbsp; -->
+                    <a class="govuk-link" href="remove-people-1.html">Remove<span class="govuk-visually-hidden"> job</span></a> 
+                </dd>
+            </div>
+            {% endif %}
         </dl>
         {% if data['person-type-2'] %}
         <form action="index" method="post">

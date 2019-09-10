@@ -27,7 +27,11 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Remove this person?</h1>
+        {% if data['person-type-1'] == "Someone else" %}
+        <div class="govuk-inset-text">{{ data['who-else-1'] }}</div>
+        {% else %}
         <div class="govuk-inset-text">{{ data['person-type-1'] }}</div>
+        {% endif %}
         <form action="people-removed" method="post">
             <div class="govuk-form-group">
                 <div class="govuk-radios">

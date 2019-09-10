@@ -126,7 +126,7 @@ router.post('/exporter/apply/people/people-removed', function (req, res) {
 // Add another person [Person 2]
 router.post('/exporter/apply/people/index', function (req, res) {
 
-    let peopleAdd2 = req.session.data['people-add-2']
+    let peopleAdd2 = req.session.data['person-add-2']
 
     if (peopleAdd2 === "Yes") {
         res.redirect('/exporter/apply/people/index')
