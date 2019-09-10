@@ -29,90 +29,60 @@
 		<h1 class="govuk-heading-l">Check your answers</h1>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">End user</dt>
-				<dd class="govuk-summary-list__value">{{ data['user-type'] }}</dd>
+				<dt class="govuk-summary-list__key">Job</dt>
+				<dd class="govuk-summary-list__value">{{ data['person-type'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="index.html">Change<span class="govuk-visually-hidden"> end user</span></a> 
+					<a class="govuk-link" href="index.html">Change<span class="govuk-visually-hidden"> job</span></a> 
 				</dd>
             </div>
-            {% if data['user-type'] == "Organisation" and data['organisation-type'] == "Other" %}
+            {% if data['organisation-type'] == "Something else" %}
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Organisation name</dt>
-                <dd class="govuk-summary-list__value">{{ data['organisation-name'] }}</dd>
+                <dt class="govuk-summary-list__key">Working for</dt>
+                <dd class="govuk-summary-list__value">{{ data['something-else-description'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="organisation.html#organisation-name">Change<span class="govuk-visually-hidden"> organisation name</span></a> 
-                </dd>
-            </div> 
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Type of orgnisation</dt>
-                <dd class="govuk-summary-list__value">{{ data['other-name'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> type of organisation</span></a> 
-                </dd>
-            </div>
-            {% elseif data['user-type'] == "Organisation" and data['organisation-type'] == "Government" %}
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Organisation name</dt>
-                <dd class="govuk-summary-list__value">{{ data['organisation-name'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="organisation.html#organisation-name">Change<span class="govuk-visually-hidden"> organisation name</span></a> 
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Type of organisation</dt>
-                <dd class="govuk-summary-list__value">{{ data['government-name'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> type of organisation</span></a> 
-                </dd>
-            </div>
-            {% elseif data['user-type'] == "Organisation" and data['organisation-type'] == "Commerical organisation" %}
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Organisation name</dt>
-                <dd class="govuk-summary-list__value">{{ data['organisation-name'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="organisation.html#organisation-name">Change<span class="govuk-visually-hidden"> organisation name</span></a> 
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Type of organisation</dt>
-                <dd class="govuk-summary-list__value">{{ data['organisation-type'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> type of organisation</span></a> 
+                    <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> organisation</span></a> 
                 </dd>
             </div>
             {% else %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Working for</dt>
+                <dd class="govuk-summary-list__value">{{ data['organisation-type'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="organisation-type.html">Change<span class="govuk-visually-hidden"> organisation</span></a> 
+                </dd>
+            </div>
+            {% endif %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Full name</dt>
                 <dd class="govuk-summary-list__value">{{ data['individual-name'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="individual.html#individual-name">Change<span class="govuk-visually-hidden"> full name</span></a> 
+                    <a class="govuk-link" href="contact-details.html#individual-name">Change<span class="govuk-visually-hidden"> full name</span></a> 
                 </dd>
             </div> 
-            {% endif %}
-            {% if data['have-website'] == "Yes" %}
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Website</dt>
-                <dd class="govuk-summary-list__value">{{ data['website-url'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="website.html#website-url">Change<span class="govuk-visually-hidden"> website</span></a> 
-                </dd>
-            </div> 
-            {% else %}
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Website</dt>
-                <dd class="govuk-summary-list__value">{{ data['have-website'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="website.html#website-url">Change<span class="govuk-visually-hidden"> website</span></a> 
-                </dd>
-            </div> 
-            {% endif %}
+
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address</dt>
                 <dd class="govuk-summary-list__value">{{ data['address'] | striptags(true) | escape | nl2br }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="address.html#address">Change<span class="govuk-visually-hidden"> address</span></a> 
+                    <a class="govuk-link" href="contact-details.html#address">Change<span class="govuk-visually-hidden"> address</span></a> 
                 </dd>
             </div> 
+            {% if data['website-url'] %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Website</dt>
+                <dd class="govuk-summary-list__value">{{ data['website-url'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="contact-details.html#website-url">Change<span class="govuk-visually-hidden"> website</span></a> 
+                </dd>
+            </div> 
+            {% endif %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">File</dt>
+                <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="upload-document.html#file-upload">Change<span class="govuk-visually-hidden"> file</span></a> 
+                </dd>
+            </div>  
         </dl>
         <a href="../task-list?people=completed" class="govuk-button">Confirm and continue</a>
 	</div>
