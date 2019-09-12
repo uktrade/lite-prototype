@@ -1,0 +1,63 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Search results - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l govuk-!-margin-bottom-7">Search results</h1>
+		<table class="govuk-table">
+            <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Description</th>
+                    <th scope="col" class="govuk-table__header">Part number</th>
+                    <th scope="col" class="govuk-table__header">Control rating</th>
+                    <th scope="col" class="govuk-table__header">Action</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">adc</td>
+                    <td class="govuk-table__cell">vv</td>
+                    <td class="govuk-table__cell">vw</td>
+                    <td class="govuk-table__cell"><a href="#">Add to application</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">adc</td>
+                    <td class="govuk-table__cell">vv</td>
+                    <td class="govuk-table__cell">vw</td>
+                    <td class="govuk-table__cell"><a href="#">Add to application</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">adc</td>
+                    <td class="govuk-table__cell">vv</td>
+                    <td class="govuk-table__cell">vw</td>
+                    <td class="govuk-table__cell"><a href="#">Add to application</a></td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+</div>
+{% endblock %}

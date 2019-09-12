@@ -1,0 +1,84 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Add good to application - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="list-of-goods" method="post">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add good to application</h1>
+                </legend>
+                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Description</dt>
+                        <dd class="govuk-summary-list__value">adc</dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Part number</dt>
+                        <dd class="govuk-summary-list__value">vv</dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Control rating</dt>
+                        <dd class="govuk-summary-list__value">vw</dd>
+                    </div>
+                </dl>
+                <!-- <div class="govuk-inset-text">
+                    <ul class="govuk-list">
+                        <li>Description: adc</li>
+                        <li>Part number: vv</li>
+                        <li>Control rating: vw</li>
+                    </ul>
+                </div> -->
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="value-goods">Value of goods (in pounds)</label>
+                    <!-- <span class="govuk-body">£</span> --> <input class="govuk-input govuk-!-width-one-half" id="value-goods" name="value-goods" type="text" value="{{ data['value-goods'] }}">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="quantity">Quantity</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="quantity" name="quantity" type="text" value="{{ data['quantity'] }}">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="measurement">Unit of measurement</label>
+                    <select class="govuk-select" id="measurement" name="measurement">
+                        <option value="found" selected>Select</option>
+                        <option value="grams">Grams</option>
+                        <option value="kilograms">Kilograms</option>
+                        <option value="no-articles">Number of articles</option>
+                        <option value="sq-metres">Square metres</option>
+                        <option value="metres">Metres</option>
+                        <option value="litres">Litres</option>
+                        <option value="cubic-metres">Cubic metres</option>
+                    </select>
+                </div>
+            </fieldset>
+            <br />
+            <button type="submit" class="govuk-button" data-module="govuk-button">Add good</button>
+			<!-- <p><a href="#">Finish later</a></p> -->
+        </form>
+	</div>
+</div>
+{% endblock %}
