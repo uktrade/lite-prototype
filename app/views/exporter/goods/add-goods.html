@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Add good to application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Add a new good - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,33 +26,38 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="list-of-goods" method="post">
+        <form action="good-confirmed" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add good to application</h1>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a new good</h1>
                 </legend>
-                <dl class="govuk-summary-list govuk-summary-list--no-border">
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">Description</dt>
-                        <dd class="govuk-summary-list__value">Firearms designed for dummy ammunition</dd>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="goods-description">Description of good</label>
+                    <span id="goods-description-hint" class="govuk-hint">This can make it easier to find your good later</span>
+                    <textarea class="govuk-textarea" id="goods-description" name="goods-description" rows="5" aria-describedby="goods-description-hint">{{ data['goods-description'] }}</textarea>
+                </div>	
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="part-number">Part number (optional)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="part-number" name="part-number" type="text" value="{{ data['part-number'] }}">
+                </div>
+                <p class="govuk-body govuk-!-margin-bottom-2">Is your good controlled?</p>
+                <div class="govuk-form-group">
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="good-controlled-yes" name="good-controlled" type="radio" value="Yes" {{ checked("good-controlled", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="good-controlled-yes">Yes</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="good-controlled-no" name="good-controlled" type="radio" value="No" {{ checked("good-controlled", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="good-controlled-no">No</label>
+                        </div>	
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="good-controlled-no" name="good-controlled" type="radio" value="I don't know" {{ checked("good-controlled", "I don't know") }}>
+                            <label class="govuk-label govuk-radios__label" for="good-controlled-no">I don't know</label>
+                        </div>	
                     </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">Part number</dt>
-                        <dd class="govuk-summary-list__value">USZIPNMB76</dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">Control rating</dt>
-                        <dd class="govuk-summary-list__value">ML1</dd>
-                    </div>
-                </dl>
-                <!-- <div class="govuk-inset-text">
-                    <ul class="govuk-list">
-                        <li>Description: adc</li>
-                        <li>Part number: vv</li>
-                        <li>Control rating: vw</li>
-                    </ul>
-                </div> -->
-                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                </div>
+
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="value-goods">Value of goods (in £ pounds)</label>
                     <!-- <span class="govuk-body">£</span> --> <input class="govuk-input govuk-!-width-one-half" id="value-goods" name="value-goods" type="text" value="{{ data['value-goods'] }}">
@@ -74,6 +79,7 @@
                         <option value="cubic-metres">Cubic metres</option>
                     </select>
                 </div>
+
                 <p class="govuk-body govuk-!-margin-bottom-2">Is your good intended to be incorporated into an end product?</p>
                 <div class="govuk-form-group">
                     <div class="govuk-radios">
@@ -88,6 +94,7 @@
                     </div>
                 </div>
             </fieldset>
+            <br />
             <button type="submit" class="govuk-button" data-module="govuk-button">Add good</button>
 			<!-- <p><a href="#">Finish later</a></p> -->
         </form>

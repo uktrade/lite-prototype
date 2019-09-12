@@ -201,4 +201,20 @@ router.get('/*/application-cancelled', function (req, res) {
     res.render('exporter/apply/confirm-cancel')
 })
 
+
+
+
+
+// Add a good to application
+router.post('/exporter/goods/all-goods', function (req, res) {
+
+    let allGoods = req.session.data['goods']
+
+    if (allGoods === "Search for goods in your organisation") {
+        res.redirect('/exporter/goods/all-goods')
+    } else {
+        res.redirect('/exporter/goods/add-goods')
+    }
+})
+
 module.exports = router
