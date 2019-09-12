@@ -28,7 +28,7 @@
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Remove this product?</h1>
         <div class="govuk-inset-text">{{ data['control-list-2'] }}</div>
-        <form action="product-removed" method="post">
+        <form action="product-removed" method="post" action="/exporter/apply/products/remove-product-2">
             <div class="govuk-form-group">
                 <div class="govuk-radios">
                     <div class="govuk-radios__item">
@@ -38,7 +38,7 @@
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="remove-product-2-no" name="remove-product-2" type="radio" value="No" {{ checked("remove-product-2", "No") }}>
                         <label class="govuk-label govuk-radios__label" for="remove-product-2-no">No</label>
-                    </div>	
+                    </div>
                 </div>
             </div>
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />

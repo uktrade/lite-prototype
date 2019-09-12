@@ -41,9 +41,9 @@ router.post('/exporter/apply/products/location-uk-2', function (req, res) {
 
 // Remove product [Product 1]
 router.post('/exporter/apply/products/product-removed', function (req, res) {
-
-    let itemRemove1 = req.session.data['remove-product-1']
-
+    console.log('posted to remove product 1')
+    let itemRemove1 = req.body['remove-product-1']
+    console.log(itemRemove1);
     if (itemRemove1 === "Yes") {
         res.redirect('/exporter/apply/products/product-removed')
     } else {
@@ -64,10 +64,10 @@ router.post('/exporter/apply/products/index-2', function (req, res) {
 })
 
 // Remove product [Product 2]
-router.post('/exporter/apply/products/product-removed', function (req, res) {
-
-    let itemRemove2 = req.session.data['remove-product-2']
-
+router.post('/exporter/apply/products/remove-product-2', function (req, res) {
+    console.log('posted to remove product 2')
+    let itemRemove2 = req.body['remove-product-2']
+    console.log(itemRemove2);
     if (itemRemove2 === "Yes") {
         res.redirect('/exporter/apply/products/product-removed')
     } else {
@@ -163,7 +163,7 @@ router.post('/exporter/apply/people/index', function (req, res) {
 //    }
 //})
 
-// Task list 
+// Task list
 router.get('/exporter/apply/task-list', (req, res, next) => {
 
     if (!req.session.sectionStatus){
@@ -175,7 +175,7 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
             information: undefined,
       	}
     }
-  
+
     if (req.query.check) {
     	req.session.sectionStatus.check = req.query.check
     };
@@ -191,10 +191,10 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
     if (req.query.information) {
     	req.session.sectionStatus.information = req.query.information
     };
-  
+
     res.render('exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
 });
-  
+
 // Clear data on the 'Application cancelled' page
 router.get('/*/application-cancelled', function (req, res) {
 	req.session.destroy()
