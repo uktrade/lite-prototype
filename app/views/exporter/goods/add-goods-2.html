@@ -26,7 +26,7 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="#" method="post">
+        <form action="good-confirmed" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a new good</h1>
@@ -62,6 +62,27 @@
                             <label class="govuk-label govuk-radios__label" for="good-controlled-no">I don't know</label>
                         </div>	
                     </div>
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="value-goods">Value of goods (in £ pounds)</label>
+                    <!-- <span class="govuk-body">£</span> --> <input class="govuk-input govuk-!-width-one-half" id="value-goods" name="value-goods" type="text" value="{{ data['value-goods'] }}">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="quantity">Quantity</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="quantity" name="quantity" type="text" value="{{ data['quantity'] }}">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="measurement">Unit of measurement</label>
+                    <select class="govuk-select" id="measurement" name="measurement">
+                        <option value="found" selected>Select</option>
+                        <option value="grams">Grams</option>
+                        <option value="kilograms">Kilograms</option>
+                        <option value="no-articles">Number of articles</option>
+                        <option value="sq-metres">Square metres</option>
+                        <option value="metres">Metres</option>
+                        <option value="litres">Litres</option>
+                        <option value="cubic-metres">Cubic metres</option>
+                    </select>
                 </div>
                 <p class="govuk-body govuk-!-margin-bottom-2">Is your good intended to be incorporated into an end product?</p>
                 <div class="govuk-form-group">
