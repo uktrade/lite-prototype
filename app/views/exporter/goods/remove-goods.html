@@ -45,29 +45,23 @@
                         <dd class="govuk-summary-list__value">ML1</dd>
                     </div>
                 </dl>
-                <!-- <div class="govuk-inset-text">
-                    <ul class="govuk-list">
-                        <li>Description: Firearms designed for dummy ammunition</li>
-                        <li>Part number: USZIPNMB76</li>
-                        <li>Control rating: ML1</li>
-                    </ul>
-                </div> -->
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                 <h2 class="govuk-heading-m">Are you sure?</h2>
-                <div class="govuk-radios">
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="remove-yes" name="remove-goods" type="radio" value="Yes" {{ checked("remove-goods", "Yes") }}>
-                        <label class="govuk-label govuk-radios__label" for="remove-yes">Yes</label>
+                <div class="govuk-form-group">
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="remove-yes" name="remove-goods" type="radio" value="Yes" {{ checked("remove-goods", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="remove-yes">Yes</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="remove-no" name="remove-goods" type="radio" value="No" {{ checked("remove-goods", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="remove-no">No</label>
+                        </div>	
                     </div>
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="remove-no" name="remove-goods" type="radio" value="No" {{ checked("remove-goods", "No") }}>
-                        <label class="govuk-label govuk-radios__label" for="remove-no">No</label>
-                    </div>	
                 </div>
             </fieldset>
-            <br />
             <button type="submit" class="govuk-button" data-module="govuk-button">Remove good</button>
-			<!-- <p><a href="#">Finish later</a></p> -->
+			<p><a href="#">Finish later</a></p>
         </form>
 	</div>
 </div>
