@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}TBC - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Add goods - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,18 +26,26 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="#" method="post">
-            <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--l" for="search-good">TBC</label>
-            </h1>
-            <div class="govuk-form-group govuk-!-margin-bottom-0">
-                <span id="search-goods-hint" class="govuk-hint">XXXXXX</span>
-                <input class="govuk-input" id="search-good" name="search-good" type="text" value="{{ data['search-good'] }}"  aria-describedby="search-goods-hint">
+        <form action="all-goods" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">Add goods</h1>
+                    </legend>
+                    <span id="search-goods-hint" class="govuk-hint">Add a good to your application by either:</span>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="add-new-good" name="goods" type="radio" value="Adding a new good" {{ checked("goods", "Adding a new good") }}>
+                            <label class="govuk-label govuk-radios__label" for="add-new-good">Adding a new good</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="search-goods" name="goods" type="radio" value="Searching all goods in your organisation" {{ checked("goods", "Searching all goods in your organisation") }}>
+                            <label class="govuk-label govuk-radios__label" for="search-goods">Searching all goods in your organisation</label>
+                        </div>	
+                    </div>
+                </fieldset>
             </div>
-            <br />
-            <button type="submit" class="govuk-button" data-module="govuk-button">Search for a good</button>
-            <p>or <a href="all-goods.html">View list of goods</a></p>
-			<!-- <p><a href="#">Finish later</a></p> -->
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
         </form>
 	</div>
 </div>

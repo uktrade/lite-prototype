@@ -62,6 +62,15 @@ $govuk-assets-path: '/govuk/assets/';
     font-size: 0.85em;
 }
 
+.goods-table th, .goods-table td {
+    font-size: 0.85em; 
+}
+
+.filter-section {
+    background: #f3f2f1;
+    padding: 20px;
+}
+
 .applications .govuk-table__cell .status-date {
     font-size: 0.85em;
     color: #6f777b;
