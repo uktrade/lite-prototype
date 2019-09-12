@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Add good to application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Remove goods from application - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -29,7 +29,7 @@
         <form action="list-of-goods" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add good to application</h1>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Remove goods from application</h1>
                 </legend>
                 <dl class="govuk-summary-list govuk-summary-list--no-border">
                     <div class="govuk-summary-list__row">
@@ -47,36 +47,26 @@
                 </dl>
                 <!-- <div class="govuk-inset-text">
                     <ul class="govuk-list">
-                        <li>Description: adc</li>
-                        <li>Part number: vv</li>
-                        <li>Control rating: vw</li>
+                        <li>Description: Firearms designed for dummy ammunition</li>
+                        <li>Part number: USZIPNMB76</li>
+                        <li>Control rating: ML1</li>
                     </ul>
                 </div> -->
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="value-goods">Value of goods (in £ pounds)</label>
-                    <!-- <span class="govuk-body">£</span> --> <input class="govuk-input govuk-!-width-one-half" id="value-goods" name="value-goods" type="text" value="{{ data['value-goods'] }}">
-                </div>
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="quantity">Quantity</label>
-                    <input class="govuk-input govuk-!-width-one-half" id="quantity" name="quantity" type="text" value="{{ data['quantity'] }}">
-                </div>
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="measurement">Unit of measurement</label>
-                    <select class="govuk-select" id="measurement" name="measurement">
-                        <option value="found" selected>Select</option>
-                        <option value="grams">Grams</option>
-                        <option value="kilograms">Kilograms</option>
-                        <option value="no-articles">Number of articles</option>
-                        <option value="sq-metres">Square metres</option>
-                        <option value="metres">Metres</option>
-                        <option value="litres">Litres</option>
-                        <option value="cubic-metres">Cubic metres</option>
-                    </select>
+                <h2 class="govuk-heading-m">Are you sure?</h2>
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="remove-yes" name="remove-goods" type="radio" value="Yes" {{ checked("remove-goods", "Yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="remove-yes">Yes</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="remove-no" name="remove-goods" type="radio" value="No" {{ checked("remove-goods", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="remove-no">No</label>
+                    </div>	
                 </div>
             </fieldset>
             <br />
-            <button type="submit" class="govuk-button" data-module="govuk-button">Add good</button>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Remove good</button>
 			<!-- <p><a href="#">Finish later</a></p> -->
         </form>
 	</div>

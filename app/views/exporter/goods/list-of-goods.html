@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}All goods added to application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Goods added to application - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,8 +26,8 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">All goods added to application</h1>
-        <p class="govuk-body">XXXXX</p>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Goods added to application</h1>
+        <p class="govuk-body">3 goods</p>
     </div>
 </div>
 <div class="govuk-grid-row">
@@ -47,13 +47,13 @@
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
+                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
+                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    <td class="govuk-table__cell">ML1</td>
                     <td class="govuk-table__cell">£1000.00</td>
                     <td class="govuk-table__cell">1</td>
-                    <td class="govuk-table__cell">Square metres</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td>
+                    <td class="govuk-table__cell">Number of articles</td>
+                    <td class="govuk-table__cell"><a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-goods.html">Remove</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
@@ -62,11 +62,21 @@
                     <td class="govuk-table__cell">£254,000.00</td>
                     <td class="govuk-table__cell">6</td>
                     <td class="govuk-table__cell">Kilograms</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td>
+                    <td class="govuk-table__cell"><a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-goods.html">Remove</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
+                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    <td class="govuk-table__cell">ML1</td>
+                    <td class="govuk-table__cell">£1000.00</td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">Number of articles</td>
+                    <td class="govuk-table__cell"><a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-goods.html">Remove</a></td>
                 </tr>
             </tbody>
         </table>
         <p class="govuk-body"><a href="all-goods.html">Add another good to application</a></p>
+        <p class="govuk-body"><a href="#">Finish later</a></p>
     </div>
 </div>
 {% endblock %}
