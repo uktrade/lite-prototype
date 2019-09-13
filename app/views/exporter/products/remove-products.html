@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Remove goods from application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Remove goods from application? - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -29,7 +29,7 @@
         <form action="list-of-products-application" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Remove products from application</h1>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Remove products from application?</h1>
                 </legend>
                 <dl class="govuk-summary-list govuk-summary-list--no-border">
                     <div class="govuk-summary-list__row">
@@ -53,26 +53,13 @@
                         <dd class="govuk-summary-list__value">1</dd>
                     </div>
                     <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">Unit</dt>
+                        <dt class="govuk-summary-list__key">Measurement</dt>
                         <dd class="govuk-summary-list__value">Number of articles</dd>
                     </div>
                 </dl>
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-                <!-- <h2 class="govuk-heading-m">Are you sure?</h2>
-                <div class="govuk-form-group">
-                    <div class="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="remove-yes" name="remove-goods" type="radio" value="Yes" {{ checked("remove-goods", "Yes") }}>
-                            <label class="govuk-label govuk-radios__label" for="remove-yes">Yes</label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="remove-no" name="remove-goods" type="radio" value="No" {{ checked("remove-goods", "No") }}>
-                            <label class="govuk-label govuk-radios__label" for="remove-no">No</label>
-                        </div>	
-                    </div>
-                </div> -->
             </fieldset>
-            <button type="submit" class="govuk-button" data-module="govuk-button">Yes, remove good</button>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Yes, remove product</button>
 			<p><a href="#">Finish later</a></p>
         </form>
 	</div>
