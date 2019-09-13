@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Add a good - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Add a product - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,46 +26,52 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="good-confirmed" method="post">
+        <form action="product-confirmed" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a good</h1>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a product</h1>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label" for="goods-description">Description of good</label>
-                    <span id="goods-description-hint" class="govuk-hint">This can make it easier to find your good later</span>
-                    <textarea class="govuk-textarea" id="goods-description" name="goods-description" rows="5" aria-describedby="goods-description-hint">{{ data['goods-description'] }}</textarea>
+                    <label class="govuk-label" for="products-description">Description of product</label>
+                    <span id="products-description-hint" class="govuk-hint">This can make it easier to find your product later</span>
+                    <textarea class="govuk-textarea" id="products-description" name="products-description" rows="5" aria-describedby="products-description-hint">{{ data['products-description'] }}</textarea>
                 </div>	
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="part-number">Part number (optional)</label>
                     <input class="govuk-input govuk-!-width-one-half" id="part-number" name="part-number" type="text" value="{{ data['part-number'] }}">
                 </div>
-                <p class="govuk-body govuk-!-margin-bottom-2">Is your good controlled?</p>
+                <p class="govuk-body govuk-!-margin-bottom-2">Is your product on the list of controlled products?</p>
                 <div class="govuk-form-group">
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="yes-conditional" name="good-controlled" type="radio" value="Yes" {{ checked("good-controlled", "Yes") }} data-aria-controls="conditional-yes-conditional">
+                            <input class="govuk-radios__input" id="yes-conditional" name="product-controlled" type="radio" value="Yes" {{ checked("product-controlled", "Yes") }} data-aria-controls="conditional-yes-conditional">
                             <label class="govuk-label govuk-radios__label" for="yes-conditional">Yes</label>
                         </div>
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="control-rating">What is the control rating?</label>
+                                <label class="govuk-label" for="control-rating">What is the control list classification?</label>
                                 <input class="govuk-input govuk-!-width-one-half" id="control-rating" name="control-rating" type="text" value="{{ data['control-rating'] }}">
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="good-controlled-no" name="good-controlled" type="radio" value="No" {{ checked("good-controlled", "No") }}>
-                            <label class="govuk-label govuk-radios__label" for="good-controlled-no">No</label>
+                            <input class="govuk-radios__input" id="product-controlled-no" name="product-controlled" type="radio" value="No" {{ checked("product-controlled", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="product-controlled-no">No</label>
                         </div>	
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="good-controlled-no" name="good-controlled" type="radio" value="I don't know" {{ checked("good-controlled", "I don't know") }}>
-                            <label class="govuk-label govuk-radios__label" for="good-controlled-no">I don't know</label>
+                            <input class="govuk-radios__input" id="product-controlled-no" name="product-controlled" type="radio" value="I do not know" {{ checked("product-controlled", "I do not know") }}>
+                            <label class="govuk-label govuk-radios__label" for="product-controlled-no">I do not know</label>
                         </div>	
                     </div>
+                    <details class="govuk-details govuk-!-margin-top-2" data-module="govuk-details" role="group">
+                        <summary class="govuk-details__summary" role="button" aria-controls="details-content-88d2d701-990f-47e6-a2c0-a382efe581e5" aria-expanded="false">
+                            <span class="govuk-details__summary-text">I do not know the control list classification</span>
+                        </summary>
+                        <div class="govuk-details__text" id="details-content-88d2d701-990f-47e6-a2c0-a382efe581e5" aria-hidden="true">You can <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">get a control list classification</a> from another GOV.UK service (Check if you need an export licence and apply for a licence online).</div>
+                    </details>
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label" for="value-goods">Value of goods (in £ pounds)</label>
-                    <!-- <span class="govuk-body">£</span> --> <input class="govuk-input govuk-!-width-one-half" id="value-goods" name="value-goods" type="text" value="{{ data['value-goods'] }}">
+                    <label class="govuk-label" for="value-products">Value of products (£)</label>
+                    <!-- <span class="govuk-body">£</span> --> <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="{{ data['value-products'] }}">
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="quantity">Quantity</label>
@@ -84,7 +90,7 @@
                         <option value="cubic-metres">Cubic metres</option>
                     </select>
                 </div>
-                <p class="govuk-body govuk-!-margin-bottom-2">Is your good intended to be incorporated into an end product?</p>
+                <p class="govuk-body govuk-!-margin-bottom-2">Is your product intended to be incorporated into an end product?</p>
                 <div class="govuk-form-group">
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
@@ -99,7 +105,7 @@
                 </div>
             </fieldset>
             <br />
-            <button type="submit" class="govuk-button" data-module="govuk-button">Add good</button>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Add product</button>
 			<p><a href="#">Finish later</a></p>
         </form>
 	</div>
