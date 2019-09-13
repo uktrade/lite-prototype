@@ -27,7 +27,7 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products added to application</h1>
-        <p class="govuk-body">3 products</p>
+        <p class="govuk-body">4 products</p>
     </div>
 </div>
 <div class="govuk-grid-row">
@@ -51,25 +51,28 @@
                     <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
                     <td class="govuk-table__cell">USZIPNMB76</td>
                     <td class="govuk-table__cell">ML1</td>
+                    
+                    {% if data['value-products'] %}
+                    <td class="govuk-table__cell">£{{ data['value-products'] }}</td>
+                    {% else %}
                     <td class="govuk-table__cell">£1000.00</td>
+                    {% endif %}
+
+                    {% if data['quantity'] %}
+                    <td class="govuk-table__cell">{{ data['quantity'] }}</td>
+                    {% else %}
                     <td class="govuk-table__cell">1</td>
+                    {% endif %}
+
                     <td class="govuk-table__cell">Number of articles</td>
-                    <td class="govuk-table__cell">Yes</td> 
-                    <td class="govuk-table__cell">
-                        <!-- <a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp; --><a href="remove-product-application.html">Remove</a>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell">£254,000.00</td>
-                    <td class="govuk-table__cell">6</td>
-                    <td class="govuk-table__cell">Kilograms</td>
-                    <td class="govuk-table__cell">Yes</td> 
-                    <td class="govuk-table__cell">
-                        <!-- <a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp; --><a href="remove-product-application.html">Remove</a>
-                    </td>
+
+                    {% if data['end-product'] %}
+                    <td class="govuk-table__cell">{{ data['end-product'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">Yes</td>
+                    {% endif %}
+
+                    <td class="govuk-table__cell"><a href="remove-product-application.html">Remove</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
@@ -79,9 +82,27 @@
                     <td class="govuk-table__cell">1</td>
                     <td class="govuk-table__cell">Number of articles</td>
                     <td class="govuk-table__cell">No</td>
-                    <td class="govuk-table__cell">
-                        <!-- <a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp; --><a href="remove-product-application.html">Remove</a>
-                    </td>
+                    <td class="govuk-table__cell"><a href="remove-product-application.html">Remove</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
+                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
+                    <td class="govuk-table__cell">1234</td>
+                    <td class="govuk-table__cell">£254,000.00</td>
+                    <td class="govuk-table__cell">6</td>
+                    <td class="govuk-table__cell">Kilograms</td>
+                    <td class="govuk-table__cell">Yes</td> 
+                    <td class="govuk-table__cell"><a href="remove-product-application.html">Remove</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
+                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    <td class="govuk-table__cell">ML1</td>
+                    <td class="govuk-table__cell">£1000.00</td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">Number of articles</td>
+                    <td class="govuk-table__cell">No</td>
+                    <td class="govuk-table__cell"><a href="remove-product-application.html">Remove</a></td>
                 </tr>
             </tbody>
         </table>
