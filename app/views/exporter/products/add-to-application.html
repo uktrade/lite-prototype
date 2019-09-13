@@ -59,14 +59,14 @@
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="measurement">Unit of measurement</label>
                     <select class="govuk-select" id="measurement" name="measurement">
-                        <option value="found" selected>Select</option>
-                        <option value="grams">Grams</option>
-                        <option value="kilograms">Kilograms</option>
-                        <option value="no-articles">Number of articles</option>
-                        <option value="sq-metres">Square metres</option>
-                        <option value="metres">Metres</option>
-                        <option value="litres">Litres</option>
-                        <option value="cubic-metres">Cubic metres</option>
+                        <option value="select" selected>Select</option>
+                        <option value="Grams {{ checked("measurement", "grams") }}">Grams</option>
+                        <option value="Kilograms {{ checked("measurement", "kilograms") }}">Kilograms</option>
+                        <option value="Number of articles {{ checked("measurement", "no-articles") }}">Number of articles</option>
+                        <option value="Square metres {{ checked("measurement", "sq-metres") }}">Square metres</option>
+                        <option value="Metres {{ checked("measurement", "metres") }}">Metres</option>
+                        <option value="Litres {{ checked("measurement", "litres") }}">Litres</option>
+                        <option value="Cubic metres {{ checked("measurement", "cubic-metres") }}">Cubic metres</option>
                     </select>
                 </div>
                 <p class="govuk-body govuk-!-margin-bottom-1">Is your product intended to be incorporated into an end product?</p>
@@ -111,14 +111,14 @@
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="measurement-2">Unit of measurement</label>
                     <select class="govuk-select" id="measurement-2" name="measurement-2">
-                        <option value="found" selected>Select</option>
-                        <option value="grams">Grams</option>
-                        <option value="kilograms">Kilograms</option>
-                        <option value="no-articles">Number of articles</option>
-                        <option value="sq-metres">Square metres</option>
-                        <option value="metres">Metres</option>
-                        <option value="litres">Litres</option>
-                        <option value="cubic-metres">Cubic metres</option>
+                        <option value="select" selected>Select</option>
+                        <option value="Grams {{ checked("measurement-2", "grams") }}">Grams</option>
+                        <option value="Kilograms {{ checked("measurement-2", "kilograms") }}">Kilograms</option>
+                        <option value="Number of articles {{ checked("measurement-2", "no-articles") }}">Number of articles</option>
+                        <option value="Square metres {{ checked("measurement-2", "sq-metres") }}">Square metres</option>
+                        <option value="Metres {{ checked("measurement-2", "metres") }}">Metres</option>
+                        <option value="Litres {{ checked("measurement-2", "litres") }}">Litres</option>
+                        <option value="Cubic metres {{ checked("measurement-2", "cubic-metres") }}">Cubic metres</option>
                     </select>
                 </div>
                 <p class="govuk-body govuk-!-margin-bottom-1">Is your product intended to be incorporated into an end product?</p>

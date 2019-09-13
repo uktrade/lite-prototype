@@ -65,7 +65,11 @@
                     <td class="govuk-table__cell">1</td>
                     {% endif %}
 
+                    {% if data['measurement'] %}
+                    <td class="govuk-table__cell">{{ data['measurement'] }}</td>
+                    {% else %}
                     <td class="govuk-table__cell">Number of articles</td>
+                    {% endif %}
 
                     {% if data['end-product'] %}
                     <td class="govuk-table__cell">{{ data['end-product'] }}</td>
@@ -92,7 +96,11 @@
                     <td class="govuk-table__cell">6</td>
                     {% endif %}
 
+                    {% if data['measurement-2'] %}
+                    <td class="govuk-table__cell">{{ data['measurement-2'] }}</td>
+                    {% else %}
                     <td class="govuk-table__cell">Kilograms</td>
+                    {% endif %}
 
                     {% if data['end-product-2'] %}
                     <td class="govuk-table__cell">{{ data['end-product-2'] }}</td>
