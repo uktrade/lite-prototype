@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Goods added to application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Products added to application - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,13 +26,13 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Goods added to application</h1>
-        <p class="govuk-body">3 goods</p>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products added to application</h1>
+        <p class="govuk-body">3 products</p>
     </div>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-		<table class="govuk-table goods-table">
+		<table class="govuk-table products-table">
             <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
@@ -42,7 +42,7 @@
                     <th scope="col" class="govuk-table__header">Value</th>
                     <th scope="col" class="govuk-table__header">Quantity</th>
                     <th scope="col" class="govuk-table__header">Unit</th>
-                    <!-- <th scope="col" class="govuk-table__header">Incorporated</th> -->
+                    <th scope="col" class="govuk-table__header">Incorporated</th> 
                     <th scope="col" class="govuk-table__header">Actions</th>
                 </tr>
             </thead>
@@ -54,9 +54,9 @@
                     <td class="govuk-table__cell">£1000.00</td>
                     <td class="govuk-table__cell">1</td>
                     <td class="govuk-table__cell">Number of articles</td>
-                    <!-- <td class="govuk-table__cell">Yes</td> -->
+                    <td class="govuk-table__cell">Yes</td> 
                     <td class="govuk-table__cell">
-                        <!-- <a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp; --><a href="remove-goods.html">Remove</a>
+                        <!-- <a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp; --><a href="remove-products.html">Remove</a>
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -66,9 +66,9 @@
                     <td class="govuk-table__cell">£254,000.00</td>
                     <td class="govuk-table__cell">6</td>
                     <td class="govuk-table__cell">Kilograms</td>
-                    <!-- <td class="govuk-table__cell">Yes</td> -->
+                    <td class="govuk-table__cell">Yes</td> 
                     <td class="govuk-table__cell">
-                        <!-- <a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp; --><a href="remove-goods.html">Remove</a>
+                        <!-- <a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp; --><a href="remove-products.html">Remove</a>
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -78,14 +78,14 @@
                     <td class="govuk-table__cell">£1000.00</td>
                     <td class="govuk-table__cell">1</td>
                     <td class="govuk-table__cell">Number of articles</td>
-                    <!-- <td class="govuk-table__cell">No</td> -->
+                    <td class="govuk-table__cell">No</td>
                     <td class="govuk-table__cell">
-                        <!-- <a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp; --><a href="remove-goods.html">Remove</a>
+                        <!-- <a href="add-to-application.html">Change</a>&nbsp;&nbsp;&nbsp;&nbsp; --><a href="remove-products.html">Remove</a>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <p class="govuk-body"><a href="all-goods.html">Add another good to application</a></p>
+        <p class="govuk-body"><a href="all-products.html">Add another product to application</a></p>
         <p class="govuk-body"><a href="#">Finish later</a></p>
     </div>
 </div>

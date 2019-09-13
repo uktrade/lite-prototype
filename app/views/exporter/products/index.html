@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Add goods - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Add a product to application - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,20 +26,20 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="all-goods" method="post">
+        <form action="all-products" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-fieldset__heading">Add a good to application</h1>
+                        <h1 class="govuk-fieldset__heading">Add a product to application</h1>
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="add-new-good" name="goods" type="radio" value="A new good" {{ checked("goods", "A new good") }}>
-                            <label class="govuk-label govuk-radios__label" for="add-new-good">A new good</label>
+                            <input class="govuk-radios__input" id="add-new-product" name="products" type="radio" value="A new product" {{ checked("products", "A new product") }}>
+                            <label class="govuk-label govuk-radios__label" for="add-new-product">A new product</label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="search-goods" name="goods" type="radio" value="Search for goods in your organisation" {{ checked("goods", "Search for goods in your organisation") }}>
-                            <label class="govuk-label govuk-radios__label" for="search-goods">Search for goods in your organisation</label>
+                            <input class="govuk-radios__input" id="search-products" name="products" type="radio" value="Search for products in your organisation" {{ checked("products", "Search for products in your organisation") }}>
+                            <label class="govuk-label govuk-radios__label" for="search-products">Search for products in your organisation</label>
                         </div>	
                     </div>
                 </fieldset>

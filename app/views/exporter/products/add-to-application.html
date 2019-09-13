@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Add good to application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Add product to application - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,10 +26,10 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="list-of-goods" method="post">
+        <form action="list-of-products-application" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add good to application</h1>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add product to application</h1>
                 </legend>
                 <dl class="govuk-summary-list govuk-summary-list--no-border">
                     <div class="govuk-summary-list__row">
@@ -54,8 +54,8 @@
                 </div> -->
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                 <div class="govuk-form-group">
-                    <label class="govuk-label" for="value-goods">Value of goods (in £ pounds)</label>
-                    <!-- <span class="govuk-body">£</span> --> <input class="govuk-input govuk-!-width-one-half" id="value-goods" name="value-goods" type="text" value="{{ data['value-goods'] }}">
+                    <label class="govuk-label" for="value-products">Value of products (£)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="{{ data['value-products'] }}">
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="quantity">Quantity</label>
@@ -74,7 +74,8 @@
                         <option value="cubic-metres">Cubic metres</option>
                     </select>
                 </div>
-                <!-- <p class="govuk-body govuk-!-margin-bottom-2">Is your good intended to be incorporated into an end product?</p>
+                <p class="govuk-body govuk-!-margin-bottom-1">Is your product intended to be incorporated into an end product?</p>
+                <span class="govuk-hint">Choose yes if the good you are exporting will be used as part of another product.</span>
                 <div class="govuk-form-group">
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
@@ -86,9 +87,9 @@
                             <label class="govuk-label govuk-radios__label" for="end-product-no">No</label>
                         </div>	
                     </div>
-                </div> -->
+                </div> 
             </fieldset>
-            <button type="submit" class="govuk-button" data-module="govuk-button">Add good to application</button>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Add product to application</button>
 			<p><a href="#">Finish later</a></p>
         </form>
 	</div>

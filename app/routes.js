@@ -205,15 +205,15 @@ router.get('/*/application-cancelled', function (req, res) {
 
 
 
-// Add a good to application
-router.post('/exporter/goods/all-goods', function (req, res) {
+// Add a product to application
+router.post('/exporter/products/all-products', function (req, res) {
 
-    let allGoods = req.session.data['goods']
+    let allProducts = req.session.data['products']
 
-    if (allGoods === "Search for goods in your organisation") {
-        res.redirect('/exporter/goods/all-goods')
+    if (allProducts === "Search for products in your organisation") {
+        res.redirect('/exporter/products/all-products')
     } else {
-        res.redirect('/exporter/goods/add-goods')
+        res.redirect('/exporter/products/add-product')
     }
 })
 
