@@ -66,10 +66,76 @@ $govuk-assets-path: '/govuk/assets/';
     font-size: 0.85em; 
 }
 
+.pagination {
+    float: rightx;
+}
+
+.pagination .pager-items {
+    display: inline;
+    list-style-type: none;
+    float: right;
+}
+
+.pagination .pager-items li {
+    display: inline;
+    margin: 0 5px;
+    /* font-size: 1.1875em; */
+}
+
+.pagination .pager-summary {
+    float: left;
+}
+
 .filter-section {
     background: #f3f2f1;
     padding: 20px;
 }
+
+.clear-filter {
+    display: inline-block;
+    margin: 10px 0 0 15px;
+}
+
+.filter-results {
+    padding: 20px 0 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #0b0c0c;
+}
+
+.filter-results .title {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.filter-results .filter-button {
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid #6f777b;
+    margin: 0 3px;
+    color: #0b0c0c;
+    text-decoration: none !important;
+} 
+
+/* Using remove as a link to clear filter options
+
+.filter-results .filter-button {
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid #6f777b;
+    margin: 0 3px;
+}
+
+.filter-results .filter-button a {
+    color: #0b0c0c;
+    text-decoration: none !important;
+}
+
+.filter-results .filter-button .govuk-link {
+    color: #1d70b8;
+    padding-left: 5px;
+    text-decoration: underline !important;
+    font-size: 14px;
+} */
 
 .applications .govuk-table__cell .status-date {
     font-size: 0.85em;

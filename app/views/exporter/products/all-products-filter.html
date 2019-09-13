@@ -32,27 +32,40 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
         <div class="filter-section">
-            <h2 class="govuk-heading-m">Filter by</h2>
             <form action="#" method="post">
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="goods-description">Description</label>
-                    <input class="govuk-input" id="goods-description" name="goods-description" type="text" value="{{ data['goods-description'] }}">
-                </div>
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="goods-part-number">Part number</label>
-                    <input class="govuk-input" id="goods-part-number" name="goods-part-number" type="text" value="{{ data['goods-part-number'] }}">
-                </div>
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="goods-control-rating">Control rating</label>
-                    <input class="govuk-input" id="goods-control-rating" name="goods-control-rating" type="text" value="{{ data['goods-control-rating'] }}">
-                </div>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">Filter by</h2>
+                    </legend>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-description">Description</label>
+                        <input class="govuk-input" id="products-description" name="_products-description" type="text" value="{{ data['products-description'] }}">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-part-number">Part number</label>
+                        <input class="govuk-input" id="products-part-number" name="_products-part-number" type="text" value="{{ data['products-part-number'] }}">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-control-rating">Control rating</label>
+                        <input class="govuk-input" id="products-control-rating" name="_products-control-rating" type="text" value="{{ data['products-control-rating'] }}">
+                    </div>
+                </fieldset>
+                <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Filter</button>
+                <a href="all-products.html" class="govuk-link clear-filter">Clear filters</a>
             </form>
-            <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Filter</button>
         </div>
     </div>
     <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body">1,400 products</p>
-        <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+        <p class="govuk-body">9 products</p>
+        <div class="filter-results govuk-body govuk-!-font-size-16">
+            <span class="title">Containing</span>
+            <a href="#" class="filter-button">N/A</a>
+            <span>and</span>
+            <a href="#" class="filter-button">ML1</a> 
+            <!-- <span class="filter-button"><a href="#">N/A</a><a href="#" class="govuk-link">remove</a></span>
+            <span>and</span>
+            <span class="filter-button"><a href="#">ML1</a><a href="#" class="govuk-link">remove</a></span> -->
+        </div>
 		<table class="govuk-table">
             <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
             <thead class="govuk-table__head">
@@ -71,32 +84,8 @@
                     <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
                     <td class="govuk-table__cell">adc</td>
                     <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
                     <td class="govuk-table__cell">vw</td>
                     <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
                 </tr>
@@ -107,21 +96,9 @@
                     <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
+                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
+                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    <td class="govuk-table__cell">ML1</td>
                     <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -131,27 +108,9 @@
                     <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
+                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
+                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    <td class="govuk-table__cell">ML1</td>
                     <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -161,99 +120,9 @@
                     <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
                     <td class="govuk-table__cell">USZIPNMB76</td>
                     <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">USZIPNMB76</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">USZIPNMB76</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
                     <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -262,20 +131,11 @@
                     <td class="govuk-table__cell">vw</td>
                     <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
                 </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html">Add product to application</a></td>
-                </tr> 
             </tbody>
         </table>
+        <div class="pagination">
+            <div class="pager-summary govuk-body">Showing 1 &ndash; 9 of 1,400 products</div>
+        </div>
         <!-- <p><a href="#">Finish later</a></p> -->
     </div>
 </div>
