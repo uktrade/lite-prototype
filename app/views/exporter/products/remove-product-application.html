@@ -28,7 +28,6 @@
 	<div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Remove product from application?</h1>
 
-        {% if data['add'] == "1" %}
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Description</dt>
@@ -76,93 +75,7 @@
             </div>
         </dl>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        <!-- <a href="list-of-products-application.html?delete=1" class="govuk-button">Yes, remove product</a> -->
-        <a href="list-of-products-application.html?add=1&delete=1" class="govuk-button">Yes, remove product</a>
-
-        {% elseif data['add'] == "2" %}
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Description</dt>
-                <dd class="govuk-summary-list__value">AK47 2019/09/03 11:25:44:145119</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Part number</dt>
-                <dd class="govuk-summary-list__value">321 2019/09/03 11:25:44:145119</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Control rating</dt>
-                <dd class="govuk-summary-list__value">1234</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Value</dt>
-                {% if data['value-products-2'] %}
-                <dd class="govuk-summary-list__value">£{{ data['value-products-2'] }}</dd>
-                {% else %}
-                <dd class="govuk-summary-list__value">£254,000.00</dd>
-                {% endif %}
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Quantity</dt>
-                {% if data['quantity-2'] %}
-                <dd class="govuk-summary-list__value">{{ data['quantity-2'] }}</dd>
-                {% else %}
-                <dd class="govuk-summary-list__value">6</dd>
-                {% endif %}
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Measurement</dt>
-                {% if data['measurement-2'] %}
-                <dd class="govuk-summary-list__value">{{ data['measurement-2'] }}</dd>
-                {% else %}
-                <dd class="govuk-summary-list__value">Kilograms</dd>
-                {% endif %}
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Incorporated</dt>
-                {% if data['end-product-2'] %}
-                <dd class="govuk-summary-list__value">{{ data['end-product-2'] }}</dd>
-                {% else %}
-                <dd class="govuk-summary-list__value">Yes</dd>
-                {% endif %}
-            </div>
-        </dl>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        <a href="list-of-products-application.html?delete=2" class="govuk-button">Yes, remove product</a>
-
-        {% elseif data['add'] == "3" %}
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Description</dt>
-                <dd class="govuk-summary-list__value">Firearms designed for dummy ammunition</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Part number</dt>
-                <dd class="govuk-summary-list__value">USZIPNMB76</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Control rating</dt>
-                <dd class="govuk-summary-list__value">ML1</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Value</dt>
-                <dd class="govuk-summary-list__value">£37,500.00</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Quantity</dt>
-                <dd class="govuk-summary-list__value">2</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Measurement</dt>
-                <dd class="govuk-summary-list__value">Number of articles</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Incorporated</dt>
-                <dd class="govuk-summary-list__value">No</dd>
-            </div>
-        </dl>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        <a href="list-of-products-application.html?delete=3" class="govuk-button">Yes, remove product</a>
-        {% endif %}
+        <a href="list-of-products-application.html?delete=1" class="govuk-button">Yes, remove product</a>
 
 		<p><a href="#">Finish later</a></p>
 	</div>
