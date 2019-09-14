@@ -44,7 +44,7 @@
                 <div class="govuk-form-group">
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="yes-conditional" name="product-controlled" type="radio" value="Yes" {{ checked("product-controlled", "Yes") }} data-aria-controls="conditional-yes-conditional">
+                            <input class="govuk-radios__input" id="yes-conditional" name="product-controlled" type="radio" value="Yes" {{ checked("product-controlled", "yes") }} data-aria-controls="conditional-yes-conditional">
                             <label class="govuk-label govuk-radios__label" for="yes-conditional">Yes</label>
                         </div>
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
@@ -54,11 +54,11 @@
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="product-controlled-no" name="product-controlled" type="radio" value="No" {{ checked("product-controlled", "No") }}>
+                            <input class="govuk-radios__input" id="product-controlled-no" name="product-controlled" type="radio" value="No" {{ checked("product-controlled", "no") }}>
                             <label class="govuk-label govuk-radios__label" for="product-controlled-no">No</label>
                         </div>	
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="product-controlled-unsure" name="product-controlled" type="radio" value="I do not know" {{ checked("product-controlled", "I do not know") }}>
+                            <input class="govuk-radios__input" id="product-controlled-unsure" name="product-controlled" type="radio" value="I do not know" {{ checked("product-controlled", "dont-know") }}>
                             <label class="govuk-label govuk-radios__label" for="product-controlled-unsure">I do not know</label>
                         </div>	
                     </div>
