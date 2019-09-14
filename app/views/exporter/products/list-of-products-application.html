@@ -32,7 +32,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        {% if data['add'] == "1" %}
+        {% if (data['add'] == "true") %}
         <p class="govuk-body">3 products</p>
         <table class="govuk-table products-table govuk-!-margin-bottom-4">
             <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
@@ -103,7 +103,7 @@
             </tbody>
         </table>
 
-        {% elseif data['remove'] == "1" %}
+        {% elseif (data['remove'] == "true") %}
         <p class="govuk-body">2 products</p>
         <table class="govuk-table products-table govuk-!-margin-bottom-4">
             <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
