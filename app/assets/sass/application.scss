@@ -116,6 +116,10 @@ $govuk-assets-path: '/govuk/assets/';
     text-decoration: none !important;
 } 
 
+.clearfix {
+    clear: both;
+}
+
 /* Using remove as a link to clear filter options
 
 .filter-results .filter-button {
