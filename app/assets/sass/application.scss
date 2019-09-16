@@ -109,12 +109,20 @@ $govuk-assets-path: '/govuk/assets/';
 
 .filter-results .filter-button {
     border-radius: 3px;
-    padding: 10px;
+    /* padding: 10px; */
     border: 1px solid #6f777b;
-    margin: 0 3px;
+    margin: 0 7px 0 3px;
     color: #0b0c0c;
     text-decoration: none !important;
+    position: relative;
+    padding: 10px 10px 10px 25px;
 } 
+
+.filter-results .filter-button .close-btn {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+}
 
 .clearfix {
     clear: both;
