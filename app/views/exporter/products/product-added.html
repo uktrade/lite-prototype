@@ -1,0 +1,61 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}You have added XX product - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-l">You have added 1 product</h1>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="remove-product">Remove<span class="govuk-visually-hidden"> control list classification</span></a> 
+                </dd>
+            </div>
+        </dl>
+        <form action="all-products" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">Add another product?</h2>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="item-yes" name="item-add-2" type="radio" value="Yes" {{ checked("item-add-2", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="item-yes">Yes</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="item-no" name="item-add-2" type="radio" value="No" {{ checked("item-add-2", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="item-no">No</label>
+                        </div>	
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+            <!-- <p class="govuk-body"><a href="../task-list?products=started">Finish later</a></p> -->
+        </form>
+	</div>
+</div>
+{% endblock %}

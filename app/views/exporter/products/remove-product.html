@@ -1,0 +1,60 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Remove product? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Remove product?</h1>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Description</dt>
+                {% if data['product-description'] %}
+                <dd class="govuk-summary-list__value">{{ data['product-description'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">Firearms designed for dummy ammunition</dd>
+                {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Part number</dt>
+                {% if data['part-number'] %}
+                <dd class="govuk-summary-list__value">{{ data['part-number'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">USZIPNMB76</dd>
+                {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Control rating</dt>
+                {% if data['control-rating'] %}
+                <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">ML1</dd>
+                {% endif %}
+            </div>
+        </dl>
+        <a href="product-removed.html" class="govuk-button">Yes, remove product</a>
+        <!-- <p class="govuk-body"><a href="#">Finish later</a></p> -->
+    </div>
+</div>
+{% endblock %}

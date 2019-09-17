@@ -1,0 +1,64 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Check your product - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-l">Check your product</h1>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Product description</dt>
+                <dd class="govuk-summary-list__value">{{ data['product-description'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="add-product.html#product-description">Change<span class="govuk-visually-hidden"> product description</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Part number</dt>
+                <dd class="govuk-summary-list__value">{{ data['part-number'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="add-product.html#part-number">Change<span class="govuk-visually-hidden"> part number</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Control list classification</dt>
+                <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="add-product.html#control-rating">Change<span class="govuk-visually-hidden"> control list classification</span></a> 
+                </dd>
+            </div>
+            <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Specification</dt>
+                <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="upload-document.html?edit=true#file-upload">Change<span class="govuk-visually-hidden"> specification</span></a> 
+                </dd>
+            </div> -->
+        </dl>
+        <a href="product-added" class="govuk-button">Save and continue</a>
+        <!-- <p class="govuk-body"><a href="#">Finish later</a></p> -->
+	</div>
+</div>
+{% endblock %}
