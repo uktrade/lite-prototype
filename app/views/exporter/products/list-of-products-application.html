@@ -60,7 +60,7 @@
                     <td class="govuk-table__cell">ML1</td>
 
                     {% if data['value-products'] %}
-                    <td class="govuk-table__cell">£{{ data['value-products'] }}</td>
+                    <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td>
                     {% else %}
                     <td class="govuk-table__cell">£1,000.00</td>
                     {% endif %}
@@ -152,7 +152,6 @@
     
         <p class="govuk-body govuk-!-margin-bottom-7"><a href="all-products-application.html">Add another product to application</a></p>
         <a class="govuk-button">Save and continue</a>
-        <!-- <p class="govuk-body"><a href="#">Finish later</a></p> -->
     </div>
 </div>
 {% endblock %}

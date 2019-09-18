@@ -203,18 +203,29 @@ router.get('/*/application-cancelled', function (req, res) {
 
 
 
+// Add a product 
+router.post('/exporter/products/all-products', function (req, res) {
 
+    let allProducts = req.session.data['product-add']
+
+    if (allProducts === 'false') {
+        res.redirect('/exporter/products/all-products')
+    } else {
+        res.redirect('/exporter/products/add-product')
+    }
+})
 
 // Add a product to application
 router.post('/exporter/products/all-products-application', function (req, res) {
 
-    let allProducts = req.session.data['products']
+    let allProductsApplication = req.session.data['products']
 
-    if (allProducts === "Search for products in your organisation") {
+    if (allProductsApplication === "Search for products in your organisation") {
         res.redirect('/exporter/products/all-products-application')
     } else {
         res.redirect('/exporter/products/add-product')
     }
 })
+
 
 module.exports = router

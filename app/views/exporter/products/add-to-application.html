@@ -27,11 +27,11 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
         <form action="list-of-products-application" method="post">
+        <!-- <form action="cya-products-application" method="post"> -->
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add product to application</h1>
                 </legend>
-
                 <dl class="govuk-summary-list govuk-summary-list--no-border">
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">Description</dt>
@@ -73,18 +73,18 @@
                 <div class="govuk-form-group">
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="end-product-yes" name="end-product" type="radio" value="Yes" {{ checked("end-product", "Yes") }}>
+                            <input class="govuk-radios__input" id="end-product-yes" name="end-product" type="radio" value="Yes">
                             <label class="govuk-label govuk-radios__label" for="end-product-yes">Yes</label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="end-product-no" name="end-product" type="radio" value="No" {{ checked("end-product", "No") }}>
+                            <input class="govuk-radios__input" id="end-product-no" name="end-product" type="radio" value="No">
                             <label class="govuk-label govuk-radios__label" for="end-product-no">No</label>
                         </div>	
                     </div>
                 </div> 
             </fieldset>
-            <button type="submit" class="govuk-button" data-module="govuk-button">Add product to application</button>
-			<!-- <p class="govuk-body"><a href="#">Finish later</a></p> -->
+            <button type="submit" class="govuk-button" data-module="govuk-button">Add product to application</button> 
+            <!-- <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button> -->
         </form>
 	</div>
 </div>
