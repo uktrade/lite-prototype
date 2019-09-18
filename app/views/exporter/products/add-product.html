@@ -26,7 +26,7 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="cya" method="post">
+        <form action="add-product-file" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a product</h1>
@@ -69,23 +69,8 @@
                         <div class="govuk-details__text">You can <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">get a control list classification</a> from another GOV.UK service (Check if you need an export licence and apply for a licence online).</div>
                     </details>
                 </div>
-                <!-- <p class="govuk-body govuk-!-margin-bottom-2">Do you have a file to upload?</p>
-                <div class="govuk-form-group">
-                    <div class="govuk-radios" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="file-upload-yes" name="file-to-upload" type="radio" value="Yes" {{ checked("file-to-upload", "yes") }}>
-                            <label class="govuk-label govuk-radios__label" for="file-upload-yes">Yes</label>
-                        </div>	
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="file-upload-no" name="file-to-upload" type="radio" value="No" {{ checked("file-to-upload", "no") }}>
-                            <label class="govuk-label govuk-radios__label" for="file-upload-no">No</label>
-                        </div>	
-                    </div>
-                </div> -->
             </fieldset>
-            <br />
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
-            <!-- <button type="submit" class="govuk-button" data-module="govuk-button">Add product</button> -->
         </form>
 	</div>
 </div>

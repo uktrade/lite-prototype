@@ -1,0 +1,47 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Upload a document for this product - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="cya-products" method="post">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Upload a document for this product</h1>
+                </legend>
+                <p class="govuk-body">TBC</p>
+                <div class="govuk-form-group">
+                    <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="document-description">Document description (optional)</label>
+                    <textarea class="govuk-textarea" id="document-description" name="document-description" rows="5">{{ data['document-description'] }}</textarea>
+                </div>	 
+            </fieldset>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+        </form>
+	</div>
+</div>
+{% endblock %}
