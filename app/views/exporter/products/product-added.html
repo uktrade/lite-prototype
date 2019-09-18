@@ -25,16 +25,135 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-	<div class="govuk-grid-column-two-thirds-from-desktop">
-        <h1 class="govuk-heading-l">You have added 1 product</h1>
-		<dl class="govuk-summary-list govuk-!-margin-bottom-6">
+	<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">You have added 2 products</h1>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
             <div class="govuk-summary-list__row">
-                <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+                <dd class="govuk-summary-list__value">Firearms design...&nbsp;&nbsp;&nbsp;1234...&nbsp;&nbsp;&nbsp;ML9000...&nbsp;&nbsp;&nbsp;digital-mark...</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="remove-product">Remove<span class="govuk-visually-hidden"> control list classification</span></a> 
+                    <a class="govuk-link" href="remove-product">Remove<span class="govuk-visually-hidden"> product</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">Firearms design...&nbsp;&nbsp;&nbsp;1234...&nbsp;&nbsp;&nbsp;ML9000...&nbsp;&nbsp;&nbsp;digital-mark...</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="remove-product">Remove<span class="govuk-visually-hidden"> product</span></a> 
                 </dd>
             </div>
         </dl>
+
+        <!-- <h2 class="govuk-heading-m">Product 1</h2>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Product description</dt>
+                <dd class="govuk-summary-list__value">{{ data['product-description'] }}</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Part number</dt>
+                <dd class="govuk-summary-list__value">{{ data['part-number'] }}</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Control list classification</dt>
+                <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
+            </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Product 2</h2>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Product description</dt>
+                <dd class="govuk-summary-list__value">{{ data['product-description'] }}</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Part number</dt>
+                <dd class="govuk-summary-list__value">{{ data['part-number'] }}</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Control list classification</dt>
+                <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>   
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
+            </div>
+        </dl> -->
+
+
+		<!-- <table class="govuk-table products-table">
+            <caption class="govuk-table__caption hidden">Description, part number and control list classification</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Description</th>
+                    <th scope="col" class="govuk-table__header">Part number</th>
+                    <th scope="col" class="govuk-table__header">Control list classification</th>
+                    <th scope="col" class="govuk-table__header">Document</th> 
+                    <th scope="col" class="govuk-table__header"></th> 
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    {% if data['product-description'] %}
+                    <td class="govuk-table__cell">{{ data['product-description'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
+                    {% endif %}
+
+                    {% if data['part-number'] %}
+                    <td class="govuk-table__cell">{{ data['part-number'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    {% endif %}
+
+                    {% if data['control-rating'] %}
+                    <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">ML1</td>
+                    {% endif %}
+
+                    {% if data['file-upload'] %}
+                    <td class="govuk-table__cell">{{ data['file-upload'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">document-uploaded.pdf</td>
+                    {% endif %}
+
+                    <td class="govuk-table__cell"><a href="#">Remove</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    {% if data['product-description'] %}
+                    <td class="govuk-table__cell">{{ data['product-description'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
+                    {% endif %}
+
+                    {% if data['part-number'] %}
+                    <td class="govuk-table__cell">{{ data['part-number'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    {% endif %}
+
+                    {% if data['control-rating'] %}
+                    <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">ML1</td>
+                    {% endif %}
+
+                    {% if data['file-upload'] %}
+                    <td class="govuk-table__cell">{{ data['file-upload'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">document-uploaded.pdf</td>
+                    {% endif %}
+
+                    <td class="govuk-table__cell"><a href="#">Remove</a></td>
+                </tr>
+            </tbody>
+        </table> -->
+
+
         <form action="all-products" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
