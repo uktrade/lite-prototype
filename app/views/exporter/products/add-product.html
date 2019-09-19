@@ -26,7 +26,8 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="add-product-file" method="post">
+        <!-- <form action="add-product-file" method="post"> -->
+        <form action="product-added" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a product</h1>
@@ -69,8 +70,18 @@
                         <div class="govuk-details__text">You can <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">get a control list classification</a> from another GOV.UK service (Check if you need an export licence and apply for a licence online).</div>
                     </details>
                 </div>
+                <p class="govuk-body govuk-!-margin-bottom-2">Upload a product document</p>
+                <span class="govuk-hint">TBC</span>
+                <div class="govuk-form-group">
+                    <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="document-description">Description of product document (optional)</label>
+                    <textarea class="govuk-textarea" id="document-description" name="document-description" rows="5">{{ data['document-description'] }}</textarea>
+                </div>	 
             </fieldset>
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+            <!-- <button type="submit" class="govuk-button" data-module="govuk-button">Add product</button> -->
         </form>
 	</div>
 </div>

@@ -52,6 +52,14 @@
                 <dd class="govuk-summary-list__value">ML1</dd>
                 {% endif %}
             </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document</dt>
+                {% if data['file-upload'] %}
+                <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">document-uploaded.pdf</dd>
+                {% endif %}
+            </div>
         </dl>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
         <a href="product-removed.html" class="govuk-button">Yes, remove product</a>
