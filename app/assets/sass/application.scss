@@ -128,6 +128,14 @@ $govuk-assets-path: '/govuk/assets/';
     clear: both;
 }
 
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
 /* Using remove as a link to clear filter options
 
 .filter-results .filter-button {
