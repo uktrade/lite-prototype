@@ -30,15 +30,27 @@
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Description</dt>
+                {% if data['product-description'] %}
+                <dd class="govuk-summary-list__value">{{ data['product-description'] }}</dd>
+                {% else %}
                 <dd class="govuk-summary-list__value">Firearms designed for dummy ammunition</dd>
+                {% endif %}
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Part number</dt>
+                {% if data['part-number'] %}
+                <dd class="govuk-summary-list__value">{{ data['part-number'] }}</dd>
+                {% else %}
                 <dd class="govuk-summary-list__value">USZIPNMB76</dd>
+                {% endif %}
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control rating</dt>
+                {% if data['control-rating'] %}
+                <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+                {% else %}
                 <dd class="govuk-summary-list__value">ML1</dd>
+                {% endif %}
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Value</dt>

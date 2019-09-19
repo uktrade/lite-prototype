@@ -1,0 +1,77 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Add a product - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="add-product-file" method="post">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a product</h1>
+                </legend>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="product-description">Description of product</label>
+                    <span id="product-description-hint" class="govuk-hint">It is easier to make a quick decision about your licence application if you can give a detailed description about your products.</span>
+                    <textarea class="govuk-textarea" id="product-description" name="product-description" rows="5" aria-describedby="product-description-hint">{{ data['product-description'] }}</textarea>
+                </div>	
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="part-number">Part number (optional)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="part-number" name="part-number" type="text" value="{{ data['part-number'] }}">
+                </div>
+                <p class="govuk-body govuk-!-margin-bottom-2">Is your product on the list of controlled products?</p>
+                <div class="govuk-form-group">
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="yes-conditional" name="product-controlled" type="radio" value="Yes" {{ checked("product-controlled", "yes") }} data-aria-controls="conditional-yes-conditional">
+                            <label class="govuk-label govuk-radios__label" for="yes-conditional">Yes</label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="control-rating">What is the control list classification?</label>
+                                <input class="govuk-input govuk-!-width-one-half" id="control-rating" name="control-rating" type="text" value="{{ data['control-rating'] }}">
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-controlled-no" name="product-controlled" type="radio" value="No" {{ checked("product-controlled", "no") }}>
+                            <label class="govuk-label govuk-radios__label" for="product-controlled-no">No</label>
+                        </div>	
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-controlled-unsure" name="product-controlled" type="radio" value="I do not know" {{ checked("product-controlled", "dont-know") }}>
+                            <label class="govuk-label govuk-radios__label" for="product-controlled-unsure">I do not know</label>
+                        </div>	
+                    </div>
+                    <details class="govuk-details govuk-!-margin-top-2" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">I do not know the control list classification</span>
+                        </summary>
+                        <div class="govuk-details__text">You can <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">get a control list classification</a> from another GOV.UK service (Check if you need an export licence and apply for a licence online).</div>
+                    </details>
+                </div>
+            </fieldset>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+        </form>
+	</div>
+</div>
+{% endblock %}
