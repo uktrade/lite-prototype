@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Add a product to application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Add a product to an application by - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -30,16 +30,16 @@
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-fieldset__heading">Add a product to application</h1>
+                        <h1 class="govuk-fieldset__heading">Add a product to an application by</h1>
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="add-new-product" name="products" type="radio" value="A new product" {{ checked("products", "A new product") }}>
-                            <label class="govuk-label govuk-radios__label" for="add-new-product">A new product</label>
+                            <input class="govuk-radios__input" id="add-new-product" name="products" type="radio" value="Adding a new product" {{ checked("products", "Adding a new product") }}>
+                            <label class="govuk-label govuk-radios__label" for="add-new-product">Adding a new product</label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="search-products" name="products" type="radio" value="Search for products" {{ checked("products", "Search for products") }}>
-                            <label class="govuk-label govuk-radios__label" for="search-products">Search for products</label>
+                            <input class="govuk-radios__input" id="search-products" name="products" type="radio" value="Searching for a product" {{ checked("products", "Searching for a product") }}>
+                            <label class="govuk-label govuk-radios__label" for="search-products">Searching for a product</label>
                         </div>	
                     </div>
                 </fieldset>
