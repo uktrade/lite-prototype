@@ -26,18 +26,19 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products added to application</h1>
+        <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products added to application</h1> -->
+
+        {% if data['removed'] %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">2 products added to application</h1>
+        {% else %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">3 products added to application</h1>
+        {% endif %}
     </div>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
         {% if (data['add'] == "true") %}
-            {% if data['removed'] %}
-            <p class="govuk-body">2 products</p>
-            {% else %}
-            <p class="govuk-body">3 products</p>
-            {% endif %}
         <table class="govuk-table products-table govuk-!-margin-bottom-4">
             <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
             <thead class="govuk-table__head">
@@ -124,7 +125,7 @@
         </table>
 
         {% else %}
-        <p class="govuk-body">2 products</p>
+        <!-- <p class="govuk-body">2 products</p> -->
         <table class="govuk-table products-table govuk-!-margin-bottom-4">
             <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
             <thead class="govuk-table__head">

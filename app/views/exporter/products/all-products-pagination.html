@@ -25,8 +25,9 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-	<div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products</h1>
+	<div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">924 products</h1>
+        <a href="add-product.html" class="govuk-button float-right">Add a product</a>
         <!-- <a href="add-product.html" class="govuk-button govuk-!-margin-bottom-">Add a product</a> -->
     </div>
 </div>
@@ -63,8 +64,8 @@
     </div> 
     <div class="govuk-grid-column-two-thirds">
         <!-- <p class="govuk-body">924 products</p> -->
-        <h2 class="govuk-heading-m float-left">924 products</h2>
-        <a href="add-product.html" class="govuk-button float-right">Add a product</a>
+        <!-- <h2 class="govuk-heading-m float-left">924 products</h2> 
+        <a href="add-product.html" class="govuk-button float-right">Add a product</a> -->
 		<table class="govuk-table govuk-!-margin-bottom-4">
             <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
             <thead class="govuk-table__head">
@@ -453,7 +454,7 @@
             </tbody>
         </table>
         <div class="pagination">
-            <div class="pager-summary govuk-body">Showing 1 &ndash; 10 of 924 products</div>
+            <div class="pager-summary govuk-body">Showing <strong>1</strong> &ndash; <strong>10</strong> of <strong>924</strong> products</div>
             <ul class="pager-items govuk-body">
                 <li>1</li>
                 <li><a href="#">2</a></li>

@@ -220,7 +220,7 @@ router.post('/exporter/products/all-products-application', function (req, res) {
 
     let allProductsApplication = req.session.data['products']
 
-    if (allProductsApplication === "Search for products in your organisation") {
+    if (allProductsApplication === "Search for products") {
         res.redirect('/exporter/products/all-products-application')
     } else {
         res.redirect('/exporter/products/add-product')
