@@ -1,0 +1,63 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Add products to an application - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Add products to an application</h1>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <div class="filter-section">
+            <form action="all-products-application-filter" method="post">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">Filter by</h2>
+                    </legend>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-description">Description</label>
+                        <input class="govuk-input" id="products-description" name="products-description" type="text" value="{{ data['products-description'] }}">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-part-number">Part number</label>
+                        <input class="govuk-input" id="products-part-number" name="products-part-number" type="text" value="{{ data['products-part-number'] }}">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-control-rating">Control rating</label>
+                        <input class="govuk-input" id="products-control-rating" name="products-control-rating" type="text" value="{{ data['products-control-rating'] }}">
+                    </div>
+                </fieldset>
+                <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Filter products</button>
+                <a href="all-products-application.html" class="govuk-link clear-filter">Clear filter</a>
+            </form>
+        </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">You have no products to add to your application.</p>
+        <p class="govuk-body">You will need to <a href="add-product.html">add a product</a> first for it to appear here.</p>
+    </div>
+</div>
+{% endblock %}
