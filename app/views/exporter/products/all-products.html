@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Products - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Products (1 added) - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -27,7 +27,7 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
         <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products</h1> -->
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">1 product</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products (1 added)</h1>
         <a href="add-product.html" class="govuk-button float-right">Add a product</a>
     </div>
 </div>
@@ -56,7 +56,8 @@
                         <input class="govuk-input" id="products-status" name="products-status" type="text" value="{{ data['products-status'] }}">
                     </div>
                 </fieldset>
-                <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Filter products</button>
+                <!-- <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Filter products</button> -->
+                <a href="#" class="govuk-button govuk-!-margin-bottom-0">Filter products</a>
                 <a href="#" class="govuk-link clear-filter">Clear filter</a>
                 <!-- <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link govuk-link--no-visited-state">Filter products</a></p> -->
             </form>

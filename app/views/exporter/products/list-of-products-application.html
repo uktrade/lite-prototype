@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Products added to application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Products (XX added) - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -29,9 +29,9 @@
         <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products added to application</h1> -->
 
         {% if data['removed'] %}
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">2 products added to application</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products (2 added)</h1>
         {% else %}
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">3 products added to application</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products (3 added)</h1>
         {% endif %}
     </div>
 </div>
