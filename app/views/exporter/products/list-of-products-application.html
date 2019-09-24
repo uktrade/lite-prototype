@@ -28,8 +28,10 @@
     <div class="govuk-grid-column-full">
         {% if data['removed'] %}
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products in application (2 added)</h1>
-        {% else %}
+        {% elseif data['add'] %}
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products in application (3 added)</h1>
+        {% else %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products in application (2 added)</h1>
         {% endif %}
         <a href="all-products-application.html" class="govuk-button govuk-button--secondary float-right">Add product to application</a>
     </div>
@@ -43,8 +45,8 @@
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header">Description</th>
-                    <th scope="col" class="govuk-table__header">Part number</th>
                     <th scope="col" class="govuk-table__header">Control rating</th>
+                    <th scope="col" class="govuk-table__header">Part number</th>
                     <th scope="col" class="govuk-table__header">Value</th>
                     <th scope="col" class="govuk-table__header">Quantity</th>
                     <th scope="col" class="govuk-table__header">Measurement</th>
@@ -61,16 +63,16 @@
                     <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
                     {% endif %}
 
-                    {% if data['part-number'] %}
-                    <td class="govuk-table__cell">{{ data['part-number'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">USZIPNMB76</td>
-                    {% endif %}
-
                     {% if data['control-rating'] %}
                     <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
                     {% else %}
                     <td class="govuk-table__cell">ML1</td>
+                    {% endif %}
+
+                    {% if data['the-part-number'] %}
+                    <td class="govuk-table__cell">{{ data['the-part-number'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">USZIPNMB76</td>
                     {% endif %}
 
                     {% if data['value-products'] %}
@@ -102,8 +104,8 @@
                 {% endif %}
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
                     <td class="govuk-table__cell">1234</td>
+                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
                     <td class="govuk-table__cell">£254,000.00</td>
                     <td class="govuk-table__cell">6</td>
                     <td class="govuk-table__cell">Kilograms</td>
@@ -112,8 +114,8 @@
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
                     <td class="govuk-table__cell">1234</td>
+                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
                     <td class="govuk-table__cell">£254,000.00</td>
                     <td class="govuk-table__cell">6</td>
                     <td class="govuk-table__cell">Kilograms</td>

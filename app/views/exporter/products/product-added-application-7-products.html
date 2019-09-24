@@ -25,7 +25,6 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-	<!-- <div class="govuk-grid-column-two-thirds"> -->
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">You have added 7 products to application</h1>
         <table class="govuk-table">
@@ -47,19 +46,19 @@
                                         {% endif %}
                                     </div>
                                     <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">Part number</dt>
-                                        {% if data['part-number'] %}
-                                        <dd class="govuk-summary-list__value">{{ data['part-number'] }}</dd>
-                                        {% else %}
-                                        <dd class="govuk-summary-list__value">USZIPNMB76</dd>
-                                        {% endif %}
-                                    </div>
-                                    <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">Control rating</dt>
                                         {% if data['control-rating'] %}
                                         <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
                                         {% else %}
                                         <dd class="govuk-summary-list__value">ML1</dd>
+                                        {% endif %}
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        {% if data['the-part-number'] %}
+                                        <dd class="govuk-summary-list__value">{{ data['the-part-number'] }}</dd>
+                                        {% else %}
+                                        <dd class="govuk-summary-list__value">USZIPNMB76</dd>
                                         {% endif %}
                                     </div>
                                 </dl>
@@ -102,12 +101,12 @@
                                         <dd class="govuk-summary-list__value">AK47 2019/09/03 11:25:44:145119</dd>
                                     </div>
                                     <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">Part number</dt>
-                                        <dd class="govuk-summary-list__value">321 2019/09/03 11:25:44:145119</dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">Control rating</dt>
                                         <dd class="govuk-summary-list__value">1234</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">321 2019/09/03 11:25:44:145119</dd>
                                     </div>
                                 </dl>
                             </div>
@@ -134,12 +133,12 @@
                                         <dd class="govuk-summary-list__value">adc</dd>
                                     </div>
                                     <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">Part number</dt>
-                                        <dd class="govuk-summary-list__value">vv</dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">Control rating</dt>
                                         <dd class="govuk-summary-list__value">vw</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">vv</dd>
                                     </div>
                                 </dl>
                             </div>
@@ -166,12 +165,12 @@
                                         <dd class="govuk-summary-list__value">adc</dd>
                                     </div>
                                     <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">Part number</dt>
-                                        <dd class="govuk-summary-list__value">N/A</dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">Control rating</dt>
                                         <dd class="govuk-summary-list__value">vw</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">N/A</dd>
                                     </div>
                                 </dl>
                             </div>
@@ -198,12 +197,12 @@
                                         <dd class="govuk-summary-list__value">adc</dd>
                                     </div>
                                     <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">Part number</dt>
-                                        <dd class="govuk-summary-list__value">vv</dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">Control rating</dt>
                                         <dd class="govuk-summary-list__value">vw</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">vv</dd>
                                     </div>
                                 </dl>
                             </div>
@@ -230,44 +229,12 @@
                                         <dd class="govuk-summary-list__value">adc</dd>
                                     </div>
                                     <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">Part number</dt>
-                                        <dd class="govuk-summary-list__value">vv</dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">Control rating</dt>
                                         <dd class="govuk-summary-list__value">vw</dd>
-                                    </div>
-                                </dl>
-                            </div>
-                        </details>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">£56,780.00</td>
-                    <td class="govuk-table__cell">20</td>
-                    <td class="govuk-table__cell">Number of articles</td>
-                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
-                </tr>
-
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell no-border-cell" colspan="4">
-                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                            <summary class="govuk-details__summary">
-                                <span class="govuk-details__summary-text">Product 6</span>
-                            </summary>
-                            <div class="govuk-details__text">
-                                <dl class="govuk-summary-list govuk-summary-list--no-border">
-                                    <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">Description</dt>
-                                        <dd class="govuk-summary-list__value">adc</dd>
                                     </div>
                                     <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">Part number</dt>
                                         <dd class="govuk-summary-list__value">vv</dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">Control rating</dt>
-                                        <dd class="govuk-summary-list__value">vw</dd>
                                     </div>
                                 </dl>
                             </div>
@@ -294,12 +261,12 @@
                                         <dd class="govuk-summary-list__value">Firearms designed for dummy ammunition</dd>
                                     </div>
                                     <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">Part number</dt>
-                                        <dd class="govuk-summary-list__value">N/A</dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
                                         <dt class="govuk-summary-list__key">Control rating</dt>
                                         <dd class="govuk-summary-list__value">ML1</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">N/A</dd>
                                     </div>
                                 </dl>
                             </div>
