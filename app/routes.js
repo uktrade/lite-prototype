@@ -215,17 +215,31 @@ router.post('/exporter/products/all-products', function (req, res) {
     }
 })
 
-// Add a product to application
+// Add a product to application 
 router.post('/exporter/products/all-products-application', function (req, res) {
 
-    let allProductsApplication = req.session.data['products']
+    let allProductsAddApplication = req.session.data['product-add-application']
 
-    if (allProductsApplication === "Searching for a product") {
+    if (allProductsAddApplication === 'true') {
         res.redirect('/exporter/products/all-products-application')
     } else {
-        res.redirect('/exporter/products/add-product')
+        res.redirect('/exporter/products/list-of-products-application')
     }
 })
+
+// Select product path
+//router.post('/exporter/products/all-products-application', function (req, res) {
+
+//    let allProductsApplication = req.session.data['products']
+
+//    if (allProductsApplication === "Searching for a product") {
+//        res.redirect('/exporter/products/all-products-application')
+//    } else {
+//        res.redirect('/exporter/products/add-product')
+//    }
+// })
+
+
 
 
 module.exports = router

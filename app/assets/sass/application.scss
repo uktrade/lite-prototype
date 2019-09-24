@@ -138,6 +138,11 @@ $govuk-assets-path: '/govuk/assets/';
     float: right;
 }
 
+.no-border-cell {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
 /* Using remove as a link to clear filter options
 
 .filter-results .filter-button {
