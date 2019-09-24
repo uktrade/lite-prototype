@@ -26,7 +26,6 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-        <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products</h1> -->
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products (1 added)</h1>
         <a href="add-product.html" class="govuk-button float-right">Add a product</a>
     </div>
@@ -44,41 +43,32 @@
                         <input class="govuk-input" id="products-description" name="products-description" type="text" value="{{ data['products-description'] }}">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-part-number">Part number</label>
-                        <input class="govuk-input" id="products-part-number" name="products-part-number" type="text" value="{{ data['products-part-number'] }}">
-                    </div>
-                    <div class="govuk-form-group">
                         <label class="govuk-label" for="products-control-rating">Control rating</label>
                         <input class="govuk-input" id="products-control-rating" name="products-control-rating" type="text" value="{{ data['products-control-rating'] }}">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-part-number">Part number</label>
+                        <input class="govuk-input" id="products-part-number" name="products-part-number" type="text" value="{{ data['products-part-number'] }}">
                     </div>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="products-status">Status</label>
                         <input class="govuk-input" id="products-status" name="products-status" type="text" value="{{ data['products-status'] }}">
                     </div>
                 </fieldset>
-                <!-- <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Filter products</button> -->
                 <a href="#" class="govuk-button govuk-!-margin-bottom-0">Filter products</a>
                 <a href="#" class="govuk-link clear-filter">Clear filter</a>
-                <!-- <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link govuk-link--no-visited-state">Filter products</a></p> -->
             </form>
         </div>
     </div> 
     <div class="govuk-grid-column-two-thirds">
-        <!-- <p class="govuk-body">924 products</p> 
-        <p class="govuk-body">1 product</p> -->
-        <!-- <p class="govuk-body"><a href="add-product.html">Add a product</a></p> -->
-        <!-- <h2 class="govuk-heading-m">1 product</h2> -->
-        <!-- <h2 class="govuk-heading-m float-left">1 product</h2> -->
-        <!-- <a href="add-product.html" class="govuk-button float-right">Add a product</a> -->
         <table class="govuk-table govuk-!-margin-bottom-4">
             <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header">Description</th>
-                    <th scope="col" class="govuk-table__header">Part number</th>
                     <th scope="col" class="govuk-table__header">Control rating</th>
+                    <th scope="col" class="govuk-table__header">Part number</th>
                     <th scope="col" class="govuk-table__header">Status</th>
-                    <!-- <th scope="col" class="govuk-table__header">Action</th> -->
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
@@ -89,30 +79,23 @@
                     <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
                     {% endif %}
 
-                    {% if data['part-number'] %}
-                    <td class="govuk-table__cell">{{ data['part-number'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">USZIPNMB76</td>
-                    {% endif %}
-
                     {% if data['control-rating'] %}
                     <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
                     {% else %}
                     <td class="govuk-table__cell">ML1</td>
                     {% endif %}
 
+                    {% if data['the-part-number'] %}
+                    <td class="govuk-table__cell">{{ data['the-part-number'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    {% endif %}
+
                     <td class="govuk-table__cell"><a href="add-product.html" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
 
-                    <!-- <td class="govuk-table__cell">Product added<br /><a href="add-product.html" class="govuk-link govuk-link--no-visited-state">Edit</a><br /><a href="remove-product.html" class="govuk-link govuk-link--no-visited-state">Remove</a></td> -->
-
-                    <!-- <td class="govuk-table__cell"><a href="add-product.html" class="govuk-link govuk-link--no-visited-state">View/Change</a></td> -->
-
-                    <!-- <td class="govuk-table__cell"><a href="add-product.html" class="govuk-link govuk-link--no-visited-state">Edit</a><br /><a href="remove-product.html" class="govuk-link govuk-link--no-visited-state">Remove</a></td> -->
                 </tr>
             </tbody>
         </table>
-        <!-- <p class="govuk-body govuk-!-margin-bottom-7"><a href="add-product.html">Add a product</a></p>
-        <a class="govuk-button">Save and continue</a> -->
     </div>
 </div>
 {% endblock %}

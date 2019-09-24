@@ -25,25 +25,16 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-	<!-- <div class="govuk-grid-column-two-thirds"> -->
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">You have added 1 product</h1>
-        <!-- <h1 class="govuk-heading-l">Products added</h1> -->
         <table class="govuk-table">
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <!-- <td class="govuk-table__cell govuk-!-font-weight-bold">Product 1</td> -->
 
                     {% if data['product-description'] %}
                     <td class="govuk-table__cell">{{ data['product-description'] }}</td>
                     {% else %}
                     <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    {% endif %}
-
-                    {% if data['part-number'] %}
-                    <td class="govuk-table__cell">{{ data['part-number'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">USZIPNMB76</td>
                     {% endif %}
 
                     {% if data['control-rating'] %}
@@ -52,9 +43,14 @@
                     <td class="govuk-table__cell">ML1</td>
                     {% endif %}
 
+                    {% if data['the-part-number'] %}
+                    <td class="govuk-table__cell">{{ data['the-part-number'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    {% endif %}
+
                     <td class="govuk-table__cell govuk-!-width-one-quarter"><a href="add-product.html">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-product.html">Remove</a></td> 
 
-                    <!-- <td class="govuk-table__cell"><a href="add-product.html">View/Change</a></td> -->
                 </tr>
             </tbody>
         </table> 
