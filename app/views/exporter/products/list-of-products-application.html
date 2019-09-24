@@ -25,13 +25,13 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-	<div class="govuk-grid-column-two-thirds">
-        <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products added to application</h1> -->
+    <div class="govuk-grid-column-full">
         {% if data['removed'] %}
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products in application (2 added)</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products in application (2 added)</h1>
         {% else %}
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products in application (3 added)</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products in application (3 added)</h1>
         {% endif %}
+        <a href="all-products-application.html" class="govuk-button govuk-button--secondary float-right">Add product to application</a>
     </div>
 </div>
 <div class="govuk-grid-row">
@@ -164,8 +164,8 @@
         </table>
         {% endif %}
     
-        <p class="govuk-body govuk-!-margin-bottom-7"><a href="all-products-application.html">Add another product to application</a></p>
-        <a class="govuk-button">Save and continue</a>
+        <!-- <p class="govuk-body govuk-!-margin-bottom-7"><a href="all-products-application.html">Add another product to application</a></p> -->
+        <a class="govuk-button govuk-!-margin-top-2">Save and continue</a>
     </div>
 </div>
 {% endblock %}
