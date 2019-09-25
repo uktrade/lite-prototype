@@ -46,7 +46,11 @@
             {% endif %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Specification</dt>
+                {% if data['file-upload'] %}
                 <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">prototype-document-uploaded.pdf</dd>
+                {% endif %}
             </div>
             {% if data['document-description'] %}
             <div class="govuk-summary-list__row">
