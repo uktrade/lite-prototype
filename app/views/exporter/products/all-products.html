@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Products (1 added) - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Your products (1 added) - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,8 +26,8 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products (1 added)</h1>
-        <a href="add-product.html" class="govuk-button float-right">Add a product</a>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Your products (1 added)</h1>
+        <a href="add-product.html" class="govuk-button float-right">Add a new product</a>
     </div>
 </div>
 <div class="govuk-grid-row">
@@ -73,22 +73,18 @@
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    {% if data['product-description'] %}
                     <td class="govuk-table__cell">{{ data['product-description'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    {% endif %}
 
-                    {% if data['control-rating'] %}
+                    {% if data['product-controlled'] == "Yes" %}
                     <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
                     {% else %}
-                    <td class="govuk-table__cell">ML1</td>
+                    <td class="govuk-table__cell">N/A</td>
                     {% endif %}
 
-                    {% if data['the-part-number'] %}
+                    {% if data['part-number'] == "Yes" %}
                     <td class="govuk-table__cell">{{ data['the-part-number'] }}</td>
                     {% else %}
-                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    <td class="govuk-table__cell">N/A</td>
                     {% endif %}
 
                     <td class="govuk-table__cell"><a href="add-product.html" class="govuk-link govuk-link--no-visited-state">Product added</a></td>

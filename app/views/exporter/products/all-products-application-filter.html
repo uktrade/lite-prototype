@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Products (9 found) - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Products (8 found) - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,7 +26,7 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products (9 found)</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products (8 found)</h1>
     </div>
 </div>
 <div class="govuk-grid-row">
@@ -60,7 +60,7 @@
             <span class="title">Containing</span>
             <a href="#" class="filter-button">
                 <span class="close-btn govuk-!-font-size-24">&times;</span> 
-                <span class="filter-word">vw</span>
+                <span class="filter-word">N/A</span>
             </a>
             <span>and</span>
             <a href="#" class="filter-button">
@@ -79,27 +79,6 @@
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    {% if data['product-description'] %}
-                    <td class="govuk-table__cell">{{ data['product-description'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    {% endif %}
-
-                    {% if data['control-rating'] %}
-                    <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">ML1</td>
-                    {% endif %}
-
-                    {% if data['the-part-number'] %}
-                    <td class="govuk-table__cell">{{ data['the-part-number'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">USZIPNMB76</td>
-                    {% endif %}
-
-                    <td class="govuk-table__cell"><a href="add-to-application.html?add=true">Add product to application</a></td>
-                </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">adc</td>
                     <td class="govuk-table__cell">vw</td>
@@ -151,7 +130,7 @@
             </tbody>
         </table>
         <div class="pagination">
-            <div class="pager-summary govuk-body">Showing <strong>1</strong> &ndash; <strong>9</strong> of <strong>1,400</strong> products</div>
+            <div class="pager-summary govuk-body">Showing <strong>1</strong> &ndash; <strong>8</strong> of <strong>1,400</strong> products</div>
         </div>
     </div>
 </div>

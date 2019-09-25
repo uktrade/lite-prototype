@@ -69,22 +69,18 @@
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    {% if data['product-description'] %}
                     <td class="govuk-table__cell">{{ data['product-description'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    {% endif %}
 
-                    {% if data['control-rating'] %}
+                    {% if data['product-controlled'] == "Yes" %}
                     <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
                     {% else %}
-                    <td class="govuk-table__cell">ML1</td>
+                    <td class="govuk-table__cell">N/A</td>
                     {% endif %}
 
-                    {% if data['the-part-number'] %}
+                    {% if data['part-number'] == "Yes" %}
                     <td class="govuk-table__cell">{{ data['the-part-number'] }}</td>
                     {% else %}
-                    <td class="govuk-table__cell">USZIPNMB76</td>
+                    <td class="govuk-table__cell">N/A</td>
                     {% endif %}
 
                     <td class="govuk-table__cell"><a href="add-to-application.html?add=true">Add product to application</a></td>
