@@ -53,15 +53,15 @@
                 </dl>
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                 <div class="govuk-form-group">
-                    <label class="govuk-label" for="value-products">Value of products (£)</label>
+                    <label class="govuk-label govuk-label--m" for="value-products">Value of products (£)</label>
                     <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="{{ data['value-products'] }}">
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label" for="quantity">Quantity</label>
+                    <label class="govuk-label govuk-label--m" for="quantity">Quantity</label>
                     <input class="govuk-input govuk-!-width-one-half" id="quantity" name="quantity" type="text" value="{{ data['quantity'] }}">
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label" for="measurement">Unit of measurement</label>
+                    <label class="govuk-label govuk-label--m" for="measurement">Unit of measurement</label>
                     <select class="govuk-select" id="measurement" name="measurement">
                         <option value="select" selected>Select</option>
                         <option value="Grams {{ checked("measurement", "grams") }}">Grams</option>
@@ -73,16 +73,16 @@
                         <option value="Cubic metres {{ checked("measurement", "cubic-metres") }}">Cubic metres</option>
                     </select>
                 </div>
-                <p class="govuk-body govuk-!-margin-bottom-1">Is your product intended to be incorporated into an end product?</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your product intended to be incorporated into an end product?</p>
                 <span class="govuk-hint">Choose yes if the good you are exporting will be used as part of another product.</span>
                 <div class="govuk-form-group">
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="end-product-yes" name="end-product" type="radio" value="Yes">
+                            <input class="govuk-radios__input" id="end-product-yes" name="end-product" type="radio" value="Yes" {{ checked("end-product", "Yes") }}>
                             <label class="govuk-label govuk-radios__label" for="end-product-yes">Yes</label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="end-product-no" name="end-product" type="radio" value="No">
+                            <input class="govuk-radios__input" id="end-product-no" name="end-product" type="radio" value="No" {{ checked("end-product", "No") }}>
                             <label class="govuk-label govuk-radios__label" for="end-product-no">No</label>
                         </div>	
                     </div>

@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Remove product? - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Product added to application - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -16,7 +16,7 @@
         text: "My account"
       },
       {
-        href: "../../sign-out.html",
+        href: "../sign-out.html",
         text: "Sign out"
       }
     ]
@@ -25,23 +25,29 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Remove product?</h1>
+	<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Product added to application</h1>
+        <div class="govuk-inset-text">
+            <p class="govuk-body">This product has been added to your application and can no longer be edited.</p>
+        </div>
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Description</dt>
                 <dd class="govuk-summary-list__value">{{ data['product-description'] }}</dd>
+                <dd class="govuk-summary-list__actions">&nbsp;</dd>
             </div>
             {% if data['product-controlled'] == "Yes" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control rating</dt>
                 <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+                <dd class="govuk-summary-list__actions">&nbsp;</dd>
             </div>
             {% endif %}
             {% if data['part-number'] == "Yes" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Part number</dt>
                 <dd class="govuk-summary-list__value">{{ data['the-part-number'] }}</dd>
+                <dd class="govuk-summary-list__actions">&nbsp;</dd>
             </div>
             {% endif %}
             <div class="govuk-summary-list__row">
@@ -51,17 +57,18 @@
                 {% else %}
                 <dd class="govuk-summary-list__value">prototype-document-uploaded.pdf</dd>
                 {% endif %}
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Download<span class="govuk-visually-hidden"> specification document</span></a>
+                </dd>
             </div>
             {% if data['document-description'] %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Type of document</dt>
                 <dd class="govuk-summary-list__value">{{ data['document-description'] }}</dd>
+                <dd class="govuk-summary-list__actions">&nbsp;</dd>
             </div>
             {% endif %}
         </dl>
-        <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
-        <a href="product-removed.html" class="govuk-button">Yes, remove product</a>
-        <p class="govuk-body"><a href="javascript:window.history.back()">No, do not remove product</a></p>
-    </div>
+	</div>
 </div>
 {% endblock %}

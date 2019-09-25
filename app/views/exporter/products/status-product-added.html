@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Edit or remove product - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Product added - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -29,14 +29,14 @@
         <form action="remove-product" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading">Edit or remove product</h1>
+                    <h1 class="govuk-fieldset__heading">Product added</h1>
                 </legend>
                 <div class="govuk-inset-text">
                     <p class="govuk-body">This product has been added but can still be edited before it is added to your application.</p>
                     <p class="govuk-body">You can also remove this product.</p>
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label" for="product-description">What is the product?</label>
+                    <label class="govuk-label govuk-label--m" for="product-description">What is the product?</label>
                     <span id="product-description-hint" class="govuk-hint">Explain:</span>
                     <ul class="govuk-list govuk-list--bullet grey-text govuk-!-margin-top-0 govuk-!-margin-bottom-2">
                         <li>what it will be used for</li>
@@ -45,7 +45,7 @@
                     </ul>
                     <textarea class="govuk-textarea" id="product-description" name="product-description" rows="5" aria-describedby="product-description-hint">{{ data['product-description'] }}</textarea>
                 </div>	
-                <p class="govuk-body govuk-!-margin-bottom-1">Is your product controlled?</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your product controlled?</p>
                 <span class="govuk-hint">Controlled products are ones that can be dangerous. You need a licence to export a controlled product.</span>
                 <div class="govuk-form-group">
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -75,7 +75,7 @@
                         <div class="govuk-details__text">You can <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank">find out if your product is controlled</a> using another GOV.UK service (Check if you need an export licence).<br /><br />If your product is controlled, you will be given a control code to answer this question.</div>
                     </details>
                 </div>
-                <p class="govuk-body govuk-!-margin-bottom-3">Do you know the part number?</p>
+                <p class="govuk-body govuk-!-margin-bottom-3 govuk-label--m">Do you know the part number?</p>
                 <div class="govuk-form-group">
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
@@ -95,13 +95,13 @@
                     </div>
                 </div>
 
-                <p class="govuk-body govuk-!-margin-bottom-2">Upload a product specification</p>
+                <p class="govuk-body govuk-!-margin-bottom-2 govuk-label--m">Upload a product specification</p>
                 <span class="govuk-hint">If you do not have a product specification, you can upload any other document that explains what the product will be used for.</span>
                 <div class="govuk-form-group">
                     <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label" for="document-description">What have you uploaded? (optional)</label>
+                    <label class="govuk-label govuk-label--m" for="document-description">What have you uploaded? (optional)</label>
                     <textarea class="govuk-textarea" id="document-description" name="document-description" rows="5">{{ data['document-description'] }}</textarea>
                 </div>	 
             </fieldset>
