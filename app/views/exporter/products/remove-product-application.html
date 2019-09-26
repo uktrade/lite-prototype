@@ -31,35 +31,19 @@
         <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-0">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Value</dt>
-                {% if data['value-products'] %}
                 <dd class="govuk-summary-list__value">£{{ data['value-products'] | formatNumber }}</dd>
-                {% else %}
-                <dd class="govuk-summary-list__value">£1,000.00</dd>
-                {% endif %}
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Quantity</dt>
-                {% if data['quantity'] %}
                 <dd class="govuk-summary-list__value">{{ data['quantity'] }}</dd>
-                {% else %}
-                <dd class="govuk-summary-list__value">1</dd>
-                {% endif %}
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Measurement</dt>
-                {% if data['measurement'] %}
                 <dd class="govuk-summary-list__value">{{ data['measurement'] }}</dd>
-                {% else %}
-                <dd class="govuk-summary-list__value">Number of articles</dd>
-                {% endif %}
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Incorporated</dt>
-                {% if data['end-product'] %}
                 <dd class="govuk-summary-list__value">{{ data['end-product'] }}</dd>
-                {% else %}
-                <dd class="govuk-summary-list__value">Yes</dd>
-                {% endif %}
             </div>
         </dl>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> 

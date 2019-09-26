@@ -56,31 +56,10 @@
                 {% if not data['removed'] %}
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">{{ data['product-name'] }}</td>
-
-                    {% if data['value-products'] %}
                     <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">£1,000.00</td>
-                    {% endif %}
-
-                    {% if data['quantity'] %}
                     <td class="govuk-table__cell">{{ data['quantity'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">1</td>
-                    {% endif %}
-
-                    {% if data['measurement'] %}
                     <td class="govuk-table__cell">{{ data['measurement'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">Grams</td>
-                    {% endif %}
-
-                    {% if data['end-product'] %}
                     <td class="govuk-table__cell">{{ data['end-product'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">Yes</td>
-                    {% endif %}
-
                     <td class="govuk-table__cell"><a href="remove-product-application.html">Remove</a></td>
                 </tr>
                 {% endif %}

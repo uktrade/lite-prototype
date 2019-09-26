@@ -32,25 +32,9 @@
                 <!-- 1-10 of 10 items -->
                 <tr class="govuk-table__row"></tr>
                     <td class="govuk-table__cell">{{ data['product-name'] }}</td>
-
-                    {% if data['value-products'] %}
                     <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">£254,000.00</td>
-                    {% endif %}
-
-                    {% if data['quantity'] %}
                     <td class="govuk-table__cell">{{ data['quantity'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">8</td>
-                    {% endif %}
-
-                    {% if data['measurement'] %}
                     <td class="govuk-table__cell">{{ data['measurement'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">Number of articles</td>
-                    {% endif %}
-
                     <td class="govuk-table__cell govuk-!-width-one-quarter"><a href="add-to-application.html">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-product-application.html">Remove</a></td> 
                 </tr>
                 <tr class="govuk-table__row">
