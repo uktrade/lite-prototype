@@ -25,18 +25,28 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">You have added 1 product</h1>
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
-            <div class="govuk-summary-list__row">
-                <dd class="govuk-summary-list__value">{{ data['product-name'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="add-product.html">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="govuk-link" href="remove-product">Remove<span class="govuk-visually-hidden"> product name</span></a> 
-                </dd>
-            </div>
-        </dl>
+                    <td class="govuk-table__cell">{{ data['product-description'] }}</td>
+
+                    {% if data['product-controlled'] == "Yes" %}
+                    <td class="govuk-table__cell">{{ data['control-rating'] }}</td>  
+                    {% endif %}
+
+                    {% if data['part-number'] == "Yes" %}
+                    <td class="govuk-table__cell">{{ data['the-part-number'] }}</td>
+                    {% endif %}
+
+                    <td class="govuk-table__cell govuk-!-width-one-quarter"><a href="add-product.html">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-product.html">Remove</a></td> 
+
+                </tr>
+            </tbody>
+        </table> 
+
 
         <form action="all-products" method="post">
             <div class="govuk-form-group">

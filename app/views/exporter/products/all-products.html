@@ -39,20 +39,12 @@
                         <h2 class="govuk-fieldset__heading">Filter by</h2>
                     </legend>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-description">Description</label>
-                        <input class="govuk-input" id="products-description" name="products-description" type="text" value="{{ data['products-description'] }}">
+                        <label class="govuk-label" for="products-name">Product name</label>
+                        <input class="govuk-input" id="products-name" name="products-name" type="text" value="{{ data['products-name'] }}">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-control-rating">Control rating</label>
-                        <input class="govuk-input" id="products-control-rating" name="products-control-rating" type="text" value="{{ data['products-control-rating'] }}">
-                    </div>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-part-number">Part number</label>
-                        <input class="govuk-input" id="products-part-number" name="products-part-number" type="text" value="{{ data['products-part-number'] }}">
-                    </div>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-status">Status</label>
-                        <input class="govuk-input" id="products-status" name="products-status" type="text" value="{{ data['products-status'] }}">
+                        <label class="govuk-label" for="products-date">Date added</label>
+                        <input class="govuk-input" id="products-date" name="products-date" type="text" value="{{ data['products-date'] }}">
                     </div>
                 </fieldset>
                 <a href="#" class="govuk-button govuk-!-margin-bottom-0">Filter products</a>
@@ -62,32 +54,17 @@
     </div> 
     <div class="govuk-grid-column-two-thirds">
         <table class="govuk-table govuk-!-margin-bottom-4">
-            <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
+            <caption class="govuk-table__caption hidden">Product name and date added</caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Description</th>
-                    <th scope="col" class="govuk-table__header">Control rating</th>
-                    <th scope="col" class="govuk-table__header">Part number</th>
-                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">Product name</th>
+                    <th scope="col" class="govuk-table__header">Date added</th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['product-description'] }}</td>
-
-                    {% if data['product-controlled'] == "Yes" %}
-                    <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">N/A</td>
-                    {% endif %}
-
-                    {% if data['part-number'] == "Yes" %}
-                    <td class="govuk-table__cell">{{ data['the-part-number'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">N/A</td>
-                    {% endif %}
-
-                    <td class="govuk-table__cell"><a href="status-product-added.html" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="add-product.html" class="govuk-link govuk-link--no-visited-state">{{ data['product-name'] }}</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
 
                 </tr>
             </tbody>
