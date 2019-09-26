@@ -1,0 +1,59 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Check your answers - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+		<h1 class="govuk-heading-l">Check your answers</h1>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">    
+            {% if data['information-support'] == "Yes" %}
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">Support your application</dt>
+				<dd class="govuk-summary-list__value">{{ data['information-support'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="index.html#information-support">Change<span class="govuk-visually-hidden"> support your application</span></a> 
+				</dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Supporting information</dt>
+                <dd class="govuk-summary-list__value">{{ data['yes-provide'] | striptags(true) | escape | nl2br }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="index.html#yes-provide">Change<span class="govuk-visually-hidden"> supporting information</span></a> 
+                </dd>
+            </div> 
+            {% else %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Support your application</dt>
+                <dd class="govuk-summary-list__value">{{ data['information-support'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="index.html#information-support">Change<span class="govuk-visually-hidden"> support your application</span></a> 
+                </dd>
+            </div> 
+            {% endif %}
+        </dl>
+        <a href="../task-list?information=completed" class="govuk-button">Confirm and continue</a>
+	</div>
+</div>
+{% endblock %}

@@ -223,7 +223,8 @@ router.post('/exporter/products/all-products-application', function (req, res) {
     if (allProductsAddApplication === 'true') {
         res.redirect('/exporter/products/all-products-application')
     } else {
-        res.redirect('/exporter/products/list-of-products-application')
+        // res.redirect('/exporter/products/list-of-products-application')
+        res.redirect('/exporter/apply/task-list')
     }
 })
 

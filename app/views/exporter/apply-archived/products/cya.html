@@ -1,0 +1,92 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Check your answers - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-l">Check your answers</h1>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Shipping from</dt>
+                <dd class="govuk-summary-list__value">{{ data['location'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="index.html?edit=true">Change<span class="govuk-visually-hidden"> shipping location</span></a> 
+                </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Shipping address</dt>
+                {% if data["location"] === "Outside the UK" %}
+                <dd class="govuk-summary-list__value">{{ data['address-shipping'] | striptags(true) | escape | nl2br }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="location-outside-uk.html?edit=true#address-shipping">Change<span class="govuk-visually-hidden"> shipping address</span></a> 
+                </dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="location-uk.html?edit=true#address-postcode">Change<span class="govuk-visually-hidden"> shipping address</span></a> 
+                </dd>
+                {% endif %}
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Classification</dt>
+                <dd class="govuk-summary-list__value">{{ data['control-list'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="control-list.html?edit=true#control-list">Change<span class="govuk-visually-hidden"> classification</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Product</dt>
+                <dd class="govuk-summary-list__value">{{ data['description'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="description.html?edit=true#description">Change<span class="govuk-visually-hidden"> product</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Quantity</dt>
+                <dd class="govuk-summary-list__value">{{ data['quantity'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="quantity.html?edit=true#quantity">Change<span class="govuk-visually-hidden"> quantity</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Value</dt>
+                <dd class="govuk-summary-list__value">£{{ data['total-value'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="value.html?edit=true#total-value">Change<span class="govuk-visually-hidden"> value</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Specification</dt>
+                <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="upload-document.html?edit=true#file-upload">Change<span class="govuk-visually-hidden"> specification</span></a> 
+                </dd>
+            </div>
+        </dl>
+        <a href="product-added" class="govuk-button">Save and continue</a>
+        <p><a href="../task-list?products=started">Finish later</a></p> 
+	</div>
+</div>
+{% endblock %}

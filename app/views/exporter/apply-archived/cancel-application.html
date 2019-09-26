@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}No products added to application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Cancel application - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,13 +26,10 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">No products added to application</h1>
-    </div>
-</div>
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <p class="govuk-body">There are no products added to this application.</p>
-        <p class="govuk-body govuk-!-margin-bottom-7"><a href="all-products-application.html">Add a product to your application</a></p>
-    </div>
+		<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Cancel application</h1>
+        <p class="govuk-body">When you cancel an application, your application will be deleted.</p>
+        <p class="govuk-body">You will be given the option to start a new application on the next page.</p>
+        <a href="application-cancelled" class="govuk-button">Cancel and delete</a>
+	</div>
 </div>
 {% endblock %}

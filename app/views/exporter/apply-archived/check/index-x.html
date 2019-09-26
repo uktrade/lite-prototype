@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Product removed - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Before you start - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -16,7 +16,7 @@
         text: "My account"
       },
       {
-        href: "../sign-out.html",
+        href: "../../sign-out.html",
         text: "Sign out"
       }
     ]
@@ -26,11 +26,9 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Product removed</h1>
-        <p>This product has been removed.</p>
-        <p class="govuk-body"><a href="all-products.html">View your products</a></p>
-        <p class="govuk-body"><a href="add-product.html">Add another product</a></p>
-        <p class="govuk-body"><a href="#">Return to main menu</a></p>
-    </div>
+        <h1 class="govuk-heading-l">Before you start</h1>
+        <p class="govuk-body">TBC</p>
+        <a href="../task-list?check=completed" class="govuk-button">Continue</a>
+	</div>
 </div>
 {% endblock %}

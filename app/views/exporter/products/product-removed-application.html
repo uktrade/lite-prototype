@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}No products added to application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Product removed - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,13 +26,11 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">No products added to application</h1>
-    </div>
-</div>
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <p class="govuk-body">There are no products added to this application.</p>
-        <p class="govuk-body govuk-!-margin-bottom-7"><a href="all-products-application.html">Add a product to your application</a></p>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Product removed</h1>
+        <p>This product has been removed from your application.</p>
+        <p class="govuk-body"><a href="product-added-application.html">View products added to your application</a></p>
+        <p class="govuk-body"><a href="all-products-application.html">Add another product to your application</a></p>
+        <p class="govuk-body"><a href="#">Return to main menu</a></p>
     </div>
 </div>
 {% endblock %}
