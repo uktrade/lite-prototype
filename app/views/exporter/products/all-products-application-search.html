@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Products (2 found) - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Products (1 found) - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,39 +26,38 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products (2 found)</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products (1 found)</h1>
     </div>
 </div>
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-        <div class="filter-section">
-            <form action="#" method="post">
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                        <h2 class="govuk-fieldset__heading">Filter by</h2>
-                    </legend>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-name">Product</label>
-                        <input class="govuk-input" id="products-name" name="products-name" type="text" value="{{ data['products-name'] }}">
+    <div class="govuk-grid-column-two-thirds">        
+        <div class="search-section govuk-!-margin-bottom-4">
+            <form action="all-products-application-search" method="post">
+                <div class="govuk-form-group govuk-!-margin-bottom-0">
+                    <label class="govuk-label govuk-label--m" for="search-products">Search products</label>
+                    <div class="clearfix">
+                        <input class="govuk-input govuk-!-width-full govuk-!-margin-bottom-3" id="search-products" name="search-products" type="text" value="{{ data['search-products'] }}">
+                        <button type="submit" class="govuk-button" data-module="govuk-button">Search</button>
+                        <a href="all-products-application.html" class="govuk-link clear-search">Clear search</a>
                     </div>
-                </fieldset>
-                <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Filter products</button>
-                <a href="all-products-application.html" class="govuk-link clear-filter">Clear filter</a>
+                </div>
             </form>
         </div>
     </div>
+</div>
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <div class="filter-results govuk-body govuk-!-font-size-16">
             <span class="title">Containing</span>
             <a href="#" class="filter-button">
                 <span class="close-btn govuk-!-font-size-24">&times;</span> 
-                <span class="filter-word">MLD-TC87 two locks</span>
+                <span class="filter-word">Lockheed AC-137</span>
             </a>
-            <span>and</span>
+            <!-- <span>and</span>
             <a href="#" class="filter-button">
                 <span class="close-btn govuk-!-font-size-24">&times;</span>
                 <span class="filter-word">Nuclear Fuel Complex 13</span>
-            </a>
+            </a> -->
         </div>
 		<table class="govuk-table govuk-!-margin-bottom-4">
             <caption class="govuk-table__caption hidden">Product and action</caption>
@@ -70,12 +69,8 @@
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">MLD-TC87 two locks</td>
-                    <td class="govuk-table__cell"><a href="#">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 13</td>
-                    <td class="govuk-table__cell"><a href="#">Add product to application</a></td>
+                    <td class="govuk-table__cell">Lockheed AC-137</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
                 </tr>
             </tbody>
         </table>
