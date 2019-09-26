@@ -39,20 +39,12 @@
                         <h2 class="govuk-fieldset__heading">Filter by</h2>
                     </legend>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-description">Description</label>
-                        <input class="govuk-input" id="products-description" name="products-description" type="text" value="{{ data['products-description'] }}">
+                        <label class="govuk-label" for="products-name">Product</label>
+                        <input class="govuk-input" id="products-name" name="products-name" type="text" value="{{ data['products-name'] }}">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-control-rating">Control rating</label>
-                        <input class="govuk-input" id="products-control-rating" name="products-control-rating" type="text" value="{{ data['products-control-rating'] }}">
-                    </div>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-part-number">Part number</label>
-                        <input class="govuk-input" id="products-part-number" name="products-part-number" type="text" value="{{ data['products-part-number'] }}">
-                    </div>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-status">Status</label>
-                        <input class="govuk-input" id="products-status" name="products-status" type="text" value="{{ data['products-status'] }}">
+                        <label class="govuk-label" for="products-date">Date added</label>
+                        <input class="govuk-input" id="products-date" name="products-date" type="text" value="{{ data['products-date'] }}">
                     </div>
                 </fieldset>
                 <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Filter products</button>
@@ -62,335 +54,218 @@
     </div> 
     <div class="govuk-grid-column-two-thirds">
 		<table class="govuk-table govuk-!-margin-bottom-4">
-            <caption class="govuk-table__caption hidden">Description, part number and control rating</caption>
+            <caption class="govuk-table__caption hidden">Product and date added</caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Description</th>
-                    <th scope="col" class="govuk-table__header">Control rating</th>
-                    <th scope="col" class="govuk-table__header">Part number</th>
-                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">Product</th>
+                    <th scope="col" class="govuk-table__header">Date added</th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['product-description'] }}</td>
-
-                    {% if data['product-controlled'] == "Yes" %}
-                    <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">N/A</td>
-                    {% endif %}
-
-                    {% if data['part-number'] == "Yes" %}
-                    <td class="govuk-table__cell">{{ data['the-part-number'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">N/A</td>
-                    {% endif %}
-
-                    <td class="govuk-table__cell"><a href="status-product-added.html" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="product.html" class="govuk-link govuk-link--no-visited-state">{{ data['product-name'] }}</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell"><a href="status-product-added-application.html" class="govuk-link govuk-link--no-visited-state">Product added to application</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="status-product-reviewed.html" class="govuk-link govuk-link--no-visited-state">Currently being reviewed by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="status-product-verified.html" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
-                </tr>
-
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added to application</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Currently being reviewed by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
-                </tr>
-
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added to application</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Currently being reviewed by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
-                </tr>
-
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added to application</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Currently being reviewed by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
-                </tr>
-
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added to application</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Currently being reviewed by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">ML1</td>
-                    <td class="govuk-table__cell">N/A</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Verified by ECJU</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Product added</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>                         
             </tbody>
         </table>
         <div class="pagination">
-            <div class="pager-summary govuk-body">Showing <strong>1</strong> &ndash; <strong>10</strong> of <strong>924</strong> products</div>
+            <div class="pager-summary govuk-body">Showing <strong>1</strong> &ndash; <strong>50</strong> of <strong>924</strong> products</div>
             <ul class="pager-items govuk-body">
                 <li>1</li>
                 <li><a href="#">2</a></li>

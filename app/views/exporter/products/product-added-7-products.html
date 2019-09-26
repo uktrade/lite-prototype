@@ -25,67 +25,60 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">You have added 7 products</h1>
-        <table class="govuk-table">
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-
-                    <td class="govuk-table__cell">{{ data['product-description'] }}</td>
-
-                    {% if data['product-controlled'] == "Yes" %}
-                    <td class="govuk-table__cell">{{ data['control-rating'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">&nbsp;</td>  
-                    {% endif %}
-
-                    {% if data['part-number'] == "Yes" %}
-                    <td class="govuk-table__cell">{{ data['the-part-number'] }}</td>
-                    {% else %}
-                    <td class="govuk-table__cell">&nbsp;</td>  
-                    {% endif %}
-
-                    <td class="govuk-table__cell govuk-!-width-one-quarter"><a href="add-product.html">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-product.html">Remove</a></td> 
-
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">AK47 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell">1234</td>
-                    <td class="govuk-table__cell">321 2019/09/03 11:25:44:145119</td>
-                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">Part number - No</td>
-                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">vv</td>
-                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">adc</td>
-                    <td class="govuk-table__cell">vw</td>
-                    <td class="govuk-table__cell">Part number - No</td>
-                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Firearms designed for dummy ammunition</td>
-                    <td class="govuk-table__cell">Control list classification - No</td>
-                    <td class="govuk-table__cell">USZIPNMB76</td>
-                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
-                </tr>
-            </tbody>
-        </table> 
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">{{ data['product-name'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="add-product">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="govuk-link" href="remove-product">Remove<span class="govuk-visually-hidden"> product name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">Boston Dynamics Spot droid 67-D1</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> product name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">Lockheed AC-130</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> product name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">Nuclear Fuel Complex</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> product name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">Boston Dynamics Spot droid 67-D1</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> product name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">Lockheed AC-130</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> product name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">Nuclear Fuel Complex</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> product name</span></a> 
+                </dd>
+            </div>
+        </dl>
+        
         <form action="all-products" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">

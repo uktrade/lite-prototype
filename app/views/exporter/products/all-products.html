@@ -39,7 +39,7 @@
                         <h2 class="govuk-fieldset__heading">Filter by</h2>
                     </legend>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="products-name">Product name</label>
+                        <label class="govuk-label" for="products-name">Product</label>
                         <input class="govuk-input" id="products-name" name="products-name" type="text" value="{{ data['products-name'] }}">
                     </div>
                     <div class="govuk-form-group">
@@ -54,18 +54,17 @@
     </div> 
     <div class="govuk-grid-column-two-thirds">
         <table class="govuk-table govuk-!-margin-bottom-4">
-            <caption class="govuk-table__caption hidden">Product name and date added</caption>
+            <caption class="govuk-table__caption hidden">Product and date added</caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Product name</th>
+                    <th scope="col" class="govuk-table__header">Product</th>
                     <th scope="col" class="govuk-table__header">Date added</th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="add-product.html" class="govuk-link govuk-link--no-visited-state">{{ data['product-name'] }}</a></td>
+                    <td class="govuk-table__cell"><a href="product.html" class="govuk-link govuk-link--no-visited-state">{{ data['product-name'] }}</a></td>
                     <td class="govuk-table__cell">25 September 2019</td>
-
                 </tr>
             </tbody>
         </table>
