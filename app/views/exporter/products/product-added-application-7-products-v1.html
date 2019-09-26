@@ -1,0 +1,300 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}You have added 7 products to application - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">You have added 7 products to application</h1>
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell no-border-cell" colspan="4">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">Product 1</span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Description</dt>
+                                        <dd class="govuk-summary-list__value">{{ data['product-description'] }}</dd>
+                                    </div>
+                                    {% if data['product-controlled'] == "Yes" %}
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Control rating</dt>
+                                        <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+                                    </div>
+                                    {% endif %}
+                                    {% if data['part-number'] == "Yes" %}
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">{{ data['the-part-number'] }}</dd>
+                                    </div>
+                                    {% endif %}
+                                </dl>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row"></tr>
+                    {% if data['value-products'] %}
+                    <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">£254,000.00</td>
+                    {% endif %}
+
+                    {% if data['quantity'] %}
+                    <td class="govuk-table__cell">{{ data['quantity'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">8</td>
+                    {% endif %}
+
+                    {% if data['measurement'] %}
+                    <td class="govuk-table__cell">{{ data['measurement'] }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">Number of articles</td>
+                    {% endif %}
+
+                    <td class="govuk-table__cell govuk-!-width-one-quarter"><a href="add-to-application.html">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-product-application.html">Remove</a></td> 
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell no-border-cell" colspan="4">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">Product 2</span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Description</dt>
+                                        <dd class="govuk-summary-list__value">AK47 2019/09/03 11:25:44:145119</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Control rating</dt>
+                                        <dd class="govuk-summary-list__value">1234</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">321 2019/09/03 11:25:44:145119</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">£45,800.00</td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">Litres</td>
+                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell no-border-cell" colspan="4">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">Product 3</span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Description</dt>
+                                        <dd class="govuk-summary-list__value">adc</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Control rating</dt>
+                                        <dd class="govuk-summary-list__value">vw</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">vv</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">£15,000.20</td>
+                    <td class="govuk-table__cell">3</td>
+                    <td class="govuk-table__cell">Grams</td>
+                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell no-border-cell" colspan="4">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">Product 4</span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Description</dt>
+                                        <dd class="govuk-summary-list__value">adc</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Control rating</dt>
+                                        <dd class="govuk-summary-list__value">vw</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">N/A</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">£312,900.00</td>
+                    <td class="govuk-table__cell">20</td>
+                    <td class="govuk-table__cell">Kilograms</td>
+                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell no-border-cell" colspan="4">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">Product 5</span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Description</dt>
+                                        <dd class="govuk-summary-list__value">adc</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Control rating</dt>
+                                        <dd class="govuk-summary-list__value">vw</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">vv</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">£10,500.00</td>
+                    <td class="govuk-table__cell">2,000</td>
+                    <td class="govuk-table__cell">Metres</td>
+                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell no-border-cell" colspan="4">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">Product 6</span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Description</dt>
+                                        <dd class="govuk-summary-list__value">adc</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Control rating</dt>
+                                        <dd class="govuk-summary-list__value">vw</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">vv</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">£56,780.00</td>
+                    <td class="govuk-table__cell">20</td>
+                    <td class="govuk-table__cell">Number of articles</td>
+                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell no-border-cell" colspan="4">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">Product 7</span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Description</dt>
+                                        <dd class="govuk-summary-list__value">Firearms designed for dummy ammunition</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Control rating</dt>
+                                        <dd class="govuk-summary-list__value">ML1</dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Part number</dt>
+                                        <dd class="govuk-summary-list__value">N/A</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">£680,080.00</td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">Number of articles</td>
+                    <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove</a></td> 
+                </tr>
+
+            </tbody>
+        </table> 
+
+        <form action="all-products-application" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">Add another product to application?</h2>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-add-yes" name="product-add-application" type="radio" value="true">
+                            <label class="govuk-label govuk-radios__label" for="product-add-yes">Yes</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-add-no" name="product-add-application" type="radio" value="false">
+                            <label class="govuk-label govuk-radios__label" for="product-add-no">No</label>
+                        </div>	
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+        </form>
+	</div>
+</div>
+{% endblock %}

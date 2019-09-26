@@ -27,11 +27,31 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
         <form action="product-added-application" method="post">
+        <!-- <form action="list-of-products-application" method="post"> -->
+        <!-- <form action="cya-products-application" method="post"> -->
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-1">Add product to application</h1>
-                    <span class="govuk-caption-l govuk-!-margin-bottom-4">{{ data['product-name'] }}</span>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add product to application</h1>
                 </legend>
+                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Description</dt>
+                        <dd class="govuk-summary-list__value">{{ data['product-description'] }}</dd>
+                    </div>
+                    {% if data['product-controlled'] == "Yes" %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Control rating</dt>
+                        <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+                    </div>
+                    {% endif %}
+                    {% if data['part-number'] == "Yes" %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Part number</dt>
+                        <dd class="govuk-summary-list__value">{{ data['the-part-number'] }}</dd>
+                    </div>
+                    {% endif %}
+                </dl>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="value-products">Value of products (£)</label>
                     <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="{{ data['value-products'] }}">
@@ -69,6 +89,7 @@
                 </div> 
             </fieldset>
             <button type="submit" class="govuk-button" data-module="govuk-button">Add product to application</button> 
+            <!-- <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button> -->
         </form>
 	</div>
 </div>
