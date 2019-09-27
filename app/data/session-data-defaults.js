@@ -19,6 +19,8 @@ Example usage:
 
 module.exports = {
 
+products:[]
+
   // Insert values here
 
 }

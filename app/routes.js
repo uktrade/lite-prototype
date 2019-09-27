@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const _ = require('lodash');
 
 // Add your routes here - above the module.exports line
 
@@ -211,7 +212,7 @@ router.post('/exporter/products/all-products', function (req, res) {
     if (allProducts === 'false') {
         res.redirect('/exporter/products/all-products')
     } else {
-        res.redirect('/exporter/products/add-product')
+        res.redirect('/exporter/products/new/add-product')
     }
 })
 
@@ -243,11 +244,47 @@ router.post('/exporter/products/all-products-application', function (req, res) {
 
 // ***** Add product flow ***** 
 // Save the product
-router.post('/exporter/products/save', function (req, res, next) {
+router.post('/exporter/products/:index/save', function (req, res, next) {
     var data = req.session.data
-    console.log("Product data is", data.tempProduct)
+    var index = req.params.index
+
+    // Create products array if it doesn't already exist
+    var products = _.get(data, 'products')
+    if (!products) _.set(data, 'products', [])
+
+    // Store the product data
+    var productData = data.tempProduct
+
+    // Delete temporary data
+    delete data.tempProduct
+
+    // Add to products array
+    if (index == 'new') {
+        data.products.push(productData)
+    }
+    else {
+        data.products[index] = productData
+    }
+
+    console.log('Products contains', data.products.length, 'items')
+
     res.redirect('/exporter/products/product-added')
   })
+
+// Forward product pages to their templates
+router.get('/exporter/products/:index/:template', function (req, res, next) {
+    var data = req.session.data
+    var index = req.params.index
+    var template = req.params.template
+
+    console.log(data.products)
+
+    if (index != 'new'){
+        data.tempProduct = data.products[index]
+    }
+
+    res.render('exporter/products/' + template, {currentItemIndex: index})
+  });
 
 
 
