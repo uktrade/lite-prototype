@@ -243,6 +243,26 @@ router.post('/exporter/products/all-products-application', function (req, res) {
 
 
 // ***** Add product flow ***** 
+
+// Grab data from array and put in tempLocation
+router.get('/exporter/products/:index/edit', function (req, res, next) {
+    var data = req.session.data
+    var index = req.params.index
+
+    // Grab data for the product, save to tempProduct
+    data.tempProduct = data.products[index]
+
+    res.redirect('/exporter/products/' + index + '/add-product')
+});
+
+// Forward product pages to their templates
+router.get('/exporter/products/:index/:template', function (req, res, next) {
+    var data = req.session.data
+    var index = req.params.index
+    var template = req.params.template
+    res.render('exporter/products/' + template, {currentItemIndex: index})
+});
+
 // Save the product
 router.post('/exporter/products/:index/save', function (req, res, next) {
     var data = req.session.data
@@ -271,20 +291,7 @@ router.post('/exporter/products/:index/save', function (req, res, next) {
     res.redirect('/exporter/products/product-added')
   })
 
-// Forward product pages to their templates
-router.get('/exporter/products/:index/:template', function (req, res, next) {
-    var data = req.session.data
-    var index = req.params.index
-    var template = req.params.template
 
-    console.log(data.products)
-
-    if (index != 'new'){
-        data.tempProduct = data.products[index]
-    }
-
-    res.render('exporter/products/' + template, {currentItemIndex: index})
-  });
 
 
 
