@@ -212,7 +212,7 @@ router.post('/exporter/products/all-products', function (req, res) {
     if (allProducts === 'false') {
         res.redirect('/exporter/products/all-products')
     } else {
-        res.redirect('/exporter/products/new/add-product')
+        res.redirect('/exporter/products/new')
     }
 })
 
@@ -253,6 +253,24 @@ router.get('/exporter/products/:index/edit', function (req, res, next) {
     data.tempProduct = data.products[index]
 
     res.redirect('/exporter/products/' + index + '/add-product')
+});
+
+router.get('/exporter/products/new', function (req, res, next) {
+    var data = req.session.data
+    delete data.tempProduct
+
+    res.redirect('/exporter/products/new/add-product')
+});
+
+// Grab data from array and put in tempLocation
+router.get('/exporter/products/:index/remove-product', function (req, res, next) {
+    var data = req.session.data
+    var index = req.params.index
+
+    // Grab data for the product, save to tempProduct
+    data.tempProduct = data.products[index]
+
+    res.render('exporter/products/remove-product')
 });
 
 // Forward product pages to their templates
