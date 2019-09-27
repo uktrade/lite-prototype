@@ -1,0 +1,112 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Add product to application - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="product-added-application" method="post">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-1">Add product to application</h1>
+                    <span class="govuk-caption-l govuk-!-margin-bottom-4">{{ data['product-name'] }}</span>
+                </legend>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="value-products">Value of products (£)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="{{ data['value-products'] }}">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="quantity">Quantity</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="quantity" name="quantity" type="text" value="{{ data['quantity'] }}">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="measurement">Unit of measurement</label>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="measurement-pieces" name="measurement" type="radio" value="Pieces" {{ checked("measurement", "Pieces") }}>
+                            <label class="govuk-label govuk-radios__label" for="measurement-pieces">Pieces</label>
+                        </div>	
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="measurement-metres" name="measurement" type="radio" value="Metres" {{ checked("measurement", "Metres") }}>
+                            <label class="govuk-label govuk-radios__label" for="measurement-metres">Metres</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="measurement-litres" name="measurement" type="radio" value="Litres" {{ checked("measurement", "Litres") }}>
+                            <label class="govuk-label govuk-radios__label" for="measurement-litres">Litres</label>
+                        </div>	
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="measurement-kilograms" name="measurement" type="radio" value="Kilograms" {{ checked("measurement", "Kilograms") }}>
+                            <label class="govuk-label govuk-radios__label" for="measurement-kilograms">Kilograms</label>
+                        </div>		
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="other-conditional" name="measurement" type="radio" value="Other" {{ checked("measurement", "Other") }} data-aria-controls="conditional-other-conditional">
+                            <label class="govuk-label govuk-radios__label" for="other-conditional">Other</label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-conditional">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="other-measurement">What is the unit of measurement?</label>
+                                <input class="govuk-input govuk-!-width-one-half" id="other-measurement" name="other-measurement" type="text" value="{{ data['other-measurement'] }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="measurement">Unit of measurement</label>
+                    <select class="govuk-select" id="measurement" name="measurement">
+                        <option value="select" selected>Select</option>
+                        <option value="Grams {{ checked("measurement", "grams") }}">Grams</option>
+                        <option value="Kilograms {{ checked("measurement", "kilograms") }}">Kilograms</option>
+                        <option value="Number of articles {{ checked("measurement", "no-articles") }}">Number of articles</option>
+                        <option value="Square metres {{ checked("measurement", "sq-metres") }}">Square metres</option>
+                        <option value="Metres {{ checked("measurement", "metres") }}">Metres</option>
+                        <option value="Litres {{ checked("measurement", "litres") }}">Litres</option>
+                        <option value="Cubic metres {{ checked("measurement", "cubic-metres") }}">Cubic metres</option>
+                    </select>
+                </div> -->
+
+
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your product intended to be incorporated into an end product?</p>
+                <span class="govuk-hint">Choose yes if the good you are exporting will be used as part of another product.</span>
+                <div class="govuk-form-group">
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="end-product-yes" name="end-product" type="radio" value="Yes" {{ checked("end-product", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="end-product-yes">Yes</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="end-product-no" name="end-product" type="radio" value="No" {{ checked("end-product", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="end-product-no">No</label>
+                        </div>	
+                    </div>
+                </div> 
+            </fieldset>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Add product to application</button> 
+        </form>
+	</div>
+</div>
+{% endblock %}

@@ -43,16 +43,16 @@
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="measurement">Unit of measurement</label>
                     <select class="govuk-select" id="measurement" name="measurement">
-                        <option value="select" selected>Select</option>
-                        <option value="Grams {{ checked("measurement", "grams") }}">Grams</option>
-                        <option value="Kilograms {{ checked("measurement", "kilograms") }}">Kilograms</option>
-                        <option value="Number of articles {{ checked("measurement", "no-articles") }}">Number of articles</option>
-                        <option value="Square metres {{ checked("measurement", "sq-metres") }}">Square metres</option>
-                        <option value="Metres {{ checked("measurement", "metres") }}">Metres</option>
-                        <option value="Litres {{ checked("measurement", "litres") }}">Litres</option>
-                        <option value="Cubic metres {{ checked("measurement", "cubic-metres") }}">Cubic metres</option>
+                        <option value="select" selected>Select</option> 
+                        <option value="Grams" {{ 'selected' if checked("measurement", "Grams") }}>Grams</option>
+                        <option value="Kilograms" {{ 'selected' if checked("measurement", "Kilograms") }}>Kilograms</option>
+                        <option value="Number of articles" {{ 'selected' if checked("measurement", "Number of articles") }}>Number of articles</option>
+                        <option value="Square metres" {{ 'selected' if checked("measurement", "Square metres") }}>Square metres</option>
+                        <option value="Metres" {{ 'selected' if checked("measurement", "Metres") }}>Metres</option>
+                        <option value="Litres" {{ 'selected' if checked("measurement", "Litres") }}>Litres</option>
+                        <option value="Cubic metres" {{ 'selected' if checked("measurement", "Cubic metres") }}>Cubic metres</option>
                     </select>
-                </div>
+                </div> 
                 <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your product intended to be incorporated into an end product?</p>
                 <span class="govuk-hint">Choose yes if the good you are exporting will be used as part of another product.</span>
                 <div class="govuk-form-group">
