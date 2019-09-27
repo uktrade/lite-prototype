@@ -241,6 +241,14 @@ router.post('/exporter/products/all-products-application', function (req, res) {
 // })
 
 
+// ***** Add product flow ***** 
+// Save the product
+router.post('/exporter/products/save', function (req, res, next) {
+    var data = req.session.data
+    console.log("Product data is", data.tempProduct)
+    res.redirect('/exporter/products/product-added')
+  })
+
 
 
 module.exports = router
