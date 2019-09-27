@@ -28,7 +28,7 @@
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">You have added {{ data.products | length }} product</h1>
         {% for product in data.products %}
-            <p>{{ product["product-name"] }} - <a href="{{loop.index0}}/edit">edit product</a><a href="{{loop.index0}}/remove-product">remove product</a></p>
+            <p>{{ product["product-name"] }} - <a href="{{loop.index0}}/edit">edit product</a><a href="{{loop.index0}}/remove">remove product</a></p>
         {% endfor %}
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
             <div class="govuk-summary-list__row">

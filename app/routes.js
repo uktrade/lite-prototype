@@ -212,7 +212,7 @@ router.post('/exporter/products/all-products', function (req, res) {
     if (allProducts === 'false') {
         res.redirect('/exporter/products/all-products')
     } else {
-        res.redirect('/exporter/products/new')
+        res.redirect('/exporter/products/new/add-product')
     }
 })
 
@@ -255,22 +255,34 @@ router.get('/exporter/products/:index/edit', function (req, res, next) {
     res.redirect('/exporter/products/' + index + '/add-product')
 });
 
-router.get('/exporter/products/new', function (req, res, next) {
-    var data = req.session.data
-    delete data.tempProduct
-
-    res.redirect('/exporter/products/new/add-product')
+// Make sure we delete tempProduct data when returning to index
+router.get('/exporter/products/product-added', function (req, res, next) {
+  var data = req.session.data
+  delete data.tempProduct
+  next()
 });
 
 // Grab data from array and put in tempLocation
-router.get('/exporter/products/:index/remove-product', function (req, res, next) {
+router.get('/exporter/products/:index/remove', function (req, res, next) {
     var data = req.session.data
     var index = req.params.index
 
     // Grab data for the product, save to tempProduct
     data.tempProduct = data.products[index]
 
-    res.render('exporter/products/remove-product')
+    res.redirect('/exporter/products/' + index + '/remove-product')
+});
+
+// Grab data from array and put in tempLocation
+router.get('/exporter/products/:index/remove-product/confirm', function (req, res, next) {
+    var data = req.session.data
+    var index = req.params.index
+
+    data.products.splice(index, 1);
+    delete data.tempProduct
+    console.log("Removing product")
+
+    res.redirect('/exporter/products/product-added')
 });
 
 // Forward product pages to their templates
