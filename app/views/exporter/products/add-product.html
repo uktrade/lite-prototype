@@ -44,7 +44,7 @@
                 <div class="govuk-form-group">
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="yes-conditional" name="product-controlled" type="radio" value="Yes" {{ checked("product-controlled", "Yes") }} data-aria-controls="conditional-yes-conditional">
+                            <input class="govuk-radios__input" id="yes-conditional" name="tempProduct[product-controlled]" type="radio" value="Yes" {{ checked("product-controlled", "Yes") }} data-aria-controls="conditional-yes-conditional">
                             <label class="govuk-label govuk-radios__label" for="yes-conditional">Yes</label>
                         </div>
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
@@ -54,11 +54,11 @@
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="product-controlled-no" name="product-controlled" type="radio" value="No" {{ checked("product-controlled", "No") }}>
+                            <input class="govuk-radios__input" id="product-controlled-no" name="tempProduct[product-controlled]" type="radio" value="No" {{ checked("product-controlled", "No") }}>
                             <label class="govuk-label govuk-radios__label" for="product-controlled-no">No</label>
                         </div>	
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="product-controlled-unsure" name="product-controlled" type="radio" value="Not sure" {{ checked("product-controlled", "Not sure") }}>
+                            <input class="govuk-radios__input" id="product-controlled-unsure" name="tempProduct[product-controlled]" type="radio" value="Not sure" {{ checked("product-controlled", "Not sure") }}>
                             <label class="govuk-label govuk-radios__label" for="product-controlled-unsure">Not sure</label>
                         </div>	
                     </div>
@@ -76,7 +76,7 @@
                 <p class="govuk-body govuk-!-margin-bottom-2 govuk-label--m">Upload a product specification</p>
                 <span class="govuk-hint">If you do not have a product specification, you can upload any other document that explains what the product will be used for.</span>
                 <div class="govuk-form-group">
-                    <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
+                    <input class="govuk-file-upload" id="file-upload" name="tempProduct[file-upload]" type="file">
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="document-description">What have you uploaded? (optional)</label>

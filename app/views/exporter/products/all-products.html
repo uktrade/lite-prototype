@@ -26,8 +26,8 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Your products (1 added)</h1>
-        <a href="add-product.html" class="govuk-button float-right">Add a new product</a>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Your products ({{ data.products | length }} added)</h1>
+        <a href="new/add-product.html" class="govuk-button float-right">Add a new product</a>
     </div>
 </div>
 <div class="govuk-grid-row">
@@ -62,10 +62,12 @@
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
+                {% for product in data.products %}
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="product.html" class="govuk-link govuk-link--no-visited-state">{{ data['product-name'] }}</a></td>
+                    <td class="govuk-table__cell"><a href="product.html" class="govuk-link govuk-link--no-visited-state">{{ product["product-name"] }}</a></td>
                     <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

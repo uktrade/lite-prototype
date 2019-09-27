@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}You have added XX product - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}You have added {{ data.products | length }} products - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,20 +26,18 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">You have added {{ data.products | length }} product</h1>
-        {% for product in data.products %}
-            <p>{{ product["product-name"] }} - <a href="{{loop.index0}}/edit">edit product</a><a href="{{loop.index0}}/remove">remove product</a></p>
-        {% endfor %}
+        <h1 class="govuk-heading-l">You have added {{ data.products | length }} products</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            {% for product in data.products %}
             <div class="govuk-summary-list__row">
-                <dd class="govuk-summary-list__value">{{ data['product-name'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ product["product-name"] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a href="add-product.html">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="govuk-link" href="remove-product">Remove<span class="govuk-visually-hidden"> product name</span></a> 
+                    <a href="{{loop.index0}}/edit">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="govuk-link" href="{{loop.index0}}/remove">Remove<span class="govuk-visually-hidden"> product name</span></a> 
                 </dd>
             </div>
+            {% endfor %}
         </dl>
-
         <form action="all-products" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
