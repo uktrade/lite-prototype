@@ -33,11 +33,11 @@
                 </legend>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="product-name">Name of product</label>
-                    <input class="govuk-input govuk-!-width-full" id="product-name" name="product-name" type="text" value="{{ data['product-name'] }}">
+                    <input class="govuk-input govuk-!-width-full" id="product-name" name="tempProduct[product-name]" type="text" value="{{ data.tempProduct['product-name'] }}">
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="product-description">What does this product do?</label>
-                    <textarea class="govuk-textarea" id="product-description" name="product-description" rows="5" aria-describedby="product-description-hint">{{ data['product-description'] }}</textarea>
+                    <textarea class="govuk-textarea" id="product-description" name="tempProduct[product-description]" rows="5" aria-describedby="product-description-hint">{{ data.tempProduct['product-description'] }}</textarea>
                 </div>	
                 <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your product controlled?</p>
                 <span class="govuk-hint">Controlled products are ones that can be dangerous. You need a licence to export a controlled product.</span>
@@ -50,7 +50,7 @@
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
                             <div class="govuk-form-group">
                                 <label class="govuk-label" for="control-rating">What is the control list classification?</label>
-                                <input class="govuk-input govuk-!-width-one-half" id="control-rating" name="control-rating" type="text" value="{{ data['control-rating'] }}">
+                                <input class="govuk-input govuk-!-width-one-half" id="control-rating" name="tempProduct[control-rating]" type="text" value="{{ data.tempProduct['control-rating'] }}">
                             </div>
                         </div>
                         <div class="govuk-radios__item">
@@ -71,7 +71,7 @@
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="part-number">Part number (optional)</label>
-                    <input class="govuk-input govuk-!-width-one-half" id="part-number" name="part-number" type="text" value="{{ data['part-number'] }}">
+                    <input class="govuk-input govuk-!-width-one-half" id="part-number" name="tempProduct[part-number]" type="text" value="{{ data.tempProduct['part-number'] }}">
                 </div>
                 <p class="govuk-body govuk-!-margin-bottom-2 govuk-label--m">Upload a product specification</p>
                 <span class="govuk-hint">If you do not have a product specification, you can upload any other document that explains what the product will be used for.</span>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="document-description">What have you uploaded? (optional)</label>
-                    <textarea class="govuk-textarea" id="document-description" name="document-description" rows="5">{{ data['document-description'] }}</textarea>
+                    <textarea class="govuk-textarea" id="document-description" name="tempProduct[document-description]" rows="5">{{ data.tempProduct['document-description'] }}</textarea>
                 </div>	 
             </fieldset>
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
