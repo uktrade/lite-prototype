@@ -30,7 +30,7 @@
         <table class="govuk-table">
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['product-name'] }}</td>
+                    <td class="govuk-table__cell">{{ data.tempProduct["product-name"] }}</td>
                     <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td>
                     <td class="govuk-table__cell">{{ data['quantity'] }}</td>
                     {% if data['measurement'] === "Other" %}
