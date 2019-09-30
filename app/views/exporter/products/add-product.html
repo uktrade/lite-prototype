@@ -41,7 +41,41 @@
                 </div>	
                 <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your product controlled?</p>
                 <span class="govuk-hint">Controlled products are ones that can be dangerous. You need a licence to export a controlled product.</span>
+
+
                 <div class="govuk-form-group">
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <!-- <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-controlled-yes" name="tempProduct[product-controlled]" type="radio" value="Yes" {{ checked("tempProduct['product-controlled']", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="product-controlled-yes">Yes</label>
+                        </div> -->
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="yes-conditional" name="tempProduct[product-controlled]" type="radio" value="Yes" {{ checked("tempProduct['product-controlled']", "Yes") }} data-aria-controls="conditional-yes-conditional">
+                            <label class="govuk-label govuk-radios__label" for="yes-conditional">Yes</label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="control-rating">What is the control list classification?</label>
+                                <input class="govuk-input govuk-!-width-one-half" id="control-rating" name="tempProduct[control-rating]" type="text" value="{{ data.tempProduct['control-rating'] }}">
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-controlled-no" name="tempProduct[product-controlled]" type="radio" value="No" {{ checked("tempProduct['product-controlled']", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="product-controlled-no">No</label>
+                        </div>	
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-controlled-unsure" name="tempProduct[product-controlled]" type="radio" value="Not sure" {{ checked("tempProduct['product-controlled']", "Not sure") }}>
+                            <label class="govuk-label govuk-radios__label" for="product-controlled-unsure">Not sure</label>
+                        </div>
+                    </div>
+                    <details class="govuk-details govuk-!-margin-top-2" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">I am not sure if my product is controlled</span>
+                        </summary>
+                        <div class="govuk-details__text">You can <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank" class="govuk-link">find out if your product is controlled</a> using another GOV.UK service (Check if you need an export licence).<br /><br />If your product is controlled, you will be given a control code to answer this question.</div>
+                    </details>		
+                </div>
+                <!-- <div class="govuk-form-group">
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="yes-conditional" name="tempProduct[product-controlled]" type="radio" value="Yes" {{ checked("product-controlled", "Yes") }} data-aria-controls="conditional-yes-conditional">
@@ -68,7 +102,7 @@
                         </summary>
                         <div class="govuk-details__text">You can <a href="https://permissions-finder.service.trade.gov.uk/" target="_blank" class="govuk-link">find out if your product is controlled</a> using another GOV.UK service (Check if you need an export licence).<br /><br />If your product is controlled, you will be given a control code to answer this question.</div>
                     </details>
-                </div>
+                </div> -->
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="part-number">Part number (optional)</label>
                     <input class="govuk-input govuk-!-width-one-half" id="part-number" name="tempProduct[part-number]" type="text" value="{{ data.tempProduct['part-number'] }}">
