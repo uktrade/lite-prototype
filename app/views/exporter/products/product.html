@@ -42,32 +42,32 @@
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Used for</dt>
-                <dd class="govuk-summary-list__value">{{ data.tempProduct["product-description"] }}</dd>
+                <dd class="govuk-summary-list__value">{{ theProduct["product-description"] }}</dd>
             </div>
-            {% if data.tempProduct["product-controlled"] == "Yes" %}
+            {% if theProduct["product-controlled"] == "Yes" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Control rating</dt>
-                <dd class="govuk-summary-list__value">{{ data.tempProduct["control-rating"] }}</dd>
+                <dd class="govuk-summary-list__value">{{ theProduct["control-rating"] }}</dd>
             </div>
             {% endif %}
-            {% if data.tempProduct["part-number"] %}
+            {% if theProduct["part-number"] %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Part number</dt>
-                <dd class="govuk-summary-list__value">{{ data.tempProduct["part-number"] }}</dd>
+                <dd class="govuk-summary-list__value">{{ theProduct["part-number"] }}</dd>
             </div>
             {% endif %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Specification</dt>
-                {% if data.tempProduct["file-upload"] %}
-                <dd class="govuk-summary-list__value">{{ data.tempProduct["file-upload"] }}</dd>
+                {% if theProduct["file-upload"] %}
+                <dd class="govuk-summary-list__value">{{ theProduct["file-upload"] }}</dd>
                 {% else %}
                 <dd class="govuk-summary-list__value">prototype-document-uploaded.pdf</dd>
                 {% endif %}
             </div>
-            {% if data.tempProduct["document-description"] %}
+            {% if theProduct["document-description"] %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Type of document</dt>
-                <dd class="govuk-summary-list__value">{{ data.tempProduct["document-description"] }}</dd>
+                <dd class="govuk-summary-list__value">{{ theProduct["document-description"] }}</dd>
             </div>
             {% endif %}
         </dl>
