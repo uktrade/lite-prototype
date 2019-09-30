@@ -26,6 +26,29 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+        {% if data['removed'] %}
+        <h1 class="govuk-heading-l">You have no products</h1>
+        <form action="all-products-application" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">Add a product to application?</h2>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-add-yes" name="product-add-application" type="radio" value="true">
+                            <label class="govuk-label govuk-radios__label" for="product-add-yes">Yes</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-add-no" name="product-add-application" type="radio" value="false">
+                            <label class="govuk-label govuk-radios__label" for="product-add-no">No</label>
+                        </div>	
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+        </form>
+        {% else %}
         <h1 class="govuk-heading-l">You have added 1 product to application</h1>
         <table class="govuk-table">
             <tbody class="govuk-table__body">
@@ -62,6 +85,7 @@
             </div>
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
         </form>
+        {% endif %}
 	</div>
 </div>
 {% endblock %}

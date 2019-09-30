@@ -27,44 +27,48 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Remove product?</h1>
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Product name</dt>
-                    <dd class="govuk-summary-list__value">{{ data['product-name'] }}</dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Used for</dt>
-                    <dd class="govuk-summary-list__value">{{ data['product-description'] }}</dd>
-                </div>
-                {% if data['product-controlled'] == "Yes" %}
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Control rating</dt>
-                    <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
-                </div>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Product name</dt>
+                <dd class="govuk-summary-list__value">{{ data['product-name'] }}</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Used for</dt>
+                <dd class="govuk-summary-list__value">{{ data['product-description'] }}</dd>
+            </div>
+            {% if data['product-controlled'] == "Yes" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Control rating</dt>
+                <dd class="govuk-summary-list__value">{{ data['control-rating'] }}</dd>
+            </div>
+            {% endif %}
+            {% if data['part-number'] %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Part number</dt>
+                <dd class="govuk-summary-list__value">{{ data['part-number'] }}</dd>
+            </div>
+            {% endif %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Specification</dt>
+                {% if data['file-upload'] %}
+                <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">prototype-document-uploaded.pdf</dd>
                 {% endif %}
-                {% if data['part-number'] %}
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Part number</dt>
-                    <dd class="govuk-summary-list__value">{{ data['part-number'] }}</dd>
-                </div>
-                {% endif %}
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Specification</dt>
-                    {% if data['file-upload'] %}
-                    <dd class="govuk-summary-list__value">{{ data['file-upload'] }}</dd>
-                    {% else %}
-                    <dd class="govuk-summary-list__value">prototype-document-uploaded.pdf</dd>
-                    {% endif %}
-                </div>
-                {% if data['document-description'] %}
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Type of document</dt>
-                    <dd class="govuk-summary-list__value">{{ data['document-description'] }}</dd>
-                </div>
-                {% endif %}
-            </dl>
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        <a href="product-removed.html" class="govuk-button">Yes, remove product</a>
+            </div>
+            {% if data['document-description'] %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Type of document</dt>
+                <dd class="govuk-summary-list__value">{{ data['document-description'] }}</dd>
+            </div>
+            {% endif %}
+        </dl>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <form action="product-added" method="post">
+            <input type="hidden" name="removed" value="true">
+            <button type="submit" class="govuk-button" data-module="govuk-button">Yes, remove product</button>
+            <!-- <a href="product-added.html" class="govuk-button">Yes, remove product</a> -->
+        </form>
         <p class="govuk-body"><a href="javascript:window.history.back()" class="govuk-link">No, do not remove product</a></p>
     </div>
 </div>
