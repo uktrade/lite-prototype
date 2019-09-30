@@ -44,6 +44,9 @@
                     <label class="govuk-label govuk-label--m" for="measurement">Unit of measurement</label>
                     <select class="govuk-select" id="measurement" name="measurement">
                         <option value="select" selected>Select</option>
+                        <optgroup label="Item">
+                            <option value="pieces" {{ 'selected' if checked("measurement", "pieces") }}>pieces</option>
+                        </optgroup>
                         <optgroup label="Mass">
                             <option value="kt" {{ 'selected' if checked("measurement", "kt") }}>kt</option>
                             <option value="t" {{ 'selected' if checked("measurement", "t") }}>t</option>
@@ -51,16 +54,22 @@
                             <option value="g" {{ 'selected' if checked("measurement", "g") }}>g</option>
                             <option value="mg" {{ 'selected' if checked("measurement", "mg") }}>mg</option>
                             <option value="mcg" {{ 'selected' if checked("measurement", "mcg") }}>mcg</option>
-                            <option value="t" {{ 'selected' if checked("measurement", "t") }}>t</option>
                         </optgroup>
-                        <!-- <optgroup label="Volume">
-                            <option value="Kilograms" {{ 'selected' if checked("measurement", "Kilograms") }}>Kilograms</option>
-                            <option value="Number of articles" {{ 'selected' if checked("measurement", "Number of articles") }}>Number of articles</option>
-                            <option value="Square metres" {{ 'selected' if checked("measurement", "Square metres") }}>Square metres</option>
-                            <option value="Metres" {{ 'selected' if checked("measurement", "Metres") }}>Metres</option>
-                            <option value="Litres" {{ 'selected' if checked("measurement", "Litres") }}>Litres</option>
-                            <option value="Cubic metres" {{ 'selected' if checked("measurement", "Cubic metres") }}>Cubic metres</option>
-                        </optgroup> -->
+                        <optgroup label="Volume">
+                            <option value="m3" {{ 'selected' if checked("measurement", "m3") }}>m3</option>
+                            <option value="cm3" {{ 'selected' if checked("measurement", "cm3") }}>cm3</option>
+                            <option value="mm3" {{ 'selected' if checked("measurement", "mm3") }}>mm3</option>
+                            <option value="l" {{ 'selected' if checked("measurement", "l") }}>l</option>
+                            <option value="cl" {{ 'selected' if checked("measurement", "cl") }}>cl</option>
+                            <option value="ml" {{ 'selected' if checked("measurement", "ml") }}>ml</option>
+                            <option value="ul" {{ 'selected' if checked("measurement", "ul") }}>ul</option>
+                        </optgroup> 
+                        <optgroup label="Length">
+                            <option value="m" {{ 'selected' if checked("measurement", "m") }}>m</option>
+                        </optgroup>
+                        <optgroup label="Area">
+                            <option value="m2" {{ 'selected' if checked("measurement", "m2") }}>m2</option>
+                        </optgroup> 
                     </select>
                 </div> 
                 <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your product intended to be incorporated into an end product?</p>
