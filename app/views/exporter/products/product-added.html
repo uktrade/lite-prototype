@@ -23,10 +23,20 @@
   }) }}
 {% endblock %}
 
+{% set productCount = data.products | length %}
+
+{% if productCount == 0 %}
+  {% set pageHeading = 'You have no products' %}
+{% elseif productCount == 1 %}
+  {% set pageHeading = 'You have added 1 product' %}
+{% elseif productCount > 1 %}
+  {% set pageHeading = 'You have added ' + productCount +' products' %}
+{% endif %}
+
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">You have added {{ data.products | length }} products</h1>
+        <h1 class="govuk-heading-l">{{pageHeading}}</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
             {% for product in data.products %}
             <div class="govuk-summary-list__row">
@@ -42,7 +52,7 @@
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                        <h2 class="govuk-fieldset__heading">Add another product?</h2>
+                        <h2 class="govuk-fieldset__heading">{{'Add another product?' if productCount > 0 else 'Add a product?'}}</h2>
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
