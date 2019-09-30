@@ -244,6 +244,13 @@ router.post('/exporter/products/all-products-application', function (req, res) {
 
 // ***** Add product flow ***** 
 
+// Make sure we delete tempProduct data when returning to index
+router.get('/exporter/products/product-added', function (req, res, next) {
+  var data = req.session.data
+  delete data.tempProduct
+  next()
+});
+
 // Grab data from array and put in tempLocation
 router.get('/exporter/products/:index/edit', function (req, res, next) {
     var data = req.session.data
@@ -255,11 +262,12 @@ router.get('/exporter/products/:index/edit', function (req, res, next) {
     res.redirect('/exporter/products/' + index + '/add-product')
 });
 
-// Make sure we delete tempProduct data when returning to index
-router.get('/exporter/products/product-added', function (req, res, next) {
-  var data = req.session.data
-  delete data.tempProduct
-  next()
+// Grab index from url and pass to view
+router.get('/exporter/products/:index/view', function (req, res, next) {
+    var data = req.session.data
+    var index = req.params.index
+
+    res.render('exporter/products/product', {currentItemIndex: index})
 });
 
 // Grab data from array and put in tempLocation

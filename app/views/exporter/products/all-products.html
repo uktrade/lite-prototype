@@ -64,7 +64,7 @@
             <tbody class="govuk-table__body">
                 {% for product in data.products %}
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="product.html" class="govuk-link govuk-link--no-visited-state">{{ product["product-name"] }}</a></td>
+                    <td class="govuk-table__cell"><a href="{{loop.index0}}/view" class="govuk-link govuk-link--no-visited-state">{{ product["product-name"] }}</a></td>
                     <td class="govuk-table__cell">25 September 2019</td>
                 </tr>
                 {% endfor %}

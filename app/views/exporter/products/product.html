@@ -23,13 +23,16 @@
   }) }}
 {% endblock %}
 
+{# Grab the product data #}
+{% set theProduct = data.products[currentItemIndex] %}
+
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data.tempProduct["product-name"] }}</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ theProduct["product-name"] }}</h1>
         <div class="float-right">
-            <a href="{{loop.index0}}/edit"><button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">Edit product</button></a>
-            <a href="{{loop.index0}}/remove"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove product</button></a>
+            <a href="edit"><button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">Edit product</button></a>
+            <a href="remove"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove product</button></a>
         </div>
     </div>
 </div>
