@@ -33,7 +33,7 @@
                     <span class="govuk-caption-l govuk-!-margin-bottom-4">{{ data['product-name'] }}</span>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="value-products">Value of products (£)</label>
+                    <label class="govuk-label govuk-label--m" for="value-products">Value of product (£)</label>
                     <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="{{ data['value-products'] }}">
                 </div>
                 <div class="govuk-form-group">
@@ -72,26 +72,7 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!-- 
-                <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="measurement">Unit of measurement</label>
-                    <select class="govuk-select" id="measurement" name="measurement">
-                        <option value="select" selected>Select</option>
-                        <option value="Grams {{ checked("measurement", "grams") }}">Grams</option>
-                        <option value="Kilograms {{ checked("measurement", "kilograms") }}">Kilograms</option>
-                        <option value="Number of articles {{ checked("measurement", "no-articles") }}">Number of articles</option>
-                        <option value="Square metres {{ checked("measurement", "sq-metres") }}">Square metres</option>
-                        <option value="Metres {{ checked("measurement", "metres") }}">Metres</option>
-                        <option value="Litres {{ checked("measurement", "litres") }}">Litres</option>
-                        <option value="Cubic metres {{ checked("measurement", "cubic-metres") }}">Cubic metres</option>
-                    </select>
-                </div> -->
-
-
-                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Is your product intended to be incorporated into an end product?</p>
-                <span class="govuk-hint">Choose yes if the good you are exporting will be used as part of another product.</span>
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Will this be used as a part for another product?</p>
                 <div class="govuk-form-group">
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
@@ -105,7 +86,7 @@
                     </div>
                 </div> 
             </fieldset>
-            <button type="submit" class="govuk-button" data-module="govuk-button">Add product to application</button> 
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
         </form>
 	</div>
 </div>
