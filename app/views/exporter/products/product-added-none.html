@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}You have added XX product - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}You have no products - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,21 +26,12 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">You have added 1 product</h1>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
-            <div class="govuk-summary-list__row">
-                <dd class="govuk-summary-list__value">{{ data['product-name'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="add-product.html">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="govuk-link" href="remove-product">Remove<span class="govuk-visually-hidden"> product name</span></a> 
-                </dd>
-            </div>
-        </dl>
+        <h1 class="govuk-heading-l">You have no products</h1>
         <form action="all-products" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                        <h2 class="govuk-fieldset__heading">Add another product?</h2>
+                        <h2 class="govuk-fieldset__heading">Add a product?</h2>
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
