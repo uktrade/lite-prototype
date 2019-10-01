@@ -35,7 +35,6 @@
 </div>
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ data['product-name'] }}</h1> -->
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Used for</dt>
@@ -54,11 +53,11 @@
             </div>
             {% endif %}
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Specification</dt>
+                <dt class="govuk-summary-list__key">Document</dt>
                 {% if data['file-upload'] %}
-                <dd class="govuk-summary-list__value"><a class="govuk-link" href="#">{{ data['file-upload'] }}</a></dd>
+                <dd class="govuk-summary-list__value"><a class="govuk-link" href="#" target="_blank">{{ data['file-upload'] }}</a></dd>
                 {% else %}
-                <dd class="govuk-summary-list__value"><a class="govuk-link" href="#">prototype-document-uploaded.pdf</a><!-- &nbsp;&nbsp;&nbsp;<a class="govuk-link" href="#">Download<span class="govuk-visually-hidden"> specification</span></a>--></dd>
+                <dd class="govuk-summary-list__value"><a class="govuk-link" href="#" target="_blank">prototype-document-uploaded.pdf</a></dd>
                 {% endif %}
             </div>
             {% if data['document-description'] %}
@@ -68,8 +67,6 @@
             </div>
             {% endif %}
         </dl>
-        <!-- <a href="add-product.html"><button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">Edit product</button></a>
-        <a href="remove-product.html"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove product</button></a> -->
 	</div>
 </div>
 {% endblock %}
