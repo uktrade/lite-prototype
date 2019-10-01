@@ -28,100 +28,55 @@
 	<div class="govuk-grid-column-two-thirds">
 		<h1 class="govuk-heading-l govuk-!-margin-bottom-7">Apply for an export licence</h1>
 		<ol class="app-task-list">
-			
 			<li>
                 <h2 class="app-task-list__section">
                     <span class="app-task-list__section-number">1. </span> Prepare application
                 </h2>
 			    <ul class="app-task-list__items">
-                     <!-- Name your application -->
-                     {% if sectionStatus.name === "completed" %}
+                     <!-- Licence type -->
                      <li class="app-task-list__item">
                          <span class="app-task-list__task-name">
-                             <a href="name/cya.html" aria-describedby="name-completed">Name your application</a>
-                         </span>
-                         <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
-                     </li>
-                     {% elif sectionStatus.name === "started" %}
-                     <li class="app-task-list__item">
-                         <span class="app-task-list__task-name">
-                             <a href="name/index.html" aria-describedby="name-in-progress">Name your application</a>
+                             <a href="#" aria-describedby="name-in-progress">Licence type</a>
                          </span>
                          <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
                      </li> 
-                     {% else %}
-                     <li class="app-task-list__item">
-                         <span class="app-task-list__task-name">
-                             <a href="name/index.html">Name your application</a>
-                         </span>                
-                     </li>
-                     {% endif %}
-                    <!-- Your products -->
-                    {% if sectionStatus.products === "completed" %}
+                    <!-- Add products to application -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="products/cya-2-task-list.html" aria-describedby="products-completed">Describe your product</a>
+                            <a href="../products/product-added-application-30-products.html" aria-describedby="products-completed">Add products to application</a>
                         </span>
                         <strong class="govuk-tag app-task-list__task-completed" id="products-completed">Completed</strong>
                     </li>
-                    {% elif sectionStatus.products === "started" %}
+                    <!-- Add locations to application -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="products/index-1.html" aria-describedby="products-in-progress">Describe your product</a>
-                        </span>
-                        <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="products-in-progress">In progress</strong>
-                    </li> 
-                    {% else %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="products/index-1.html">Describe your product</a>
+                            <a href="#">Add locations to application</a>
                         </span>                
                     </li>
-                    {% endif %}
-                    <!-- People involved -->
-                    {% if sectionStatus.people === "completed" %}
+                    <!-- Add end users to application -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="people/cya-2-task-list.html" aria-describedby="people-completed">People involved</a>
-                        </span>
-                        <strong class="govuk-tag app-task-list__task-completed" id="people-completed">Completed</strong>
-                    </li>
-                    {% elif sectionStatus.people === "started" %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="people/index-1.html" aria-describedby="people-in-progress">People involved</a>
-                        </span>
-                        <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="people-in-progress">In progress</strong>
-                    </li> 
-                    {% else %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="people/index-1.html">People involved</a>
+                            <a href="#">Add end users to application</a>
                         </span>                
                     </li>
-                    {% endif %}
-                    <!-- Other information -->
-                    {% if sectionStatus.information === "completed" %}
+                    <!-- Add an ultimate end user to application -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="information/cya.html" aria-describedby="other-completed">Support your application</a>
-                        </span>
-                        <strong class="govuk-tag app-task-list__task-completed" id="other-completed">Completed</strong>
-                    </li>
-                    {% elif sectionStatus.information === "started" %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="information/index.html" aria-describedby="other-in-progress">Support your application</a>
-                        </span>
-                        <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="other-in-progress">In progress</strong>
-                    </li> 
-                    {% else %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="information/index.html">Support your application</a>
+                            <a href="#">Add an ultimate end user to application</a>
                         </span>                
                     </li>
-                    {% endif %}
+                    <!-- Add a consignee to application -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#">Add a consignee to application</a>
+                        </span>                
+                    </li>
+                    <!-- Add third parties to application -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#">Add third parties to application</a>
+                        </span>                
+                    </li>
                 </ul>
             </li>
             <li>
@@ -129,51 +84,26 @@
                     <span class="app-task-list__section-number">2. </span> Review application
                 </h2>
                 <ul class="app-task-list__items">                    
-                    <!-- Check application -->
-                    {% if sectionStatus.check === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="check/index.html" aria-describedby="check-completed">Check application answers</a>
-                        </span>
-                        <strong class="govuk-tag app-task-list__task-completed" id="check-completed">Completed</strong>
-                    </li>
-                    {% else %}
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="check/index.html">Check application answers</a>
+                            <a href="#">Check application answers</a>
                         </span>                
                     </li>
-                    {% endif %}
                 </ul>
             </li>
-
             <li>
                 <h2 class="app-task-list__section">
                     <span class="app-task-list__section-number">3. </span> Apply
                 </h2>
 				<ul class="app-task-list__items">
                     <!-- Submit application -->
-                    {% if
-                        (sectionStatus.check === "completed")
-                        and (sectionStatus.name === "completed")
-                        and (sectionStatus.products === "completed")
-                        and (sectionStatus.people === "completed")
-                        and (sectionStatus.information === "completed")
-                    %}
-					<li class="app-task-list__item">
-						<span class="app-task-list__task-name">
-							<a href="declaration.html" aria-describedby="submit-completed">Sign declaration before you submit</a>
-						</span>
-                    </li>
-                    {% else %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name grey-text">Sign declaration before you submit</span>
                     </li>
-                    {% endif %}
 				</ul>
 			</li>
 		</ol>
-		<p class="govuk-body"><a href="cancel-application.html">Cancel application</a></p>
+		<p class="govuk-body"><a href="#">Cancel application</a></p>
 	</div>
 </div>
 {% endblock %}
