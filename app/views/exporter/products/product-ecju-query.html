@@ -55,9 +55,9 @@
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Document</dt>
                 {% if data['file-upload'] %}
-                <dd class="govuk-summary-list__value"><a class="govuk-link" href="#" target="_blank">{{ data['file-upload'] }}</a></dd>
+                <dd class="govuk-summary-list__value"><a class="govuk-link" href="/public/pdfs/prototype-document-uploaded.pdf" target="_blank">{{ data['file-upload'] }}</a></dd>
                 {% else %}
-                <dd class="govuk-summary-list__value"><a class="govuk-link" href="#" target="_blank">prototype-document-uploaded.pdf</a></dd>
+                <dd class="govuk-summary-list__value"><a class="govuk-link" href="/public/pdfs/prototype-document-uploaded.pdf" target="_blank">prototype-document-uploaded.pdf</a></dd>
                 {% endif %}
             </div>
             {% if data['document-description'] %}
@@ -67,9 +67,33 @@
             </div>
             {% endif %}
         </dl>
+
+        <div class="govuk-tabs govuk-!-margin-bottom-0" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">Contents</h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#notes">Notes</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#ecju-queries">ECJU queries</a>
+                </li>
+            </ul>
+            <section class="govuk-tabs__panel" id="notes">
+                <form action="#" method="post">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="product-notes">Is there anything else you want to say about this product?</label>
+                        <textarea class="govuk-textarea" id="product-notes" name="product-notes" rows="5" aria-describedby="product-notes-hint">{{ data['product-notes'] }}</textarea>
+                    </div>	
+                    <button class="govuk-button" data-module="govuk-button">Send comment</button>
+                </form>
+            </section>
+            <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="ecju-queries">
+                <p class="govuk-body">TBC</p>
+            </section>
+        </div>
     </div>
 </div>
-<div class="govuk-grid-row">
+<!-- <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-0">
     </div>
@@ -84,5 +108,5 @@
             <button class="govuk-button" data-module="govuk-button">Add a note</button>
         </form>
 	</div>
-</div>
+</div> -->
 {% endblock %}
