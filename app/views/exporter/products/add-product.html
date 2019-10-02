@@ -32,7 +32,8 @@
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a new product</h1>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="product-name">Name of product</label>
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="product-name">Name of product</label>
+                    <span class="govuk-hint">Use a unique product name so you can recognise this in a big list of similar products.</span>
                     <input class="govuk-input govuk-!-width-full" id="product-name" name="product-name" type="text" value="{{ data['product-name'] }}">
                 </div>
                 <div class="govuk-form-group">
@@ -73,7 +74,7 @@
                     <label class="govuk-label govuk-label--m" for="part-number">Part number (optional)</label>
                     <input class="govuk-input govuk-!-width-one-half" id="part-number" name="part-number" type="text" value="{{ data['part-number'] }}">
                 </div>
-                <p class="govuk-body govuk-!-margin-bottom-2 govuk-label--m">Upload your product specification</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Upload your product specification</p>
                 <span class="govuk-hint">If you do not have a product specification, you can upload any other document that explains what the product will be used for.</span>
                 <div class="govuk-form-group">
                     <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
