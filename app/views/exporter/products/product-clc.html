@@ -25,16 +25,8 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['product-name'] }}</h1>
-        <!-- <div class="float-right">
-            <a href="add-product.html"><button disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--secondary govuk-button--disabled govuk-!-margin-right-1" data-module="govuk-button">Edit product</button></a>
-            <a href="remove-product.html"><button disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--secondary govuk-button--disabled" data-module="govuk-button">Remove product</button></a>
-        </div> -->
-    </div>
-</div>
-<div class="govuk-grid-row">
-	<div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ data['product-name'] }}</h1>
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Used for</dt>
@@ -67,7 +59,7 @@
             </div>
             {% endif %}
         </dl>
-
+        <div class="govuk-inset-text govuk-!-margin-bottom-9">This product is currently being reviewed by ECJU, but you can add notes about your product or send a query to ECJU.</div>
         <div class="govuk-tabs govuk-!-margin-bottom-0" data-module="govuk-tabs">
             <h2 class="govuk-tabs__title">Contents</h2>
             <ul class="govuk-tabs__list">
@@ -88,25 +80,9 @@
                 </form>
             </section>
             <section class="govuk-tabs__panel border-less-tabs govuk-tabs__panel--hidden" id="ecju-queries">
-                <p class="govuk-body">TBC</p>
+                <p class="govuk-body">No messages.</p>
             </section>
         </div>
     </div>
 </div>
-<!-- <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-0">
-    </div>
-</div>
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <form action="#" method="post">
-            <div class="govuk-form-group">
-                <label class="govuk-label govuk-label--m" for="product-notes">Notes</label>
-                <textarea class="govuk-textarea" id="product-notes" name="product-notes" rows="5" aria-describedby="product-notes-hint">{{ data['product-notes'] }}</textarea>
-            </div>	
-            <button class="govuk-button" data-module="govuk-button">Add a note</button>
-        </form>
-	</div>
-</div> -->
 {% endblock %}
