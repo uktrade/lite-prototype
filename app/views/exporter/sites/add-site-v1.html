@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %} 
 
-{% block pageTitle %}Add a new location - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Add a new site - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,25 +26,21 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="location-added" method="post">
+        <form action="site-added" method="post">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a new location</h1>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a new site</h1>
                 </legend>
                 <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="location-name">Name of location</label>
-                    <span class="govuk-hint">Use a unique location name so you can recognise this in a big list of similar locations.</span>
-                    <input class="govuk-input govuk-!-width-full" id="location-name" name="location-name" type="text" value="{{ data['location-name'] }}">
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="site-name">Name of site</label>
+                    <span class="govuk-hint">Use a unique site name so you can recognise this in a big list of similar sites.</span>
+                    <input class="govuk-input govuk-!-width-full" id="site-name" name="site-name" type="text" value="{{ data['site-name'] }}">
                 </div>
-                <!-- <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--m" for="location-description">What does your location do?</label>
-                    <textarea class="govuk-textarea" id="location-description" name="location-description" rows="5" aria-describedby="location-description-hint">{{ data['location-description'] }}</textarea>
-                </div> -->	
-                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Where is the location?</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Where is the site located?</p>
                 <div class="govuk-form-group">
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="in-uk-conditional" name="location-where" type="radio" value="In the UK" {{ checked("location-where", "In the UK") }} data-aria-controls="conditional-in-uk-conditional">
+                            <input class="govuk-radios__input" id="in-uk-conditional" name="site-where" type="radio" value="In the UK" {{ checked("site-where", "In the UK") }} data-aria-controls="conditional-in-uk-conditional">
                             <label class="govuk-label govuk-radios__label" for="in-uk-conditional">In the UK</label>
                         </div>
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-in-uk-conditional">
@@ -74,7 +70,7 @@
                         </div>
 
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="outside-uk-conditional" name="location-where" type="radio" value="Outside the UK" {{ checked("location-where", "Outside the UK") }} data-aria-controls="conditional-outside-uk-conditional">
+                            <input class="govuk-radios__input" id="outside-uk-conditional" name="site-where" type="radio" value="Outside the UK" {{ checked("site-where", "Outside the UK") }} data-aria-controls="conditional-outside-uk-conditional">
                             <label class="govuk-label govuk-radios__label" for="outside-uk-conditional">Outside the UK</label>
                         </div>
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-outside-uk-conditional">

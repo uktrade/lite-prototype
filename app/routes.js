@@ -203,6 +203,8 @@ router.get('/*/application-cancelled', function (req, res) {
 
 
 
+
+// **** PROTOTYPE BASED ON BUILD **** //
 // Add a product 
 router.post('/exporter/products/all-products', function (req, res) {
 
@@ -228,6 +230,30 @@ router.post('/exporter/products/all-products-application', function (req, res) {
     }
 })
 
+// Add a new site - UK or Non-UK
+router.post('/exporter/sites/site-uk', function (req, res) {
+
+    let siteUK = req.session.data['site-where']
+
+    if (siteUK === "In the UK") {
+        res.redirect('/exporter/sites/site-uk')
+    } else {
+        res.redirect('/exporter/sites/site-outside-uk')
+    }
+})
+
+// Add a new site
+router.post('/exporter/sites/all-sites', function (req, res) {
+
+    let allSites = req.session.data['site-add']
+
+    if (allSites === 'false') {
+        res.redirect('/exporter/sites/all-sites')
+    } else {
+        res.redirect('/exporter/sites/add-site')
+    }
+})
+
 // Select product path
 //router.post('/exporter/products/all-products-application', function (req, res) {
 
@@ -239,8 +265,5 @@ router.post('/exporter/products/all-products-application', function (req, res) {
 //        res.redirect('/exporter/products/add-product')
 //    }
 // })
-
-
-
 
 module.exports = router

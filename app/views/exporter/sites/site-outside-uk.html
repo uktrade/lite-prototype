@@ -1,0 +1,40 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Enter non-UK address - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="site-added" method="post">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="address-shipping">Enter non-UK address</label>
+            </h1>
+            <div class="govuk-form-group">
+                <textarea class="govuk-textarea" id="address-shipping" name="address-shipping" rows="5">{{ data['address-shipping'] }}</textarea>
+            </div>	
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+		</form>
+	</div>
+</div>
+{% endblock %}
