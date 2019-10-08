@@ -29,26 +29,26 @@
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Remove site?</h1>
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Site name</dt>
+                <dt class="govuk-summary-list__key">Name</dt>
                 <dd class="govuk-summary-list__value">{{ data['site-name'] }}</dd>
             </div>
             {% if data['site-where'] == "true" %}
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Site location</dt>
+                <dt class="govuk-summary-list__key">Location</dt>
                 <dd class="govuk-summary-list__value">In the UK</dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Site address</dt>
+                <dt class="govuk-summary-list__key">Address</dt>
                 <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
             </div>
             {% endif %}
             {% if data['site-where'] == "false" %}
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Site location</dt>
+                <dt class="govuk-summary-list__key">Location</dt>
                 <dd class="govuk-summary-list__value">Outside the UK</dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Site address</dt>
+                <dt class="govuk-summary-list__key">Address</dt>
                 <dd class="govuk-summary-list__value">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}</dd>
             </div>
             {% endif %}
