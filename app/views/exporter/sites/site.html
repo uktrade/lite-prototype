@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Remove site? - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}{{ data['site-name'] }} - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -16,7 +16,7 @@
         text: "My account"
       },
       {
-        href: "../../sign-out.html",
+        href: "../sign-out.html",
         text: "Sign out"
       }
     ]
@@ -25,13 +25,17 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Remove site?</h1>
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">{{ data['site-name'] }}</h1>
+        <div class="float-right">
+            <a href="add-site.html"><button class="govuk-button govuk-button--secondary govuk-!-margin-right-1" data-module="govuk-button">Edit site</button></a>
+            <a href="remove-site.html"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">Remove site</button></a>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
         <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Site name</dt>
-                <dd class="govuk-summary-list__value">{{ data['site-name'] }}</dd>
-            </div>
             {% if data['site-where'] == "true" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Site location</dt>
@@ -53,11 +57,6 @@
             </div>
             {% endif %}
         </dl>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        <form action="site-added-none" method="post">
-            <button type="submit" class="govuk-button" data-module="govuk-button">Yes, remove site</button>
-        </form>
-        <p class="govuk-body"><a href="javascript:window.history.back()" class="govuk-link">No, do not remove site</a></p>
-    </div>
+	</div>
 </div>
 {% endblock %}

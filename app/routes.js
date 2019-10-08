@@ -235,7 +235,7 @@ router.post('/exporter/sites/site-uk', function (req, res) {
 
     let siteUK = req.session.data['site-where']
 
-    if (siteUK === "In the UK") {
+    if (siteUK === 'true') {
         res.redirect('/exporter/sites/site-uk')
     } else {
         res.redirect('/exporter/sites/site-outside-uk')
