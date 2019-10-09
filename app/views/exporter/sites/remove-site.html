@@ -27,7 +27,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Remove site?</h1>
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-0">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Name</dt>
                 <dd class="govuk-summary-list__value">{{ data['site-name'] }}</dd>
@@ -53,9 +53,9 @@
             </div>
             {% endif %}
         </dl>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <hr class="govuk-section-break govuk-section-break--visible">
         <form action="site-added-none" method="post">
-            <button type="submit" class="govuk-button" data-module="govuk-button">Yes, remove site</button>
+            <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Yes, remove site</button>
         </form>
         <p class="govuk-body"><a href="javascript:window.history.back()" class="govuk-link">No, do not remove site</a></p>
     </div>
