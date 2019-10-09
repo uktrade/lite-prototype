@@ -37,20 +37,20 @@
 	<div class="govuk-grid-column-two-thirds">
         <dl class="govuk-summary-list govuk-summary-list--no-border">
             {% if data['site-where'] == "true" %}
-            <div class="govuk-summary-list__row">
+            <!-- <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Location</dt>
                 <dd class="govuk-summary-list__value">In the UK</dd>
-            </div>
+            </div> -->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address</dt>
                 <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
             </div>
             {% endif %}
             {% if data['site-where'] == "false" %}
-            <div class="govuk-summary-list__row">
+            <!-- <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Location</dt>
                 <dd class="govuk-summary-list__value">Outside the UK</dd>
-            </div>
+            </div> -->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address</dt>
                 <dd class="govuk-summary-list__value">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}</dd>
