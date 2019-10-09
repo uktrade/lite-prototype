@@ -233,6 +233,28 @@ $govuk-assets-path: '/govuk/assets/';
     color: #1d70b8 !important;
 }
 
+.message-sent .author p {
+    margin-bottom: 10px;
+}
+
+.message-sent .message {
+    background: #b1b4b6;
+    padding: 20px;
+}
+
+.original-message-sent {
+    background: #f3f2f1;
+    padding: 20px;
+}
+
+.original-message-sent p {
+    color: #6f777b;
+}
+
+.original-message-sent .original-author p {
+    margin-bottom: 10px;
+}
+
 
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
