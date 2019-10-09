@@ -238,7 +238,8 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .message-sent .message {
-    background: #b1b4b6;
+    /* background: #b1b4b6; */
+    background: rgba(177,180,182, 0.50);
     padding: 20px;
 }
 
