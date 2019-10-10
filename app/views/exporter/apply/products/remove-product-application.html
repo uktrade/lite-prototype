@@ -46,9 +46,10 @@
                 <dd class="govuk-summary-list__value">{{ data['end-product'] }}</dd>
             </div>
         </dl>
-        <hr class="govuk-section-break govuk-section-break--visible"> 
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6"> 
         <form action="product-added-application-none" method="post">
-            <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Yes, remove product</button>
+                <button type="submit" class="govuk-button govuk-button govuk-!-margin-right-1" data-module="govuk-button">Yes, remove product</button>
+                <a href="../task-list?products=started" class="govuk-button govuk-button--secondary">Finish later</a>
         </form>
         <p class="govuk-body"><a href="javascript:window.history.back()">No, do not remove product</a></p>
 	</div>

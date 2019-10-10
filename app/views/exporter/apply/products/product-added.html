@@ -36,7 +36,7 @@
                 </dd>
             </div>
         </dl>
-        <form action="all-products" method="post">
+        <form action="../task-list" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -44,17 +44,18 @@
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="product-add-yes" name="product-add" type="radio" value="true">
+                            <input class="govuk-radios__input" id="product-add-yes" name="product-add-apply" type="radio" value="true">
                             <label class="govuk-label govuk-radios__label" for="product-add-yes">Yes</label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="product-add-no" name="product-add" type="radio" value="false">
+                            <input class="govuk-radios__input" id="product-add-no" name="product-add-apply" type="radio" value="false">
                             <label class="govuk-label govuk-radios__label" for="product-add-no">No</label>
                         </div>	
                     </div>
                 </fieldset>
             </div>
-            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Continue</button>
+			<a href="../task-list?products=started" class="govuk-button govuk-button--secondary">Finish later</a>
         </form>
 	</div>
 </div>

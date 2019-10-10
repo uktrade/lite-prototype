@@ -26,6 +26,17 @@ router.post('/exporter/apply/products/add-product', function (req, res) {
     }
 })
 
+router.post('/exporter/apply/task-list', function (req, res) {
+
+    let allProductsApply = req.session.data['product-add-apply']
+
+    if (allProductsApply === 'false') {
+        res.redirect('/exporter/apply/task-list')
+    } else {
+        res.redirect('/exporter/apply/products/add-product')
+    }
+})
+
 // Task list
 router.get('/exporter/apply/task-list', (req, res, next) => {
 
