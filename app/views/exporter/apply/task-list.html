@@ -33,35 +33,50 @@
                     <span class="app-task-list__section-number">1. </span> Prepare application
                 </h2>
 			    <ul class="app-task-list__items">
-                     <!-- Licence type -->
-                     {% if sectionStatus.type === "completed" %}
-                     <li class="app-task-list__item">
-                         <span class="app-task-list__task-name">
-                             <a href="type/cya.html" aria-describedby="name-in-progress">Licence type</a>
-                         </span>
-                         <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
-                     </li> 
-                     {% elif sectionStatus.type === "started" %}
-                     <li class="app-task-list__item">
-                         <span class="app-task-list__task-name">
-                            <a href="type/index.html" aria-describedby="name-in-progress">Licence type</a>
-                         </span>
-                         <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
-                     </li> 
-                     {% else %}
-                     <li class="app-task-list__item">
-                         <span class="app-task-list__task-name">
-                             <a href="type/index.html">Licence type</a>
-                         </span>                
-                     </li>
-                     {% endif %}
-                    <!-- Add products to application -->
+                    <!-- Licence type -->
+                    {% if sectionStatus.type === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="products/index.html" aria-describedby="products-completed">Add products to application</a>
+                            <a href="type/cya.html" aria-describedby="name-in-progress">Licence type</a>
                         </span>
-                        <!-- <strong class="govuk-tag app-task-list__task-completed" id="products-completed">Completed</strong> -->
+                        <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
+                    </li> 
+                    {% elif sectionStatus.type === "started" %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                        <a href="type/index.html" aria-describedby="name-in-progress">Licence type</a>
+                        </span>
+                        <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
+                    </li> 
+                    {% else %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="type/index.html">Licence type</a>
+                        </span>                
                     </li>
+                    {% endif %}
+                    <!-- Add products to your application -->
+                    {% if sectionStatus.products === "completed" %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="products/cya.html" aria-describedby="name-in-progress">Add products to your application</a>
+                        </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
+                    </li> 
+                    {% elif sectionStatus.products === "started" %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                        <a href="products/index.html" aria-describedby="name-in-progress">Add products to your application</a>
+                        </span>
+                        <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
+                    </li> 
+                    {% else %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="products/index.html">Add products to your application</a>
+                        </span>                
+                    </li>
+                    {% endif %}
                     <!-- Add locations to application -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -114,7 +129,6 @@
                     <!-- Submit application -->
                     {% if
                         (sectionStatus.name === "completed")
-                        and (sectionStatus.name === "completed")
                         and (sectionStatus.products === "completed")
                         and (sectionStatus.people === "completed")
                         and (sectionStatus.information === "completed")

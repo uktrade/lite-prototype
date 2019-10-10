@@ -32,7 +32,6 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
     if (!req.session.sectionStatus){
     	req.session.sectionStatus = {
             type: undefined,
-            name: undefined,
             products: undefined,
             people: undefined,
             information: undefined,
@@ -41,9 +40,6 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
 
     if (req.query.type) {
     	req.session.sectionStatus.type = req.query.type
-    };
-    if (req.query.name) {
-    	req.session.sectionStatus.name = req.query.name
     };
     if (req.query.products) {
     	req.session.sectionStatus.products = req.query.products
