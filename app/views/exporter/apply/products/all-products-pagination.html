@@ -1,0 +1,282 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Your products (924 added) - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Your products (924 added)</h1>
+        <a href="add-product.html" class="govuk-button float-right">Add a new product</a>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <div class="filter-section">
+            <form action="all-products-filter" method="post">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">Filter by</h2>
+                    </legend>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-name">Product</label>
+                        <input class="govuk-input" id="products-name" name="products-name" type="text" value="{{ data['products-name'] }}">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-date">Date added</label>
+                        <input class="govuk-input" id="products-date" name="products-date" type="text" value="{{ data['products-date'] }}">
+                    </div>
+                </fieldset>
+                <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Filter products</button>
+                <a href="#" class="govuk-link clear-filter">Clear filter</a> 
+            </form>
+        </div>
+    </div> 
+    <div class="govuk-grid-column-two-thirds">
+		<table class="govuk-table govuk-!-margin-bottom-4">
+            <caption class="govuk-table__caption hidden">Product and date added</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Product</th>
+                    <th scope="col" class="govuk-table__header">Date added</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="product.html" class="govuk-link govuk-link--no-visited-state">{{ data['product-name'] }}</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">MLD-TC87 two locks</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D1</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 2</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-130</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D2</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D3</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 3</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-131</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D4</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 4</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-132</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D5</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 5</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-133</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D6</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D7</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 6</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-134</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D8</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-135</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D9</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 7</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-136</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D10</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D11</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 8</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-137</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D12</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 9</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-138</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D13</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 10</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-139</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D14</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D15</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 11</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-140</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D16</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-141</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D17</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 12</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-142</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D18</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Boston Dynamics Spot droid 67-D19</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Nuclear Fuel Complex 13</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lockheed AC-143</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr> 
+
+            </tbody>
+        </table>
+        <div class="pagination">
+            <div class="pager-summary govuk-body">Showing <strong>1</strong> &ndash; <strong>50</strong> of <strong>924</strong> products</div>
+            <ul class="pager-items govuk-body">
+                <li>1</li>
+                <li><a href="#" class="govuk-link govuk-link--no-visited-state">2</a></li>
+                <li><a href="#" class="govuk-link govuk-link--no-visited-state">3</a></li>
+                <li><a href="#" class="govuk-link govuk-link--no-visited-state">4</a></li>
+                <li><a href="#" class="govuk-link govuk-link--no-visited-state">5</a></li>
+                <li><a href="#" class="govuk-link govuk-link--no-visited-state">Next</a></li>
+            </ul>
+        </div> 
+    </div>
+</div>
+{% endblock %}

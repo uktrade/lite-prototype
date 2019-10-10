@@ -1,0 +1,73 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Your products (1 added) - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Your products (1 added)</h1>
+        <a href="add-product.html" class="govuk-button float-right">Add a new product</a>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <div class="filter-section">
+            <form action="#" method="post">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">Filter by</h2>
+                    </legend>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-name">Product</label>
+                        <input class="govuk-input" id="products-name" name="products-name" type="text" value="{{ data['products-name'] }}">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="products-date">Date added</label>
+                        <input class="govuk-input" id="products-date" name="products-date" type="text" value="{{ data['products-date'] }}">
+                    </div>
+                </fieldset>
+                <a href="#" class="govuk-button govuk-!-margin-bottom-0">Filter products</a>
+                <a href="#" class="govuk-link clear-filter">Clear filter</a>
+            </form>
+        </div>
+    </div> 
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table govuk-!-margin-bottom-4">
+            <caption class="govuk-table__caption hidden">Product and date added</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Product</th>
+                    <th scope="col" class="govuk-table__header">Date added</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="product.html" class="govuk-link govuk-link--no-visited-state">{{ data['product-name'] }}</a></td>
+                    <td class="govuk-table__cell">25 September 2019</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

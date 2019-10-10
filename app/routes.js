@@ -15,6 +15,17 @@ router.post('/exporter/apply/type/application-reference', function (req, res) {
     }
 })
 
+router.post('/exporter/apply/products/add-product', function (req, res) {
+
+    let selectProduct= req.session.data['select-product']
+
+    if (selectProduct=== "Add a new product") {
+        res.redirect('/exporter/apply/products/add-product')
+    } else {
+        res.redirect('/exporter/apply/products/all-products-application')
+    }
+})
+
 // Task list
 router.get('/exporter/apply/task-list', (req, res, next) => {
 

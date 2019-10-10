@@ -1,0 +1,55 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Add a product to your application - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="add-product" method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Add a product to your application</h1>
+                    </legend>
+                    <!-- <span id="sign-in-hint" class="govuk-hint">Select one option.</span> -->
+                    <div class="govuk-form-group">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="new-product" name="select-product" type="radio" value="Add a new product" {{ checked("select-product", "Add a new product") }}>
+                                <label class="govuk-label govuk-radios__label" for="new-product">A new product</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="choose-current-product" name="select-product" type="radio" value="Choose a product you have added before" {{ checked("select-product", "Choose a product you have added before") }}>
+                                <label class="govuk-label govuk-radios__label" for="choose-current-product">Choose a product you have added before</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button><br />
+			<p><a href="../task-list?type=started">Finish later</a></p> 
+		</form>
+	</div>
+</div>
+{% endblock %}

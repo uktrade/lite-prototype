@@ -1,0 +1,36 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Product removed - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Product removed</h1>
+        <p>This product has been removed.</p>
+        <p class="govuk-body"><a href="all-products.html">View your products</a></p>
+        <p class="govuk-body"><a href="add-product.html">Add another product</a></p>
+        <p class="govuk-body"><a href="#">Return to main menu</a></p>
+    </div>
+</div>
+{% endblock %}

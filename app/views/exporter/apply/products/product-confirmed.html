@@ -1,0 +1,35 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Products added - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products added</h1>
+        <p>This product has been added to your organisation.</p>
+        <p class="govuk-body"><a href="all-products-application.html">View products in your organisation</a></p>
+        <p class="govuk-body"><a href="index.html">Add another product to application</a></p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Add product to application - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="product-added-application" method="post">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-1">Add product to application</h1>
+                    <span class="govuk-caption-l govuk-!-margin-bottom-4">{{ data['product-name'] }}</span>
+                </legend>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="value-products">Value of product (£)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="value-products" name="value-products" type="text" value="{{ data['value-products'] }}">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="quantity">Quantity</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="quantity" name="quantity" type="text" value="{{ data['quantity'] }}">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="measurement">Unit of measurement</label>
+                    <select class="govuk-select" id="measurement" name="measurement">
+                        <option value="select" selected>Select</option>
+                        <optgroup label="Item">
+                            <option value="pieces" {{ 'selected' if checked("measurement", "pieces") }}>pieces</option>
+                        </optgroup>
+                        <optgroup label="Mass">
+                            <option value="kt" {{ 'selected' if checked("measurement", "kt") }}>kt</option>
+                            <option value="t" {{ 'selected' if checked("measurement", "t") }}>t</option>
+                            <option value="kg" {{ 'selected' if checked("measurement", "kg") }}>kg</option>
+                            <option value="g" {{ 'selected' if checked("measurement", "g") }}>g</option>
+                            <option value="mg" {{ 'selected' if checked("measurement", "mg") }}>mg</option>
+                            <option value="mcg" {{ 'selected' if checked("measurement", "mcg") }}>mcg</option>
+                        </optgroup>
+                        <optgroup label="Volume">
+                            <option value="m3" {{ 'selected' if checked("measurement", "m3") }}>m3</option>
+                            <option value="cm3" {{ 'selected' if checked("measurement", "cm3") }}>cm3</option>
+                            <option value="mm3" {{ 'selected' if checked("measurement", "mm3") }}>mm3</option>
+                            <option value="l" {{ 'selected' if checked("measurement", "l") }}>l</option>
+                            <option value="cl" {{ 'selected' if checked("measurement", "cl") }}>cl</option>
+                            <option value="ml" {{ 'selected' if checked("measurement", "ml") }}>ml</option>
+                            <option value="ul" {{ 'selected' if checked("measurement", "ul") }}>ul</option>
+                        </optgroup> 
+                        <optgroup label="Length">
+                            <option value="m" {{ 'selected' if checked("measurement", "m") }}>m</option>
+                        </optgroup>
+                        <optgroup label="Area">
+                            <option value="m2" {{ 'selected' if checked("measurement", "m2") }}>m2</option>
+                        </optgroup> 
+                    </select>
+                </div> 
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Will this be used as a part for another product?</p>
+                <div class="govuk-form-group">
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="end-product-yes" name="end-product" type="radio" value="Yes" {{ checked("end-product", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="end-product-yes">Yes</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="end-product-no" name="end-product" type="radio" value="No" {{ checked("end-product", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="end-product-no">No</label>
+                        </div>	
+                    </div>
+                </div> 
+            </fieldset>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+        </form>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,121 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Products in application (XX added) - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        {% if data['removed'] %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products in application (2 added)</h1>
+        {% elseif data['add'] %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products in application (3 added)</h1>
+        {% else %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Products in application (2 added)</h1>
+        {% endif %}
+        <a href="all-products-application.html" class="govuk-button govuk-button--secondary float-right">Add product to application</a>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        {% if (data['add'] == "true") %}
+        <table class="govuk-table products-table-x govuk-!-margin-bottom-4">
+            <caption class="govuk-table__caption hidden">Product, value, quantity, measurement and incorporated</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Product</th>
+                    <th scope="col" class="govuk-table__header">Value</th>
+                    <th scope="col" class="govuk-table__header">Quantity</th>
+                    <th scope="col" class="govuk-table__header">Measurement</th>
+                    <th scope="col" class="govuk-table__header">Incorporated</th> 
+                    <th scope="col" class="govuk-table__header">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                {% if not data['removed'] %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">{{ data['product-name'] }}</td>
+                    <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td>
+                    <td class="govuk-table__cell">{{ data['quantity'] }}</td>
+                    <td class="govuk-table__cell">{{ data['measurement'] }}</td>
+                    <td class="govuk-table__cell">{{ data['end-product'] }}</td>
+                    <td class="govuk-table__cell"><a href="remove-product-application.html">Remove</a></td>
+                </tr>
+                {% endif %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Nuclear Fuel Complex 1</td>
+                    <td class="govuk-table__cell">£45,800.00</td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">Litres</td>
+                    <td class="govuk-table__cell">Yes</td>
+                    <td class="govuk-table__cell"><a href="#">Remove</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">MLD-TC87 two locks</td>
+                    <td class="govuk-table__cell">£15,000.20</td>
+                    <td class="govuk-table__cell">3</td>
+                    <td class="govuk-table__cell">Grams</td>
+                    <td class="govuk-table__cell">Yes</td>
+                    <td class="govuk-table__cell"><a href="#">Remove</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        {% else %}
+        <table class="govuk-table products-table-x govuk-!-margin-bottom-4">
+            <caption class="govuk-table__caption hidden">Product, value, quantity, measurement and incorporated</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Product</th>
+                    <th scope="col" class="govuk-table__header">Value</th>
+                    <th scope="col" class="govuk-table__header">Quantity</th>
+                    <th scope="col" class="govuk-table__header">Measurement</th>
+                    <th scope="col" class="govuk-table__header">Incorporated</th> 
+                    <th scope="col" class="govuk-table__header">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Nuclear Fuel Complex 1</td>
+                    <td class="govuk-table__cell">£45,800.00</td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">Litres</td>
+                    <td class="govuk-table__cell">Yes</td>
+                    <td class="govuk-table__cell"><a href="#">Remove</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">MLD-TC87 two locks</td>
+                    <td class="govuk-table__cell">£15,000.20</td>
+                    <td class="govuk-table__cell">3</td>
+                    <td class="govuk-table__cell">Grams</td>
+                    <td class="govuk-table__cell">Yes</td>
+                    <td class="govuk-table__cell"><a href="#">Remove</a></td>
+                </tr>
+            </tbody>
+        </table>
+        {% endif %}
+        <a class="govuk-button govuk-!-margin-top-2">Save and continue</a>
+    </div>
+</div>
+{% endblock %}
