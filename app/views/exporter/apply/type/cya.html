@@ -59,8 +59,32 @@
                 </dd>
             </div> 
             {% endif %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Export length</dt>
+                <dd class="govuk-summary-list__value">{{ data['export-length'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="export-length#export-length">Change<span class="govuk-visually-hidden"> export length</span></a> 
+                </dd>
+            </div>
+            {% if data['export-official'] === "Yes" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Told by an official</dt>
+                <dd class="govuk-summary-list__value">Yes - {{ data['reference-official'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="export-licence-official#export-official">Change<span class="govuk-visually-hidden"> Told by an official</span></a> 
+                </dd>
+            </div>
+            {% else %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Told by an official</dt>
+                <dd class="govuk-summary-list__value">{{ data['export-official'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="export-licence-official#export-official">Change<span class="govuk-visually-hidden"> Told by an official</span></a> 
+                </dd>
+            </div>
+            {% endif %}
         </dl>
-        <a href="../task-list?name=completed" class="govuk-button">Confirm and continue</a>
+        <a href="../task-list?type=completed" class="govuk-button">Confirm and continue</a>
 	</div>
 </div>
 {% endblock %}

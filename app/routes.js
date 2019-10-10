@@ -15,6 +15,43 @@ router.post('/exporter/apply/type/application-reference', function (req, res) {
     }
 })
 
+// Task list
+router.get('/exporter/apply/task-list', (req, res, next) => {
+
+    if (!req.session.sectionStatus){
+    	req.session.sectionStatus = {
+            type: undefined,
+            name: undefined,
+            products: undefined,
+            people: undefined,
+            information: undefined,
+      	}
+    }
+
+    if (req.query.type) {
+    	req.session.sectionStatus.type = req.query.type
+    };
+    if (req.query.name) {
+    	req.session.sectionStatus.name = req.query.name
+    };
+    if (req.query.products) {
+    	req.session.sectionStatus.products = req.query.products
+    };
+    if (req.query.people) {
+    	req.session.sectionStatus.people = req.query.people
+    };
+    if (req.query.information) {
+    	req.session.sectionStatus.information = req.query.information
+    };
+
+    res.render('exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
+});
+// Clear data on the 'Application cancelled' page
+router.get('/*/application-cancelled', function (req, res) {
+	req.session.destroy()
+    res.render('exporter/apply/confirm-cancel')
+})
+
 
 
 
@@ -164,41 +201,41 @@ router.post('/exporter/apply/people/index', function (req, res) {
 //    }
 //})
 // Task list
-router.get('/exporter/apply/task-list', (req, res, next) => {
+//router.get('/exporter/apply/task-list', (req, res, next) => {
 
-    if (!req.session.sectionStatus){
-    	req.session.sectionStatus = {
-        	check: undefined,
-        	name: undefined,
-            products: undefined,
-            people: undefined,
-            information: undefined,
-      	}
-    }
+//    if (!req.session.sectionStatus){
+//    	req.session.sectionStatus = {
+//        	check: undefined,
+//        	name: undefined,
+//            products: undefined,
+//            people: undefined,
+//            information: undefined,
+//      	}
+//    }
 
-    if (req.query.check) {
-    	req.session.sectionStatus.check = req.query.check
-    };
-    if (req.query.name) {
-    	req.session.sectionStatus.name = req.query.name
-    };
-    if (req.query.products) {
-    	req.session.sectionStatus.products = req.query.products
-    };
-    if (req.query.people) {
-    	req.session.sectionStatus.people = req.query.people
-    };
-    if (req.query.information) {
-    	req.session.sectionStatus.information = req.query.information
-    };
+//    if (req.query.check) {
+//    	req.session.sectionStatus.check = req.query.check
+//    };
+//    if (req.query.name) {
+//    	req.session.sectionStatus.name = req.query.name
+//    };
+//    if (req.query.products) {
+//    	req.session.sectionStatus.products = req.query.products
+//    };
+//    if (req.query.people) {
+//    	req.session.sectionStatus.people = req.query.people
+//    };
+//    if (req.query.information) {
+//    	req.session.sectionStatus.information = req.query.information
+//    };
 
-    res.render('exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
-});
+//    res.render('exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
+//});
 // Clear data on the 'Application cancelled' page
-router.get('/*/application-cancelled', function (req, res) {
-	req.session.destroy()
-    res.render('exporter/apply/confirm-cancel')
-})
+//router.get('/*/application-cancelled', function (req, res) {
+//	req.session.destroy()
+//    res.render('exporter/apply/confirm-cancel')
+//})
 // <------- ###### TO BE ARCHIVED ###### ------->
 
 

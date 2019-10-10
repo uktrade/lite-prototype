@@ -34,12 +34,27 @@
                 </h2>
 			    <ul class="app-task-list__items">
                      <!-- Licence type -->
+                     {% if sectionStatus.type === "completed" %}
                      <li class="app-task-list__item">
                          <span class="app-task-list__task-name">
-                             <a href="type/index.html" aria-describedby="name-in-progress">Licence type</a>
+                             <a href="type/cya.html" aria-describedby="name-in-progress">Licence type</a>
                          </span>
-                         <!-- <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong> -->
+                         <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
                      </li> 
+                     {% elif sectionStatus.type === "started" %}
+                     <li class="app-task-list__item">
+                         <span class="app-task-list__task-name">
+                            <a href="type/index.html" aria-describedby="name-in-progress">Licence type</a>
+                         </span>
+                         <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
+                     </li> 
+                     {% else %}
+                     <li class="app-task-list__item">
+                         <span class="app-task-list__task-name">
+                             <a href="type/index.html">Licence type</a>
+                         </span>                
+                     </li>
+                     {% endif %}
                     <!-- Add products to application -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -97,13 +112,27 @@
                 </h2>
 				<ul class="app-task-list__items">
                     <!-- Submit application -->
+                    {% if
+                        (sectionStatus.name === "completed")
+                        and (sectionStatus.name === "completed")
+                        and (sectionStatus.products === "completed")
+                        and (sectionStatus.people === "completed")
+                        and (sectionStatus.information === "completed")
+                    %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="declaration.html" aria-describedby="submit-completed">Sign declaration before you submit</a>
+                        </span>
+                    </li>
+                    {% else %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name grey-text">Sign declaration before you submit</span>
                     </li>
+                    {% endif %}
 				</ul>
 			</li>
 		</ol>
-		<p class="govuk-body"><a href="#">Cancel application</a></p>
+		<p class="govuk-body"><a href="cancel-application.html">Cancel application</a></p>
 	</div>
 </div>
 {% endblock %}

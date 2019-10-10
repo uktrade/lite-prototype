@@ -42,8 +42,8 @@
 
                             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
                                 <div class="govuk-form-group">
-                                    <label class="govuk-label" for="control-rating">Reference (optional)</label>
-                                    <input class="govuk-input govuk-!-width-one-half" id="control-rating" name="control-rating" type="text" value="{{ data['control-rating'] }}">
+                                    <label class="govuk-label" for="reference-official">Reference (optional)</label>
+                                    <input class="govuk-input govuk-!-width-one-half" id="reference-official" name="reference-official" type="text" value="{{ data['reference-official'] }}">
                                 </div>
                             </div>
 
@@ -55,7 +55,9 @@
                     </div>
                 </fieldset>
             </div>
-			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button> 
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+            <br />
+			<p><a href="../task-list?type=started">Finish later</a></p>
 		</form>
 	</div>
 </div>
