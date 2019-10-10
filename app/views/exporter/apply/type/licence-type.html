@@ -1,0 +1,62 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Which export licence do you want to apply for? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="application-reference" method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Which export licence do you want to apply for?</h1>
+                    </legend>
+                    <!-- <span id="sign-in-hint" class="govuk-hint">Select one option.</span> -->
+                    <div class="govuk-form-group">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="standard" name="licence-type" type="radio" value="Standard Licence" {{ checked("licence-type", "Standard Licence") }} aria-describedby="standard-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="standard">Standard Licence</label>
+                                <span id="standard-item-hint" class="govuk-hint govuk-radios__hint">Standard Licences are specific to the company and the recipient (consignee). They are for a set quantity and set value of goods. You will need to provide support documentation with your application.</span>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="open" name="licence-type" type="radio" value="Open Licence" {{ checked("licence-type", "Open Licence") }} aria-describedby="Open-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="open">Open Licence</label>
+                                <span id="open-item-hint" class="govuk-hint govuk-radios__hint">Open Licences cover long-term projects and repeat business. This is company specific, with no set quantity or value of goods. You will receive compliance audits under this type of licence.</span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">Help with choosing a licence</span>
+                </summary>
+                <div class="govuk-details__text">If you're unsure about which licence to select, then read the guidance on GOV.UK for <a href="https://www.gov.uk/starting-to-export/licences" target="_blank">exporting and doing business abroad</a>.</div>
+            </details>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button> 
+		</form>
+	</div>
+</div>
+{% endblock %}

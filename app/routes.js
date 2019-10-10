@@ -3,6 +3,22 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
+// Apply for an export licence
+router.post('/exporter/apply/type/application-reference', function (req, res) {
+
+    let licenceType = req.session.data['licence-type']
+
+    if (licenceType === "Standard Licence") {
+        res.redirect('/exporter/apply/type/application-reference')
+    } else {
+        res.redirect('/exporter/apply/type/export-length')
+    }
+})
+
+
+
+
+// <------- ###### TO BE ARCHIVED ###### ------->
 // UK/non-UK location
 router.post('/exporter/apply/products/location-uk', function (req, res) {
 
@@ -14,7 +30,6 @@ router.post('/exporter/apply/products/location-uk', function (req, res) {
         res.redirect('/exporter/apply/products/location-outside-uk')
     }
 })
-
 // UK/non-UK location [Product 1]
 router.post('/exporter/apply/products/location-uk-1', function (req, res) {
 
@@ -26,7 +41,6 @@ router.post('/exporter/apply/products/location-uk-1', function (req, res) {
         res.redirect('/exporter/apply/products/location-outside-uk-1')
     }
 })
-
 // UK/non-UK location [Product 2]
 router.post('/exporter/apply/products/location-uk-2', function (req, res) {
 
@@ -38,7 +52,6 @@ router.post('/exporter/apply/products/location-uk-2', function (req, res) {
         res.redirect('/exporter/apply/products/location-outside-uk-2')
     }
 })
-
 // Remove product [Product 1]
 router.post('/exporter/apply/products/product-removed', function (req, res) {
     console.log('posted to remove product 1')
@@ -50,7 +63,6 @@ router.post('/exporter/apply/products/product-removed', function (req, res) {
         res.redirect('/exporter/apply/products/product-added')
     }
 })
-
 // Add another product [Product 1]
 router.post('/exporter/apply/products/index-2', function (req, res) {
 
@@ -62,7 +74,6 @@ router.post('/exporter/apply/products/index-2', function (req, res) {
         res.redirect('/exporter/apply/task-list?products=completed')
     }
 })
-
 // Remove product [Product 2]
 router.post('/exporter/apply/products/remove-product-2', function (req, res) {
     console.log('posted to remove product 2')
@@ -74,7 +85,6 @@ router.post('/exporter/apply/products/remove-product-2', function (req, res) {
         res.redirect('/exporter/apply/products/product-added')
     }
 })
-
 // Add another product [Product 2]
 router.post('/exporter/apply/products/index', function (req, res) {
 
@@ -86,7 +96,6 @@ router.post('/exporter/apply/products/index', function (req, res) {
         res.redirect('/exporter/apply/task-list?products=completed')
     }
 })
-
 // Remove people [Person 1]
 router.post('/exporter/apply/people/people-removed', function (req, res) {
 
@@ -98,7 +107,6 @@ router.post('/exporter/apply/people/people-removed', function (req, res) {
         res.redirect('/exporter/apply/people/people-added')
     }
 })
-
 // Add another person [Person 1]
 router.post('/exporter/apply/people/index-2', function (req, res) {
 
@@ -110,7 +118,6 @@ router.post('/exporter/apply/people/index-2', function (req, res) {
         res.redirect('/exporter/apply/task-list?people=completed')
     }
 })
-
 // Remove people [Person 2]
 router.post('/exporter/apply/people/people-removed', function (req, res) {
 
@@ -122,7 +129,6 @@ router.post('/exporter/apply/people/people-removed', function (req, res) {
         res.redirect('/exporter/apply/people/people-added')
     }
 })
-
 // Add another person [Person 2]
 router.post('/exporter/apply/people/index', function (req, res) {
 
@@ -134,11 +140,6 @@ router.post('/exporter/apply/people/index', function (req, res) {
         res.redirect('/exporter/apply/task-list?people=completed')
     }
 })
-
-
-
-
-
 // User type
 //router.post('/exporter/apply/people/organisation', function (req, res) {
 
@@ -162,7 +163,6 @@ router.post('/exporter/apply/people/index', function (req, res) {
 //        res.redirect('/exporter/apply/end-user/cya')
 //    }
 //})
-
 // Task list
 router.get('/exporter/apply/task-list', (req, res, next) => {
 
@@ -194,13 +194,12 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
 
     res.render('exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
 });
-
 // Clear data on the 'Application cancelled' page
 router.get('/*/application-cancelled', function (req, res) {
 	req.session.destroy()
     res.render('exporter/apply/confirm-cancel')
 })
-
+// <------- ###### TO BE ARCHIVED ###### ------->
 
 
 

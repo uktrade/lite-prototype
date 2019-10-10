@@ -1,0 +1,54 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}What do you want to export? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="licence-type" method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">What do you want to export?</h1>
+                    </legend>
+                    <!-- <span id="sign-in-hint" class="govuk-hint">Select one option.</span> -->
+                    <div class="govuk-form-group">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="finished-products" name="send-type" type="radio" value="Finished products" {{ checked("send-type", "Finished products") }}>
+                                <label class="govuk-label govuk-radios__label" for="finished-products">Finished products</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="product-parts" name="send-type" type="radio" value="Parts (to make a finished product)" {{ checked("send-type", "Parts (to make a finished product)") }}>
+                                <label class="govuk-label govuk-radios__label" for="product-parts">Parts (to make a finished product)</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button> 
+		</form>
+	</div>
+</div>
+{% endblock %}
