@@ -78,11 +78,29 @@
                     </li>
                     {% endif %}
                     <!-- Add locations to application -->
+                    {% if sectionStatus.locations === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="#">Add locations to application</a>
+                            <a href="locations/xxx.html" aria-describedby="name-in-progress">Add locations to application</a>
+                        </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
+                    </li> 
+                    {% elif sectionStatus.locations === "started" %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                        <a href="locations/index.html" aria-describedby="name-in-progress">Add locations to application</a>
+                        </span>
+                        <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
+                    </li> 
+                    {% else %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="locations/index.html">Add locations to application</a>
                         </span>                
                     </li>
+                    {% endif %}
+
+            
                     <!-- Add end users to application -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -130,8 +148,7 @@
                     {% if
                         (sectionStatus.name === "completed")
                         and (sectionStatus.products === "completed")
-                        and (sectionStatus.people === "completed")
-                        and (sectionStatus.information === "completed")
+                        and (sectionStatus.locations === "completed")
                     %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">

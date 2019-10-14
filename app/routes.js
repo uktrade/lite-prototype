@@ -45,7 +45,7 @@ router.post('/exporter/apply/task-list', function (req, res) {
     let allProductsApply = req.session.data['product-add-apply']
 
     if (allProductsApply === 'false') {
-        res.redirect('/exporter/apply/products/all-products-application')
+        res.redirect('/exporter/apply/products/add-to-application')
     } else {
         res.redirect('/exporter/apply/products/add-product')
     }
@@ -58,8 +58,7 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
     	req.session.sectionStatus = {
             type: undefined,
             products: undefined,
-            people: undefined,
-            information: undefined,
+            locations: undefined,
       	}
     }
 
@@ -69,11 +68,8 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
     if (req.query.products) {
     	req.session.sectionStatus.products = req.query.products
     };
-    if (req.query.people) {
-    	req.session.sectionStatus.people = req.query.people
-    };
-    if (req.query.information) {
-    	req.session.sectionStatus.information = req.query.information
+    if (req.query.locations) {
+    	req.session.sectionStatus.locations = req.query.locations
     };
 
     res.render('exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
