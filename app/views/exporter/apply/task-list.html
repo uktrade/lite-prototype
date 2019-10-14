@@ -55,74 +55,74 @@
                         </span>                
                     </li>
                     {% endif %}
-                    <!-- Add products to your application -->
+                    <!-- Add products -->
                     {% if sectionStatus.products === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="products/product-addedd.html" aria-describedby="name-in-progress">Add products to your application</a>
+                            <a href="products/product-addedd.html" aria-describedby="name-in-progress">Add products</a>
                         </span>
                         <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
                     </li> 
                     {% elif sectionStatus.products === "started" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                        <a href="products/index.html" aria-describedby="name-in-progress">Add products to your application</a>
+                        <a href="products/index.html" aria-describedby="name-in-progress">Add products</a>
                         </span>
                         <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
                     </li> 
                     {% else %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="products/index.html">Add products to your application</a>
+                            <a href="products/index.html">Add products</a>
                         </span>                
                     </li>
                     {% endif %}
-                    <!-- Add locations to application -->
-                    {% if sectionStatus.locations === "completed" %}
+                    <!-- Add destination countries -->
+                    {% if sectionStatus.destinations === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="locations/xxx.html" aria-describedby="name-in-progress">Add locations to application</a>
+                            <a href="destinations/xxx.html" aria-describedby="name-in-progress">Add destination countries</a>
                         </span>
                         <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
                     </li> 
-                    {% elif sectionStatus.locations === "started" %}
+                    {% elif sectionStatus.destinations === "started" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                        <a href="locations/index.html" aria-describedby="name-in-progress">Add locations to application</a>
+                        <a href="destinations/index.html" aria-describedby="name-in-progress">Add destination countries</a>
                         </span>
                         <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
                     </li> 
                     {% else %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="locations/index.html">Add locations to application</a>
+                            <a href="destinations/index.html">Add destination countries</a>
                         </span>                
                     </li>
                     {% endif %}
 
             
-                    <!-- Add end users to application -->
+                    <!-- Add end users -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="#">Add end users to application</a>
+                            <a href="#">Add end users</a>
                         </span>                
                     </li>
-                    <!-- Add an ultimate end user to application -->
+                    <!-- Add an ultimate end user -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="#">Add an ultimate end user to application</a>
+                            <a href="#">Add an ultimate end user</a>
                         </span>                
                     </li>
-                    <!-- Add a consignee to application -->
+                    <!-- Add a consignee -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="#">Add a consignee to application</a>
+                            <a href="#">Add a consignee</a>
                         </span>                
                     </li>
-                    <!-- Add third parties to application -->
+                    <!-- Add any other third parties -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="#">Add third parties to application</a>
+                            <a href="#">Add any other third parties</a>
                         </span>                
                     </li>
                 </ul>
@@ -134,7 +134,7 @@
                 <ul class="app-task-list__items">                    
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="#">Check application answers</a>
+                            <a href="#">Check your answers</a>
                         </span>                
                     </li>
                 </ul>
@@ -148,7 +148,7 @@
                     {% if
                         (sectionStatus.name === "completed")
                         and (sectionStatus.products === "completed")
-                        and (sectionStatus.locations === "completed")
+                        and (sectionStatus.destinations === "completed")
                     %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">

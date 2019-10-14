@@ -38,12 +38,27 @@
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="standard" name="licence-type" type="radio" value="Standard Licence" {{ checked("licence-type", "Standard Licence") }} aria-describedby="standard-item-hint">
                                 <label class="govuk-label govuk-radios__label" for="standard">Standard Licence</label>
-                                <span id="standard-item-hint" class="govuk-hint govuk-radios__hint">Standard Licences are specific to the company and the recipient (consignee). They are for a set quantity and set value of goods. You will need to provide support documentation with your application.</span>
+                                <span id="standard-item-hint" class="govuk-hint govuk-radios__hint">Choose this licence if this is your first export licence.<br /><br />You can use this to export:
+                                    <ul class="govuk-list govuk-list--bullet grey-text govuk-!-margin-top-1 govuk-!-margin-bottom-0">
+                                        <li>to 1 organisation</li>
+                                        <li>for 1 to 2 years</li>
+                                        <li>a specific number of items</li>
+                                        <li>a specific value of items</li>
+                                    </ul>
+                                </span>
                             </div>
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="open" name="licence-type" type="radio" value="Open Licence" {{ checked("licence-type", "Open Licence") }} aria-describedby="Open-item-hint">
                                 <label class="govuk-label govuk-radios__label" for="open">Open Licence</label>
-                                <span id="open-item-hint" class="govuk-hint govuk-radios__hint">Open Licences cover long-term projects and repeat business. This is company specific, with no set quantity or value of goods. You will receive compliance audits under this type of licence.</span>
+                                <span id="standard-item-hint" class="govuk-hint govuk-radios__hint">Choose this licence if you are doing repeat business.<br /><br />You can use this to export:
+                                    <ul class="govuk-list govuk-list--bullet grey-text govuk-!-margin-top-1 govuk-!-margin-bottom-0">
+                                        <li>unlimited products</li>
+                                        <li>unlimited numbers</li>
+                                        <li>to multiple organisations</li>
+                                        <li>to multiple countries</li>
+                                        <li>for 3 to 5 years</li>
+                                    </ul>
+                                </span>
                             </div>
                         </div>
                     </div>

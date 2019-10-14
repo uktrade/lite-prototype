@@ -58,7 +58,7 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
     	req.session.sectionStatus = {
             type: undefined,
             products: undefined,
-            locations: undefined,
+            destinations: undefined,
       	}
     }
 
@@ -68,8 +68,8 @@ router.get('/exporter/apply/task-list', (req, res, next) => {
     if (req.query.products) {
     	req.session.sectionStatus.products = req.query.products
     };
-    if (req.query.locations) {
-    	req.session.sectionStatus.locations = req.query.locations
+    if (req.query.destinations) {
+    	req.session.sectionStatus.destinations = req.query.destinations
     };
 
     res.render('exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
