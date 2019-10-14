@@ -3,7 +3,7 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-// Apply for an export licence
+// http://localhost:3000/exporter/apply/type/licence-type
 router.post('/exporter/apply/type/application-reference', function (req, res) {
 
     let licenceType = req.session.data['licence-type']
@@ -15,14 +15,27 @@ router.post('/exporter/apply/type/application-reference', function (req, res) {
     }
 })
 
+// http://localhost:3000/exporter/apply/products/index
 router.post('/exporter/apply/products/add-product', function (req, res) {
 
-    let selectProduct= req.session.data['select-product']
+    let selectProduct = req.session.data['select-product']
 
-    if (selectProduct=== "Add a new product") {
+    if (selectProduct === "Add a new product") {
         res.redirect('/exporter/apply/products/add-product')
     } else {
         res.redirect('/exporter/apply/products/all-products-application')
+    }
+})
+
+// http://localhost:3000/exporter/apply/products/product-added-application
+router.post('/exporter/apply/products/all-products-application', function (req, res) {
+
+    let productTest = req.session.data['product-add-application-test']
+
+    if (productTest === 'true') {
+        res.redirect('/exporter/apply/products/all-products-application')
+    } else {
+        res.redirect('/exporter/apply/task-list')
     }
 })
 
