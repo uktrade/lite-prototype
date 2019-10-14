@@ -30,7 +30,11 @@
         <table class="govuk-table">
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
+                    {% if data['product-add-apply'] %}
+                    <td class="govuk-table__cell">{{ data['product-name'] }}</td>
+                    {% else %}
                     <td class="govuk-table__cell">British Challenger 2</td>
+                    {% endif %}
                     <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td>
                     <td class="govuk-table__cell">{{ data['quantity'] }}</td>
                     {% if data['measurement'] === "Other" %}
@@ -50,11 +54,11 @@
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="product-add-yes" name="product-add-application-test" type="radio" value="true">
+                            <input class="govuk-radios__input" id="product-add-yes" name="product-add-application-apply" type="radio" value="true">
                             <label class="govuk-label govuk-radios__label" for="product-add-yes">Yes</label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="product-add-no" name="product-add-application-test" type="radio" value="false">
+                            <input class="govuk-radios__input" id="product-add-no" name="product-add-application-apply" type="radio" value="false">
                             <label class="govuk-label govuk-radios__label" for="product-add-no">No</label>
                         </div>	
                     </div>

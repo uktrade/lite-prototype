@@ -30,21 +30,22 @@ router.post('/exporter/apply/products/add-product', function (req, res) {
 // http://localhost:3000/exporter/apply/products/product-added-application
 router.post('/exporter/apply/products/all-products-application', function (req, res) {
 
-    let productTest = req.session.data['product-add-application-test']
+    let allProductsAddApplicationApply = req.session.data['product-add-application-apply']
 
-    if (productTest === 'true') {
+    if (allProductsAddApplicationApply === 'true') {
         res.redirect('/exporter/apply/products/all-products-application')
     } else {
         res.redirect('/exporter/apply/task-list')
     }
 })
 
+// http://localhost:3000/exporter/apply/products/product-added
 router.post('/exporter/apply/task-list', function (req, res) {
 
     let allProductsApply = req.session.data['product-add-apply']
 
     if (allProductsApply === 'false') {
-        res.redirect('/exporter/apply/task-list')
+        res.redirect('/exporter/apply/products/all-products-application')
     } else {
         res.redirect('/exporter/apply/products/add-product')
     }

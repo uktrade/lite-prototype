@@ -56,10 +56,17 @@
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
+                {% if data['product-add-apply'] %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">{{ data['product-name'] }}</td>
+                    <td class="govuk-table__cell"><a href="add-to-application.html" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
+                </tr>
+                {% else %}
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">British Challenger 2</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html?add=true" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
+                    <td class="govuk-table__cell"><a href="add-to-application.html" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
                 </tr>
+                {% endif %}
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Nuclear Fuel Complex 1</td>
                     <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
