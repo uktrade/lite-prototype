@@ -3,17 +3,26 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-// http://localhost:3000/exporter/apply/type/licence-type
-router.post('/exporter/apply/type/application-reference', function (req, res) {
+// #######################################################
+// ###### Apply for an export licence: Licence type ######
+// #######################################################
 
-    let licenceType = req.session.data['licence-type']
+// http://localhost:3000/exporter/apply/licence-type/export-licence
+router.post('/exporter/apply/licence-type/application-reference', function (req, res) {
+
+    let licenceType = req.session.data['export-licence-type']
 
     if (licenceType === "Standard Licence") {
-        res.redirect('/exporter/apply/type/application-reference')
+        res.redirect('/exporter/apply/licence-type/application-reference')
     } else {
-        res.redirect('/exporter/apply/type/export-licence-official')
+        res.redirect('/exporter/apply/licence-type/export-licence-official')
     }
 })
+
+
+// #######################################################
+// ###### Apply for an export licence: Add products ######
+// #######################################################
 
 // http://localhost:3000/exporter/apply/products/index
 router.post('/exporter/apply/products/add-product', function (req, res) {
@@ -35,7 +44,7 @@ router.post('/exporter/apply/products/all-products-application', function (req, 
     if (allProductsAddApplicationApply === 'true') {
         res.redirect('/exporter/apply/products/all-products-application')
     } else {
-        res.redirect('/exporter/apply/task-list?products=completed')
+        res.redirect('/exporter/apply/task-list-2')
     }
 })
 
@@ -51,28 +60,20 @@ router.post('/exporter/apply/task-list', function (req, res) {
     }
 })
 
+
+// ####################################################################
+// ###### Apply for an export licence: Add destination countries ######
+// ####################################################################
+
 // http://localhost:3000/exporter/apply/destinations/index
-router.post('/exporter/apply/destinations/add-site', function (req, res) {
+router.post('/exporter/apply/destinations/all-sites', function (req, res) {
 
     let selectSite = req.session.data['select-location']
 
-    if (selectSite === "Add a new site") {
-        res.redirect('/exporter/apply/destinations/add-site')
-    } else {
+    if (selectSite === "Choose a site you have added before") {
         res.redirect('/exporter/apply/destinations/all-sites')
-    }
-})
-
-// http://localhost:3000/exporter/apply/destinations/all-sites
-// HACKED to make the task list pattern work
-router.post('/exporter/apply/destinations/index', function (req, res) {
-
-    let allSitesApply = req.session.data['select-site']
-
-    if (allSitesApply === 'site 1') {
-        res.redirect('/exporter/apply/task-list?destinations=completed')
     } else {
-        res.redirect('/exporter/apply/task-list?destinations=completed')
+        res.redirect('/exporter/apply/destinations/add-site')
     }
 })
 
@@ -88,36 +89,31 @@ router.post('/exporter/apply/destinations/site-uk', function (req, res) {
     }
 })
 
+// http://localhost:3000/exporter/apply/destinations/site-added
+router.post('/exporter/apply/destinations/add-site', function (req, res) {
 
+    let siteAddApply = req.session.data['site-add']
 
-// Task list
-router.get('/exporter/apply/task-list', (req, res, next) => {
-
-    if (!req.session.sectionStatus){
-    	req.session.sectionStatus = {
-            type: undefined,
-            products: undefined,
-            destinations: undefined,
-      	}
+    if (siteAddApply === 'true') {
+        res.redirect('/exporter/apply/destinations/add-site')
+    } else {
+        res.redirect('/exporter/apply/task-list-3')
     }
+})
 
-    if (req.query.type) {
-    	req.session.sectionStatus.type = req.query.type
-    };
-    if (req.query.products) {
-    	req.session.sectionStatus.products = req.query.products
-    };
-    if (req.query.destinations) {
-    	req.session.sectionStatus.destinations = req.query.destinations
-    };
 
-    res.render('exporter/apply/task-list.html', {sectionStatus: req.session.sectionStatus});
-});
+// ####################################################
+// ###### Apply for an export licence: Task List ######
+// ####################################################
+
 // Clear data on the 'Application cancelled' page
 router.get('/*/application-cancelled', function (req, res) {
 	req.session.destroy()
     res.render('exporter/apply/confirm-cancel')
 })
+
+
+
 
 
 
@@ -304,6 +300,8 @@ router.post('/exporter/apply/people/index', function (req, res) {
 //    res.render('exporter/apply/confirm-cancel')
 //})
 // <------- ###### TO BE ARCHIVED ###### ------->
+
+
 
 
 

@@ -33,20 +33,12 @@
                 <dd class="govuk-summary-list__value">{{ data['site-name'] }}</dd>
             </div>
             {% if data['site-where'] == "true" %}
-            <!-- <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Location</dt>
-                <dd class="govuk-summary-list__value">In the UK</dd>
-            </div> -->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address</dt>
                 <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
             </div>
             {% endif %}
             {% if data['site-where'] == "false" %}
-            <!-- <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Location</dt>
-                <dd class="govuk-summary-list__value">Outside the UK</dd>
-            </div> -->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address</dt>
                 <dd class="govuk-summary-list__value">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}</dd>
@@ -55,8 +47,7 @@
         </dl>
         <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
         <form action="site-added-none" method="post">
-            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Yes, remove site</button>
-            <a href="../task-list?destinations=started" class="govuk-button govuk-button--secondary">Finish later</a>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Yes, remove site</button>
         </form>
         <p class="govuk-body"><a href="javascript:window.history.back()" class="govuk-link">No, do not remove site</a></p>
     </div>

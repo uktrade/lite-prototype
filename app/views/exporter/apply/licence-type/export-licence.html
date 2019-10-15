@@ -35,12 +35,12 @@
                     <div class="govuk-form-group">
                         <div class="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="standard" name="licence-type" type="radio" value="Standard Licence" {{ checked("licence-type", "Standard Licence") }} aria-describedby="standard-item-hint">
+                                <input class="govuk-radios__input" id="standard" name="export-licence-type" type="radio" value="Standard Licence" {{ checked("export-licence-type", "Standard Licence") }} aria-describedby="standard-item-hint">
                                 <label class="govuk-label govuk-radios__label" for="standard">Standard Licence</label>
                                 <span id="standard-item-hint" class="govuk-hint govuk-radios__hint">Choose this licence if this is your first export licence.</span>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="open" name="licence-type" type="radio" value="Open Licence" {{ checked("licence-type", "Open Licence") }} aria-describedby="Open-item-hint">
+                                <input class="govuk-radios__input" id="open" name="export-licence-type" type="radio" value="Open Licence" {{ checked("export-licence-type", "Open Licence") }} aria-describedby="Open-item-hint">
                                 <label class="govuk-label govuk-radios__label" for="open">Open Licence</label>
                                 <span id="standard-item-hint" class="govuk-hint govuk-radios__hint">Choose this licence if you are doing repeat business.</span>
                             </div>
@@ -68,11 +68,9 @@
                         <li>to multiple countries</li>
                         <li>for 3 to 5 years</li>
                     </ul>
-                    <!-- <p class="govuk-body govuk-!-margin-top-2">If you're unsure about which licence to select, then read the guidance on GOV.UK for <a href="https://www.gov.uk/starting-to-export/licences" target="_blank">exporting and doing business abroad</a>.</p> -->
                 </div>
             </details>
-			<button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Save and continue</button>
-            <a href="../task-list?type=started" class="govuk-button govuk-button--secondary">Finish later</a> 
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
 		</form>
 	</div>
 </div>
