@@ -37,14 +37,15 @@
                     {% if sectionStatus.type === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="type/cya.html" aria-describedby="name-in-progress">Licence type</a>
+                            <!-- <a href="type/cya.html" aria-describedby="name-in-progress">Licence type</a> -->
+                            <a href="type/index.html" aria-describedby="name-in-progress">Licence type</a>
                         </span>
                         <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
                     </li> 
                     {% elif sectionStatus.type === "started" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                        <a href="type/index.html" aria-describedby="name-in-progress">Licence type</a>
+                            <a href="type/index.html" aria-describedby="name-in-progress">Licence type</a>
                         </span>
                         <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
                     </li> 
@@ -52,21 +53,23 @@
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="type/index.html">Licence type</a>
-                        </span>                
+                        </span>    
+                        <strong class="govuk-tag govuk-tag-initial app-task-list__task-completed" id="name-in-progress">Not started</strong>            
                     </li>
                     {% endif %}
                     <!-- Add products -->
                     {% if sectionStatus.products === "completed" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="products/product-added-application.html" aria-describedby="name-in-progress">Add products</a>
+                            <!-- <a href="products/product-added-application.html" aria-describedby="name-in-progress">Add products</a> -->
+                            <a href="products/index.html" aria-describedby="name-in-progress">Add products</a>
                         </span>
                         <strong class="govuk-tag app-task-list__task-completed" id="name-completed">Completed</strong>
                     </li> 
                     {% elif sectionStatus.products === "started" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                        <a href="products/index.html" aria-describedby="name-in-progress">Add products</a>
+                            <a href="products/index.html" aria-describedby="name-in-progress">Add products</a>
                         </span>
                         <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
                     </li> 
@@ -74,7 +77,8 @@
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="products/index.html">Add products</a>
-                        </span>                
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-initial app-task-list__task-completed" id="name-in-progress">Not started</strong>              
                     </li>
                     {% endif %}
                     <!-- Add destination countries -->
@@ -88,15 +92,16 @@
                     {% elif sectionStatus.destinations === "started" %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                        <a href="destinations/index.html" aria-describedby="name-in-progress">Add destination countries</a>
+                            <a href="destinations/index.html" aria-describedby="name-in-progress">Add destination countries</a>
                         </span>
                         <strong class="govuk-tag govuk-tag-progress app-task-list__task-completed" id="name-in-progress">In progress</strong>
                     </li> 
                     {% else %}
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="destinations/index.html">Add destination countries</a>
-                        </span>                
+                            <a href="#">Add destination countries</a>
+                        </span> 
+                        <strong class="govuk-tag govuk-tag-initial app-task-list__task-completed" id="name-in-progress">Not started</strong>               
                     </li>
                     {% endif %}
 
@@ -105,25 +110,29 @@
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="#">Add end users</a>
-                        </span>                
+                        </span>
+                        <strong class="govuk-tag govuk-tag-initial app-task-list__task-completed" id="name-in-progress">Not started</strong>                
                     </li>
                     <!-- Add an ultimate end user -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="#">Add an ultimate end user</a>
-                        </span>                
+                        </span>   
+                        <strong class="govuk-tag govuk-tag-initial app-task-list__task-completed" id="name-in-progress">Not started</strong>             
                     </li>
                     <!-- Add a consignee -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="#">Add a consignee</a>
-                        </span>                
+                        </span> 
+                        <strong class="govuk-tag govuk-tag-initial app-task-list__task-completed" id="name-in-progress">Not started</strong>               
                     </li>
                     <!-- Add any other third parties -->
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="#">Add any other third parties</a>
-                        </span>                
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-initial app-task-list__task-completed" id="name-in-progress">Not started</strong>              
                     </li>
                 </ul>
             </li>
@@ -131,12 +140,22 @@
                 <h2 class="app-task-list__section">
                     <span class="app-task-list__section-number">2. </span> Review application
                 </h2>
-                <ul class="app-task-list__items">                    
+                <ul class="app-task-list__items"> 
+                    {% if
+                        (sectionStatus.name === "completed")
+                        and (sectionStatus.products === "completed")
+                        and (sectionStatus.destinations === "completed")
+                    %}                   
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="#">Check your answers</a>
                         </span>                
                     </li>
+                    {% else %}
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">Check your answers</span>
+                    </li>
+                    {% endif %}
                 </ul>
             </li>
             <li>
@@ -157,7 +176,7 @@
                     </li>
                     {% else %}
                     <li class="app-task-list__item">
-                        <span class="app-task-list__task-name grey-text">Sign declaration before you submit</span>
+                        <span class="app-task-list__task-name">Sign declaration before you submit</span>
                     </li>
                     {% endif %}
 				</ul>

@@ -26,7 +26,8 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form action="cya" method="post">
+		<!-- <form action="cya" method="post"> -->
+        <form action="#" method="post">
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -55,8 +56,10 @@
                     </div>
                 </fieldset>
             </div>
-            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Save and continue</button>
-            <a href="../task-list?type=started" class="govuk-button govuk-button--secondary">Finish later</a> 
+            <!-- <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Save and continue</button>
+            <a href="../task-list?type=started" class="govuk-button govuk-button--secondary">Finish later</a> -->
+            <a href="../task-list?type=completed" class="govuk-button govuk-!-margin-right-1">Save and continue</a>
+        <a href="../task-list?type=started" class="govuk-button govuk-button--secondary">Finish later</a> 
 		</form>
 	</div>
 </div>
