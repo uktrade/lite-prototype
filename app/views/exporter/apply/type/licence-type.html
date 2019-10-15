@@ -27,38 +27,22 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<form action="application-reference" method="post">
-			<div class="govuk-form-group">
+			<div class="govuk-form-group govuk-!-margin-bottom-2">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 						<h1 class="govuk-fieldset__heading">Which export licence do you want to apply for?</h1>
                     </legend>
-                    <!-- <span id="sign-in-hint" class="govuk-hint">Select one option.</span> -->
                     <div class="govuk-form-group">
                         <div class="govuk-radios">
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="standard" name="licence-type" type="radio" value="Standard Licence" {{ checked("licence-type", "Standard Licence") }} aria-describedby="standard-item-hint">
                                 <label class="govuk-label govuk-radios__label" for="standard">Standard Licence</label>
-                                <span id="standard-item-hint" class="govuk-hint govuk-radios__hint">Choose this licence if this is your first export licence.<!-- <br /><br />You can use this to export:
-                                    <ul class="govuk-list govuk-list--bullet grey-text govuk-!-margin-top-1 govuk-!-margin-bottom-0">
-                                        <li>to 1 organisation</li>
-                                        <li>for 1 to 2 years</li>
-                                        <li>a specific number of items</li>
-                                        <li>a specific value of items</li>
-                                    </ul> -->
-                                </span>
+                                <span id="standard-item-hint" class="govuk-hint govuk-radios__hint">Choose this licence if this is your first export licence.</span>
                             </div>
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="open" name="licence-type" type="radio" value="Open Licence" {{ checked("licence-type", "Open Licence") }} aria-describedby="Open-item-hint">
                                 <label class="govuk-label govuk-radios__label" for="open">Open Licence</label>
-                                <span id="standard-item-hint" class="govuk-hint govuk-radios__hint">Choose this licence if you are doing repeat business.<!-- <br /><br />You can use this to export:
-                                    <ul class="govuk-list govuk-list--bullet grey-text govuk-!-margin-top-1 govuk-!-margin-bottom-0">
-                                        <li>unlimited products</li>
-                                        <li>unlimited numbers</li>
-                                        <li>to multiple organisations</li>
-                                        <li>to multiple countries</li>
-                                        <li>for 3 to 5 years</li>
-                                    </ul> -->
-                                </span>
+                                <span id="standard-item-hint" class="govuk-hint govuk-radios__hint">Choose this licence if you are doing repeat business.</span>
                             </div>
                         </div>
                     </div>
@@ -66,17 +50,17 @@
             </div>
             <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">Help with choosing a licence</span>
+                    <span class="govuk-details__summary-text">I do not know which licence I need</span>
                 </summary>
                 <div class="govuk-details__text">
-                    <p class="govuk-body">For a standard licence, you can use this to export:</p>
+                    <p class="govuk-body">Choose a standard licence if you want to export:</p>
                     <ul class="govuk-list govuk-list--bullet">
                         <li>to 1 organisation</li>
                         <li>for 1 to 2 years</li>
                         <li>a specific number of items</li>
                         <li>a specific value of items</li>
                     </ul>
-                    <p class="govuk-body">For an open licence, you can use this to export:</p>
+                    <p class="govuk-body">Choose an open licence if you want to export:</p>
                     <ul class="govuk-list govuk-list--bullet">
                         <li>unlimited products</li>
                         <li>unlimited numbers</li>
@@ -84,7 +68,8 @@
                         <li>to multiple countries</li>
                         <li>for 3 to 5 years</li>
                     </ul>
-                    <p class="govuk-body">If you're unsure about which licence to select, then read the guidance on GOV.UK for <a href="https://www.gov.uk/starting-to-export/licences" target="_blank">exporting and doing business abroad</a>.</p></div>
+                    <!-- <p class="govuk-body govuk-!-margin-top-2">If you're unsure about which licence to select, then read the guidance on GOV.UK for <a href="https://www.gov.uk/starting-to-export/licences" target="_blank">exporting and doing business abroad</a>.</p> -->
+                </div>
             </details>
 			<button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Save and continue</button>
             <a href="../task-list?type=started" class="govuk-button govuk-button--secondary">Finish later</a> 

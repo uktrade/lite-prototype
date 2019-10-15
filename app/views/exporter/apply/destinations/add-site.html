@@ -1,0 +1,58 @@
+
+{% extends "layout-exporter.html" %} 
+
+{% block pageTitle %}Add a new site - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="site-uk" method="post">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Add a new site</h1>
+                </legend>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-1" for="site-name">Site name</label>
+                    <span class="govuk-hint">Use a unique site name so you can recognise this in a big list of similar sites.</span>
+                    <input class="govuk-input govuk-!-width-full" id="site-name" name="site-name" type="text" value="{{ data['site-name'] }}">
+                </div>
+                <p class="govuk-body govuk-!-margin-bottom-1 govuk-label--m">Where is the site located?</p>
+                <div class="govuk-form-group">
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="in-uk" name="site-where" type="radio" value="true" {{ checked("site-where", "true") }}>
+                            <label class="govuk-label govuk-radios__label" for="in-uk">In the UK</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="outside-uk" name="site-where" type="radio" value="false" {{ checked("site-where", "false") }}>
+                            <label class="govuk-label govuk-radios__label" for="outside-uk">Outside the UK</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Save and continue</button>
+            <a href="../task-list?destinations=started" class="govuk-button govuk-button--secondary">Finish later</a>
+        </form>
+	</div>
+</div>
+{% endblock %}

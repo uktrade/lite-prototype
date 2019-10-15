@@ -1,0 +1,66 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}You have added 1 site - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">You have added 1 site</h1>
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><strong>{{ data['site-name'] }}</strong></td>
+                    {% if data['site-where'] == "false" %}
+                    <td class="govuk-table__cell">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}</td>
+                    {% else %}
+                    <td class="govuk-table__cell">50 Victoria Street<br />London<br />SW1H 0TL</td>
+                    {% endif %}
+                    <td class="govuk-table__cell"><a href="add-site">Edit<span class="govuk-visually-hidden"> site name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="govuk-link" href="remove-site">Remove<span class="govuk-visually-hidden"> site name</span></a></td>
+                </tr>
+            </tbody>
+        </table>
+        <form action="all-sites" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">Add another site?</h2>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="site-add-yes" name="site-add" type="radio" value="true">
+                            <label class="govuk-label govuk-radios__label" for="site-add-yes">Yes</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="site-add-no" name="site-add" type="radio" value="false">
+                            <label class="govuk-label govuk-radios__label" for="site-add-no">No</label>
+                        </div>	
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Continue</button>
+            <a href="../task-list?destinations=started" class="govuk-button govuk-button--secondary">Finish later</a>
+        </form>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}What address are you sending from? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="site-uk-select" method="post">
+			<div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <h1 class="govuk-label-wrapper">
+                        <label class="govuk-label govuk-label--l" for="uk-postcode">Postcode</label>
+                    </h1>
+                    <input class="govuk-input govuk-input--width-10" id="uk-postcode" name="uk-postcode" type="text">
+                </div>
+			</div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">Find address</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

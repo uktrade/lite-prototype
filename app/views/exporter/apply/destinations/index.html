@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Add a product to your application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Add a site to your application - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,29 +26,29 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form action="add-product" method="post">
+		<form action="add-site" method="post">
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-						<h1 class="govuk-fieldset__heading">Add a product to your application</h1>
+						<h1 class="govuk-fieldset__heading">Add a site to your application</h1>
                     </legend>
-                    <!-- <span id="sign-in-hint" class="govuk-hint">Select one option.</span> -->
+                    <!-- <span id="sign-in-hint" class="govuk-hint">You can only choose one type of location per application.</span> -->
                     <div class="govuk-form-group">
                         <div class="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="new-product" name="select-product" type="radio" value="Add a new product" {{ checked("select-product", "Add a new product") }}>
-                                <label class="govuk-label govuk-radios__label" for="new-product">A new product</label>
+                                <input class="govuk-radios__input" id="new-site" name="select-location" type="radio" value="Add a new site" {{ checked("select-location", "Add a new site") }}>
+                                <label class="govuk-label govuk-radios__label" for="new-site">Add a new site</label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="choose-product" name="select-product" type="radio" value="Choose a product you have added before" {{ checked("select-product", "Choose a product you have added before") }}>
-                                <label class="govuk-label govuk-radios__label" for="choose-product">Choose a product you have added before</label>
+                                <input class="govuk-radios__input" id="choose-site" name="select-location" type="radio" value="Choose a site you have added before" {{ checked("select-location", "Choose a site you have added before") }}>
+                                <label class="govuk-label govuk-radios__label" for="choose-site">Choose a site you have added before</label>
                             </div>
                         </div>
                     </div>
                 </fieldset>
             </div>
             <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Save and continue</button>
-            <a href="../task-list?products=started" class="govuk-button govuk-button--secondary">Finish later</a>
+            <a href="../task-list?destinations=started" class="govuk-button govuk-button--secondary">Finish later</a>
 		</form>
 	</div>
 </div>

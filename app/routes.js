@@ -11,7 +11,7 @@ router.post('/exporter/apply/type/application-reference', function (req, res) {
     if (licenceType === "Standard Licence") {
         res.redirect('/exporter/apply/type/application-reference')
     } else {
-        res.redirect('/exporter/apply/type/export-length')
+        res.redirect('/exporter/apply/type/export-licence-official')
     }
 })
 
@@ -50,6 +50,45 @@ router.post('/exporter/apply/task-list', function (req, res) {
         res.redirect('/exporter/apply/products/add-product')
     }
 })
+
+// http://localhost:3000/exporter/apply/destinations/index
+router.post('/exporter/apply/destinations/add-site', function (req, res) {
+
+    let selectSite = req.session.data['select-location']
+
+    if (selectSite === "Add a new site") {
+        res.redirect('/exporter/apply/destinations/add-site')
+    } else {
+        res.redirect('/exporter/apply/destinations/all-sites')
+    }
+})
+
+// http://localhost:3000/exporter/apply/destinations/all-sites
+// HACKED to make the task list pattern work
+router.post('/exporter/apply/destinations/index', function (req, res) {
+
+    let allSitesApply = req.session.data['select-site']
+
+    if (allSitesApply === 'site 1') {
+        res.redirect('/exporter/apply/task-list?destinations=completed')
+    } else {
+        res.redirect('/exporter/apply/task-list?destinations=completed')
+    }
+})
+
+// http://localhost:3000/exporter/apply/destinations/add-site
+router.post('/exporter/apply/destinations/site-uk', function (req, res) {
+
+    let siteUKApply = req.session.data['site-where']
+
+    if (siteUKApply === 'true') {
+        res.redirect('/exporter/apply/destinations/site-uk')
+    } else {
+        res.redirect('/exporter/apply/destinations/site-outside-uk')
+    }
+})
+
+
 
 // Task list
 router.get('/exporter/apply/task-list', (req, res, next) => {

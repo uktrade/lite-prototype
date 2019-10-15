@@ -1,0 +1,43 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Check your answers - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+		<h1 class="govuk-heading-l">Check your answers</h1>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">Sending</dt>
+				<dd class="govuk-summary-list__value">{{ data['select-site'] }}</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="all-sitesl#send-type">Change<span class="govuk-visually-hidden"> sending</span></a> 
+				</dd>
+            </div> 
+        </dl>
+        <a href="../task-list?type=completed" class="govuk-button govuk-!-margin-right-1">Confirm and continue</a>
+        <a href="../task-list?type=started" class="govuk-button govuk-button--secondary">Finish later</a> 
+	</div>
+</div>
+{% endblock %}

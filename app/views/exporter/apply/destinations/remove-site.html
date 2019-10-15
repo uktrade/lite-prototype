@@ -1,0 +1,64 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Remove site? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Remove site?</h1>
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-0">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">{{ data['site-name'] }}</dd>
+            </div>
+            {% if data['site-where'] == "true" %}
+            <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Location</dt>
+                <dd class="govuk-summary-list__value">In the UK</dd>
+            </div> -->
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
+            </div>
+            {% endif %}
+            {% if data['site-where'] == "false" %}
+            <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Location</dt>
+                <dd class="govuk-summary-list__value">Outside the UK</dd>
+            </div> -->
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}</dd>
+            </div>
+            {% endif %}
+        </dl>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+        <form action="site-added-none" method="post">
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Yes, remove site</button>
+            <a href="../task-list?destinations=started" class="govuk-button govuk-button--secondary">Finish later</a>
+        </form>
+        <p class="govuk-body"><a href="javascript:window.history.back()" class="govuk-link">No, do not remove site</a></p>
+    </div>
+</div>
+{% endblock %}
