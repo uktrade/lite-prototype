@@ -68,12 +68,11 @@
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">{{ data['site-name'] }}</a></td>
                     {% if data['site-where'] == "false" %}
-                    <td class="govuk-table__cell">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}</td>
+                    <td class="govuk-table__cell">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}<br /><span class="grey-text">{{ data['country'] }}</span></td>
                     {% else %}
                     <td class="govuk-table__cell">50 Victoria Street<br />London<br />SW1H 0TL</td>
                     {% endif %}
-                    <td class="govuk-table__cell"><a href="add-site">Edit<span class="govuk-visually-hidden"> site</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a class="govuk-link" href="remove-site">Remove<span class="govuk-visually-hidden"> site</span></a></td>
+                    <td class="govuk-table__cell"><a href="add-site">Edit<span class="govuk-visually-hidden"> site</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="govuk-link" href="remove-site">Remove<span class="govuk-visually-hidden"> site</span></a></td>
                 </tr>
             </tbody>
         </table>

@@ -1,0 +1,48 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Select address - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="upload-document" method="post">
+			<div class="govuk-form-group">
+				<h1 class="govuk-label-wrapper">
+					<label class="govuk-label govuk-label--l" for="address">Select address</label>
+				</h1>
+				<select class="govuk-select" id="address" name="address">
+                    <option value="found" selected>2 addresses found</option>
+                    <option value="50 Victoria St, Westminster, London SW1H 0TL" {{ 'selected' if checked("address", "50 Victoria St, Westminster, London SW1H 0TL") }}>50 Victoria St, Westminster, London SW1H 0TL</option>
+                    <option value="Transport For London Street Management" {{ 'selected' if checked("address", "Transport For London Street Management") }}>Transport For London Street Management</option>
+					<!-- <option value="victoria">50 Victoria St, Westminster, London SW1H 0TL</option>
+					<option value="tfl">Transport For London Street Management</option> -->
+				</select>
+			</div>
+			<p class="govuk-body govuk-!-margin-top-6">Postcode <span class="govuk-!-font-weight-bold">SW1H 0TL</span> &nbsp;&nbsp;&nbsp;<a href="site-uk.html">Change</a></p>
+			<p class=" govuk-!-margin-top-4 govuk-!-margin-bottom-6"><a href="site-uk-manual.html">I can't find my address</a></p> 
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

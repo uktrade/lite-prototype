@@ -10,9 +10,9 @@ const router = express.Router()
 // http://localhost:3000/exporter/apply/licence-type/export-licence
 router.post('/exporter/apply/licence-type/application-reference', function (req, res) {
 
-    let licenceType = req.session.data['export-licence-type']
+    let licenceTypeApply = req.session.data['export-licence-type']
 
-    if (licenceType === "Standard Licence") {
+    if (licenceTypeApply === "Standard Licence") {
         res.redirect('/exporter/apply/licence-type/application-reference')
     } else {
         res.redirect('/exporter/apply/licence-type/export-licence-official')
@@ -27,9 +27,9 @@ router.post('/exporter/apply/licence-type/application-reference', function (req,
 // http://localhost:3000/exporter/apply/products/index
 router.post('/exporter/apply/products/add-product', function (req, res) {
 
-    let selectProduct = req.session.data['select-product']
+    let selectProductApply = req.session.data['select-product']
 
-    if (selectProduct === "Add a new product") {
+    if (selectProductApply === "Add a new product") {
         res.redirect('/exporter/apply/products/add-product')
     } else {
         res.redirect('/exporter/apply/products/all-products-application')
@@ -68,9 +68,9 @@ router.post('/exporter/apply/task-list', function (req, res) {
 // http://localhost:3000/exporter/apply/destinations/index
 router.post('/exporter/apply/destinations/all-sites', function (req, res) {
 
-    let selectSite = req.session.data['select-location']
+    let selectSiteApply = req.session.data['select-location']
 
-    if (selectSite === "Choose a site you have added before") {
+    if (selectSiteApply === "Choose a site you have added before") {
         res.redirect('/exporter/apply/destinations/all-sites')
     } else {
         res.redirect('/exporter/apply/destinations/add-site')
@@ -85,7 +85,7 @@ router.post('/exporter/apply/destinations/site-uk', function (req, res) {
     if (siteUKApply === 'true') {
         res.redirect('/exporter/apply/destinations/site-uk')
     } else {
-        res.redirect('/exporter/apply/destinations/site-outside-uk')
+        res.redirect('/exporter/apply/destinations/site-country')
     }
 })
 
@@ -101,6 +101,22 @@ router.post('/exporter/apply/destinations/add-site', function (req, res) {
     }
 })
 
+
+// ########################################################
+// ###### Apply for an export licence: Add end users ######
+// ########################################################
+
+// http://localhost:3000/exporter/apply/end-users/location
+router.post('/exporter/apply/end-users/site-uk', function (req, res) {
+
+    let endUserUKApply = req.session.data['recipent-based']
+
+    if (endUserUKApply === 'true') {
+        res.redirect('/exporter/apply/end-users/site-uk')
+    } else {
+        res.redirect('/exporter/apply/end-users/site-country')
+    }
+})
 
 // ####################################################
 // ###### Apply for an export licence: Task List ######
@@ -339,7 +355,7 @@ router.post('/exporter/sites/site-uk', function (req, res) {
     if (siteUK === 'true') {
         res.redirect('/exporter/sites/site-uk')
     } else {
-        res.redirect('/exporter/sites/site-outside-uk')
+        res.redirect('/exporter/sites/site-country')
     }
 })
 

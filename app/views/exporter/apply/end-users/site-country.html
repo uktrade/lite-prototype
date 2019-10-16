@@ -1,0 +1,47 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Which country? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="site-outside-uk" method="post">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="non-UK-address">Which country?</label>
+            </h1>
+            <div class="govuk-form-group">
+                <select class="govuk-select" id="country" name="country">
+                    <option value="select" selected>Select</option>
+                    <option value="Abu Dhabi" {{ 'selected' if checked("country", "Abu Dhabi") }}>Abu Dhabi</option>
+                    <option value="Afghanistan" {{ 'selected' if checked("country", "Afghanistan") }}>Afghanistan</option>
+                    <option value="Ajman" {{ 'selected' if checked("country", "Ajman") }}>Ajman</option>
+                    <option value="Akrotiri" {{ 'selected' if checked("country", "Akrotiri") }}>Akrotiri</option>
+                    <option value="South Georgia and South Sandwich Islands" {{ 'selected' if checked("country", "South Georgia and South Sandwich Islands") }}>South Georgia and South Sandwich Islands</option>
+                </select>
+            </div>	
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

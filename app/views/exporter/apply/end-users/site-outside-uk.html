@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Enter the address - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Enter an address - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,9 +26,9 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="site-added" method="post">
+        <form action="upload-document" method="post">
             <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--l" for="non-UK-address">Enter the address</label>
+                <label class="govuk-label govuk-label--l" for="non-UK-address">Enter an address</label>
             </h1>
             <div class="govuk-form-group">
                 <textarea class="govuk-textarea" id="non-UK-address" name="non-UK-address" rows="5">{{ data['non-UK-address'] }}</textarea>
