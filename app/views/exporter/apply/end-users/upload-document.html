@@ -12,25 +12,20 @@
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">Upload the end user undertaking</h1>
                     </legend>
-                    <div class="govuk-warning-text">
-                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                        <strong class="govuk-warning-text__text">
-                            <span class="govuk-warning-text__assistive">Warning</span>
-                            Do not upload any document which is above “official-sensitive” level.
-                        </strong>
-                    </div>
-                    <p class="govuk-body">Maximum size: 100MB per file</p>
+                    <p class="govuk-body">This is a document that explains:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>who the end user is, and</li>
+                        <li>how they will use your goods</li>
+                    </ul>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="file-upload">Upload a file</label>
                         <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
                     </div>
                 </fieldset>
             </div>
-            <!-- <a href="#" class="govuk-button govuk-button--secondary">Upload document</a><br />
-            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button> -->
             <button type="submit" class="govuk-button" data-module="govuk-button">Upload document</button>
         </form>
-        <p class="govuk-body">Or <a href="../task-list-4-progress">save your application and return to the overview page</a> (You can upload a document later)</p>
+        <!-- <p class="govuk-body">Or <a href="../task-list-4-progress">save your application and return to the overview page</a> (You can upload a document later)</p> -->
 	</div>
 </div>
 {% endblock %}

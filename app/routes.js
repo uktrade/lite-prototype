@@ -118,6 +118,19 @@ router.post('/exporter/apply/end-users/site-uk', function (req, res) {
     }
 })
 
+// http://localhost:3000/exporter/apply/end-users/sensitive-information
+router.post('/exporter/apply/end-users/upload-document', function (req, res) {
+
+    let endUserSensitiveApply = req.session.data['sensitive-information']
+
+    if (endUserSensitiveApply === 'No') {
+        res.redirect('/exporter/apply/end-users/upload-document')
+    } else {
+        res.redirect('/exporter/apply/task-list-4')
+    }
+})
+
+
 // ####################################################
 // ###### Apply for an export licence: Task List ######
 // ####################################################
