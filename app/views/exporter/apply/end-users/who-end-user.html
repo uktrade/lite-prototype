@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Who is the consignee? - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Who is end user? - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -30,15 +30,20 @@
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-						<h1 class="govuk-fieldset__heading">Who is the consignee?</h1>
+						<h1 class="govuk-fieldset__heading">Who is end user?</h1>
                     </legend>
-                    <span id="event-name-hint" class="govuk-hint">This is someone who looks after the goods after their first stop, on the way to their final destination.</span>
+                    <span id="event-name-hint" class="govuk-hint">This is the person who will use or sell your goods.</span>
+                    <p class="govuk-body">They will either:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>use or sell your goods as they are, or</li>
+                        <li>put the goods into another product</li>
+                    </ul>
                     <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--m" for="consignee-name">Name</label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="consignee-name" name="consignee-name" type="text" value="{{ data['consignee-name'] }}">
+                        <label class="govuk-label govuk-label--m" for="end-user-name">Name</label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="end-user-name" name="end-user-name" type="text" value="{{ data['end-user-name'] }}">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--m" for="consignee-name">Do they have a website?</label>
+                        <label class="govuk-label govuk-label--m" for="end-user-name">Do they have a website?</label>
                         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="yes-conditional" name="have-website" type="radio" value="Yes" {{ checked("have-website", "Yes") }}  data-aria-controls="conditional-yes-conditional">

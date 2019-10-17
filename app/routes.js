@@ -102,9 +102,50 @@ router.post('/exporter/apply/destinations/add-site', function (req, res) {
 })
 
 
+// ##########################################################
+// ###### Apply for an export licence: Add a consignee ######
+// ##########################################################
+
+// http://localhost:3000/exporter/apply/consignee/location
+router.post('/exporter/apply/consignee/site-uk', function (req, res) {
+
+    let consigneeUKApply = req.session.data['recipent-based']
+
+    if (consigneeUKApply === 'true') {
+        res.redirect('/exporter/apply/consignee/site-uk')
+    } else {
+        res.redirect('/exporter/apply/consignee/site-country')
+    }
+})
+
+// http://localhost:3000/exporter/apply/consignee/sensitive-information
+router.post('/exporter/apply/consignee/upload-document', function (req, res) {
+
+    let consigneeSensitiveApply = req.session.data['sensitive-information']
+
+    if (consigneeSensitiveApply === 'No') {
+        res.redirect('/exporter/apply/consignee/upload-document')
+    } else {
+        res.redirect('/exporter/apply/task-list-4')
+    }
+})
+
+
 // ########################################################
 // ###### Apply for an export licence: Add end users ######
 // ########################################################
+
+// http://localhost:3000/exporter/apply/end-users/index
+router.post('/exporter/apply/task-list-5', function (req, res) {
+
+    let endUserSameApply = req.session.data['same-organistion']
+
+    if (endUserSameApply === 'Yes') {
+        res.redirect('/exporter/apply/task-list-5')
+    } else {
+        res.redirect('/exporter/apply/end-users/who-end-user')
+    }
+})
 
 // http://localhost:3000/exporter/apply/end-users/location
 router.post('/exporter/apply/end-users/site-uk', function (req, res) {
@@ -126,7 +167,7 @@ router.post('/exporter/apply/end-users/upload-document', function (req, res) {
     if (endUserSensitiveApply === 'No') {
         res.redirect('/exporter/apply/end-users/upload-document')
     } else {
-        res.redirect('/exporter/apply/task-list-4')
+        res.redirect('/exporter/apply/task-list-5')
     }
 })
 
