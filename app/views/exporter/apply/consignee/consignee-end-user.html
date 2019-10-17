@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Does your end user undertaking include sensitive information? - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Is your consignee also the end user? - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,27 +26,21 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form action="upload-document" method="post">
+		<form action="../task-list-5" method="post">
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-						<h1 class="govuk-fieldset__heading">Does your end user undertaking include sensitive information?</h1>
+						<h1 class="govuk-fieldset__heading">Is your consignee also the end user?</h1>
                     </legend>
-                    <span id="changed-name-hint" class="govuk-hint">This is information that could be a threat to national security.</span>
                     <div class="govuk-form-group">
                         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="yes-sensitive-conditional" name="sensitive-information" type="radio" value="Yes" {{ checked("sensitive-information", "Yes") }} data-aria-controls="conditional-yes-sensitive-conditional">
-                                <label class="govuk-label govuk-radios__label" for="yes-sensitive-conditional">Yes</label>
-                            </div>
-                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-sensitive-conditional">
-                                <p class="govuk-body">You need to contact the Export Control Joint Unit (ECJU). They will arrange a secure way for you to share this document.</p>
-                                <p class="govuk-body">Phone: 01234 567 891</p>
-                                <p class="govuk-body">You can continue with your application in the meantime.</p>
+                                <input class="govuk-radios__input" id="yes-consignee-end-user" name="consignee-end-user" type="radio" value="Yes" {{ checked("consignee-end-user", "Yes") }}>
+                                <label class="govuk-label govuk-radios__label" for="yes-consignee-end-user">Yes</label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="no-sensitive" name="sensitive-information" type="radio" value="No" {{ checked("sensitive-information", "No") }}>
-                                <label class="govuk-label govuk-radios__label" for="no-sensitive">No</label>
+                                <input class="govuk-radios__input" id="no-consignee-end-user" name="consignee-end-user" type="radio" value="No" {{ checked("consignee-end-user", "No") }}>
+                                <label class="govuk-label govuk-radios__label" for="no-consignee-end-user">No</label>
                             </div>
                         </div>
                     </div>

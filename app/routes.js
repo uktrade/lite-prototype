@@ -118,13 +118,13 @@ router.post('/exporter/apply/consignee/site-uk', function (req, res) {
     }
 })
 
-// http://localhost:3000/exporter/apply/consignee/sensitive-information
-router.post('/exporter/apply/consignee/upload-document', function (req, res) {
+// http://localhost:3000/exporter/apply/consignee/consignee-end-user
+router.post('/exporter/apply/task-list-5', function (req, res) {
 
-    let consigneeSensitiveApply = req.session.data['sensitive-information']
+    let consigneeEndUser = req.session.data['consignee-end-user']
 
-    if (consigneeSensitiveApply === 'No') {
-        res.redirect('/exporter/apply/consignee/upload-document')
+    if (consigneeEndUser === 'Yes') {
+        res.redirect('/exporter/apply/task-list-5')
     } else {
         res.redirect('/exporter/apply/task-list-4')
     }
