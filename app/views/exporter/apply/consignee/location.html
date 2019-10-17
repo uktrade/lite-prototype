@@ -1,0 +1,54 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Where is their business? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="site-uk" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">Where is their business?</h1>
+                    </legend>
+                    <div class="govuk-form-group">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="in-uk" name="recipent-based" type="radio" value="true" {{ checked("recipent-based", "true") }}>
+                                <label class="govuk-label govuk-radios__label" for="in-uk">In the UK</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="outside-uk" name="recipent-based" type="radio" value="false" {{ checked("recipent-based", "false") }}>
+                                <label class="govuk-label govuk-radios__label" for="outside-uk">Outside the UK</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

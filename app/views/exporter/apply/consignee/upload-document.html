@@ -1,0 +1,31 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Upload the end user undertaking - Exporter service name - GOV.UK{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="../task-list-4" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">Upload the end user undertaking</h1>
+                    </legend>
+                    <p class="govuk-body">This is a document that explains:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>who the end user is, and</li>
+                        <li>how they will use your goods</li>
+                    </ul>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="file-upload">Upload a file</label>
+                        <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Upload document</button>
+        </form>
+        <!-- <p class="govuk-body">Or <a href="../task-list-4-progress">save your application and return to the overview page</a> (You can upload a document later)</p> -->
+	</div>
+</div>
+{% endblock %}
