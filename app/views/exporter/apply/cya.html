@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Check your answers - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Check your answers before sending your application - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,52 +26,47 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds-from-desktop">
-		<h1 class="govuk-heading-l">Check your answers</h1>
+        <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+        
+        <h2 class="govuk-heading-m">Licence type</h2>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">Sending</dt>
 				<dd class="govuk-summary-list__value">{{ data['send-type'] }}</dd>
 				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link" href="index.html#send-type">Change<span class="govuk-visually-hidden"> sending</span></a> 
+					<a class="govuk-link" href="licence-type/index#send-type">Change<span class="govuk-visually-hidden"> sending</span></a> 
 				</dd>
             </div> 
-            {% if data['licence-type'] === "Standard Licence" %}
+            {% if data['export-licence-type'] === "Standard Licence" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Licence</dt>
-                <dd class="govuk-summary-list__value">{{ data['licence-type'] }}</dd>
+                <dd class="govuk-summary-list__value">Standard</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="licence-type#licence-type">Change<span class="govuk-visually-hidden"> licence</span></a> 
+                    <a class="govuk-link" href="licence-type/export-licence#export-licence-type">Change<span class="govuk-visually-hidden"> licence</span></a> 
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Your reference</dt>
                 <dd class="govuk-summary-list__value">{{ data['reference-application'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="application-reference#reference-application">Change<span class="govuk-visually-hidden"> your reference</span></a> 
+                    <a class="govuk-link" href="licence-type/application-reference#reference-application">Change<span class="govuk-visually-hidden"> your reference</span></a> 
                 </dd>
             </div> 
             {% else %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Licence type</dt>
-                <dd class="govuk-summary-list__value">{{ data['licence-type'] }}</dd>
+                <dd class="govuk-summary-list__value">Open</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="licence-type#licence-type">Change<span class="govuk-visually-hidden"> licence type</span></a> 
+                    <a class="govuk-link" href="licence-type/export-licence#export-licence-type">Change<span class="govuk-visually-hidden"> licence type</span></a> 
                 </dd>
             </div> 
             {% endif %}
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">How long for</dt>
-                <dd class="govuk-summary-list__value">{{ data['export-length'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="export-length#export-length">Change<span class="govuk-visually-hidden"> how long for</span></a> 
-                </dd>
-            </div>
             {% if data['export-official'] === "Yes" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Told by an official</dt>
                 <dd class="govuk-summary-list__value">Yes - {{ data['reference-official'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="export-licence-official#export-official">Change<span class="govuk-visually-hidden"> Told by an official</span></a> 
+                    <a class="govuk-link" href="licence-type/export-licence-official#export-official">Change<span class="govuk-visually-hidden"> told by an official</span></a> 
                 </dd>
             </div>
             {% else %}
@@ -79,11 +74,168 @@
                 <dt class="govuk-summary-list__key">Told by an official</dt>
                 <dd class="govuk-summary-list__value">{{ data['export-official'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="export-licence-official#export-official">Change<span class="govuk-visually-hidden"> Told by an official</span></a> 
+                    <a class="govuk-link" href="licence-type/export-licence-official#export-official">Change<span class="govuk-visually-hidden"> told by an official</span></a> 
                 </dd>
             </div>
             {% endif %}
         </dl>
+
+        <h2 class="govuk-heading-m">Products added</h2>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Product 1</h3>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-7">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">{{ data['product-name'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="products/add-product#product-name">Change<span class="govuk-visually-hidden"> product name</span></a> 
+                </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Value</dt>
+                <dd class="govuk-summary-list__value">£{{ data['value-products'] | formatNumber }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="products/add-to-application#value-products">Change<span class="govuk-visually-hidden"> value</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Quantity</dt>
+                <dd class="govuk-summary-list__value">{{ data['quantity'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="products/add-to-application#quantity">Change<span class="govuk-visually-hidden"> quantity</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Measurement</dt>
+                <dd class="govuk-summary-list__value">{{ data['measurement'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="products/add-to-application#measurement">Change<span class="govuk-visually-hidden"> measurement</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Part for another product</dt>
+                <dd class="govuk-summary-list__value">{{ data['end-product'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="products/add-to-application#end-product">Change<span class="govuk-visually-hidden"> part for another product</span></a> 
+                </dd>
+            </div>
+        </dl>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Product 2</h3>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">RAF Voyager</dd>
+                <dd class="govuk-summary-list__actions">&nbsp;</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Value</dt>
+                <dd class="govuk-summary-list__value">£40,000,000.00</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> value</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Quantity</dt>
+                <dd class="govuk-summary-list__value">1</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> quantity</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Measurement</dt>
+                <dd class="govuk-summary-list__value">kg</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> measurement</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Part for another product</dt>
+                <dd class="govuk-summary-list__value">No</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> part for another product</span></a> 
+                </dd>
+            </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Sites added</h2>
+        {% if data['select-location'] === "Add a new site" %}
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Site 1</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">{{ data['site-name'] }}</dd>
+
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="destinations/add-site#site-name">Change<span class="govuk-visually-hidden"> site name</span></a> 
+                </dd>
+            </div>
+            {% if data['site-where'] == "true" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+            {% endif %}
+            {% if data['site-where'] == "false" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}<br /><span class="grey-text">{{ data['country'] }}</span></dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="destinations/site-outside-uk#non-UK-address">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+            {% endif %}
+        </dl>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Site 2</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">{{ data['site-name'] }}</dd>
+
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="destinations/add-site#site-name">Change<span class="govuk-visually-hidden"> site name</span></a> 
+                </dd>
+            </div>
+            {% if data['site-where'] == "true" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+            {% endif %}
+            {% if data['site-where'] == "false" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}<br /><span class="grey-text">{{ data['country'] }}</span></dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="destinations/site-outside-uk#non-UK-address">Change<span class="govuk-visually-hidden"> address</span></a> 
+                </dd>
+            </div>
+            {% endif %}
+        </dl>
+        {% else %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Site 1</dt>
+                <dd class="govuk-summary-list__value">Department for International Trade<br />50 Victoria Street<br />London<br />SW1H 0TL</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> site name</span></a> 
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Site 2</dt>
+                <dd class="govuk-summary-list__value">The White House<br />1600 Pennsylvania Ave.<br />NW Washington<br />DC 20500<br /><span class="grey-text">United States</span></dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> site name</span></a> 
+                </dd>
+            </div>
+        </dl>
+        {% endif %}
+
         <a href="declaration" class="govuk-button govuk-!-margin-right-1">Confirm and continue</a> 
 	</div>
 </div>
