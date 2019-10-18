@@ -26,7 +26,7 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form action="site-uk" method="post">
+		<form action="uk" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -35,11 +35,11 @@
                     <div class="govuk-form-group">
                         <div class="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="in-uk" name="recipent-based" type="radio" value="true" {{ checked("recipent-based", "true") }}>
+                                <input class="govuk-radios__input" id="in-uk" name="consignee-based" type="radio" value="true" {{ checked("consignee-based", "true") }}>
                                 <label class="govuk-label govuk-radios__label" for="in-uk">In the UK</label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="outside-uk" name="recipent-based" type="radio" value="false" {{ checked("recipent-based", "false") }}>
+                                <input class="govuk-radios__input" id="outside-uk" name="consignee-based" type="radio" value="false" {{ checked("consignee-based", "false") }}>
                                 <label class="govuk-label govuk-radios__label" for="outside-uk">Outside the UK</label>
                             </div>
                         </div>

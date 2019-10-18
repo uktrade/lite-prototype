@@ -78,14 +78,14 @@ router.post('/exporter/apply/destinations/all-sites', function (req, res) {
 })
 
 // http://localhost:3000/exporter/apply/destinations/add-site
-router.post('/exporter/apply/destinations/site-uk', function (req, res) {
+router.post('/exporter/apply/destinations/uk', function (req, res) {
 
     let siteUKApply = req.session.data['site-where']
 
     if (siteUKApply === 'true') {
-        res.redirect('/exporter/apply/destinations/site-uk')
+        res.redirect('/exporter/apply/destinations/uk')
     } else {
-        res.redirect('/exporter/apply/destinations/site-country')
+        res.redirect('/exporter/apply/destinations/country')
     }
 })
 
@@ -107,14 +107,14 @@ router.post('/exporter/apply/destinations/add-site', function (req, res) {
 // ##########################################################
 
 // http://localhost:3000/exporter/apply/consignee/location
-router.post('/exporter/apply/consignee/site-uk', function (req, res) {
+router.post('/exporter/apply/consignee/uk', function (req, res) {
 
-    let consigneeUKApply = req.session.data['recipent-based']
+    let consigneeUKApply = req.session.data['consignee-based']
 
     if (consigneeUKApply === 'true') {
-        res.redirect('/exporter/apply/consignee/site-uk')
+        res.redirect('/exporter/apply/consignee/uk')
     } else {
-        res.redirect('/exporter/apply/consignee/site-country')
+        res.redirect('/exporter/apply/consignee/country')
     }
 })
 
@@ -148,14 +148,14 @@ router.post('/exporter/apply/task-list-5', function (req, res) {
 })
 
 // http://localhost:3000/exporter/apply/end-users/location
-router.post('/exporter/apply/end-users/site-uk', function (req, res) {
+router.post('/exporter/apply/end-users/uk', function (req, res) {
 
-    let endUserUKApply = req.session.data['recipent-based']
+    let endUserUKApply = req.session.data['end-user-based']
 
     if (endUserUKApply === 'true') {
-        res.redirect('/exporter/apply/end-users/site-uk')
+        res.redirect('/exporter/apply/end-users/uk')
     } else {
-        res.redirect('/exporter/apply/end-users/site-country')
+        res.redirect('/exporter/apply/end-users/country')
     }
 })
 

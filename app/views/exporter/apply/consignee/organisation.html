@@ -35,22 +35,22 @@
                     <div class="govuk-form-group">
                         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="government" name="end-user-type" type="radio" value="Government" {{ checked("end-user-type", "Government") }}>
+                                <input class="govuk-radios__input" id="government" name="consignee-user-type" type="radio" value="Government" {{ checked("consignee-user-type", "Government") }}>
                                 <label class="govuk-label govuk-radios__label" for="government">Government</label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="commercial" name="end-user-type" type="radio" value="Commercial" {{ checked("end-user-type", "Commercial") }}>
+                                <input class="govuk-radios__input" id="commercial" name="consignee-user-type" type="radio" value="Commercial" {{ checked("consignee-user-type", "Commercial") }}>
                                 <label class="govuk-label govuk-radios__label" for="commercial">Commercial</label>
                             </div>
                             <div class="govuk-radios__divider">or</div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="other-conditional" name="end-user-type" type="radio" value="Something else" {{ checked("end-user-type", "Something else") }} data-aria-controls="conditional-other-conditional">
+                                <input class="govuk-radios__input" id="other-conditional" name="consignee-user-type" type="radio" value="Something else" {{ checked("consignee-user-type", "Something else") }} data-aria-controls="conditional-other-conditional">
                                 <label class="govuk-label govuk-radios__label" for="other-conditional">Something else</label>
                             </div>
                             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-conditional">
                                 <div class="govuk-form-group">
-                                    <label class="govuk-label" for="other-name">What kind of organisation?</label>
-                                    <input class="govuk-input govuk-!-width-one-half" id="other-name" name="other-name" type="text" value="{{ data['other-name'] }}">
+                                    <label class="govuk-label" for="consignee-other-name">What kind of organisation?</label>
+                                    <input class="govuk-input govuk-!-width-one-half" id="consignee-other-name" name="consignee-other-name" type="text" value="{{ data['consignee-other-name'] }}">
                                 </div>
                             </div>
                         </div>

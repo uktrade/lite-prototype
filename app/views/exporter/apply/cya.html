@@ -80,7 +80,7 @@
             {% endif %}
         </dl>
 
-        <h2 class="govuk-heading-m">Products added</h2>
+        <h2 class="govuk-heading-m">Products</h2>
         <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Product 1</h3>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-7">
             <div class="govuk-summary-list__row">
@@ -157,7 +157,7 @@
             </div>
         </dl>
 
-        <h2 class="govuk-heading-m">Sites added</h2>
+        <h2 class="govuk-heading-m">Sites</h2>
         {% if data['select-location'] === "Add a new site" %}
         <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Site 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-7">
@@ -181,9 +181,9 @@
             {% if data['site-where'] == "false" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address</dt>
-                <dd class="govuk-summary-list__value">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}<br /><span class="grey-text">{{ data['country'] }}</span></dd>
+                <dd class="govuk-summary-list__value">{{ data['site-non-UK-address'] | striptags(true) | escape | nl2br }}<br /><span class="grey-text">{{ data['site-country'] }}</span></dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="destinations/site-outside-uk#non-UK-address">Change<span class="govuk-visually-hidden"> address</span></a> 
+                    <a class="govuk-link" href="destinations/site-outside-uk#site-non-UK-address">Change<span class="govuk-visually-hidden"> address</span></a> 
                 </dd>
             </div>
             {% endif %}
@@ -210,9 +210,9 @@
             {% if data['site-where'] == "false" %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Address</dt>
-                <dd class="govuk-summary-list__value">{{ data['non-UK-address'] | striptags(true) | escape | nl2br }}<br /><span class="grey-text">{{ data['country'] }}</span></dd>
+                <dd class="govuk-summary-list__value">{{ data['site-non-UK-address'] | striptags(true) | escape | nl2br }}<br /><span class="grey-text">{{ data['site-country'] }}</span></dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="destinations/site-outside-uk#non-UK-address">Change<span class="govuk-visually-hidden"> address</span></a> 
+                    <a class="govuk-link" href="destinations/site-outside-uk#site-non-UK-address">Change<span class="govuk-visually-hidden"> address</span></a> 
                 </dd>
             </div>
             {% endif %}
@@ -235,6 +235,37 @@
             </div>
         </dl>
         {% endif %}
+
+        <h2 class="govuk-heading-m">Consignee</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">{{ data['consignee-name'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="consignee/index#consignee-name">Change<span class="govuk-visually-hidden"> name</span></a> 
+                </dd>
+            </div>
+            {% if data['consignee-have-website'] == "Yes" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Website</dt>
+                <dd class="govuk-summary-list__value">{{ data['consignee-website-url'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="consignee/index#consignee-website-url">Change<span class="govuk-visually-hidden"> website</span></a> 
+                </dd>
+            </div>
+            {% endif %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Organisation</dt>
+                {% if data['consignee-user-type'] == "Something else" %}
+                <dd class="govuk-summary-list__value">{{ data['consignee-other-name'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">{{ data['consignee-user-type'] }}</dd>
+                {% endif %}
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="consignee/organisation#consignee-user-type">Change<span class="govuk-visually-hidden"> organisation</span></a> 
+                </dd>
+            </div>
+        </dl>
 
         <a href="declaration" class="govuk-button govuk-!-margin-right-1">Confirm and continue</a> 
 	</div>

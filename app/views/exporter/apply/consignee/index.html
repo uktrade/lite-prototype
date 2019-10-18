@@ -41,17 +41,17 @@
                         <label class="govuk-label govuk-label--m" for="consignee-name">Do they have a website?</label>
                         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="yes-conditional" name="have-website" type="radio" value="Yes" {{ checked("have-website", "Yes") }}  data-aria-controls="conditional-yes-conditional">
+                                <input class="govuk-radios__input" id="yes-conditional" name="consignee-have-website" type="radio" value="Yes" {{ checked("consignee-have-website", "Yes") }}  data-aria-controls="conditional-yes-conditional">
                                 <label class="govuk-label govuk-radios__label" for="yes-conditional">Yes</label>
                             </div>
                             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-conditional">
                                 <div class="govuk-form-group">
-                                    <label class="govuk-label" for="website-url">Website</label>
-                                    <input class="govuk-input govuk-!-width-two-thirds" id="website-url" name="website-url" type="text" value="{{ data['website-url'] }}">
+                                    <label class="govuk-label" for="consignee-website-url">Website</label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="consignee-website-url" name="consignee-website-url" type="text" value="{{ data['consignee-website-url'] }}">
                                 </div>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="no-website" name="have-website" type="radio" value="No" {{ checked("have-website", "No") }}>
+                                <input class="govuk-radios__input" id="no-website" name="consignee-have-website" type="radio" value="No" {{ checked("consignee-have-website", "No") }}>
                                 <label class="govuk-label govuk-radios__label" for="no-website">No</label>
                             </div>
                         </div>

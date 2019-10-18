@@ -26,12 +26,12 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <form action="sensitive-information" method="post">
+        <form action="site-added" method="post">
             <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--l" for="non-UK-address">Address</label>
+                <label class="govuk-label govuk-label--l" for="site-non-UK-address">Address</label>
             </h1>
             <div class="govuk-form-group">
-                <textarea class="govuk-textarea" id="non-UK-address" name="non-UK-address" rows="5">{{ data['non-UK-address'] }}</textarea>
+                <textarea class="govuk-textarea" id="site-non-UK-address" name="site-non-UK-address" rows="5">{{ data['site-non-UK-address'] }}</textarea>
             </div>	
             <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
 		</form>

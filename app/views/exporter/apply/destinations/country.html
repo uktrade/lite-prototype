@@ -1,0 +1,51 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Country - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <form action="outside-uk" method="post">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="site-country">Country</label>
+            </h1>
+            <div class="govuk-form-group">
+                <select class="govuk-select" id="site-country" name="site-country">
+                    <option value="select" selected>Select</option>
+                    <option value="Abu Dhabi" {{ 'selected' if checked("site-country", "Abu Dhabi") }}>Abu Dhabi</option>
+                    <option value="Afghanistan" {{ 'selected' if checked("site-country", "Afghanistan") }}>Afghanistan</option>
+                    <option value="Ajman" {{ 'selected' if checked("site-country", "Ajman") }}>Ajman</option>
+                    <option value="Akrotiri" {{ 'selected' if checked("site-country", "Akrotiri") }}>Akrotiri</option>
+                    <option value="Åland Islands" {{ 'selected' if checked("site-country", "Åland Islands") }}>Åland Islands</option>
+                    <option value="Albania" {{ 'selected' if checked("site-country", "Albania") }}>Albania</option>
+                    <option value="Algeria" {{ 'selected' if checked("site-country", "Algeria") }}>Algeria</option>
+                    <option value="American Samoa" {{ 'selected' if checked("site-country", "American Samoa") }}>American Samoa</option>
+                    <option value="South Georgia and South Sandwich Islands" {{ 'selected' if checked("site-country", "South Georgia and South Sandwich Islands") }}>South Georgia and South Sandwich Islands</option>
+                </select>
+            </div>	
+			<button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+		</form>
+	</div>
+</div>
+{% endblock %}
