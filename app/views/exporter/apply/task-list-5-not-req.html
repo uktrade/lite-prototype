@@ -1,0 +1,115 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Exporter service name - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l govuk-!-margin-bottom-7">Apply for an export licence</h1>
+		<ol class="app-task-list">
+			<li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">1. </span> Prepare application
+                </h2>
+			    <ul class="app-task-list__items">
+                    <!-- Licence type -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="licence-type/index.html">Licence type</a>
+                        </span>    
+                        <strong class="govuk-tag app-task-list__task-completed" id="name-in-progress">Completed</strong>            
+                    </li>
+
+                    <!-- Add products -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="products/index">Add products</a>
+                        </span>  
+                        <strong class="govuk-tag app-task-list__task-completed" id="name-in-progress">Completed</strong>               
+                    </li>
+    
+                    <!-- Add destination countries -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="destinations/index">Add destination countries</a>
+                        </span> 
+                        <strong class="govuk-tag app-task-list__task-completed" id="name-in-progress">Completed</strong>              
+                    </li>
+
+                    <!-- Add a consignee -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="consignee/index">Add a consignee</a>
+                        </span> 
+                        <strong class="govuk-tag app-task-list__task-completed" id="name-in-progress">Completed</strong>               
+                    </li>
+            
+                    <!-- Add end user -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">Add end user</span>
+                        <strong class="govuk-tag govuk-tag-not-required app-task-list__task-completed" id="name-in-progress">Not required</strong>             
+                    </li>
+
+                    <!-- Add an ultimate end user
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="ultimate-end-user/index">Add an ultimate end user</a>
+                        </span>   
+                        <strong class="govuk-tag app-task-list__task-completed" id="name-in-progress">Completed</strong>             
+                    </li> -->
+
+                    <!-- Add any other third parties -->
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="third-parties/index">Add any other third parties</a>
+                        </span>  
+                        <strong class="govuk-tag govuk-tag-initial app-task-list__task-completed" id="name-in-progress">Not started</strong>              
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">2. </span> Review application
+                </h2>
+                <ul class="app-task-list__items"> 
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">Check your answers</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">3. </span> Apply
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">Sign declaration before you submit</span>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <p class="govuk-body"><a href="cancel-application">Cancel application</a></p>
+    </div>
+</div>
+{% endblock %}

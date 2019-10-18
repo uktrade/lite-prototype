@@ -119,12 +119,12 @@ router.post('/exporter/apply/consignee/site-uk', function (req, res) {
 })
 
 // http://localhost:3000/exporter/apply/consignee/consignee-end-user
-router.post('/exporter/apply/task-list-5', function (req, res) {
+router.post('/exporter/apply/task-list-5-not-req', function (req, res) {
 
     let consigneeEndUser = req.session.data['consignee-end-user']
 
     if (consigneeEndUser === 'Yes') {
-        res.redirect('/exporter/apply/task-list-5')
+        res.redirect('/exporter/apply/task-list-5-not-req')
     } else {
         res.redirect('/exporter/apply/task-list-4')
     }
