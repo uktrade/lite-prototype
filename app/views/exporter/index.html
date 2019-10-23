@@ -15,9 +15,13 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-		<h1 class="govuk-heading-l govuk-!-margin-bottom-1">ABC Exporters Ltd</h1>
+		<h1 class="govuk-heading-l govuk-!-margin-bottom-7">ABC Exporters Ltd</h1>
         <!-- <span class="govuk-caption-l govuk-!-margin-bottom-7">Account number: XXX-XXX-XXX</span> -->
-        <h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-1">Standard Licence</h4>
+        <h2 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-4">Applications</h2>
+        <p class="govuk-body govuk-!-margin-bottom-7"><a href="apply/task-list.html">Apply for an export licence</a></p>
+
+
+        <!-- <h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-1">Standard Licence</h4> 
         <ul class="govuk-list">
             <li><a href="apply/task-list.html">Apply for an export licence</a></li>
         </ul>
@@ -25,101 +29,34 @@
         <ul class="govuk-list">
             <li><a href="#">TBC</a></li>
         </ul>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
         
+        <div class="govuk-tabs govuk-!-margin-bottom-0" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">Contents</h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab no-underline" href="#completed"><span class="small-banner-double">12</span>&nbsp;&nbsp;Completed</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab no-underline" href="#in-progress"><span class="small-banner">6</span>&nbsp;&nbsp;In progress</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab no-underline" href="#drafts"><span class="small-banner">4</span>&nbsp;&nbsp;Drafts</a>
+                </li>
+            </ul>
+            <section class="govuk-tabs__panel border-less-tabs" id="completed">
+                <p class="govuk-body">TBC</p>
+            </section>
+            <section class="govuk-tabs__panel border-less-tabs govuk-tabs__panel--hidden" id="in-progress">
+                <p class="govuk-body">TBC</p>
+            </section>
+            <section class="govuk-tabs__panel border-less-tabs govuk-tabs__panel--hidden" id="drafts">
+                <p class="govuk-body">TBC</p>
+            </section>
+        </div>
 
+        <h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-4">Manage</h2>
 
-        <!-- <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Apply for an export licence</h2>
-        <ul class="govuk-list">
-            <li><a href="apply">Start a new application</a></li>
-            <li><a href="#">View all applications</a></li>
-        </ul>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Products</h2>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="products/add-product.html">Add a new product</a></li>
-            <li><a href="products/all-products.html">View all products</a></li>
-        </ul>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Locations</h2>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="#">Add a new location</a></li>
-            <li><a href="#">View all locations</a></li>
-        </ul>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">End users</h2>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="#">Add an end user</a></li>
-            <li><a href="#">View all end users</a>
-        </ul>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Ultimate end user</h2>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="#">Add an ultimate end user</a></li>
-        </ul>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Consignee</h2>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="#">Add an consignee</a></li>
-        </ul>
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Third parties</h2>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="#">Add third parties</a></li>
-            <li><a href="#">View all third parties</a>
-        </ul>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">My account</h2>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">User settings</h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="#">Edit profile</a></li>
-            <li><a href="#">Close account</a></li>
-        </ul>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Team settings</h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="#">Add a member</a></li>
-            <li><a href="#">Edit member</a></li>
-            <li><a href="#">Remove member</a></li>
-        </ul>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Site settings</h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="#">Add a site</a></li>
-            <li><a href="#">Edit site</a></li>
-            <li><a href="#">Remove site</a></li>
-        </ul> -->
-
-        <!-- <ul class="govuk-list">
-            <li><a href="products/add-product.html">Add a new product</a></li>
-            <li><a href="products/all-products-application.html">Add products to an application</a></li>
-        </ul>
-        <h2 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-1">Apply for a licence</h2>
-        <ul class="govuk-list govuk-!-margin-top-0">
-            <li><a href="products/all-products.html">Add products to an application</a></li>
-        </ul> -->
-		<!-- <ul class="govuk-list govuk-!-margin-top-6">
-			<li><a href="apply/task-list.html">Apply for an export licence</a></li>
-		</ul>
-		 <ul class="govuk-list govuk-!-margin-top-6">
-			<li><a href="ask-a-question.html">Ask a question</a></li>
-		</ul>
-		<div class="govuk-grid-row govuk-!-margin-top-6">
-			<div class="govuk-grid-column-one-half">
-				<div class="panel">
-					<h2 class="govuk-heading-m">Licence XXXXXX</h2>
-					<p class="govuk-body">[What can the user do in this section?]</p>
-					<ul class="govuk-list govuk-!-margin-top-4">
-						<li><a href="#">Check for a licence</a></li>
-						<li><a href="#">Apply for a licence</a></li>
-						<li><a href="#">View licences</a></li>
-						<li><a href="#">Appeals</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="govuk-grid-column-one-half">
-				<div class="panel">
-					<h2 class="govuk-heading-m">XXXXXXXXXXXX</h2>
-					<p class="govuk-body">[What can the user do in this section?]</p>
-					<ul class="govuk-list govuk-!-margin-top-4">
-						<li><a href="ask-a-question.html">Ask a question</a></li>
-					</ul>
-				</div>
-			</div>
-		</div> -->
     </div>
 </div>
 {% endblock %}
