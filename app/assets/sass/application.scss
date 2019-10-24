@@ -293,6 +293,13 @@ $govuk-assets-path: '/govuk/assets/';
     text-decoration: none;
 }
 
+.dashboard-panel {
+    /* background: #b1b4b6; */
+    background: rgba(177,180,182, 0.50);
+    background: #f3f2f1;
+    padding: 20px;
+}
+
 @media (min-width: 40.0625em) { /* 641px or more */
     .internal-ui .govuk-header__menu-button {
         top: 15px;
