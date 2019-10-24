@@ -437,4 +437,176 @@ router.post('/exporter/sites/all-sites', function (req, res) {
 //    }
 // })
 
+ router.post('/exporter/products/product-added', function (req, res) {
+
+     if (req.session.data['products'] == undefined) {
+         req.session.data['products'] = []
+     }
+
+   var products = []
+   var existing_products = req.session.data['products']
+
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    var today = dd + '/' + mm + '/' + yyyy;
+
+if(req.session.data['edit']=='true') {
+     for (i = 0; i < existing_products.length; i++) {
+            if(existing_products[i]['product-name']==req.session.data['product-name']) {
+                //don't add
+            }
+            else {
+                products.push(existing_products[i])
+            }
+        }
+
+}
+  else {
+        products = req.session.data['products']
+    }
+      products.push({
+         'product-name': req.session.data['product-name'],
+         'control-rating': req.session.data['control-rating'],
+         'product-description': req.session.data['product-description'],
+         'product-controlled': req.session.data['product-controlled'],
+         'file-upload': req.session.data['file-upload'],
+         'document-description': req.session.data['document-description'],
+         'part-number': req.session.data['part-number'],
+         'product-date':  today
+     })
+
+
+      req.session.data['control-rating'] = undefined
+     req.session.data['product-description'] = undefined
+     req.session.data['product-name'] = undefined
+     req.session.data['document-description'] = undefined
+     req.session.data['file-upload'] = undefined
+     req.session.data['part-number'] = undefined
+     req.session.data['product-controlled'] = undefined
+     req.session.data['products'] = products
+     products = undefined
+
+      res.redirect('/exporter/products/product-added')
+ })
+
+router.post('/exporter/products/product-removed', function (req, res) {
+
+     if (req.session.data['products'] == undefined) {
+         req.session.data['products'] = []
+     }
+
+     var products = []
+     var existing_products = req.session.data['products']
+
+
+        for (i = 0; i < existing_products.length; i++) {
+            if(existing_products[i]['product-name']==req.session.data['product-name']) {
+                //don't add
+            }
+            else {
+                products.push(existing_products[i])
+            }
+        }
+
+     req.session.data['control-rating'] = undefined
+     req.session.data['product-description'] = undefined
+     req.session.data['product-name'] = undefined
+     req.session.data['document-description'] = undefined
+     req.session.data['file-upload'] = undefined
+     req.session.data['part-number'] = undefined
+     req.session.data['product-controlled'] = undefined
+
+    req.session.data['products'] = products
+     products = undefined
+      res.redirect('/exporter/products/product-removed')
+ })
+
+router.post('/exporter/products/product-removed-application', function (req, res) {
+
+     if (req.session.data['app-products'] == undefined) {
+         req.session.data['app-products'] = []
+     }
+
+     var app_products = []
+     var existing_products = req.session.data['app-products']
+
+
+        for (i = 0; i < existing_products.length; i++) {
+            if(existing_products[i]['product-name']==req.session.data['product-name']) {
+                //don't add
+            }
+            else {
+                app_products.push(existing_products[i])
+            }
+        }
+
+     req.session.data['good'] = undefined
+     req.session.data['value-products'] = undefined
+     req.session.data['quantity'] = undefined
+     req.session.data['measurement'] = undefined
+     req.session.data['end-product'] = undefined
+     req.session.data['other-measurement'] = undefined
+
+    req.session.data['app-products'] = app_products
+     app_products = undefined
+      res.redirect('/exporter/products/product-removed-application')
+ })
+
+ router.post('/exporter/products/product-added-application', function (req, res) {
+
+     if (req.session.data['app-products'] == undefined) {
+         req.session.data['app-products'] = []
+     }
+
+     var app_products = []
+     var existing_products = req.session.data['app-products']
+
+     if(req.session.data['edit']=='true') {
+        for (i = 0; i < existing_products.length; i++) {
+            if(existing_products[i]['product-name']==req.session.data['good']) {
+                //don't add
+            }
+            else {
+                app_products.push(existing_products[i])
+            }
+        }
+    }
+    else {
+        app_products = req.session.data['app-products']
+    }
+
+
+        app_products.push({
+         'product-name': req.session.data['good'],
+         'value-products': req.session.data['value-products'],
+         'quantity': req.session.data['quantity'],
+         'measurement': req.session.data['measurement'],
+         'end-product': req.session.data['end-product'],
+         'other-measurement': req.session.data['other-measurement']
+     })
+
+     req.session.data['good'] = undefined
+     req.session.data['edit'] = undefined
+     req.session.data['value-products'] = undefined
+     req.session.data['quantity'] = undefined
+     req.session.data['measurement'] = undefined
+     req.session.data['end-product'] = undefined
+     req.session.data['other-measurement'] = undefined
+
+    req.session.data['app-products'] = app_products
+     app_products = undefined
+      res.redirect('/exporter/products/product-added-application')
+ })
+
+
 module.exports = router
