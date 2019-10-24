@@ -62,10 +62,12 @@
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
+                {% for item in data['products'] %}
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="product.html" class="govuk-link govuk-link--no-visited-state">{{ data['product-name'] }}</a></td>
-                    <td class="govuk-table__cell">25 September 2019</td>
+                    <td class="govuk-table__cell"><a href="product.html?product-name={{item['product-name']}}&product-description={{item['product-description']}}&control-rating={{item['control-rating']}}&product-controlled={{item['product-controlled']}}&file-upload={{item['file-upload']}}&document-description={{item['document-description']}}&part-number={{item['part-number']}}&product-date={{item['product-date']}}" class="govuk-link govuk-link--no-visited-state">{{ item['product-name'] }}</a></td>
+                    <td class="govuk-table__cell">{{ item['product-date'] }}</td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
