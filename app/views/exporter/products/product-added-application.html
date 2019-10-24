@@ -29,17 +29,19 @@
         <h1 class="govuk-heading-l">You have added 1 product</h1>
         <table class="govuk-table">
             <tbody class="govuk-table__body">
+                {% for item in data['app-products'] %}
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['product-name'] }}</td>
-                    <td class="govuk-table__cell">£{{ data['value-products'] | formatNumber }}</td>
-                    <td class="govuk-table__cell">{{ data['quantity'] }}</td>
-                    {% if data['measurement'] === "Other" %}
-                    <td class="govuk-table__cell">{{ data['other-measurement'] }}</td>
+                    <td class="govuk-table__cell">{{ item['product-name'] }}</td>
+                    <td class="govuk-table__cell">£{{ item['value-products'] | formatNumber }}</td>
+                    <td class="govuk-table__cell">{{ item['quantity'] }}</td>
+                    {% if item['measurement'] === "Other" %}
+                    <td class="govuk-table__cell">{{ item['other-measurement'] }}</td>
                     {% else %}
-                    <td class="govuk-table__cell">{{ data['measurement'] }}</td>
+                    <td class="govuk-table__cell">{{ item['measurement'] }}</td>
                     {% endif %}
-                    <td class="govuk-table__cell govuk-!-width-one-quarter"><a href="add-to-application.html">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-product-application.html">Remove</a></td> 
+                    <td class="govuk-table__cell govuk-!-width-one-quarter"><a href="add-to-application.html?edit=true&good={{item['product-name']}}&value-products={{item['value-products']}}&quantity={{item['quantity']}}&measurement={{item['measurement']}}&other-measurement={{item['other-measurement']}}&end-product={{item['end-product']}}">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-product-application.html?product-name={{item['product-name']}}&value-products={{item['value-products']}}&quantity={{item['quantity']}}&measurement={{item['measurement']}}&other-measurement={{item['other-measurement']}}&end-product={{item['end-product']}}">Remove</a></td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table> 
         <form action="all-products-application" method="post">
