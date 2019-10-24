@@ -28,12 +28,14 @@
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">You have added 1 product</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            {% for item in data['products'] %}
             <div class="govuk-summary-list__row">
-                <dd class="govuk-summary-list__value">{{ data['product-name'] }}</dd>
+                <dd class="govuk-summary-list__value">{{ item['product-name'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a href="add-product">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="govuk-link" href="remove-product">Remove<span class="govuk-visually-hidden"> product name</span></a> 
+                    <a href="add-product?edit=true&product-name={{item['product-name']}}&product-description={{item['product-description']}}&control-rating={{item['control-rating']}}&product-controlled={{item['product-controlled']}}&file-upload={{item['file-upload']}}&document-description={{item['document-description']}}&part-number={{item['part-number']}}&product-date={{item['product-date']}}">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="govuk-link" href="remove-product?product-name={{item['product-name']}}&product-description={{item['product-description']}}&control-rating={{item['control-rating']}}&product-controlled={{item['product-controlled']}}&file-upload={{item['file-upload']}}&document-description={{item['document-description']}}&part-number={{item['part-number']}}&product-date={{item['product-date']}}">Remove<span class="govuk-visually-hidden"> product name</span></a>
                 </dd>
             </div>
+            {% endfor%}
         </dl>
         <form action="all-products" method="post">
             <div class="govuk-form-group">
