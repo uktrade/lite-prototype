@@ -567,7 +567,7 @@ router.post('/exporter/products/product-removed', function (req, res) {
          res.redirect('/exporter/products/product-added-none')
      }
      else {
-         res.redirect('/exporter/products/product-added')
+         res.redirect('/exporter/products/all-products')
      }
 
  })
