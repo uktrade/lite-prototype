@@ -507,7 +507,7 @@ if(req.session.data['edit']=='true') {
   else {
         products = req.session.data['products']
     }
-      products.push({
+      products.unshift({
          'product-name': req.session.data['product-name'],
          'control-rating': req.session.data['control-rating'],
          'product-description': req.session.data['product-description'],
@@ -519,6 +519,19 @@ if(req.session.data['edit']=='true') {
      })
 
 
+      var clear = 'false'
+      var redirect= '/exporter/products/product-added'
+
+if(req.session.data['edit-from-add']=='true') {
+ clear='true'
+}
+else if(req.session.data['edit']=='true') {
+ redirect= '/exporter/products/product'
+}
+else {
+ clear = 'true'
+     }
+     if(clear=='true') {
      req.session.data['control-rating'] = undefined
      req.session.data['product-description'] = undefined
      req.session.data['product-name'] = undefined
@@ -526,18 +539,34 @@ if(req.session.data['edit']=='true') {
      req.session.data['file-upload'] = undefined
      req.session.data['part-number'] = undefined
      req.session.data['product-controlled'] = undefined
-     req.session.data['products'] = products
+     }
      req.session.data['removed'] = undefined
+     req.session.data['edit'] = undefined
+     req.session.data['edit-from-add'] = undefined
+     req.session.data['products'] = products
      products = undefined
-
-      res.redirect('/exporter/products/product-added')
+      res.redirect(redirect)
  })
+
+router.post('/exporter/products/all-products', function (req, res) {
+     req.session.data['control-rating'] = undefined
+     req.session.data['product-description'] = undefined
+     req.session.data['product-name'] = undefined
+     req.session.data['document-description'] = undefined
+     req.session.data['file-upload'] = undefined
+     req.session.data['part-number'] = undefined
+     req.session.data['product-controlled'] = undefined
+     req.session.data['removed'] = undefined
+     req.session.data['edit'] = undefined
+     req.session.data['edit-from-add'] = undefined
+})
 
 router.post('/exporter/products/product-removed', function (req, res) {
 
      if (req.session.data['products'] == undefined) {
          req.session.data['products'] = []
      }
+
 
      var products = []
      var existing_products = req.session.data['products']
@@ -627,7 +656,7 @@ router.post('/exporter/products/product-removed-application', function (req, res
     }
 
 
-        app_products.push({
+        app_products.unshift({
          'product-name': req.session.data['good'],
          'value-products': req.session.data['value-products'],
          'quantity': req.session.data['quantity'],
@@ -648,6 +677,5 @@ router.post('/exporter/products/product-removed-application', function (req, res
      app_products = undefined
       res.redirect('/exporter/products/product-added-application')
  })
-
 
 module.exports = router
