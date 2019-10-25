@@ -26,13 +26,13 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">You have added 1 product</h1>
+        <h1 class="govuk-heading-l">You have added {% if(data['products']==undefined)%}0{% else %}{{ data['products'].length + ''}}{% endif %} products</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
             {% for item in data['products'] %}
             <div class="govuk-summary-list__row">
                 <dd class="govuk-summary-list__value">{{ item['product-name'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a href="add-product?edit=true&product-name={{item['product-name']}}&product-description={{item['product-description']}}&control-rating={{item['control-rating']}}&product-controlled={{item['product-controlled']}}&file-upload={{item['file-upload']}}&document-description={{item['document-description']}}&part-number={{item['part-number']}}&product-date={{item['product-date']}}">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="govuk-link" href="remove-product?product-name={{item['product-name']}}&product-description={{item['product-description']}}&control-rating={{item['control-rating']}}&product-controlled={{item['product-controlled']}}&file-upload={{item['file-upload']}}&document-description={{item['document-description']}}&part-number={{item['part-number']}}&product-date={{item['product-date']}}">Remove<span class="govuk-visually-hidden"> product name</span></a>
+                    <a href="add-product?edit=true&edit-from-add=true&product-name={{item['product-name']}}&product-description={{item['product-description']}}&control-rating={{item['control-rating']}}&product-controlled={{item['product-controlled']}}&file-upload={{item['file-upload']}}&document-description={{item['document-description']}}&part-number={{item['part-number']}}&product-date={{item['product-date']}}">Edit<span class="govuk-visually-hidden"> product name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="govuk-link" href="remove-product?redirect=product-added&product-name={{item['product-name']}}&product-description={{item['product-description']}}&control-rating={{item['control-rating']}}&product-controlled={{item['product-controlled']}}&file-upload={{item['file-upload']}}&document-description={{item['document-description']}}&part-number={{item['part-number']}}&product-date={{item['product-date']}}">Remove<span class="govuk-visually-hidden"> product name</span></a>
                 </dd>
             </div>
             {% endfor%}
