@@ -39,7 +39,7 @@
                     {% else %}
                     <td class="govuk-table__cell">{{ item['measurement'] }}</td>
                     {% endif %}
-                    <td class="govuk-table__cell govuk-!-width-one-quarter"><a href="add-to-application.html?edit=true&good={{item['product-name']}}&value-products={{item['value-products']}}&quantity={{item['quantity']}}&measurement={{item['measurement']}}&other-measurement={{item['other-measurement']}}&end-product={{item['end-product']}}">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-product-application.html?product-name={{item['product-name']}}&value-products={{item['value-products']}}&quantity={{item['quantity']}}&measurement={{item['measurement']}}&other-measurement={{item['other-measurement']}}&end-product={{item['end-product']}}">Remove</a></td>
+                    <td class="govuk-table__cell govuk-!-width-one-quarter"><a href="add-to-application.html?edit=true&product-name={{item['product-name']}}&value-products={{item['value-products']}}&quantity={{item['quantity']}}&measurement={{item['measurement']}}&other-measurement={{item['other-measurement']}}&end-product={{item['end-product']}}">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="remove-product-application.html?product-name={{item['product-name']}}&value-products={{item['value-products']}}&quantity={{item['quantity']}}&measurement={{item['measurement']}}&other-measurement={{item['other-measurement']}}&end-product={{item['end-product']}}">Remove</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
