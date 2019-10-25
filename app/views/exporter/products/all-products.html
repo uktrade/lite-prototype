@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Your products (1 added) - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Your products - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,7 +26,7 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Your products (1 added)</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Your products ({{ data['products'].length + ' added'}})</h1>
         <a href="add-product.html" class="govuk-button float-right">Add a new product</a>
     </div>
 </div>
