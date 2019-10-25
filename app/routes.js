@@ -438,15 +438,16 @@ router.post('/exporter/sites/all-sites', function (req, res) {
 // })
 
 // Add item routing
- router.post('/exporter/products/product-added', function (req, res) {
+router.post('/exporter/products/product-added', function (req, res) {
 
      if (req.session.data['products'] == undefined) {
          req.session.data['products'] = []
      }
-
+   if (req.session.data['redirect'] == undefined) {
+    req.session.data['redirect']='product-added'
+    }
    var products = []
    var existing_products = req.session.data['products']
-
 
     var today = new Date();
     var dd = today.getDate();
@@ -493,7 +494,6 @@ router.post('/exporter/sites/all-sites', function (req, res) {
 
     var today = dd + ' ' + mm + ' ' + yyyy;
 
-if(req.session.data['edit']=='true') {
      for (i = 0; i < existing_products.length; i++) {
             if(existing_products[i]['product-name']==req.session.data['product-name']) {
                 //don't add
@@ -502,11 +502,8 @@ if(req.session.data['edit']=='true') {
                 products.push(existing_products[i])
             }
         }
+    req.session.data['edit']=undefined
 
-}
-  else {
-        products = req.session.data['products']
-    }
       products.unshift({
          'product-name': req.session.data['product-name'],
          'control-rating': req.session.data['control-rating'],
@@ -561,6 +558,7 @@ router.post('/exporter/products/all-products', function (req, res) {
      req.session.data['edit-from-add'] = undefined
 })
 
+
 router.post('/exporter/products/product-removed', function (req, res) {
 
      if (req.session.data['products'] == undefined) {
@@ -592,11 +590,16 @@ router.post('/exporter/products/product-removed', function (req, res) {
     req.session.data['products'] = products
     req.session.data['removed'] = true
      products = undefined
+     console.log('redirect= ' + req.session.data['redirect'])
      if(req.session.data['products'].length == 0) {
          res.redirect('/exporter/products/product-added-none')
      }
+     else if(req.session.data['redirect']=='all-products') {
+        req.session.data['redirect']=undefined
+        res.redirect('/exporter/products/all-products')
+     }
      else {
-         res.redirect('/exporter/products/all-products')
+         res.redirect('/exporter/products/product-added')
      }
 
  })
