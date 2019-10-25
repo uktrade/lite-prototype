@@ -437,6 +437,7 @@ router.post('/exporter/sites/all-sites', function (req, res) {
 //    }
 // })
 
+// Add item routing
  router.post('/exporter/products/product-added', function (req, res) {
 
      if (req.session.data['products'] == undefined) {
@@ -452,13 +453,45 @@ router.post('/exporter/sites/all-sites', function (req, res) {
     var mm = today.getMonth() + 1; //January is 0!
 
     var yyyy = today.getFullYear();
-    if (dd < 10) {
-      dd = '0' + dd;
+
+    if (mm == 1) {
+      mm = 'January';
     }
-    if (mm < 10) {
-      mm = '0' + mm;
+    else if (mm == 2) {
+      mm = 'February';
     }
-    var today = dd + '/' + mm + '/' + yyyy;
+    else if (mm == 3) {
+      mm = 'March';
+    }
+    else if (mm == 4) {
+      mm = 'April';
+    }
+    else if (mm == 5) {
+      mm = 'May';
+    }
+    else if (mm == 6) {
+      mm = 'June';
+    }
+    else if (mm == 7) {
+      mm = 'July';
+    }
+    else if (mm == 8) {
+      mm = 'August';
+    }
+    else if (mm == 9) {
+      mm = 'September';
+    }
+    else if (mm == 10) {
+      mm = 'October';
+    }
+    else if (mm == 11) {
+      mm = 'November';
+    }
+    else if (mm == 12) {
+      mm = 'December';
+    }
+
+    var today = dd + ' ' + mm + ' ' + yyyy;
 
 if(req.session.data['edit']=='true') {
      for (i = 0; i < existing_products.length; i++) {
@@ -486,7 +519,7 @@ if(req.session.data['edit']=='true') {
      })
 
 
-      req.session.data['control-rating'] = undefined
+     req.session.data['control-rating'] = undefined
      req.session.data['product-description'] = undefined
      req.session.data['product-name'] = undefined
      req.session.data['document-description'] = undefined
@@ -494,6 +527,7 @@ if(req.session.data['edit']=='true') {
      req.session.data['part-number'] = undefined
      req.session.data['product-controlled'] = undefined
      req.session.data['products'] = products
+     req.session.data['removed'] = undefined
      products = undefined
 
       res.redirect('/exporter/products/product-added')
@@ -527,8 +561,15 @@ router.post('/exporter/products/product-removed', function (req, res) {
      req.session.data['product-controlled'] = undefined
 
     req.session.data['products'] = products
+    req.session.data['removed'] = true
      products = undefined
-      res.redirect('/exporter/products/product-removed')
+     if(req.session.data['products'].length == 0) {
+         res.redirect('/exporter/products/product-added-none')
+     }
+     else {
+         res.redirect('/exporter/products/product-added')
+     }
+
  })
 
 router.post('/exporter/products/product-removed-application', function (req, res) {
