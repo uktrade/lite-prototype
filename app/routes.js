@@ -644,30 +644,27 @@ router.post('/exporter/products/product-removed-application', function (req, res
      var app_products = []
      var existing_products = req.session.data['app-products']
 
-     if(req.session.data['edit']=='true') {
+
         for (i = 0; i < existing_products.length; i++) {
-            if(existing_products[i]['product-name']==req.session.data['good']) {
+            if(existing_products[i]['product-name']==req.session.data['product-name']) {
                 //don't add
             }
             else {
                 app_products.push(existing_products[i])
             }
         }
-    }
-    else {
-        app_products = req.session.data['app-products']
-    }
 
 
+if(req.session.data['product-name'] != undefined) {
         app_products.unshift({
-         'product-name': req.session.data['good'],
+         'product-name': req.session.data['product-name'],
          'value-products': req.session.data['value-products'],
          'quantity': req.session.data['quantity'],
          'measurement': req.session.data['measurement'],
          'end-product': req.session.data['end-product'],
          'other-measurement': req.session.data['other-measurement']
      })
-
+  }
      req.session.data['good'] = undefined
      req.session.data['edit'] = undefined
      req.session.data['value-products'] = undefined
