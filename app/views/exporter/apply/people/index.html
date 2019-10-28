@@ -1,0 +1,53 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Are you the exporter? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="export-deal" method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Are you the exporter?</h1>
+                    </legend>
+                    <div class="govuk-form-group">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="yes-exporter" name="is-exporter" type="radio" value="Yes" {{ checked("is-exporter", "Yes") }}>
+                                <label class="govuk-label govuk-radios__label" for="yes-exporter">Yes</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="no-exporter" name="is-exporter" type="radio" value="No" {{ checked("is-exporter", "No") }}>
+                                <label class="govuk-label govuk-radios__label" for="no-exporter">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

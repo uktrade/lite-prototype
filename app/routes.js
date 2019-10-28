@@ -172,6 +172,59 @@ router.post('/exporter/apply/end-users/upload-document', function (req, res) {
 })
 
 
+// ########################################################################
+// ###### Apply for an export licence: Add any other people involved ######
+// ########################################################################
+
+// http://localhost:3000/exporter/apply/people/index
+router.post('/exporter/apply/people/export-deal', function (req, res) {
+
+    let confirmExporter = req.session.data['is-exporter']
+
+    if (confirmExporter === "Yes") {
+        res.redirect('/exporter/apply/people/export-deal')
+    } else {
+        res.redirect('/exporter/apply/people/agent-broker')
+    }
+})
+
+// http://localhost:3000/exporter/apply/people/export-deal
+router.post('/exporter/apply/people/agent-broker-details', function (req, res) {
+
+    let confirmExportDeal = req.session.data['arrange-export-deal']
+
+    if (confirmExportDeal === "Yes") {
+        res.redirect('/exporter/apply/people/agent-broker-details')
+    } else {
+        res.redirect('/exporter/apply/people/other-consultants')
+    }
+})
+
+// http://localhost:3000/exporter/apply/people/agent-broker
+router.post('/exporter/apply/people/other-consultants', function (req, res) {
+
+    let confirmAgentBroker = req.session.data['is-agent-broker']
+
+    if (confirmAgentBroker === "No") {
+        res.redirect('/exporter/apply/people/other-consultants')
+    } else {
+        res.redirect('/exporter/apply/people/agent-broker-details')
+    }
+})
+
+// http://localhost:3000/exporter/apply/people/location
+router.post('/exporter/apply/people/uk', function (req, res) {
+
+    let agentBrokerUKApply = req.session.data['agent-broker-based']
+
+    if (agentBrokerUKApply === 'true') {
+        res.redirect('/exporter/apply/people/uk')
+    } else {
+        res.redirect('/exporter/apply/people/country')
+    }
+})
+
+
 // ####################################################
 // ###### Apply for an export licence: Task List ######
 // ####################################################

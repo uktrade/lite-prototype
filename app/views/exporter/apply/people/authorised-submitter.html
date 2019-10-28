@@ -1,0 +1,59 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Do you have an authorised submitter? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="anyone-else-involved" method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Do you have an authorised submitter?</h1>
+                    </legend>
+                    <p class="govuk-body">An authorised submitter is someone that:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>checks export paperwork before it is submitted</li>
+                        <li>submits the paperwork</li>
+                    </ul>
+                    <p class="govuk-body">For example, they will check this licence application before you send it.</p>
+                    <div class="govuk-form-group">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="yes-authorised-submitter" name="is-authorised-submitter" type="radio" value="Yes" {{ checked("is-authorised-submitter", "Yes") }}>
+                                <label class="govuk-label govuk-radios__label" for="yes-authorised-submitter">Yes</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="no-authorised-submitter" name="is-authorised-submitter" type="radio" value="No" {{ checked("is-authorised-submitter", "No") }}>
+                                <label class="govuk-label govuk-radios__label" for="no-authorised-submitter">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

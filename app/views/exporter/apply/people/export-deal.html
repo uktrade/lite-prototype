@@ -1,0 +1,54 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Did a broker arrange your export deal? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="agent-broker-details" method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">Did a broker arrange your export deal?</h1>
+                    </legend>
+                    <div class="govuk-form-group">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="yes-export-deal" name="arrange-export-deal" type="radio" value="Yes" {{ checked("arrange-export-deal", "Yes") }}>
+                                <label class="govuk-label govuk-radios__label" for="yes-export-deal">Yes</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="no-export-deal" name="arrange-export-deal" type="radio" value="No" {{ checked("arrange-export-deal", "No") }}>
+                                <label class="govuk-label govuk-radios__label" for="no-export-deal">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Save and continue</button>
+            <!-- <a href="../task-list-1-progress" class="govuk-button govuk-button--secondary">Return to this application later</a> -->
+		</form>
+	</div>
+</div>
+{% endblock %}
