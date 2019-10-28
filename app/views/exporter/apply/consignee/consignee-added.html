@@ -1,0 +1,60 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}You have added 1 consignee - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">You have added 1 consignee</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">{{ data['consignee-name'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="index">Edit<span class="govuk-visually-hidden"> consignee name</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="govuk-link" href="remove-consignee">Remove<span class="govuk-visually-hidden"> consignee name</span></a> 
+                </dd>
+            </div>
+        </dl>
+        <form action="../task-list-5-not-req" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">Add another consignee?</h2>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="consignee-add-yes" name="consignee-add" type="radio" value="true">
+                            <label class="govuk-label govuk-radios__label" for="consignee-add-yes">Yes</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="consignee-add-no" name="consignee-add" type="radio" value="false">
+                            <label class="govuk-label govuk-radios__label" for="consignee-add-no">No</label>
+                        </div>	
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+	</div>
+</div>
+{% endblock %}

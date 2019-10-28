@@ -1,0 +1,69 @@
+
+{% extends "layout-exporter.html" %}
+
+{% block pageTitle %}Remove consignee? - Exporter service name - GOV.UK{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+	homepageUrl: "/",
+    serviceName: "Exporter service name",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "user-menu",
+    navigation: [
+      {
+        href: "#",
+        text: "My account"
+      },
+      {
+        href: "../../sign-out.html",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Remove consignee?</h1>
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-0">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">{{ data['consignee-name'] }}</dd>
+            </div>
+            {% if data['consignee-have-website'] == "Yes" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Website</dt>
+                <dd class="govuk-summary-list__value">{{ data['consignee-website-url'] }}</dd>
+            </div>
+            {% endif %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Organisation</dt>
+                {% if data['consignee-user-type'] == "Something else" %}
+                <dd class="govuk-summary-list__value">{{ data['consignee-other-name'] }}</dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">{{ data['consignee-user-type'] }}</dd>
+                {% endif %}
+            </div>
+            {% if data['consignee-based'] == "true" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">50 Victoria Street<br />London<br />SW1H 0TL</dd>
+            </div>
+            {% endif %}
+            {% if data['consignee-based'] == "false" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">{{ data['consignee-non-UK-address'] | striptags(true) | escape | nl2br }}<br /><span class="grey-text">{{ data['consignee-country'] }}</span></dd>
+            </div>
+            {% endif %}
+        </dl>
+        <hr class="govuk-section-break govuk-section-break--visible">
+        <form action="consignee-added-none" method="post">
+            <button type="submit" class="govuk-button govuk-button govuk-!-margin-top-6" data-module="govuk-button">Yes, remove consignee</button>
+        </form>
+        <p class="govuk-body"><a href="javascript:window.history.back()" class="govuk-link">No, do not remove consignee</a></p>
+    </div>
+</div>
+{% endblock %}

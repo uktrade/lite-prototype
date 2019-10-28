@@ -119,14 +119,39 @@ router.post('/exporter/apply/consignee/uk', function (req, res) {
 })
 
 // http://localhost:3000/exporter/apply/consignee/consignee-end-user
+
+//router.post('/exporter/apply/task-list-5-not-req', function (req, res) {
+
+//    let consigneeEndUser = req.session.data['consignee-end-user']
+
+//    if (consigneeEndUser === 'Yes') {
+//        res.redirect('/exporter/apply/task-list-5-not-req')
+//    } else {
+//        res.redirect('/exporter/apply/task-list-4')
+//    }
+// })
+
+// http://localhost:3000/exporter/apply/consignee/consignee-added
 router.post('/exporter/apply/task-list-5-not-req', function (req, res) {
 
-    let consigneeEndUser = req.session.data['consignee-end-user']
+    let consigneeAddAnother = req.session.data['consignee-add']
 
-    if (consigneeEndUser === 'Yes') {
+    if (consigneeAddAnother === 'false') {
         res.redirect('/exporter/apply/task-list-5-not-req')
     } else {
-        res.redirect('/exporter/apply/task-list-4')
+        res.redirect('/exporter/apply/consignee/index')
+    }
+})
+
+// http://localhost:3000/exporter/apply/consignee/consignee-added-none
+router.post('/exporter/apply/consignee/index', function (req, res) {
+
+    let consigneeAddAnotherNone = req.session.data['consignee-add-none']
+
+    if (consigneeAddAnotherNone === 'true') {
+        res.redirect('/exporter/apply/consignee/index')
+    } else {
+        res.redirect('/exporter/apply/task-list-5-not-req')
     }
 })
 
