@@ -208,7 +208,7 @@ router.post('/exporter/apply/people/other-consultants', function (req, res) {
     if (confirmAgentBroker === "No") {
         res.redirect('/exporter/apply/people/other-consultants')
     } else {
-        res.redirect('/exporter/apply/people/agent-broker-details')
+        res.redirect('/exporter/apply/people/agent-broker-details-agent')
     }
 })
 

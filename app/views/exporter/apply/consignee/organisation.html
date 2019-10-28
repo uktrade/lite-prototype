@@ -42,6 +42,10 @@
                                 <input class="govuk-radios__input" id="commercial" name="consignee-user-type" type="radio" value="Commercial" {{ checked("consignee-user-type", "Commercial") }}>
                                 <label class="govuk-label govuk-radios__label" for="commercial">Commercial</label>
                             </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="individual" name="consignee-user-type" type="radio" value="Individual" {{ checked("consignee-user-type", "Individual") }}>
+                                <label class="govuk-label govuk-radios__label" for="individual">Individual</label>
+                            </div>
                             <div class="govuk-radios__divider">or</div>
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="other-conditional" name="consignee-user-type" type="radio" value="Something else" {{ checked("consignee-user-type", "Something else") }} data-aria-controls="conditional-other-conditional">
@@ -50,6 +54,7 @@
                             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-conditional">
                                 <div class="govuk-form-group">
                                     <label class="govuk-label" for="consignee-other-name">What kind of organisation?</label>
+                                    <span id="consignee-other-name-hint" class="govuk-hint">For example, a charity or non governmental organisation.</span>
                                     <input class="govuk-input govuk-!-width-one-half" id="consignee-other-name" name="consignee-other-name" type="text" value="{{ data['consignee-other-name'] }}">
                                 </div>
                             </div>
