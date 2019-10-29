@@ -8,16 +8,16 @@ const router = express.Router()
 // #######################################################
 
 // http://localhost:3000/exporter/apply/licence-type/export-licence
-router.post('/exporter/apply/licence-type/application-reference', function (req, res) {
+//router.post('/exporter/apply/licence-type/application-reference', function (req, res) {
 
-    let licenceTypeApply = req.session.data['export-licence-type']
+//    let licenceTypeApply = req.session.data['export-licence-type']
 
-    if (licenceTypeApply === "Standard Licence") {
-        res.redirect('/exporter/apply/licence-type/application-reference')
-    } else {
-        res.redirect('/exporter/apply/licence-type/export-licence-official')
-    }
-})
+//    if (licenceTypeApply === "Standard Licence") {
+//        res.redirect('/exporter/apply/licence-type/application-reference')
+//    } else {
+//        res.redirect('/exporter/apply/licence-type/export-licence-official')
+//    }
+// })
 
 
 // #######################################################

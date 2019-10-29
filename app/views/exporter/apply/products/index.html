@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Add a product to your application - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}What do you want to export? - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,27 +26,28 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form action="add-product" method="post">
+		<form action="add-product-application" method="post">
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-						<h1 class="govuk-fieldset__heading">Add a product to your application</h1>
+						<h1 class="govuk-fieldset__heading">What do you want to export?</h1>
                     </legend>
                     <div class="govuk-form-group">
                         <div class="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="new-product" name="select-product" type="radio" value="Add a new product" {{ checked("select-product", "Add a new product") }}>
-                                <label class="govuk-label govuk-radios__label" for="new-product">A new product</label>
+                                <input class="govuk-radios__input" id="finished-products" name="send-type" type="radio" value="Finished products" {{ checked("send-type", "Finished products") }}>
+                                <label class="govuk-label govuk-radios__label" for="finished-products">Finished products</label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="choose-product" name="select-product" type="radio" value="Choose a product you have added before" {{ checked("select-product", "Choose a product you have added before") }}>
-                                <label class="govuk-label govuk-radios__label" for="choose-product">Choose a product you have added before</label>
+                                <input class="govuk-radios__input" id="product-parts" name="send-type" type="radio" value="Parts (to make a finished product)" {{ checked("send-type", "Parts (to make a finished product)") }}>
+                                <label class="govuk-label govuk-radios__label" for="product-parts">Parts (to make a finished product)</label>
                             </div>
                         </div>
                     </div>
                 </fieldset>
             </div>
-            <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Save and continue</button>
+            <!-- <a href="../task-list-1-progress" class="govuk-button govuk-button--secondary">Return to this application later</a> -->
 		</form>
 	</div>
 </div>
