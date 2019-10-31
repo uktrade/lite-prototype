@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Products (924 available) - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Products ({{data['products'].length}} available) - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -65,10 +65,10 @@
             </tbody>
         </table>
         <div class="pagination">
-            <div class="pager-summary govuk-body">Showing <strong>1</strong> &ndash; <strong>{% if data['products'].length>50%} 50 {%else%} {{data['products'].length}} {% endif %}</strong> of <strong>{{data['products'].length}}</strong> products</div>
+            {% if data['products'].length>50%}<div class="pager-summary govuk-body">Showing <strong>1</strong> &ndash; <strong>{% if data['products'].length>50%} 50 {%else%} {{data['products'].length}} {% endif %}</strong> of <strong>{{data['products'].length}}</strong> products</div>{% endif %}
             <ul class="pager-items govuk-body">
-                {% if data['products'].length>50%}
-		<li>1</li>
+               {% if data['products'].length>50%}
+                <li>1</li>
                 <li><a href="#" class="govuk-link govuk-link--no-visited-state">2</a></li>
                 {% endif %}
                 {% if data['products'].length>100%}
@@ -88,4 +88,3 @@
     </div>
 </div>
 {% endblock %}
-
