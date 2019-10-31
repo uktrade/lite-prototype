@@ -187,6 +187,13 @@ $govuk-assets-path: '/govuk/assets/';
     display: block;   
 }
 
+.govuk-tag-done {
+    /* Inverted */
+    border: 3px solid #1d70b8;
+    background: #fff;
+    color: #1d70b8;
+}
+
 .govuk-tag-progress {
     background-color: #f3f2f1;
     color: #0b0c0c;
@@ -196,6 +203,11 @@ $govuk-assets-path: '/govuk/assets/';
     border: 1px solid #b1b4b6;
     background: #fff;
     color: #0b0c0c;
+
+    /* Inverted 
+    border: 3px solid #b1b4b6;
+    background: #fff;
+    color: #b1b4b6; */
 }
 
 .govuk-tag-not-required {
