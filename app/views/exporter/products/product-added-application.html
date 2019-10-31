@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}You have added 1 product - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}You have {% if data['app-products'] %}{% if data['app-products'].length>0 %}added {{ data['app-products'].length }}{% else %}no{% endif %}{% else %}no{% endif %} product{% if data['app-products'].length!=1 %}s{% endif %} - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,7 +26,7 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l">You have added 1 product</h1>
+        <h1 class="govuk-heading-l">You have {% if data['app-products'] %}{% if data['app-products'].length>0 %}added {{ data['app-products'].length }}{% else %}no{% endif %}{% else %}no{% endif %} product{% if data['app-products'].length!=1 %}s{% endif %}</h1>
         <table class="govuk-table">
             <tbody class="govuk-table__body">
                 {% for item in data['app-products'] %}
@@ -48,7 +48,7 @@
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                        <h2 class="govuk-fieldset__heading">Add another product to application?</h2>
+                        <h2 class="govuk-fieldset__heading">Add {% if data['app-products'].length>0 %}another {% endif %}product to application?</h2>
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
