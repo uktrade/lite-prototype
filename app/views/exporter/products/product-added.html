@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}You have added 1 product - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}You have {% if(data['products']==undefined)%}no products{% else %}added {{ data['products'].length + ''}}{% if(data['products'].length==1) %} product{% else %} products{% endif %}{% endif %} - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,7 +26,7 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">You have added {% if(data['products']==undefined)%}0 products{% else %}{{ data['products'].length + ''}}{% if(data['products'].length==1) %} product{% else %} products{% endif %}{% endif %} </h1>
+        <h1 class="govuk-heading-l">You have {% if(data['products']==undefined)%}no products{% else %}added {{ data['products'].length + ''}}{% if(data['products'].length==1) %} product{% else %} products{% endif %}{% endif %} </h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
             {% for item in data['products'] %}
             <div class="govuk-summary-list__row">
