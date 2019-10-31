@@ -632,7 +632,7 @@ router.post('/exporter/products/product-removed-application', function (req, res
 
     req.session.data['app-products'] = app_products
      app_products = undefined
-      res.redirect('/exporter/products/product-removed-application')
+      res.redirect('/exporter/products/product-added-application')
  })
 
  router.post('/exporter/products/product-added-application', function (req, res) {
