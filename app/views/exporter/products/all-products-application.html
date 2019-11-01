@@ -1,7 +1,7 @@
 
 {% extends "layout-exporter.html" %}
 
-{% block pageTitle %}Products (924 available) - Exporter service name - GOV.UK{% endblock %}
+{% block pageTitle %}Products ({{data['products'].length}} available) - Exporter service name - GOV.UK{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -26,7 +26,7 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products (924 available)</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Products ({{data['products'].length}} available)</h1>
     </div>
 </div>
 <div class="govuk-grid-row">
@@ -56,217 +56,33 @@
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
+                {% for item in data['products'] %}
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['product-name'] }}</td>
-                    <td class="govuk-table__cell"><a href="add-to-application.html?add=true" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
+                    <td class="govuk-table__cell">{{ item['product-name'] }}</td>
+                    <td class="govuk-table__cell"><a href="add-to-application.html?add=true&product-name={{item['product-name']}}" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
                 </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 1</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">MLD-TC87 two locks</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D1</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 2</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-130</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D2</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D3</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 3</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-131</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D4</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 4</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-132</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D5</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 5</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-133</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D6</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D7</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 6</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-134</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D8</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-135</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D9</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 7</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-136</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D10</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D11</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 8</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-137</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D12</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 9</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-138</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D13</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 10</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-139</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D14</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D15</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 11</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-140</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D16</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-141</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D17</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 12</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-142</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D18</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Boston Dynamics Spot droid 67-D19</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Nuclear Fuel Complex 13</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Lockheed AC-143</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Add product to application</a></td>
-                </tr>  
+                {% endfor %}
             </tbody>
         </table>
         <div class="pagination">
-            <div class="pager-summary govuk-body">Showing <strong>1</strong> &ndash; <strong>50</strong> of <strong>924</strong> products</div>
+            {% if data['products'].length>50%}<div class="pager-summary govuk-body">Showing <strong>1</strong> &ndash; <strong>{% if data['products'].length>50%} 50 {%else%} {{data['products'].length}} {% endif %}</strong> of <strong>{{data['products'].length}}</strong> products</div>{% endif %}
             <ul class="pager-items govuk-body">
+               {% if data['products'].length>50%}
                 <li>1</li>
                 <li><a href="#" class="govuk-link govuk-link--no-visited-state">2</a></li>
+                {% endif %}
+                {% if data['products'].length>100%}
                 <li><a href="#" class="govuk-link govuk-link--no-visited-state">3</a></li>
+                {% endif %}
+                {% if data['products'].length>150%}
                 <li><a href="#" class="govuk-link govuk-link--no-visited-state">4</a></li>
+                {% endif %}
+                {% if data['products'].length>200%}
                 <li><a href="#" class="govuk-link govuk-link--no-visited-state">5</a></li>
+                {% endif %}
+                {% if data['products'].length>250%}
                 <li><a href="#" class="govuk-link govuk-link--no-visited-state">Next</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
