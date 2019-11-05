@@ -26,8 +26,8 @@
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Your products (1 added)</h1>
-        <a href="add-product.html" class="govuk-button float-right">Add a new product</a>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7 float-left">Your products ({% if(data['products']==undefined)%}0 added{% else %}{{ data['products'].length + ' added'}}{% endif %})</h1>
+        <a href="add-product.html?control-rating=&product-description=&product-name=&document-description=&file-upload=&part-number=&product-controlled=&edit=?" class="govuk-button float-right">Add a new product</a>
     </div>
 </div>
 <div class="govuk-grid-row">
@@ -62,10 +62,12 @@
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
+                {% for item in data['products'] %}
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="product.html" class="govuk-link govuk-link--no-visited-state">{{ data['product-name'] }}</a></td>
-                    <td class="govuk-table__cell">25 September 2019</td>
+                    <td class="govuk-table__cell"><a href="product.html?product-name={{item['product-name']}}&product-description={{item['product-description']}}&control-rating={{item['control-rating']}}&product-controlled={{item['product-controlled']}}&file-upload={{item['file-upload']}}&document-description={{item['document-description']}}&part-number={{item['part-number']}}&product-date={{item['product-date']}}" class="govuk-link govuk-link--no-visited-state">{{ item['product-name'] }}</a></td>
+                    <td class="govuk-table__cell">{{ item['product-date'] }}</td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
