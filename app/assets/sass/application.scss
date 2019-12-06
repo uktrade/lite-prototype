@@ -38,7 +38,6 @@ $govuk-assets-path: '/govuk/assets/';
 
 .internal-ui .govuk-tabs__panel {
     border: none !important;
-    /*padding-left: 0 !important;*/
 }
 
 .internal-ui .govuk-header__logo {
@@ -51,7 +50,6 @@ $govuk-assets-path: '/govuk/assets/';
 
 .internal-ui .govuk-footer {
     background: #f3f2f1 !important;
-    /* clear: both; */
 }
 
 .hidden {
@@ -79,7 +77,6 @@ $govuk-assets-path: '/govuk/assets/';
 .pagination .pager-items li {
     display: inline;
     margin: 0 5px;
-    /* font-size: 1.1875em; */
 }
 
 .pagination .pager-summary {
@@ -88,8 +85,6 @@ $govuk-assets-path: '/govuk/assets/';
 
 .filter-section {
     background: #f3f2f1;
-    /* background: rgba(243, 242, 241, 1);
-    background: rgba(111, 119, 123, 0.25); */
     padding: 20px;
 }
 
@@ -121,7 +116,6 @@ $govuk-assets-path: '/govuk/assets/';
 
 .filter-results .filter-button {
     border-radius: 3px;
-    /* padding: 10px; */
     border: 1px solid #6f777b;
     margin: 0 7px 0 3px;
     color: #0b0c0c;
@@ -160,27 +154,6 @@ $govuk-assets-path: '/govuk/assets/';
     margin-bottom: 30px;
 }
 
-/* Using remove as a link to clear filter options
-
-.filter-results .filter-button {
-    border-radius: 3px;
-    padding: 10px;
-    border: 1px solid #6f777b;
-    margin: 0 3px;
-}
-
-.filter-results .filter-button a {
-    color: #0b0c0c;
-    text-decoration: none !important;
-}
-
-.filter-results .filter-button .govuk-link {
-    color: #1d70b8;
-    padding-left: 5px;
-    text-decoration: underline !important;
-    font-size: 14px;
-} */
-
 .applications .govuk-table__cell .status-date {
     font-size: 0.85em;
     color: #6f777b;
@@ -203,11 +176,6 @@ $govuk-assets-path: '/govuk/assets/';
     border: 1px solid #b1b4b6;
     background: #fff;
     color: #0b0c0c;
-
-    /* Inverted 
-    border: 3px solid #b1b4b6;
-    background: #fff;
-    color: #b1b4b6; */
 }
 
 .govuk-tag-not-required {
@@ -262,7 +230,6 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .message-sent .message {
-    /* background: #b1b4b6; */
     background: rgba(177,180,182, 0.50);
     padding: 20px;
 }
